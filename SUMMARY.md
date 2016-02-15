@@ -5,4 +5,4 @@
     * [公众号支付接口](gateway-1.0/公众号支付接口.md)
 * [支付网关2.0](upay-gateway-2.0/README.md)
     * [支付网关2.0接入文档](upay-gateway-2.0/支付网关2.0接入文档.md)
-    * [核心业务接口激活码](upay-gateway-2.0.md)
+    * [核心业务接口激活码的生成和使用](upay-gateway-2.0/核心业务接口激活码的生成和使用.md)
