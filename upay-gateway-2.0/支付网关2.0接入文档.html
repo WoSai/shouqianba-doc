@@ -1,0 +1,2435 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}
+html{line-height:1}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
+q,blockquote{quotes:none}
+q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}
+a img{border:none}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}
+a{color:#1863a1}
+a:visited{color:#751590}
+a:focus{color:#0181eb}
+a:hover{color:#0181eb}
+a:active{color:#01579f}
+aside.sidebar a{color:#222}
+aside.sidebar a:focus{color:#0181eb}
+aside.sidebar a:hover{color:#0181eb}
+aside.sidebar a:active{color:#01579f}
+a{-webkit-transition:color 0.3s;-moz-transition:color 0.3s;-o-transition:color 0.3s;transition:color 0.3s}
+
+body,h1,h2,h3,h4,h5,h6,footer{font-family:"PT Sans","Helvetica Neue","Optima","Hiragino Sans GB",sans-serif}
+body{line-height:1.5em;color:#222
+	-webkit-text-size-adjust:none;  min-width: 200px;
+  max-width: 760px;
+  margin: 0 auto; padding: 1em;}
+
+pre,code,tt,p code,li code{font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace}
+
+h1{font-size:2.2em;line-height:1.2em}
+
+h1,h2,h3,h4,h5,h6{text-rendering:optimizelegibility;margin-bottom:1em;font-weight:bold}
+h2,section h1{font-size:1.5em}
+h3,section h2,section section h1{font-size:1.3em}
+h4,section h3,section section h2,section section section h1{font-size:1em}
+h5,section h4,section section h3{font-size:.9em}
+h6,section h5,section section h4,section section section h3{font-size:.8em}
+.markdown-body{padding: 0px 4px;}
+.markdown-body h1{position:relative;padding-top:1em;padding-bottom:0.2em;margin-bottom:1em;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x}
+.markdown-body  h1 a{text-decoration:none}
+.markdown-body  h1 a:hover{text-decoration:underline}
+
+.markdown-body h2{padding-top:0.8em;padding-bottom:0.2em;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x}
+.markdown-body h2:first-child,.markdown-body header+h2{padding-top:0}
+.markdown-body h2:first-child,.markdown-body header+h2{background:none}
+
+
+
+p,.markdown-body blockquote,ul,ol{margin-bottom:0.8em; margin-top:0.8em;}
+ul{list-style-type:disc}
+ul ul{list-style-type:circle;margin-bottom:0px}
+ul ul ul{list-style-type:square;margin-bottom:0px}
+ol{list-style-type:decimal}
+ol ol{list-style-type:lower-alpha;margin-bottom:0px}
+ol ol ol{list-style-type:lower-roman;margin-bottom:0px}
+ul,ul ul,ul ol,ol,ol ul,ol ol{margin-left:1.3em}
+ul ul,ul ol,ol ul,ol ol{margin-bottom:0em}
+strong{font-weight:bold}
+em{font-style:italic}
+sup,sub{font-size:0.75em;position:relative;display:inline-block;padding:0 .2em;line-height:.8em}
+sup{top:-.5em}
+sub{bottom:-.5em}
+a[rev='footnote']{font-size:.75em;padding:0 .3em;line-height:1}
+q{font-style:italic}
+q:before{content:"\201C"}
+q:after{content:"\201D"}
+em,dfn{font-style:italic}
+strong,dfn{font-weight:bold}
+del,s{text-decoration:line-through}
+abbr,acronym{border-bottom:1px dotted;cursor:help}
+small{font-size:.8em}
+big{font-size:1.2em}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body blockquote{font-style:italic;position:relative;font-size:1.2em;line-height:1.5em;padding-left:1em;border-left:4px solid rgba(170,170,170,0.5)}
+.markdown-body blockquote cite{font-style:italic}
+.markdown-body blockquote cite a{color:#aaa !important;word-wrap:break-word}
+.markdown-body blockquote cite:before{content:'\2014';padding-right:.3em;padding-left:.3em;color:#aaa}
+
+.markdown-body a{white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word}
+
+body>header{font-size:1em;padding-top:1.5em;padding-bottom:1.5em}
+.markdown-body{overflow:hidden}
+.markdown-body>div,.markdown-body>article{width:100%}
+aside.sidebar{float:none;padding:0 18px 1px;background-color:#f7f7f7;border-top:1px solid #e0e0e0}
+.flex-content,article img,article video,article .flash-video,aside.sidebar img{max-width:100%;height:auto}
+.basic-alignment.left,article img.left,article video.left,article .left.flash-video,aside.sidebar img.left{float:left;margin-right:1.5em}
+.basic-alignment.right,article img.right,article video.right,article .right.flash-video,aside.sidebar img.right{float:right;margin-left:1.5em}
+.basic-alignment.center,article img.center,article video.center,article .center.flash-video,aside.sidebar img.center{display:block;margin:0 auto 1.5em}
+.basic-alignment.left,article img.left,article video.left,article .left.flash-video,aside.sidebar img.left,.basic-alignment.right,article img.right,article video.right,article .right.flash-video,aside.sidebar img.right{margin-bottom:.8em}
+.toggle-sidebar,.no-sidebar .toggle-sidebar{display:none}
+
+
+.markdown-body img,.markdown-body video,.markdown-body .flash-video{ -webkit-border-radius:0.3em;-moz-border-radius:0.3em;-ms-border-radius:0.3em;-o-border-radius:0.3em;border-radius:0.3em;-webkit-box-shadow:rgba(0,0,0,0.15) 0 1px 4px;-moz-box-shadow:rgba(0,0,0,0.15) 0 1px 4px;box-shadow:rgba(0,0,0,0.15) 0 1px 4px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:#fff 0.5em solid;}
+
+.markdown-body img,.markdown-body video{max-width: 100%;}
+.markdown-body video,.markdown-body .flash-video{margin:0 auto 1.5em}
+.markdown-body video{display:block;width:100%}
+.markdown-body .flash-video>div{position:relative;display:block;padding-bottom:56.25%;padding-top:1px;height:0;overflow:hidden}
+.markdown-body .flash-video>div iframe,.markdown-body .flash-video>div object,.markdown-body .flash-video>div embed{position:absolute;top:0;left:0;width:100%;height:100%}
+.markdown-body>footer{padding-bottom:2.5em;margin-top:2em}
+.markdown-body>footer p.meta{margin-bottom:.8em;font-size:.85em;clear:both;overflow:hidden}
+
+
+body,pre{ background:#fdf6e3 url('data:image/png;base64,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') top left;}
+body{ background-color: #f8f8f8;}
+pre{-webkit-border-radius:0.4em;-moz-border-radius:0.4em;-ms-border-radius:0.4em;-o-border-radius:0.4em;border-radius:0.4em;border:1px solid #e7dec3;line-height:1.45em;font-size:13px;margin-bottom:2.1em;padding:.8em 1em;color:#586e75;overflow:auto}
+.markdown-body code{background: none;}
+h3.filename+pre{-moz-border-radius-topleft:0px;-webkit-border-top-left-radius:0px;border-top-left-radius:0px;-moz-border-radius-topright:0px;-webkit-border-top-right-radius:0px;border-top-right-radius:0px}
+p code,li code{display:inline-block;white-space:no-wrap;background:#fff;font-size:.8em;line-height:1.5em;color:#555;border:1px solid #ddd;-webkit-border-radius:0.4em;-moz-border-radius:0.4em;-ms-border-radius:0.4em;-o-border-radius:0.4em;border-radius:0.4em;padding:0 .3em;margin:-1px 0}
+p pre code,li pre code{font-size:1em !important;background:none;border:none}
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function,
+.hljs-name {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+
+</style>
+
+<style> @media print{ .hljs{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div class="markdown-body">
+<h1 id="toc_0">支付网关2.0接入文档</h1>
+
+<ul>
+<li>
+<a href="#toc_0">支付网关2.0接入文档</a>
+<ul>
+<li>
+<a href="#toc_1">一.概述</a>
+<ul>
+<li>
+<a href="#toc_2">1.功能详述</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">二.接口通讯</a>
+<ul>
+<li>
+<a href="#toc_4">1.请求方式</a>
+</li>
+<li>
+<a href="#toc_5">2.签名算法</a>
+</li>
+<li>
+<a href="#toc_6">3.返回数据</a>
+<ul>
+<li>
+<a href="#toc_7">3.1返回字段列表</a>
+</li>
+<li>
+<a href="#toc_8">3.2返回实例</a>
+<ul>
+<li>
+<a href="#toc_9">i)交易成功</a>
+</li>
+<li>
+<a href="#toc_10">ii)交易进行中</a>
+</li>
+<li>
+<a href="#toc_11">iii)交易失败</a>
+</li>
+<li>
+<a href="#toc_12">iv)客户端错误</a>
+</li>
+<li>
+<a href="#toc_13">v)客户端错误</a>
+</li>
+<li>
+<a href="#toc_14">vi)服务端错误</a>
+</li>
+<li>
+<a href="#toc_15">vii)服务端系统错误</a>
+</li>
+<li>
+<a href="#toc_16">viii)退款成功</a>
+</li>
+<li>
+<a href="#toc_17">ix)查单成功</a>
+</li>
+<li>
+<a href="#toc_18">x)预下单成功</a>
+</li>
+<li>
+<a href="#toc_19">xi)撤单成功</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">三.接口列表</a>
+<ul>
+<li>
+<a href="#toc_21">1.约定</a>
+</li>
+<li>
+<a href="#toc_22">2.付款</a>
+<ul>
+<li>
+<a href="#toc_23">2.1 URL</a>
+</li>
+<li>
+<a href="#toc_24">2.2 请求参数说明</a>
+</li>
+<li>
+<a href="#toc_25">2.3 同步返回参数说明</a>
+</li>
+<li>
+<a href="#toc_26">2.4 客户端支付流程代码示例</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_27">3.退款</a>
+<ul>
+<li>
+<a href="#toc_28">3.1 URL</a>
+</li>
+<li>
+<a href="#toc_29">3.2 请求参数说明</a>
+</li>
+<li>
+<a href="#toc_30">3.3同步返回参数说明</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_31">4.查询</a>
+<ul>
+<li>
+<a href="#toc_32">4.1 URL</a>
+</li>
+<li>
+<a href="#toc_33">4.2 请求参数说明</a>
+</li>
+<li>
+<a href="#toc_34">4.3 同步返回参数说明</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_35">5.撤单</a>
+<ul>
+<li>
+<a href="#toc_36">5.1 URL</a>
+</li>
+<li>
+<a href="#toc_37">5.2 请求参数说明</a>
+</li>
+<li>
+<a href="#toc_38">5.3 同步返回参数</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_39">6.预下单</a>
+<ul>
+<li>
+<a href="#toc_40">6.1 URL</a>
+</li>
+<li>
+<a href="#toc_41">6.2 请求参数说明</a>
+<ul>
+<li>
+<a href="#toc_42">6.3 同步返回参数说明</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_43">四.附录</a>
+<ul>
+<li>
+<a href="#toc_44">1. 通讯错误码列表</a>
+</li>
+<li>
+<a href="#toc_45">2.业务响应码列表</a>
+</li>
+<li>
+<a href="#toc_46">3.订单状态列表</a>
+</li>
+<li>
+<a href="#toc_47">4. 流水状态列表</a>
+</li>
+<li>
+<a href="#toc_48">5. 业务执行错误码列表</a>
+</li>
+<li>
+<a href="#toc_49">6. 支付方式列表</a>
+</li>
+<li>
+<a href="#toc_50">7. 二级支付方式列表</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2 id="toc_1">一.概述</h2>
+
+<pre><code>   本接口是收钱吧对外提供的统一支付接口，旨在提供一站式的移动支付解决方案。收钱吧内部集成了 支付宝，微信，京东，百度，银联钱
+包等众多支付通道。对外提供包括支付，退款，撤单，查询，预下单等
+功能。接入者只需要对接这几个接口，即可方便的使用多种移动支付来
+收款。 
+</code></pre>
+
+<h3 id="toc_2">1.功能详述</h3>
+
+<ol>
+<li><p><strong>支付</strong>： B扫C支付模式 ，B扫C统一下单，系统自动识别支付方式。</p></li>
+<li><p><strong>退款</strong>：新版本接口可支持同一笔订单分多次退款。</p></li>
+<li><p><strong>撤单</strong>：通讯异常的时候可以直接发起撤单操作将订单取消</p></li>
+<li><p><strong>查询</strong>：获取订单的最新状态</p></li>
+<li><p><strong>预下单</strong>： C扫B当面付模式，调用接口生成二维码，消费者扫码完成支付</p></li>
+</ol>
+
+<h2 id="toc_3">二.接口通讯</h2>
+
+<h3 id="toc_4">1.请求方式</h3>
+
+<pre><code>所有通讯接口采用POST方式传递参数，请求主体格式为 JSON
+</code></pre>
+
+<h3 id="toc_5">2.签名算法</h3>
+
+<pre><code>    采用传输层签名机制。将HTTP请求主体字节流视为被签名的内容，不关心主体的格式
+（application/json或application/x-www-form-urlencoded)。
+    签名人ID和签名放在HTTP请求头中，在接入服务中统一校验。
+    签名算法MD5：  sign = MD5 ( CONCAT( content + secret ) )
+    签名首部： Authorization:terminalId+&quot; &quot;+sign
+</code></pre>
+
+<h3 id="toc_6">3.返回数据</h3>
+
+<pre><code>    所有接口返回数据统一为 JSON 格式，包括通讯状态响应 和 业务数据响应。
+</code></pre>
+
+<h4 id="toc_7">3.1返回字段列表</h4>
+
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段含义</th>
+<th>取值</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>result_code</td>
+<td>通讯响应码</td>
+<td>200，400，500</td>
+<td>200：通讯成功；400：客户端错误；500:服务端错误</td>
+</tr>
+<tr>
+<td>error_code</td>
+<td>通讯错误码</td>
+<td>见附录《公共错误码》</td>
+<td>通讯 <strong>失败</strong> 的时候才返回</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>通讯错误信息描述</td>
+<td>见附录《公共错误码》</td>
+<td>通讯 <strong>失败</strong> 的时候才返回</td>
+</tr>
+<tr>
+<td>biz_response</td>
+<td>业务响应数据</td>
+<td>数组结构</td>
+<td>通讯 <strong>成功</strong> 的时候才返回</td>
+</tr>
+<tr>
+<td>biz_response.result_code</td>
+<td>业务执行响应码</td>
+<td>见附录《业务数据响应码列表》</td>
+<td></td>
+</tr>
+<tr>
+<td>biz_response.error_code</td>
+<td>业务执行结果返回码</td>
+<td>见附录《业执行错误码列表》</td>
+<td></td>
+</tr>
+<tr>
+<td>biz_response.error_message</td>
+<td>业务执行错误信息</td>
+<td>见附录《业务执行错误码列表》</td>
+<td>业务执行成功才返回</td>
+</tr>
+<tr>
+<td>biz_response.sn</td>
+<td>收钱吧系统订单号</td>
+<td>16位数字</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.client_sn</td>
+<td>客户系统订单号</td>
+<td></td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.status</td>
+<td>最新流水状态</td>
+<td>见附录《流水状态列表》</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.order_status</td>
+<td>最新订单状态</td>
+<td>见附录《订单状态列表》</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.payer_uid</td>
+<td>付款人在支付服务商系统中的用户ID</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.pay_login</td>
+<td>付款人在支付服务商系统中的登录账户</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.trade_no</td>
+<td>第三方支付通道订单号</td>
+<td>32-128位</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.total_amount</td>
+<td>交易总金额</td>
+<td>整数，以 <font color="red">分</font> 为单位</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.net_amount</td>
+<td>如果没有退款，这个字段等于total_amount。否则等于total_amount减去退款金额</td>
+<td>整数，以分为单位</td>
+<td>业务执行 <strong>成功</strong> 才返回</td>
+</tr>
+<tr>
+<td>biz_response.payway</td>
+<td>支付方式</td>
+<td>见附录《支付方式列表》</td>
+<td>业务执行 <strong>成功</strong>才返回。包括支付宝，微信，京东，百度钱包等，未来会不断增加</td>
+</tr>
+<tr>
+<td>biz_response.sub_payway</td>
+<td>二级支付方式</td>
+<td>见附录《二级支付方式列表》</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.finish_time</td>
+<td>本次业务操作在收钱吧系统中执行完成的时间</td>
+<td>时间戳</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.channel_finish_time</td>
+<td>本次业务操作在第三方支付通道执行完成的时间</td>
+<td>时间戳</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.terminal_sn</td>
+<td>发起本次业务请求的终端ID</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.store_id</td>
+<td>本次交易所属门店</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.subject</td>
+<td>本次交易概述</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.reflect</td>
+<td>商户透传参数</td>
+<td>JSON</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+<tr>
+<td>biz_response.operator</td>
+<td>本次业务执行的操作员</td>
+<td>字符串</td>
+<td>业务执行 <strong>成功</strong>才返回</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_8">3.2返回实例</h4>
+
+<h5 id="toc_9">i)交易成功</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;PAY_SUCCESS&quot;,
+    &quot;data&quot;: {
+      &quot;sn&quot;: &quot;7894259244067349&quot;,
+      &quot;client_sn&quot;: &quot;12345677767776&quot;,
+      &quot;status&quot;: &quot;SUCCESS&quot;,
+      &quot;payway&quot;: &quot;3&quot;,
+      &quot;sub_payway&quot;: &quot;1&quot;,
+      &quot;order_status&quot;: &quot;PAID&quot;,
+      &quot;payer_uid&quot;: &quot;okSzXt3uY4-W8fKBH7B4z8seMzBU&quot;,
+      &quot;trade_no&quot;: &quot;1006101016201512081965934048&quot;,
+      &quot;total_amount&quot;: &quot;1&quot;,
+      &quot;net_amount&quot;: &quot;1&quot;,
+      &quot;finish_time&quot;: &quot;1449569460430&quot;,
+&quot;channel_finish_time&quot;: &quot;1449569460000&quot;,
+&quot;terminal_sn&quot;: &quot;1122234-dewls02s2&quot;,
+&quot;store_id&quot;: &quot;00293001928483902&quot;,
+&quot;subject&quot;: &quot;达美乐披萨&quot;,
+&quot;operator&quot;: &quot;刘侃&quot;,
+    }
+  }
+}
+</code></pre>
+
+<h5 id="toc_10">ii)交易进行中</h5>
+
+<pre><code class="language-json">{
+    &quot;result_code&quot;: &quot;200&quot;,
+    &quot;biz_response&quot;: {
+        &quot;result_code&quot;: &quot;PAY_IN_PROGRESS&quot;,
+        &quot;data&quot;: {
+            &quot;sn&quot;: &quot;789200393929142&quot;,
+            &quot;client_sn&quot;: &quot;230202l2-2-2002&quot;,
+            &quot;trade_no&quot;: &quot;0019101002020384822248&quot;,
+            &quot;ctime&quot;: &quot;2015-11-01 18:01:00&quot;,
+            &quot;status&quot;: &quot;IN_PROG&quot;,
+            &quot;order_status&quot;: &quot;CREATED&quot;,
+            &quot;total_amount &quot;: &quot;1000&quot;
+        }
+    }
+}
+</code></pre>
+
+<h5 id="toc_11">iii)交易失败</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;PAY_FAIL&quot;,
+    &quot;error_code&quot;: &quot;EXPIRED_BARCODE&quot;,
+    &quot;error_message&quot;: &quot;过期的支付条码&quot;,
+    &quot;data&quot;: {
+      &quot;sn&quot;: &quot;7894259244067344&quot;,
+      &quot;client_sn&quot;: &quot;12345677767776&quot;,
+      &quot;status&quot;: &quot;FAIL_CANCELED&quot;,
+      &quot;payway&quot;: &quot;3&quot;,
+      &quot;sub_payway&quot;: &quot;1&quot;,
+      &quot;order_status&quot;: &quot;PAY_CANCELED&quot;,
+      &quot;total_amount&quot;: &quot;1&quot;,
+      &quot;net_amount&quot;: &quot;1&quot;,
+      &quot;finish_time&quot;: &quot;1449569494595&quot;
+    }
+  }
+}
+</code></pre>
+
+<h5 id="toc_12">iv)客户端错误</h5>
+
+<pre><code class="language-json">{
+    &quot;result_code&quot;: &quot;400&quot;,
+    &quot;error_code&quot;: &quot;TERMINAL_NOT_EXISTS&quot;,
+    &quot;error_message&quot;: &quot;不存在这个终端&quot;,
+}
+</code></pre>
+
+<h5 id="toc_13">v)客户端错误</h5>
+
+<pre><code class="language-json">{
+    &quot;result_code&quot;: &quot;400&quot;,
+    &quot;error_code&quot;: &quot;INVALID_PARAMETER&quot;,
+    &quot;error_message&quot;: &quot;client_sn不可以为空；total_amount不可以为负数&quot;,
+}
+</code></pre>
+
+<h5 id="toc_14">vi)服务端错误</h5>
+
+<pre><code class="language-json">{
+    &quot;result_code&quot;: &quot;500&quot;,
+    &quot;error_code&quot;: &quot;UNKNOWN_SYSTEM_ERROR&quot;,
+    &quot;error_message&quot;: &quot;未知的系统错误&quot;,
+}
+</code></pre>
+
+<h5 id="toc_15">vii)服务端系统错误</h5>
+
+<pre><code class="language-json">{
+    &quot;result_code&quot;: &quot;500&quot;,
+    &quot;error_code&quot;: &quot;MAINTENANCE_INPROGRESS&quot;,
+    &quot;error_message&quot;: &quot;服务端正在升级维护，稍候5分钟&quot;,
+}
+</code></pre>
+
+<h5 id="toc_16">viii)退款成功</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;REFUND_SUCCESS&quot;,
+    &quot;data&quot;: {
+      &quot;sn&quot;: &quot;7894259244067218&quot;,
+      &quot;client_sn&quot;: &quot;12345677767776&quot;,
+      &quot;status&quot;: &quot;SUCCESS&quot;,
+      &quot;payway&quot;: &quot;3&quot;,
+      &quot;sub_payway&quot;: &quot;1&quot;,
+      &quot;order_status&quot;: &quot;REFUNDED&quot;,
+      &quot;trade_no&quot;: &quot;2006101016201512080095793262&quot;,
+      &quot;total_amount&quot;: &quot;1&quot;,
+      &quot;net_amount&quot;: &quot;0&quot;,
+      &quot;finish_time&quot;: &quot;1449563206776&quot;,
+      &quot;channel_finish_time&quot;: &quot;1449563206632&quot;
+    }
+  }
+}
+</code></pre>
+
+<h5 id="toc_17">ix)查单成功</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+        &quot;result_code&quot;: &quot;SUCCESS&quot;,
+        &quot;data&quot;: {
+             &quot;sn&quot;: &quot;7894259244096963&quot;,
+              &quot;client_sn&quot;: &quot;1234567&quot;,
+              &quot;ctime&quot;: &quot;1449036464229&quot;,
+              &quot;status&quot;: &quot;SUCCESS&quot;,
+              &quot;order_status&quot;: &quot;CANCELED&quot;,
+              &quot;total_amount&quot;: &quot;1&quot;,
+              &quot;net_amount&quot;: &quot;0&quot;,
+              &quot;finish_time&quot;: &quot;1449563206776&quot;,
+              &quot;channel_finish_time&quot;: &quot;1449563206632&quot;,
+              &quot;payway&quot;: &quot;3&quot;,
+              &quot;sub_payway&quot;: &quot;1&quot;,
+
+    }
+  }
+}
+</code></pre>
+
+<h5 id="toc_18">x)预下单成功</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;PRECREATE_SUCCESS&quot;,
+    &quot;data&quot;: {
+      &quot;sn&quot;: &quot;7894259244096169&quot;,
+      &quot;client_sn&quot;: &quot;765432112&quot;,
+      &quot;status&quot;: &quot;IN_PROG&quot;,
+      &quot;order_status&quot;: &quot;CREATED&quot;,
+      &quot;total_amount&quot;: &quot;1&quot;,
+      &quot;net_amount&quot;: &quot;1&quot;,
+      &quot;operator &quot;: &quot;张三丰&quot;,
+      &quot;subject &quot;: &quot;coca cola&quot;,
+      &quot;qr_code&quot;: &quot;https://qr.alipay.com/bax8z75ihyoqpgkv5f&quot;
+    }
+  }
+}
+</code></pre>
+
+<h5 id="toc_19">xi)撤单成功</h5>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;CANCEL_SUCCESS&quot;,
+    &quot;data&quot;: {
+      &quot;sn&quot;: &quot;7894259244064831&quot;,
+      &quot;client_sn&quot;: &quot;22345677767776&quot;,
+      &quot;status&quot;: &quot;SUCCESS&quot;,
+      &quot;payway&quot;: &quot;3&quot;,
+      &quot;sub_payway&quot;: &quot;1&quot;,
+      &quot;order_status&quot;: &quot;CANCELED&quot;,
+      &quot;total_amount&quot;: &quot;1&quot;,
+      &quot;net_amount&quot;: &quot;0&quot;,
+      &quot;finish_time&quot;: &quot;1450090828489&quot;,
+      &quot;subject&quot;: &quot;wx&quot;,
+      &quot;store_id&quot;: &quot;49&quot;
+    }
+  }
+}
+</code></pre>
+
+<h2 id="toc_20">三.接口列表</h2>
+
+<h3 id="toc_21">1.约定</h3>
+
+<ul>
+<li>所有返回参数都为 <font color="red"><strong>JSON</strong></font> 格式;</li>
+<li>所有返回数据的类型都是 <font color="red"><strong>字符串</strong></font>；</li>
+<li>接口中所有涉及金额的地方都以 <font color="red"><strong>分</strong></font> 为单位；</li>
+</ul>
+
+<h3 id="toc_22">2.付款</h3>
+
+<h4 id="toc_23">2.1 URL</h4>
+
+<pre><code>api_domain/upay/v2/pay
+</code></pre>
+
+<h4 id="toc_24">2.2 请求参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID，不超过32位的纯数字</td>
+<td>00101010029201012912</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户系统订单号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>必须在商户系统内唯一；且长度不超过64字节</td>
+<td>18348290098298292838</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>payway</td>
+<td>支付方式</td>
+<td>String</td>
+<td>N</td>
+<td>纯数字字符串，一旦设置，则根据支付码判断支付通道的逻辑失效</td>
+<td>1</td>
+</tr>
+<tr>
+<td>dynamic_id</td>
+<td>条码内容</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>不超过32字节</td>
+<td>130818341921441147</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>交易简介</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>本次交易的简要介绍</td>
+<td>Pizza</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>门店操作员</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>发起本次交易的操作员</td>
+<td>Obama</td>
+</tr>
+<tr>
+<td>description</td>
+<td>商品详情</td>
+<td>String(256)</td>
+<td>N</td>
+<td>对商品或本次交易的描述</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>经度</td>
+<td>String</td>
+<td>N</td>
+<td>经纬度必须同时出现</td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>维度</td>
+<td>String</td>
+<td>N</td>
+<td>经纬度必须同时出现</td>
+<td></td>
+</tr>
+<tr>
+<td>device_id</td>
+<td>设备标示</td>
+<td>String(32)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>extended</td>
+<td>扩展参数集合</td>
+<td>String(256)</td>
+<td>N</td>
+<td>收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节（amountdiscountable, amountundiscountable, promoInfo, goods_detail, etc.）</td>
+<td></td>
+</tr>
+<tr>
+<td>reflact</td>
+<td>反射参数</td>
+<td>String(64)</td>
+<td>N</td>
+<td>任何调用者希望原样返回的信息</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_25">2.3 同步返回参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>终端号</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>01939202039923029</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7892259488292938</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号</td>
+<td>7654321132</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td>支付服务商订单号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>支付通道交易凭证号</td>
+<td>2013112011001004330000121536</td>
+</tr>
+<tr>
+<td>status</td>
+<td>流水状态</td>
+<td>Stirng(32)</td>
+<td>Y</td>
+<td>本次操作产生的流水的状态</td>
+<td>PAY_SUCCESS</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>订单状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>当前订单状态</td>
+<td>PAID</td>
+</tr>
+<tr>
+<td>payway</td>
+<td>支付方式</td>
+<td>Stirng(2)</td>
+<td>Y</td>
+<td>一级支付方式，取值见附录《支付方式列表》</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sub_payway</td>
+<td>二级支付方式</td>
+<td>String(2)</td>
+<td>Y</td>
+<td>二级支付方式，取值见附录《二级支付方式列表》</td>
+<td>1</td>
+</tr>
+<tr>
+<td>payer_uid</td>
+<td>付款人ID</td>
+<td>Stirng(64)</td>
+<td>N</td>
+<td>支付平台（微信，支付宝）上的付款人ID</td>
+<td>2801003920293239230239</td>
+</tr>
+<tr>
+<td>payer_login</td>
+<td>付款人账号</td>
+<td>Stirng(128)</td>
+<td>N</td>
+<td>支付平台上(微信，支付宝)的付款人账号</td>
+<td>134****3920</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总额</td>
+<td>Stirng(10)</td>
+<td>Y</td>
+<td>本次交易总金额</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>实收金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>如果没有退款，这个字段等于total<u>amount。否则等于 total</u>amount减去退款金额</td>
+<td>0</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>交易概述</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>本次交易概述</td>
+<td>Pizza</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>付款动作在收钱吧的完成时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳</td>
+<td>1449646835244</td>
+</tr>
+<tr>
+<td>channel_finish_time</td>
+<td>付款动作在支付服务商的完成时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳</td>
+<td>1449646835244</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>门店操作员</td>
+<td>张三丰</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>反射参数</td>
+<td>String(64)</td>
+<td>N</td>
+<td>透传参数</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>支付失败返回示例：</strong></p>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;400&quot;,
+  &quot;error_code&quot;: &quot;INVALID_PARAMS&quot;,
+  &quot;error_message&quot;: &quot;total_amount金额为整数，长度不超过10位，以分为单位&quot;
+}
+
+</code></pre>
+
+<h4 id="toc_26">2.4 客户端支付流程代码示例</h4>
+
+<pre><code class="language-java"> Sub pay(request, timeout):
+  Try:
+    response = POST (pay_url, request)
+  Except NetworkConnectError ex:
+    raise (“网络不可用”, ex)
+  Except NetworkIOError ex:
+    return poll (request.client_sn, timeout)
+  handle_response_error(response)
+  biz_response = response.biz_response
+  if biz_response.result_code == “PAY_SUCCESS”:
+    return (“本次收款成功”, response)
+  elif biz_response.result_code == “PAY_FAIL”:
+    return (“本次收款失败并且支付金额已退还付款人”, response)
+  elif biz_response.result_code == “PAY_FAIL_ERROR”:
+    raise (“本次收款异常请联系收钱吧客服”, response)
+  elif biz_response.result_code == “FAIL”:
+    raise (“收款失败不涉及金额变更/提醒操作员错误内容”, response)
+  else:
+    return poll(request.client_sn, timeout)
+
+Sub poll(client_sn, remaining_time):
+  if remaining_time &lt; 0:
+    Try:
+      response = POST(cancel_url, client_sn)
+    Except NetworkError ex:
+      raise “本次收款超时撤单网络异常请联系收钱吧客服”, ex
+    handle_response_error(response)
+    result_code = response.biz_response.result_code
+    error_code = response.biz_response.error_code
+    if result_code == “CANCEL_SUCCESS” or 
+       result_code == “CANCEL_ABORT_SUCCESS”:
+      return (“本次收款超时并且已经成功撤单”, response)
+    elif result_code == “FAIL” and error_code == “UPAY_ORDER_NOT_EXISTS”:
+      return (“本次收款超时并且不需要撤单”, response)
+    else:
+      raise (“本次收款超时撤单异常请联系收钱吧客服”, response)
+  else:
+    stopwatch.start()
+    Try
+      response = POST(query_url, client_sn)
+    Except NetworkError ex:
+      sleep(5)
+      return poll(client_sn, remaining_time – stopwatch.reading())
+    handle_reponse_error(response)
+    biz_response = response.biz_response
+    if biz_response.result_code == “FAIL” and
+       biz_response.error_code == “UPAY_ORDER_NOT_EXISTS”:
+      return (“本次收款失败并且不需要撤单”, response)
+    elif biz_response.result_code == “SUCCESS”:
+      if biz_response.data.order_status == “CREATED”:
+        sleep(5)
+        return poll(client_sn, remaining_time – stopwatch.reading())
+      elif biz_response.data.order_status == “PAID”:
+        return (“本次收款成功”, response)
+      elif biz_response.data.order_status == “PAY_CANCELED”:
+        return (“本次收款失败并且支付金额已退还付款人”, response)
+      elif biz_response.data.order_status == “PAY_ERROR”:
+        return (“本次收款异常请联系收钱吧客服”, response)
+
+
+Sub handle_response_error(response):
+  if response.result_code == “400”:
+    raise (“联系终端开发商”, response.error_message)
+  elif response.result_code == “500”:
+    raise (“收钱吧支付网关故障，联系收钱吧客服”, response.error_message)
+
+</code></pre>
+
+<h3 id="toc_27">3.退款</h3>
+
+<h4 id="toc_28">3.1 URL</h4>
+
+<pre><code>    api_domain/upay/v2/refund
+</code></pre>
+
+<h4 id="toc_29">3.2 请求参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>00101010029201012912</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7892259488292938</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号。</td>
+<td>7654321132</td>
+</tr>
+<tr>
+<td>refund_request_no</td>
+<td>退款序列号</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>商户退款所需序列号,防止重复退款</td>
+<td>23030349</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>执行本次退款的操作员</td>
+<td>Obama</td>
+</tr>
+<tr>
+<td>refund_amount</td>
+<td>退款金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>退款金额</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_30">3.3同步返回参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID，可好扩字母数字等</td>
+<td>103939292020</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7894259244061958</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号。</td>
+<td>22345677767776</td>
+</tr>
+<tr>
+<td>status</td>
+<td>退款流水状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>本次退款对应的流水的状态</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>订单状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>当前订单状态</td>
+<td>REFUNDED</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td>支付平台的订单凭证号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>支付宝或微信的订单号</td>
+<td>2006101016201512090096528672</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>原始交易实收金额</td>
+<td>100</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>剩余金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>实收金额减退款金额</td>
+<td>0</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>退款动作在收钱吧的完成时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次退款动作在收钱吧的完成时间</td>
+<td>1449646835244</td>
+</tr>
+<tr>
+<td>channel_finish_time</td>
+<td>退款动作在支付平台完成的时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次退款动作在微信或支付宝的完成时间</td>
+<td>1449646835221</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>商品概述</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>交易时候的商品概述</td>
+<td>wx</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>执行本次退款的操作员</td>
+<td>Obama</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>退款失败返回示例</strong></p>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;FAIL&quot;,
+    &quot;error_code&quot;: &quot;UPAY_REFUND_INVALID_ORDER_STATE&quot;,
+    &quot;error_message&quot;: &quot;无法对错误的订单状态执行退款操作&quot;
+  }
+}
+
+</code></pre>
+
+<h3 id="toc_31">4.查询</h3>
+
+<h4 id="toc_32">4.1 URL</h4>
+
+<pre><code>api_domain/upay/v2/query
+</code></pre>
+
+<h4 id="toc_33">4.2 请求参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>010382829292929</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧系统订单号</td>
+<td>String(16)</td>
+<td>N</td>
+<td>收钱吧系统唯一订单号</td>
+<td>7894259244061958</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户自己的订单号</td>
+<td>String(64)</td>
+<td>N</td>
+<td>商户自己订号</td>
+<td>2324545839</td>
+</tr>
+</tbody>
+</table>
+
+<p><font color="red"><strong>sn与client_sn不能同时为空，优先按照sn查找，如果没有，再按照client_sn查询; terminal_sn与wosai_store_id不能同时为空</strong></font></p>
+
+<h4 id="toc_34">4.3 同步返回参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID，</td>
+<td>01012010201201029</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7894259244061958</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号。</td>
+<td>22345677767776</td>
+</tr>
+<tr>
+<td>status</td>
+<td>流水状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>本次操作对应的流水的状态</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>订单状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>当前订单状态</td>
+<td>REFUNDED</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td>支付平台的订单凭证号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>支付宝或微信的订单号</td>
+<td>2006101016201512090096528672</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>原始交易实收金额</td>
+<td>100</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>剩余金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>实收金额减退款金额</td>
+<td>0</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>上次操作在收钱吧的完成时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次动作在收钱吧的完成时间</td>
+<td>1449646835244</td>
+</tr>
+<tr>
+<td>channel_finish_time</td>
+<td>上次操作再支付平台完成的时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次动作在微信或支付宝的完成时间</td>
+<td>1449646835221</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>商品概述</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>交易时候的商品概述</td>
+<td>wx</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>执行上次业务动作的操作员</td>
+<td>Obama</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_35">5.撤单</h3>
+
+<h4 id="toc_36">5.1 URL</h4>
+
+<pre><code>api_domain/upay/v2/cancel
+</code></pre>
+
+<h4 id="toc_37">5.2 请求参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>564db52b-d59d-4953-8364-31d674a08862</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧系统订单号</td>
+<td>String(16)</td>
+<td>N</td>
+<td>收钱吧系统唯一订单号</td>
+<td>7894259244061958</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户自己的订单号</td>
+<td>String(64)</td>
+<td>N</td>
+<td>商户自己订号</td>
+<td>2324545839</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_38">5.3 同步返回参数</h4>
+
+<p><strong>撤单成功返回字段</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>01012010201201029</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7894259244061958</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号</td>
+<td>22345677767776</td>
+</tr>
+<tr>
+<td>status</td>
+<td>流水状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>本次操作对应的流水的状态</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>订单状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>当前订单状态</td>
+<td>CANCELED</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td>支付平台的订单凭证号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>支付宝或微信的订单号</td>
+<td>2006101016201512090096528672</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>原始交易实收金额</td>
+<td>100</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>剩余金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>实收金额减退款金额</td>
+<td>0</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>上次操作在收钱吧的完成时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次动作在收钱吧的完成时间</td>
+<td>1449646835244</td>
+</tr>
+<tr>
+<td>channel_finish_time</td>
+<td>上次操作在支付平台完成的时间</td>
+<td>String(13)</td>
+<td>Y</td>
+<td>时间戳，本次动作在微信或支付宝的完成时间</td>
+<td>1449646835221</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>商品概述</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>交易时候的商品概述</td>
+<td>wx</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>执行上次业务动作的操作员</td>
+<td>Obama</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>撤单失败返回示例</strong></p>
+
+<pre><code class="language-json">{
+  &quot;result_code&quot;: &quot;200&quot;,
+  &quot;biz_response&quot;: {
+    &quot;result_code&quot;: &quot;FAIL&quot;,
+    &quot;error_code&quot;: &quot;UPAY_CANCEL_INVALID_ORDER_STATE&quot;,
+    &quot;error_message&quot;: &quot;当前的订单状态是3201&quot;
+  }
+}
+</code></pre>
+
+<h3 id="toc_39">6.预下单</h3>
+
+<h4 id="toc_40">6.1 URL</h4>
+
+<pre><code>    api_domain/Upay/v2/precreate
+</code></pre>
+
+<h4 id="toc_41">6.2 请求参数说明</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>terminal_sn</td>
+<td>收钱吧终端ID</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>收钱吧终端ID</td>
+<td>23420593829</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户系统订单号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>必须在商户系统内唯一；且长度不超过64字节</td>
+<td>18348290098298292838</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>payway</td>
+<td>支付方式</td>
+<td>String</td>
+<td>Y</td>
+<td>纯数字字符串，一旦设置，则根据支付吗判断支付通道的逻辑失效</td>
+<td>1</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>交易简介</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>本次交易的简要介绍</td>
+<td>pizza</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>门店操作员</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>发起本次交易的操作员</td>
+<td>Obama</td>
+</tr>
+<tr>
+<td>description</td>
+<td>商品详情</td>
+<td>String(256)</td>
+<td>N</td>
+<td>对商品或本次交易的描述</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>经度</td>
+<td>String</td>
+<td>N</td>
+<td>经纬度必须同时出现</td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>纬度</td>
+<td>String</td>
+<td>N</td>
+<td>经纬度必须同时出现</td>
+<td></td>
+</tr>
+<tr>
+<td>device_id</td>
+<td>设备标示</td>
+<td>String(32)</td>
+<td>N</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>extended</td>
+<td>扩展参数集合</td>
+<td>String(256)</td>
+<td>N</td>
+<td>收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节（amountdiscountable, amountundiscountable, promoInfo, goods_detail, etc.）</td>
+<td></td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>反射参数</td>
+<td>String(64)</td>
+<td>N</td>
+<td>任何调用者希望原样返回的信息</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_42">6.3 同步返回参数说明</h5>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>类型</th>
+<th>必填</th>
+<th>描述</th>
+<th>范例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sn</td>
+<td>收钱吧唯一订单号</td>
+<td>Stirng(16)</td>
+<td>Y</td>
+<td>收钱吧系统内部唯一订单号</td>
+<td>7892259488292938</td>
+</tr>
+<tr>
+<td>client_sn</td>
+<td>商户订单号</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>商户系统订单号</td>
+<td>7654321132</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td>支付服务商订单号</td>
+<td>String(64)</td>
+<td>Y</td>
+<td>支付通道交易凭证号</td>
+<td>2013112011001004330000121536</td>
+</tr>
+<tr>
+<td>status</td>
+<td>流水状态</td>
+<td>Stirng(32)</td>
+<td>Y</td>
+<td>本次操作产生的流水的状态</td>
+<td>CREATED</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>订单状态</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>当前订单状态</td>
+<td>CREATED</td>
+</tr>
+<tr>
+<td>payway</td>
+<td>支付方式</td>
+<td>Stirng(2)</td>
+<td>Y</td>
+<td>一级支付方式，取值见附录《支付方式列表》</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sub_payway</td>
+<td>二级支付方式</td>
+<td>String(2)</td>
+<td>Y</td>
+<td>二级支付方式，取值见附录《二级支付方式列表》</td>
+<td>3</td>
+</tr>
+<tr>
+<td>qr_code</td>
+<td>二维码内容</td>
+<td>Stirng(128)</td>
+<td>预下单成功后生成的二维码</td>
+<td><a href="https://qr.alipay.com/bax00069h45nvvfc3tu9803a">https://qr.alipay.com/bax00069h45nvvfc3tu9803a</a></td>
+<td></td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>交易总额</td>
+<td>Stirng(10)</td>
+<td>Y</td>
+<td>本次交易总金额</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>实收金额</td>
+<td>String(10)</td>
+<td>Y</td>
+<td>如果没有退款，这个字段等于total<u>amount。否则等于total</u>amount减去退款金额</td>
+<td>0</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>交易概述</td>
+<td>Stirng(64)</td>
+<td>Y</td>
+<td>本次交易概述</td>
+<td>Pizza</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>操作员</td>
+<td>String(32)</td>
+<td>Y</td>
+<td>门店操作员</td>
+<td>张三丰</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>反射参数</td>
+<td>String(64)</td>
+<td>N</td>
+<td>透传参数</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_43">四.附录</h2>
+
+<h3 id="toc_44">1. 通讯错误码列表</h3>
+
+<pre><code>    error_code为本次通讯的错误码;
+    error_message为对应的中文描述；
+    当result_code不等于200的时候才会出现
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>result_code</th>
+<th>error_code</th>
+<th>error_message</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>400</strong></td>
+<td>INVALID_PARAMS</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>INVALID_TERMINAL</td>
+<td>终端错误</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>ILLEGAL_SIGN</td>
+<td>签名错误</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>INVALID_BARCODE</td>
+<td>支付条码错误</td>
+</tr>
+<tr>
+<td><strong>500</strong></td>
+<td>UNKNOWN<u>SYSTEM</u>ERROR</td>
+<td>系统错误</td>
+</tr>
+<tr>
+<td><strong>500</strong></td>
+<td>UNEXPECTED<u>PROVIDER</u>ERROR</td>
+<td>不识别的支付通道</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_45">2.业务响应码列表</h3>
+
+<pre><code>biz_response.result_code,状态分为：状态分为 SUCCESS、FAIL、INPROGRESS和UNKNOWN 四类，
+        SUCCESS:        本次业务执行成功
+       FAIL:            本次业务执行失败
+       INPROGRESS:  本次业务进行中
+        UNKNOWN:        本次业务执行结果未知
+</code></pre>
+
+<p><strong>具体到业务场景，分别有下列状态：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+<th>下一步动作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="red">PAY_SUCCESS</font></td>
+<td>支付操作成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="red">PAY_FAIL</font></td>
+<td>支付操作失败并且已冲正</td>
+<td>重新进行一笔交易</td>
+</tr>
+<tr>
+<td><font color="red">PAY_FAIL_ERROR</font></td>
+<td>支付操作失败并且不确定第三方支付通道状态</td>
+<td>联系客服</td>
+</tr>
+<tr>
+<td><font color="green">CANCEL_SUCCESS</td>
+<td>撤单操作成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="green">CANCEL_ERROR</td>
+<td>撤单操作失败并且不确定第三方支付通道状态</td>
+<td>联系客服</td>
+</tr>
+<tr>
+<td><font color="green">CANCEL_ABORT_ERROR</td>
+<td>撤单操作试图终止进行中的支付流程，但是失败，不确定第三方支付通道的状态</td>
+<td>联系客服</td>
+</tr>
+<tr>
+<td><font color="green">CANCEL_ABORT_SUCCESS</td>
+<td>撤单操作试图终止进行中的支付流程并且成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="pink">REFUND_SUCCESS</td>
+<td>退款操作成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="pink">REFUND_ERROR</td>
+<td>退款操作失败并且不确定第三方支付通状态</td>
+<td>联系客服</td>
+</tr>
+<tr>
+<td><font color="blue">PRECREATE_SUCCESS</td>
+<td>预下单操作成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="blue">PRECREATE_FAIL</td>
+<td>预下单操作失败</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="red">SUCCESS</td>
+<td>操作成功</td>
+<td></td>
+</tr>
+<tr>
+<td><font color="red">FAIL</td>
+<td>操作失败（不会触发流程）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_46">3.订单状态列表</h3>
+
+<pre><code>biz_response.data.order_status
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="green">CREATED</td>
+<td><font color="red">订单已创建/支付中</td>
+</tr>
+<tr>
+<td><font color="green">PAID</td>
+<td><font color="red">订单支付成功</td>
+</tr>
+<tr>
+<td><font color="green">PAY_CANCELED</td>
+<td><font color="red">支付失败并且已经成功充正</td>
+</tr>
+<tr>
+<td><font color="green">PAY_ERROR</td>
+<td><font color="red">支付失败，不确定是否已经成功充正</td>
+</tr>
+<tr>
+<td><font color="green">REFUNDED</td>
+<td><font color="red">已成功全额退款</td>
+</tr>
+<tr>
+<td><font color="green">PARTIAL_REFUNDED</td>
+<td><font color="red">已成功部分退款</td>
+</tr>
+<tr>
+<td><font color="green">REFUND_ERROR</td>
+<td><font color="red">退款失败并且不确定第三方支付通道的最终退款状态</td>
+</tr>
+<tr>
+<td><font color="green">CANCELED</td>
+<td><font color="red">用户发起的撤单已成功</td>
+</tr>
+<tr>
+<td><font color="green">CANCEL_ERROR</td>
+<td><font color="red">用户发起的撤单失败并且不确定第三方支付通道的最终状态</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_47">4. 流水状态列表</h3>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+<th>处理逻辑</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SUCCESS</td>
+<td>业务执行确认成功（即收钱吧后台和消费者端均成功）</td>
+<td>银货两讫（无论是交货还是退货）</td>
+</tr>
+<tr>
+<td>FAIL_CANCELED</td>
+<td>确认失败（即收钱吧后台和消费者端均失败）</td>
+<td>银货两讫，（不交货或是不退货）</td>
+</tr>
+<tr>
+<td>FAIL_PROTOCOL_1</td>
+<td>协议错误</td>
+<td>小概率事件，失败但不确认消费者端状态<br>（即收钱吧后台强制认为是失败，但不确认消费者端是否同步失败）<br>（如果是收款，则不交货，但立即联系收钱吧客服，<br>（即算是消费者显示成功付款；<br>（如果是退货，则马上把货品回收，<br>（同时立即联系收钱吧客服，由收钱吧客服负责将钱款退回。</td>
+</tr>
+<tr>
+<td>FAIL_IO_1</td>
+<td>IO错误</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>FAIL_PROTOCOL_2</td>
+<td>协议错误</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>FAIL_IO_2</td>
+<td>IO错误</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>FAIL_PROTOCOL_3</td>
+<td>协议错误</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>FAIL_ERROR</td>
+<td>支付流程失败后进行自动撤单操作，和支付通道通信成功，但是返回结果为撤单失败。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>CANCEL_ERROR</td>
+<td>撤单流程调用支付通道的撤单接口通信成功，但是返回结果为撤单失败。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>REFUND_ERROR</td>
+<td>退款流程调用支付通道的退款接口通信成功，但是返回的结果为退款失败。</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>****
+备注：
+    当系统返回状态为 失败但不确认消费者端状态的时候，
+一定要明确这笔订单是失败的，收钱吧会最终负责将这笔交易撤销。
+不能交货或者退货，请立即进行人工介入，联系客服人员，以防遭受损失。
+</code></pre>
+
+<h3 id="toc_48">5. 业务执行错误码列表</h3>
+
+<pre><code>biz_response.error_code为业务执行结果返回码；biz_response.error_message为对应的中文描述,
+当业务执行失败(即biz_response.result不为success)的时候，会返回如下内容
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>error_code</th>
+<th>error_message</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AUTHCODE_EXPIRE</td>
+<td>二维码过期</td>
+</tr>
+<tr>
+<td>INVALID_BARCODE</td>
+<td>条码错误</td>
+</tr>
+<tr>
+<td>INSUFFICIENT_FUND</td>
+<td>账户金额不足</td>
+</tr>
+<tr>
+<td>EXPIRED_BARCODE</td>
+<td>过期的支付条码</td>
+</tr>
+<tr>
+<td>BUYER_OVER_DAILY_LIMIT</td>
+<td>付款人当日付款金额超过上限</td>
+</tr>
+<tr>
+<td>BUYER_OVER_TRANSACTION_LIMIT</td>
+<td>付款人单笔付款金额超过上限</td>
+</tr>
+<tr>
+<td>SELLER_OVER_DAILY_LIMIT</td>
+<td>收款账户当日收款金额超过上限</td>
+</tr>
+<tr>
+<td>TRADE_NOT_EXIST</td>
+<td>交易不存在</td>
+</tr>
+<tr>
+<td>TRADE_HAS_SUCCESS</td>
+<td>交易已被支付</td>
+</tr>
+<tr>
+<td>SELLER_BALANCE_NOT_ENOUGH</td>
+<td>卖家余额不足</td>
+</tr>
+<tr>
+<td>REFUND_AMT_NOT_EQUAL_TOTAL</td>
+<td>退款金额无效</td>
+</tr>
+<tr>
+<td>TRADE_FAILED</td>
+<td>交易失败</td>
+</tr>
+<tr>
+<td>CLIENT<u>SN</u>CONFLICT</td>
+<td>client_sn在系统中已存在</td>
+</tr>
+<tr>
+<td>UPAY_ORDER_NOT_EXIST</td>
+<td>订单不存在</td>
+</tr>
+<tr>
+<td>REFUND_REQUEST_CONFLICT</td>
+<td>重复的退款请求</td>
+</tr>
+<tr>
+<td>UNEXPECTED_PROVIDER_ERROR</td>
+<td>不认识的支付通道</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_49">6. 支付方式列表</h3>
+
+<pre><code>biz_response.data.payway
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>支付宝</td>
+</tr>
+<tr>
+<td>3</td>
+<td>微信</td>
+</tr>
+<tr>
+<td>4</td>
+<td>百付宝</td>
+</tr>
+<tr>
+<td>5</td>
+<td>京东</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_50">7. 二级支付方式列表</h3>
+
+<pre><code>biz_response.data.sub_payway
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>条码支付</td>
+</tr>
+<tr>
+<td>2</td>
+<td>二维码支付</td>
+</tr>
+</tbody>
+</table>
+
+</div></body>
+
+</html>
