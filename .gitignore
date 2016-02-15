@@ -22,3 +22,6 @@ Thumbs.db
 #################
 !.gitignore
 build
+.pdf
+.doc
+.docx
