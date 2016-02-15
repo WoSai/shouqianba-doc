@@ -21,3 +21,4 @@ Thumbs.db
 # Project files #
 #################
 !.gitignore
+build
