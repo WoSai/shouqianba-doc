@@ -1,23 +1,4 @@
-# 对接收钱吧API
-
-## 关键业务流程
-### B扫C交易
-#### 时序
-![B扫C](http://ww4.sinaimg.cn/large/48673013gw1ez7c45v2t4j20gq0rzdhm.jpg)
-
-
-### C扫B交易
-#### 时序
-![C扫B](http://ww4.sinaimg.cn/large/48673013gw1ez7c4lpqb1j20g80flmy3.jpg)
-
-
-### 退款
-#### 时序
-![退款](http://ww2.sinaimg.cn/large/48673013gw1ez7c4wsb9kj20gq0h3mxx.jpg)
-
-
-## 终端管理接口
-对接支付网关2.0 API时，除了[核心支付接口](api/core.md)所列接口外，还可能需要用到下列管理类接口
+# 业务类API Reference
 
 ### 激活
 激活接口用于根据激活码，获取终端sn和终端key，用于调用核心支付接口时的签名。激活接口需要使用服务商的密钥签名。签名方法参考支付接口的文档。请使用服务商序列号（vendor_sn）作为签名人ID，服务商密钥作为签名密钥。
