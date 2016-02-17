@@ -3,7 +3,7 @@
 ##1.SDK简介
 
 ###1.1 前言
-  收钱吧 Android SDK2.0 集成了各种支付方式,第三方通过调用本 SDK,可以轻松将支付宝,微 信,百度钱包,京东钱包支付等多种支付方式集成到自己的应用。
+  收钱吧 Android SDK集成了各种支付方式,第三方通过调用本 SDK,可以轻松将支付宝,微 信,百度钱包,京东钱包支付等多种支付方式集成到自己的应用。
 
 
 ###1.2 主要功能
@@ -30,8 +30,7 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 *<font color="red">setPayModel(UpayOrder.PayModel.NO_UI)。</font>*
 
 ##2.开发指南
-开发包获取:去官方网站获取最新开发包 
-https://shouqianba.com/sdkDocs.php?title=Android。
+[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK-2.1.0_build20160201.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ##3.集成步骤
 ###3.1 Eclipse下集成SDK
@@ -289,8 +288,8 @@ PAY_SUCCESS|支付操作成功|
 PAY_FAIL|支付操作失败并且已冲正|重新进行一笔交易
 PAY_FAI_ERROR|支付失败并且不确定第三方支付通道状态|联系客服 400-668-5353
 CANCEL_SUCCESS|撤单操作成功|
-CANCEL_ERROR|撤单操作失败并且不确定第三方支付通道状态|联系客户400-668-5353
-CANCEL_ABORT_ERROR|撤单操作师徒终止进行中的支付流程，但是失败，不确定第三方支付通道的状态|联系客户400-668-5353
+CANCEL_ERROR|撤单操作失败并且不确定第三方支付通道状态|联系客服400-668-5353
+CANCEL_ABORT_ERROR|撤单操作师徒终止进行中的支付流程，但是失败，不确定第三方支付通道的状态|联系客服400-668-5353
 CANCEL_ABORT_SUCCESS|撤单操作师徒终止进行中的支付流程并且成功|
 REFUND_SUCCESS|退款操作成功|
 REFUND_ERROR|退款操作失败并且不确定第三方支付通道状态|联系客服400-668-5353
