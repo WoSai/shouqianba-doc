@@ -6,13 +6,18 @@
 2. 签到(可选)
 3. 交易
 
+
 ## 激活
 激活接口用于通过终端激活码来获取terminalSn和terminalKey，以用于调用其他接口时的签名。
 
 激活接口对于同一台终端，只需要调用一次。
 
+![](../img/NotActivited.png?raw=true) 
+
 ## 签到
 签到接口用于更新terminalKey。出于安全考虑，开发者可以自行决定何时调用签到接口。terminalKey一旦更新，历史的terminalKey将会失效。
+
+![](../img/Activited.png?raw=true) 
 
 ## 交易
 支付平台提供如下类的交易功能：
