@@ -14,8 +14,6 @@
 
 ## Step 3 - 开发应用
 
-开发环境接入域名：https://api.test.shouqianba.com
-
 生产环境接入域名：https://api.shouqianba.com
 
 支付平台所以的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`
