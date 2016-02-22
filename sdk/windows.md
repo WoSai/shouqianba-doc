@@ -23,6 +23,7 @@ V2.1.0 Build.160128|2016/01/28|王志鹏|--|新增revoke接口说明，并修改
 V2.1.0 Build.160129|2016/01/29|王志鹏|--|文档增加了几个错误提示的说明，新增reflect和extended参数说明
 V2.1.0 Build.160130|2016/01/31|王志鹏|--|修正文档中一个访问地址错误，增加了查询接口的返回参数描述
 V2.1.0 Build.160202|2016/02/02|王志鹏|--|补充调用接口的参数规范说明
+V2.1.0 Build.160202|2016/02/22|王志鹏|--|修正文档描述错误
 
 ##3 功能概述
 
@@ -70,8 +71,8 @@ UpaySDK 主要的业务功能有如下五个:
 [下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK-2.1.0_build20160202.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ####4.1.2 内容
-SDK 包含一个“Upay.dll”动态库文件和两个配置文件,如下图:
-![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12fq67999j20mx03ojs2.jpg)
+SDK 包含一个“CashBarV2.dll”动态库文件和两个配置文件,如下图:
+![GitHub set up](http://ww2.sinaimg.cn/mw690/839dbc19gw1f180uytbjvj21hw09gjt2.jpg)
 
 ####4.1.3 部署
 
