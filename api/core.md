@@ -38,188 +38,210 @@ biz_response.operator  | 本次业务执行的操作员 |字符串 |业务执行
 
 1. 交易成功
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_SUCCESS",
-                "data": {
-                    "sn": "7894259244067349",
-                    "client_sn": "12345677767776",
-                    "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "PAID",
-                    "payer_uid": "okSzXt3uY4-W8fKBH7B4z8seMzBU",
-                    "trade_no": "1006101016201512081965934048",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "finish_time": "1449569460430",
-                    "channel_finish_time": "1449569460000",
-                    "terminal_sn": "1122234-dewls02s2",
-                    "store_id": "00293001928483902",
-                    "subject": "Domino's Pizza",
-                    "operator": "Kan",
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_SUCCESS",
+            "data": {
+                "sn": "7894259244067349",
+                "client_sn": "12345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "PAID",
+                "payer_uid": "okSzXt3uY4-W8fKBH7B4z8seMzBU",
+                "trade_no": "1006101016201512081965934048",
+                "total_amount": "1",
+                "net_amount": "1",
+                "finish_time": "1449569460430",
+                "channel_finish_time": "1449569460000",
+                "terminal_sn": "1122234-dewls02s2",
+                "store_id": "00293001928483902",
+                "subject": "Domino's Pizza",
+                "operator": "Kan",
             }
         }
+    }
+    ```
 
 2. 交易进行中
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_IN_PROGRESS",
-                "data": {
-                    "sn": "789200393929142",
-                    "client_sn": "230202l2-2-2002",
-                    "trade_no": "0019101002020384822248",
-                    "ctime": "2015-11-01 18:01:00",
-                    "status": "IN_PROG",
-                    "order_status": "CREATED",
-                    "total_amount ": "1000"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_IN_PROGRESS",
+            "data": {
+                "sn": "789200393929142",
+                "client_sn": "230202l2-2-2002",
+                "trade_no": "0019101002020384822248",
+                "ctime": "2015-11-01 18:01:00",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount ": "1000"
             }
         }
+    }
+    ```
 
 3. 交易失败
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_FAIL",
-                "error_code": "EXPIRED_BARCODE",
-                "error_message": "过期的支付条码",
-                "data": {
-                    "sn": "7894259244067344",
-                    "client_sn": "12345677767776",
-                    "status": "FAIL_CANCELED",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "PAY_CANCELED",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "finish_time": "1449569494595"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_FAIL",
+            "error_code": "EXPIRED_BARCODE",
+            "error_message": "过期的支付条码",
+            "data": {
+                "sn": "7894259244067344",
+                "client_sn": "12345677767776",
+                "status": "FAIL_CANCELED",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "PAY_CANCELED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "finish_time": "1449569494595"
             }
         }
+    }
+    ```
 
 4. 客户端错误
 
-        {
-            "result_code": "400",
-            "error_code": "TERMINAL_NOT_EXISTS",
-            "error_message": "不存在这个终端",
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "TERMINAL_NOT_EXISTS",
+        "error_message": "不存在这个终端",
+    }
+    ```
 
 5. 客户端错误
 
-        {
-            "result_code": "400",
-            "error_code": "INVALID_PARAMETER",
-            "error_message": "client_sn不可以为空；total_amount不可以为负数",
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "INVALID_PARAMETER",
+        "error_message": "client_sn不可以为空；total_amount不可以为负数",
+    }
+    ```
 
 6. 服务端错误
 
-        {
-            "result_code": "500",
-            "error_code": "UNKNOWN_SYSTEM_ERROR",
-            "error_message": "未知的系统错误",
-        }
+    ```json
+    {
+        "result_code": "500",
+        "error_code": "UNKNOWN_SYSTEM_ERROR",
+        "error_message": "未知的系统错误",
+    }
+    ```
 
 7. 服务端系统错误
 
-        {
-            "result_code": "500",
-            "error_code": "MAINTENANCE_INPROGRESS",
-            "error_message": "服务端正在升级维护，稍候5分钟",
-        }
+    ```json
+    {
+        "result_code": "500",
+        "error_code": "MAINTENANCE_INPROGRESS",
+        "error_message": "服务端正在升级维护，稍候5分钟",
+    }
+    ```
 
 8. 退款成功
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "REFUND_SUCCESS",
-                "data": {
-                    "sn": "7894259244067218",
-                    "client_sn": "12345677767776",
-                    "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "REFUNDED",
-                    "trade_no": "2006101016201512080095793262",
-                    "total_amount": "1",
-                    "net_amount": "0",
-                    "finish_time": "1449563206776",
-                    "channel_finish_time": "1449563206632"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "REFUND_SUCCESS",
+            "data": {
+                "sn": "7894259244067218",
+                "client_sn": "12345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "REFUNDED",
+                "trade_no": "2006101016201512080095793262",
+                "total_amount": "1",
+                "net_amount": "0",
+                "finish_time": "1449563206776",
+                "channel_finish_time": "1449563206632"
             }
         }
+    }
+    ```
 
 9. 查单成功
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "SUCCESS",
-                "data": {
-                     "sn": "7894259244096963",
-                      "client_sn": "1234567",
-                      "ctime": "1449036464229",
-                      "status": "SUCCESS",
-                      "order_status": "CANCELED",
-                      "total_amount": "1",
-                      "net_amount": "0",
-                      "finish_time": "1449563206776",
-                      "channel_finish_time": "1449563206632",
-                      "payway": "3",
-                      "sub_payway": "1"
-                }
-            }
-        }
-
-10. 预下单成功
-
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PRECREATE_SUCCESS",
-                "data": {
-                    "sn": "7894259244096169",
-                    "client_sn": "765432112",
-                    "status": "IN_PROG",
-                    "order_status": "CREATED",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "operator ": "张三丰",
-                    "subject ": "coca cola",
-                    "qr_code": "https://qr.alipay.com/bax8z75ihyoqpgkv5f"
-                }
-            }
-        }
-
-11. 撤单成功
-
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_SUCCESS",
-                "data": {
-                    "sn": "7894259244064831",
-                    "client_sn": "22345677767776",
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "SUCCESS",
+            "data": {
+                    "sn": "7894259244096963",
+                    "client_sn": "1234567",
+                    "ctime": "1449036464229",
                     "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
                     "order_status": "CANCELED",
                     "total_amount": "1",
                     "net_amount": "0",
-                    "finish_time": "1450090828489",
-                    "subject": "wx",
-                    "store_id": "49"
-                }
+                    "finish_time": "1449563206776",
+                    "channel_finish_time": "1449563206632",
+                    "payway": "3",
+                    "sub_payway": "1"
             }
         }
+    }
+    ```
+
+10. 预下单成功
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PRECREATE_SUCCESS",
+            "data": {
+                "sn": "7894259244096169",
+                "client_sn": "765432112",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "operator ": "张三丰",
+                "subject ": "coca cola",
+                "qr_code": "https://qr.alipay.com/bax8z75ihyoqpgkv5f"
+            }
+        }
+    }
+    ```
+
+11. 撤单成功
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_SUCCESS",
+            "data": {
+                "sn": "7894259244064831",
+                "client_sn": "22345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "CANCELED",
+                "total_amount": "1",
+                "net_amount": "0",
+                "finish_time": "1450090828489",
+                "subject": "wx",
+                "store_id": "49"
+            }
+        }
+    }
+    ```
 
 
 ## 接口列表
@@ -255,7 +277,6 @@ device_id | 设备标示 |String(32) | | |
 extended | 扩展参数集合 | JSON map | N | 收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
 reflect | 反射参数 | JSON map | N | 任何调用者希望原样返回的信息，可以用于关联商户ERP系统的订单或记录附加订单内容 | { "tips": "200" }
 
-
 * 同步返回参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
@@ -283,78 +304,82 @@ reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
 * 支付失败返回示例
 
-        {
-            "result_code": "400",
-            "error_code": "INVALID_PARAMS",
-            "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "INVALID_PARAMS",
+        "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
+    }
+    ```
 
 * 客户端支付流程代码示例
 
-        Sub pay(request, timeout):
-          Try:
-            response = POST (pay_url, request)
-          Except NetworkConnectError ex:
-            raise (“网络不可用”, ex)
-          Except NetworkIOError ex:
-            return poll (request.client_sn, timeout)
-          handle_response_error(response)
-          biz_response = response.biz_response
-          if biz_response.result_code == “PAY_SUCCESS”:
+    ```python
+    Sub pay(request, timeout):
+        Try:
+        response = POST (pay_url, request)
+        Except NetworkConnectError ex:
+        raise (“网络不可用”, ex)
+        Except NetworkIOError ex:
+        return poll (request.client_sn, timeout)
+        handle_response_error(response)
+        biz_response = response.biz_response
+        if biz_response.result_code == “PAY_SUCCESS”:
+        return (“本次收款成功”, response)
+        elif biz_response.result_code == “PAY_FAIL”:
+        return (“本次收款失败并且支付金额已退还付款人”, response)
+        elif biz_response.result_code == “PAY_FAIL_ERROR”:
+        raise (“本次收款异常请联系收钱吧客服”, response)
+        elif biz_response.result_code == “FAIL”:
+        raise (“收款失败不涉及金额变更/提醒操作员错误内容”, response)
+        else:
+        return poll(request.client_sn, timeout)
+    
+    Sub poll(client_sn, remaining_time):
+        if remaining_time < 0:
+        Try:
+            response = POST(cancel_url, client_sn)
+        Except NetworkError ex:
+            raise “本次收款超时撤单网络异常请联系收钱吧客服”, ex
+        handle_response_error(response)
+        result_code = response.biz_response.result_code
+        error_code = response.biz_response.error_code
+        if result_code == “CANCEL_SUCCESS” or 
+            result_code == “CANCEL_ABORT_SUCCESS”:
+            return (“本次收款超时并且已经成功撤单”, response)
+        elif result_code == “FAIL” and error_code == “UPAY_ORDER_NOT_EXISTS”:
+            return (“本次收款超时并且不需要撤单”, response)
+        else:
+            raise (“本次收款超时撤单异常请联系收钱吧客服”, response)
+        else:
+        stopwatch.start()
+        Try
+            response = POST(query_url, client_sn)
+        Except NetworkError ex:
+            sleep(5)
+            return poll(client_sn, remaining_time – stopwatch.reading())
+        handle_reponse_error(response)
+        biz_response = response.biz_response
+        if biz_response.result_code == “FAIL” and
+            biz_response.error_code == “UPAY_ORDER_NOT_EXISTS”:
+            return (“本次收款失败并且不需要撤单”, response)
+        elif biz_response.result_code == “SUCCESS”:
+            if biz_response.data.order_status == “CREATED”:
+            sleep(5)
+            return poll(client_sn, remaining_time – stopwatch.reading())
+            elif biz_response.data.order_status == “PAID”:
             return (“本次收款成功”, response)
-          elif biz_response.result_code == “PAY_FAIL”:
+            elif biz_response.data.order_status == “PAY_CANCELED”:
             return (“本次收款失败并且支付金额已退还付款人”, response)
-          elif biz_response.result_code == “PAY_FAIL_ERROR”:
-            raise (“本次收款异常请联系收钱吧客服”, response)
-          elif biz_response.result_code == “FAIL”:
-            raise (“收款失败不涉及金额变更/提醒操作员错误内容”, response)
-          else:
-            return poll(request.client_sn, timeout)
-        
-        Sub poll(client_sn, remaining_time):
-          if remaining_time < 0:
-            Try:
-              response = POST(cancel_url, client_sn)
-            Except NetworkError ex:
-              raise “本次收款超时撤单网络异常请联系收钱吧客服”, ex
-            handle_response_error(response)
-            result_code = response.biz_response.result_code
-            error_code = response.biz_response.error_code
-            if result_code == “CANCEL_SUCCESS” or 
-               result_code == “CANCEL_ABORT_SUCCESS”:
-              return (“本次收款超时并且已经成功撤单”, response)
-            elif result_code == “FAIL” and error_code == “UPAY_ORDER_NOT_EXISTS”:
-              return (“本次收款超时并且不需要撤单”, response)
-            else:
-              raise (“本次收款超时撤单异常请联系收钱吧客服”, response)
-          else:
-            stopwatch.start()
-            Try
-              response = POST(query_url, client_sn)
-            Except NetworkError ex:
-              sleep(5)
-              return poll(client_sn, remaining_time – stopwatch.reading())
-            handle_reponse_error(response)
-            biz_response = response.biz_response
-            if biz_response.result_code == “FAIL” and
-               biz_response.error_code == “UPAY_ORDER_NOT_EXISTS”:
-              return (“本次收款失败并且不需要撤单”, response)
-            elif biz_response.result_code == “SUCCESS”:
-              if biz_response.data.order_status == “CREATED”:
-                sleep(5)
-                return poll(client_sn, remaining_time – stopwatch.reading())
-              elif biz_response.data.order_status == “PAID”:
-                return (“本次收款成功”, response)
-              elif biz_response.data.order_status == “PAY_CANCELED”:
-                return (“本次收款失败并且支付金额已退还付款人”, response)
-              elif biz_response.data.order_status == “PAY_ERROR”:
-                return (“本次收款异常请联系收钱吧客服”, response)
-        
-        Sub handle_response_error(response):
-          if response.result_code == “400”:
-            raise (“联系终端开发商”, response.error_message)
-          elif response.result_code == “500”:
-            raise (“收钱吧支付网关故障，联系收钱吧客服”, response.error_message)
+            elif biz_response.data.order_status == “PAY_ERROR”:
+            return (“本次收款异常请联系收钱吧客服”, response)
+    
+    Sub handle_response_error(response):
+        if response.result_code == “400”:
+        raise (“联系终端开发商”, response.error_message)
+        elif response.result_code == “500”:
+        raise (“收钱吧支付网关故障，联系收钱吧客服”, response.error_message)
+    ```
 
 
 #### 退款
@@ -362,7 +387,6 @@ reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 * 入口
 
 		{api_domain}/upay/v2/refund
-
 
 * 请求参数说明
 
@@ -400,14 +424,16 @@ operator|	操作员	|String(32)|Y|执行本次退款的操作员|"Obama"
 
 * 退款失败返回示例
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "FAIL",
-                "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
-                "error_message": "订单已全额退款,可退金额不足"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "FAIL",
+            "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
+            "error_message": "订单已全额退款,可退金额不足"
         }
+    }
+    ```
 
 
 #### 查询
@@ -489,14 +515,16 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 
 * 撤单失败返回示例**
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_ERROR",
-                "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
-                "error_message": "订单7894259244061958参与了活动并且无法撤销"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_ERROR",
+            "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
+            "error_message": "订单7894259244061958参与了活动并且无法撤销"
         }
+    }
+    ```
 
 
 #### 手动撤单
@@ -541,14 +569,16 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 
 * 撤单失败返回示例**
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_ERROR",
-                "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
-                "error_message": "订单7894259244061958参与了活动并且无法撤销"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_ERROR",
+            "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
+            "error_message": "订单7894259244061958参与了活动并且无法撤销"
         }
+    }
+    ```    
 
 
 #### 预下单
