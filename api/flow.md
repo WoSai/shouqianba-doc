@@ -6,15 +6,15 @@
 
 ## Step 2 - 提交资料
 
-向申请接入资格的工作人员提供必要的资料，获取对应开发环境和生产环境的vendorSn, vendorKey。
+向申请接入资格的工作人员提供必要的资料，以获取您的vendorSn和vendorKey。
 
-向工作人员提供商户资料，获取对应开发环境和生产环境的终端激活码。
+向工作人员提供商户资料，获取激活该商户终端的激活码。
 
 至此，您已经可以开始使用收钱吧支付平台的API了。
 
 ## Step 3 - 开发应用
 
-生产环境接入域名：https://api.shouqianba.com
+接入域名：https://api.shouqianba.com
 
 支付平台所以的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`
 
