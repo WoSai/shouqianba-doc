@@ -256,7 +256,7 @@ biz_response.operator  | 本次业务执行的操作员 |字符串 |业务执行
 
 * 入口
 
-	api_domain/upay/v2/pay
+	{api_domain}/upay/v2/pay
 
 * 请求参数说明
 
@@ -388,7 +388,7 @@ Sub handle_response_error(response):
 
 * 入口
 
-		api_domain/upay/v2/refund
+		{api_domain}/upay/v2/refund
 
 
 * 请求参数说明
@@ -443,7 +443,7 @@ operator|	操作员	|String(32)|Y|执行本次退款的操作员|"Obama"
 
 * 入口
 
-	api_domain/upay/v2/query
+	{api_domain}/upay/v2/query
 
 * 请求参数说明
 
@@ -481,7 +481,7 @@ operator	|操作员	|String(64)|	Y|	执行上次业务动作的操作员| "Obama
 
 * 入口
 	
-	api_domain/upay/v2/cancel
+	{api_domain}/upay/v2/cancel
 
 * 请求参数说明
 
@@ -534,7 +534,7 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 
 * 入口
 
-	api_domain/upay/v2/revoke
+	{api_domain}/upay/v2/revoke
 
 * 请求参数说明
 
@@ -584,7 +584,7 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 #### 预下单
 
 * 入口
-		api_domain/Upay/v2/precreate
+		{api_domain}/upay/v2/precreate
 
 * 请求参数说明
 
