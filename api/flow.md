@@ -16,15 +16,17 @@
 
 ## Step 3 - 开发应用
 
-接入域名：https://api.shouqianba.com
+接入域名：`https://api.shouqianba.com`
 
-支付平台所以的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`
+支付平台所以的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`。
+
+所有请求的body都需采用`UTF-8`编码，所有响应也会采用相同编码。
 
 支付平台所有的API调用都需要签名验证。
 
 ### 签名算法
 
-* 采用传输层签名机制。将HTTP请求body部分字节流视为被签名的内容，不关心主体的格式。
+* 采用应用层签名机制。将HTTP请求body部分的`UTF-8`编码字节流视为被签名的内容，不关心主体的格式。
 * 签名人sn和签名值放在HTTP请求头中，在接入服务中统一校验。
 * 签名算法: sign = MD5( CONCAT( body + key ) )
 * 签名首部: `Authorization: sn + " " + sign`
