@@ -30,7 +30,7 @@ biz_response.terminal_sn | Terminal serial number of the transaction | String | 
 biz_response.store_id | Store ID of the transaction | String | Returned only when business process is **successfully completed**.
 biz_response.subject | Subject or brief summary of the transaction | String | Returned only when business process is **successfully completed**.
 biz_response.description | Detailed description of the transaction | String | Returned only when business process is **successfully completed**.
-biz_response.reflect | Anything that the client sent in `reflect` field of the request | String | Returned only when business process is **successfully completed**.
+biz_response.reflect | Anything that the client sent in `reflect` field of the request | String(64) | Returned only when business process is **successfully completed**.
 biz_response.operator  | Operator of the transaction | String | Returned only when business process is **successfully completed**.
 
 #### Response Examples
@@ -252,7 +252,7 @@ longitude | Longitude of the transaction location | String | N | Must be used si
 latitude | Latitude of the transaction location | String| N | Must be used simultaneously with `longitude` | "31.4056441552"
 device_id | Terminal device's unique identifier | String(32) | N | No longer than 32 characters | Such as IMEI of an Android device or `indentifierForVendor` of an iOS device
 extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
-reflect | Reflect parameter | String | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
+reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 
 * Response Parameters
 
@@ -573,7 +573,7 @@ longitude | Longitude of the transaction location | String | N | Must be used si
 latitude | Latitude of the transaction location | String| N | Must be used simultaneously with `longitude` | "31.4056441552"
 device_id | Terminal device's unique identifier | String(32) | N | No longer than 32 characters | Such as IMEI of an Android device or `indentifierForVendor` of an iOS device
 extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
-reflect | Reflect parameter | String | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
+reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 
 * Response Parameters
 

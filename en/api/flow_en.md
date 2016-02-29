@@ -34,5 +34,5 @@ All requests must be signed as instructed below:
 
 ### sn & key
 
-* For activation(`{api_domain}/terminal/activate`), please use `vendorSn` and `vendorKey` for signature.
+* For activation (`{api_domain}/terminal/activate`), please use `vendorSn` and `vendorKey` for signature.
 * For other requests (checkin, pay, refund, query, etc.), please use `terminalSn` and `terminalKey` returned in successful activation or checkin responses.
