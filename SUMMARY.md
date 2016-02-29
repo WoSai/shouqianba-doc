@@ -11,6 +11,3 @@
     * [Windows SDK](sdk/windows.md)
     * [iOS SDK](sdk/ios.md)
     * [Android SDK](sdk/android.md)
-* [Web API](en/api/README.md)
-    * [Workflow](en/api/flow_en.md)
-    * [Transaction API](en/api/core_en.md)

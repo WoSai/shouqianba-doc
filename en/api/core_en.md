@@ -1,4 +1,4 @@
-# Upay Web API Reference - Payment
+# Upay Web API Reference - Transaction
 
 ## API Response
 
