@@ -49,7 +49,7 @@ Your terminal needs to check in at least once per day to get latest `terminal_ke
 
 Using expired or invalid `terminal_key` to sign your requests will result in illegal signature responses.
 
-We recommend each terminal checks in before the first transaction of each day.
+We recommend that each terminal check in before the first transaction of each day.
 
 ### API Target
 
@@ -89,9 +89,9 @@ Example：
 
 ## Upload Terminal Log
 
-Even though not required, we recommend each terminal logs its own activities and uploads its log file each day after checking in. Terminal log is an important asset for debugging all sorts of terminal errors and failures.
+Even though not required, we recommend each terminal log its own activities and upload its log file each day after checking in. Terminal log is an important asset for debugging all sorts of terminal errors and failures.
 
-The terminal may delete the log file after a sucessful upload. We strongly recommend developers to keep log entries consise and rotate the log file on daily basis, so that log files are small enough to be uploaded without interfereing other terminal functionalities.
+The terminal may delete the log file after a sucessful upload. We strongly recommend developers to keep log entries consise and rotate the log file on daily basis, so that log files are small enough to be uploaded without interfering other terminal functionalities.
 
 Use `terminal_sn` and `terminal_key` to sign your log upload requests just like other types of requests.
 
@@ -135,9 +135,9 @@ The client's `terminal_sn` and request signature should be in the `Authorization
 
 ### Terminal Activation
 
-Every Upay terminal needs to be activated before any transaction takes place. Terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
+Each Upay terminal needs to be activated before any transaction takes place. The terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is also responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
 
 ### Terminal Key Update
 
-Similar to a POS terminal, Upay terminal needs to check in everyday to get latest `terminal_key`. Updating the `terminal_key` everyday helps keep your terminal and transactions safe.
+Similar to a POS terminal, a Upay terminal needs to check in everyday to get latest `terminal_key`. Updating the `terminal_key` everyday helps keep your terminal and transactions safe.
 

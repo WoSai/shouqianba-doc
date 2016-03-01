@@ -9,7 +9,7 @@ To make sure your services or client application works properly with Upay Web AP
 
 ## Terminal Activation
 
-Every Upay terminal needs to be activated before any transaction takes place. Terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
+Each Upay terminal needs to be activated before any transaction takes place. The terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is also responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
 
 Every terminal only needs to be activated once.
 
