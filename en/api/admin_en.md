@@ -6,15 +6,15 @@ The purpose of activation is to register the terminal device information and to 
 
 Similarly, `vendor_sn` and `vendor_key` should be used to sign activation requests. Please refer to *Workflow* and *Developer Guide* on how to sign your requests.
 
-### API Target
+#### API Target
 
 POST `/terminal/activate`
 
-### Content-Type
+#### Content-Type
 
 `application/json`
 
-### Reqeust Parameters
+#### Reqeust Parameters
 
 Field | Type | Required | Description
 ------ | ----- | -----| -----
@@ -24,7 +24,7 @@ os_info | String | N | Terminal OS information, such as: Android 5.0.
 sdk_version | String | Y | Upay SDK version
 type | String | N | Terminal device type. Default is "2" (SQB_SDK).
 
-### Response Parameters
+#### Response Parameters
 
 Field | Type | Required | Description
 ------ | ----- | -----| -----
@@ -51,15 +51,15 @@ Using expired or invalid `terminal_key` to sign your requests will result in ill
 
 We recommend that each terminal check in before the first transaction of each day.
 
-### API Target
+#### API Target
 
 POST `/terminal/checkin`
 
-### Content-Type
+#### Content-Type
 
 `application/json`
 
-### Request Parameters
+#### Request Parameters
 
 Field | Type | Required | Description
 ------ | ----- | -----| -----
@@ -68,7 +68,7 @@ device_id | String | Y | Device identification, such as IMEI of an Android devic
 os_info | String | N | Terminal OS information, such as: Android 5.0.
 sdk_version | String | Y | Upay SDK version
 
-### Response Parameters
+#### Response Parameters
 
 Field | Type | Required | Description
 ------ | ----- | -----| -----
@@ -95,15 +95,15 @@ The terminal may delete the log file after a sucessful upload. We strongly recom
 
 Use `terminal_sn` and `terminal_key` to sign your log upload requests just like other types of requests.
 
-### API Target
+#### API Target
 
 POST `/terminal/uploadLog`
 
-### Request Parameters
+#### Request Parameters
 
 The body of the request is the log file's binary stream compressed using gzip.
 
-### Resonpse Parameters
+#### Resonpse Parameters
 
 Success:
 
@@ -117,7 +117,7 @@ Success:
 
 Result_code is not `"200"` if request fails.
 
-### Error Codes
+#### Error Codes
 
 [TODO]
 
@@ -125,19 +125,19 @@ Result_code is not `"200"` if request fails.
 
 Upay Web API adopts several mechanisms to ensure high level of transaction security:
 
-### HTTPs Protocol
+#### HTTPs Protocol
 
 All Upay Web APIs use HTTPs protocol to encrypt communications between servers and clients.
 
-### Request Signature
+#### Request Signature
 
 The client's `terminal_sn` and request signature should be in the `Authorization` header of each Upay Web API request. Request signature makes sure the request is signed by the right entity and not modified by any third party.
 
-### Terminal Activation
+#### Terminal Activation
 
 Each Upay terminal needs to be activated before any transaction takes place. The terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is also responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
 
-### Terminal Key Update
+#### Terminal Key Update
 
 Similar to a POS terminal, a Upay terminal needs to check in everyday to get latest `terminal_key`. Updating the `terminal_key` everyday helps keep your terminal and transactions safe.
 
