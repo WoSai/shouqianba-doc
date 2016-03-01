@@ -37,188 +37,210 @@ biz_response.operator  | Operator of the transaction | String | Returned only wh
 
 1. Pay Success
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_SUCCESS",
-                "data": {
-                    "sn": "7894259244067349",
-                    "client_sn": "12345677767776",
-                    "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "PAID",
-                    "payer_uid": "okSzXt3uY4-W8fKBH7B4z8seMzBU",
-                    "trade_no": "1006101016201512081965934048",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "finish_time": "1449569460430",
-                    "channel_finish_time": "1449569460000",
-                    "terminal_sn": "1122234-dewls02s2",
-                    "store_id": "00293001928483902",
-                    "subject": "Domino's Pizza",
-                    "operator": "Kan",
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_SUCCESS",
+            "data": {
+                "sn": "7894259244067349",
+                "client_sn": "12345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "PAID",
+                "payer_uid": "okSzXt3uY4-W8fKBH7B4z8seMzBU",
+                "trade_no": "1006101016201512081965934048",
+                "total_amount": "1",
+                "net_amount": "1",
+                "finish_time": "1449569460430",
+                "channel_finish_time": "1449569460000",
+                "terminal_sn": "1122234-dewls02s2",
+                "store_id": "00293001928483902",
+                "subject": "Domino's Pizza",
+                "operator": "Kan",
             }
         }
+    }
+    ```
 
 2. Pay in Progress
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_IN_PROGRESS",
-                "data": {
-                    "sn": "789200393929142",
-                    "client_sn": "230202l2-2-2002",
-                    "trade_no": "0019101002020384822248",
-                    "ctime": "2015-11-01 18:01:00",
-                    "status": "IN_PROG",
-                    "order_status": "CREATED",
-                    "total_amount ": "1000"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_IN_PROGRESS",
+            "data": {
+                "sn": "789200393929142",
+                "client_sn": "230202l2-2-2002",
+                "trade_no": "0019101002020384822248",
+                "ctime": "2015-11-01 18:01:00",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount ": "1000"
             }
         }
+    }
+    ```
 
 3. Pay Failed
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PAY_FAIL",
-                "error_code": "EXPIRED_BARCODE",
-                "error_message": "过期的支付条码",
-                "data": {
-                    "sn": "7894259244067344",
-                    "client_sn": "12345677767776",
-                    "status": "FAIL_CANCELED",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "PAY_CANCELED",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "finish_time": "1449569494595"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_FAIL",
+            "error_code": "EXPIRED_BARCODE",
+            "error_message": "过期的支付条码",
+            "data": {
+                "sn": "7894259244067344",
+                "client_sn": "12345677767776",
+                "status": "FAIL_CANCELED",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "PAY_CANCELED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "finish_time": "1449569494595"
             }
         }
+    }
+    ```
 
 4. Client Error - Terminal Not Exists
 
-        {
-            "result_code": "400",
-            "error_code": "TERMINAL_NOT_EXISTS",
-            "error_message": "不存在这个终端",
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "TERMINAL_NOT_EXISTS",
+        "error_message": "不存在这个终端",
+    }
+    ```
 
 5. Client Error - Invalid Parameter
 
-        {
-            "result_code": "400",
-            "error_code": "INVALID_PARAMETER",
-            "error_message": "client_sn不可以为空；total_amount不可以为负数",
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "INVALID_PARAMETER",
+        "error_message": "client_sn不可以为空；total_amount不可以为负数",
+    }
+    ```
 
 6. Server Error - Unknown
 
-        {
-            "result_code": "500",
-            "error_code": "UNKNOWN_SYSTEM_ERROR",
-            "error_message": "未知的系统错误",
-        }
+    ```json
+    {
+        "result_code": "500",
+        "error_code": "UNKNOWN_SYSTEM_ERROR",
+        "error_message": "未知的系统错误",
+    }
+    ```
 
 7. Server Error - Maintenance in Progress
 
-        {
-            "result_code": "500",
-            "error_code": "MAINTENANCE_INPROGRESS",
-            "error_message": "服务端正在升级维护，稍候5分钟",
-        }
+    ```json
+    {
+        "result_code": "500",
+        "error_code": "MAINTENANCE_INPROGRESS",
+        "error_message": "服务端正在升级维护，稍候5分钟",
+    }
+    ```
 
 8. Refund Success
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "REFUND_SUCCESS",
-                "data": {
-                    "sn": "7894259244067218",
-                    "client_sn": "12345677767776",
-                    "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
-                    "order_status": "REFUNDED",
-                    "trade_no": "2006101016201512080095793262",
-                    "total_amount": "1",
-                    "net_amount": "0",
-                    "finish_time": "1449563206776",
-                    "channel_finish_time": "1449563206632"
-                }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "REFUND_SUCCESS",
+            "data": {
+                "sn": "7894259244067218",
+                "client_sn": "12345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "REFUNDED",
+                "trade_no": "2006101016201512080095793262",
+                "total_amount": "1",
+                "net_amount": "0",
+                "finish_time": "1449563206776",
+                "channel_finish_time": "1449563206632"
             }
         }
+    }
+    ```
 
 9. Query Success
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "SUCCESS",
-                "data": {
-                     "sn": "7894259244096963",
-                      "client_sn": "1234567",
-                      "ctime": "1449036464229",
-                      "status": "SUCCESS",
-                      "order_status": "CANCELED",
-                      "total_amount": "1",
-                      "net_amount": "0",
-                      "finish_time": "1449563206776",
-                      "channel_finish_time": "1449563206632",
-                      "payway": "3",
-                      "sub_payway": "1"
-                }
-            }
-        }
-
-10. Pre-create Success
-
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "PRECREATE_SUCCESS",
-                "data": {
-                    "sn": "7894259244096169",
-                    "client_sn": "765432112",
-                    "status": "IN_PROG",
-                    "order_status": "CREATED",
-                    "total_amount": "1",
-                    "net_amount": "1",
-                    "operator ": "Sam",
-                    "subject ": "coca cola",
-                    "qr_code": "https://qr.alipay.com/bax8z75ihyoqpgkv5f"
-                }
-            }
-        }
-
-11. Cancel Success
-
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_SUCCESS",
-                "data": {
-                    "sn": "7894259244064831",
-                    "client_sn": "22345677767776",
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "SUCCESS",
+            "data": {
+                    "sn": "7894259244096963",
+                    "client_sn": "1234567",
+                    "ctime": "1449036464229",
                     "status": "SUCCESS",
-                    "payway": "3",
-                    "sub_payway": "1",
                     "order_status": "CANCELED",
                     "total_amount": "1",
                     "net_amount": "0",
-                    "finish_time": "1450090828489",
-                    "subject": "wx",
-                    "store_id": "49"
-                }
+                    "finish_time": "1449563206776",
+                    "channel_finish_time": "1449563206632",
+                    "payway": "3",
+                    "sub_payway": "1"
             }
         }
+    }
+    ```
+
+10. Pre-create Success
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PRECREATE_SUCCESS",
+            "data": {
+                "sn": "7894259244096169",
+                "client_sn": "765432112",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "operator ": "Sam",
+                "subject ": "coca cola",
+                "qr_code": "https://qr.alipay.com/bax8z75ihyoqpgkv5f"
+            }
+        }
+    }
+    ```
+
+11. Cancel Success
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_SUCCESS",
+            "data": {
+                "sn": "7894259244064831",
+                "client_sn": "22345677767776",
+                "status": "SUCCESS",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "CANCELED",
+                "total_amount": "1",
+                "net_amount": "0",
+                "finish_time": "1450090828489",
+                "subject": "wx",
+                "store_id": "49"
+            }
+        }
+    }
+    ```
 
 
 ## Payment APIs
@@ -283,80 +305,82 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
 
 * Response Example - Failed
 
-        {
-            "result_code": "400",
-            "error_code": "INVALID_PARAMS",
-            "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
-        }
+    ```json
+    {
+        "result_code": "400",
+        "error_code": "INVALID_PARAMS",
+        "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
+    }
+    ```
 
 * Client Pseudo-code Example
 
-```
-Sub pay(request, timeout):
-  Try:
-    response = POST (pay_url, request)
-  Except NetworkConnectError ex:
-    raise ("Network error", ex)
-  Except NetworkIOError ex:
-    return poll (request.client_sn, timeout)
-  handle_response_error(response)
-  biz_response = response.biz_response
-  if biz_response.result_code == "PAY_SUCCESS":
-    return ("Payment received", response)
-  elif biz_response.result_code == "PAY_FAIL":
-    return ("Payment failed and refunded, please retry", response)
-  elif biz_response.result_code == "PAY_FAIL_ERROR":
-    raise ("Payment error, please contact Upay customer service", response)
-  elif biz_response.result_code == "FAIL":
-    raise ("Payment failed and no transaction was made", response)
-  else:
-    return poll(request.client_sn, timeout)
-
-Sub poll(client_sn, remaining_time):
-  if remaining_time < 0:
-    Try:
-      response = POST(cancel_url, client_sn)
-    Except NetworkError ex:
-      raise "Order cancellation failed due to network error, please contact Upay customer service", ex
-    handle_response_error(response)
-    result_code = response.biz_response.result_code
-    error_code = response.biz_response.error_code
-    if result_code == "CANCEL_SUCCESS" or 
-       result_code == "CANCEL_ABORT_SUCCESS":
-      return ("Order expired and has been canceled", response)
-    elif result_code == "FAIL" and error_code == "UPAY_ORDER_NOT_EXISTS":
-      return ("Order expired and does not require cancellcation", response)
-    else:
-      raise ("Order cancellation error, please contact Upay customer service", response)
-  else:
-    stopwatch.start()
-    Try
-      response = POST(query_url, client_sn)
-    Except NetworkError ex:
-      sleep(5)
-      return poll(client_sn, remaining_time – stopwatch.reading())
-    handle_reponse_error(response)
-    biz_response = response.biz_response
-    if biz_response.result_code == "FAIL" and
-       biz_response.error_code == "UPAY_ORDER_NOT_EXISTS":
-      return ("Order payment failed and does not require cancellcation", response)
-    elif biz_response.result_code == "SUCCESS":
-      if biz_response.data.order_status == "CREATED":
-        sleep(5)
-        return poll(client_sn, remaining_time – stopwatch.reading())
-      elif biz_response.data.order_status == "PAID":
+    ```python
+    Sub pay(request, timeout):
+      Try:
+        response = POST (pay_url, request)
+      Except NetworkConnectError ex:
+        raise ("Network error", ex)
+      Except NetworkIOError ex:
+        return poll (request.client_sn, timeout)
+      handle_response_error(response)
+      biz_response = response.biz_response
+      if biz_response.result_code == "PAY_SUCCESS":
         return ("Payment received", response)
-      elif biz_response.data.order_status == "PAY_CANCELED":
+      elif biz_response.result_code == "PAY_FAIL":
         return ("Payment failed and refunded, please retry", response)
-      elif biz_response.data.order_status == "PAY_ERROR":
-        return ("Payment error, please contact Upay customer service", response)
-
-Sub handle_response_error(response):
-  if response.result_code == "400":
-    raise ("Please contact terminal manufacturer", response.error_message)
-  elif response.result_code == "500":
-    raise ("Payment error, please contact Upay customer service", response.error_message)
-```
+      elif biz_response.result_code == "PAY_FAIL_ERROR":
+        raise ("Payment error, please contact Upay customer service", response)
+      elif biz_response.result_code == "FAIL":
+        raise ("Payment failed and no transaction was made", response)
+      else:
+        return poll(request.client_sn, timeout)
+    
+    Sub poll(client_sn, remaining_time):
+      if remaining_time < 0:
+        Try:
+          response = POST(cancel_url, client_sn)
+        Except NetworkError ex:
+          raise "Order cancellation failed due to network error, please contact Upay customer service", ex
+        handle_response_error(response)
+        result_code = response.biz_response.result_code
+        error_code = response.biz_response.error_code
+        if result_code == "CANCEL_SUCCESS" or 
+           result_code == "CANCEL_ABORT_SUCCESS":
+          return ("Order expired and has been canceled", response)
+        elif result_code == "FAIL" and error_code == "UPAY_ORDER_NOT_EXISTS":
+          return ("Order expired and does not require cancellcation", response)
+        else:
+          raise ("Order cancellation error, please contact Upay customer service", response)
+      else:
+        stopwatch.start()
+        Try
+          response = POST(query_url, client_sn)
+        Except NetworkError ex:
+          sleep(5)
+          return poll(client_sn, remaining_time – stopwatch.reading())
+        handle_reponse_error(response)
+        biz_response = response.biz_response
+        if biz_response.result_code == "FAIL" and
+           biz_response.error_code == "UPAY_ORDER_NOT_EXISTS":
+          return ("Order payment failed and does not require cancellcation", response)
+        elif biz_response.result_code == "SUCCESS":
+          if biz_response.data.order_status == "CREATED":
+            sleep(5)
+            return poll(client_sn, remaining_time – stopwatch.reading())
+          elif biz_response.data.order_status == "PAID":
+            return ("Payment received", response)
+          elif biz_response.data.order_status == "PAY_CANCELED":
+            return ("Payment failed and refunded, please retry", response)
+          elif biz_response.data.order_status == "PAY_ERROR":
+            return ("Payment error, please contact Upay customer service", response)
+    
+    Sub handle_response_error(response):
+      if response.result_code == "400":
+        raise ("Please contact terminal manufacturer", response.error_message)
+      elif response.result_code == "500":
+        raise ("Payment error, please contact Upay customer service", response.error_message)
+    ```
 
 #### Refund
 
@@ -401,14 +425,16 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 * Response Example - Failed
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "FAIL",
-                "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
-                "error_message": "订单已全额退款,可退金额不足"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "FAIL",
+            "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
+            "error_message": "订单已全额退款,可退金额不足"
         }
+    }
+    ```
 
 #### Query
 
@@ -490,14 +516,16 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 * Response Example - Failed
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_ERROR",
-                "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
-                "error_message": "订单7894259244061958参与了活动并且无法撤销"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_ERROR",
+            "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
+            "error_message": "订单7894259244061958参与了活动并且无法撤销"
         }
+    }
+    ```
 
 #### Revoke
 
@@ -541,14 +569,16 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 * Response Example - Failed
 
-        {
-            "result_code": "200",
-            "biz_response": {
-                "result_code": "CANCEL_ERROR",
-                "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
-                "error_message": "订单7894259244061958参与了活动并且无法撤销"
-            }
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "CANCEL_ERROR",
+            "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
+            "error_message": "订单7894259244061958参与了活动并且无法撤销"
         }
+    }
+    ```
 
 #### Pre-create
 
@@ -704,7 +734,7 @@ FAIL_ERROR | After a failed payment transaction, Upay automatically initiates a 
 CANCEL_ERROR | A cancallation requested by client is initiated but failed | Same as FAIL_PROTOCOL_1
 REFUND_ERROR | A refund requested by client is initiated but failed | Same as FAIL_PROTOCOL_1	
 
-**Note**：当系统返回状态为 失败但不确认消费者端状态的时候，
+**Note**：[TODO]当系统返回状态为 失败但不确认消费者端状态的时候，
 一定要明确这笔订单是失败的，收钱吧会最终负责将这笔交易撤销。
 不能交货或者退货，请立即进行人工介入，联系客服人员，以防遭受损失。
 

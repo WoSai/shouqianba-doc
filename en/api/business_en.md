@@ -17,7 +17,7 @@ Every terminal only needs to be activated once.
 
 ## Terminal Checkin
 
-`terminal_sn` and `terminal_key` are like username and password to your terminal. To keep your terminals and transactions safe, `terminal_key`s should be updated on daily basis. Developers may pick any time during the day to perfrom the checkin. But keep in mind that a `terminal_key` is only valid for at most 48 hours, and after each checkin, only current and last `terminal_key` are valid.
+`terminal_sn` and `terminal_key` are like username and password to your terminal. To keep your terminals and transactions safe, `terminal_key`s should be updated on daily basis. Developers may pick any time during the day to perfrom the checkin. But keep in mind that a `terminal_key` is only valid for at most 48 hours, and after each checkin, only current and last `terminal_key`s are valid.
 
 ![](../img/checkin_sd.png?raw=true) 
 

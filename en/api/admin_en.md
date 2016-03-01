@@ -1,99 +1,143 @@
-# Terminal API Reference
+# Upay Web API Reference - Terminal
 
-### Activation
-The purpose of activation is to get the terminal sn and terminal key via activation interface, these parameters are used to sign the singature when using Transcation API.
-A Vendor key is required to sign the signature. The signature algorithm can refered to Transcation API document.
-Please use vendor serial number (vendor_sn) as signer ID, vendor key as signature key.
-#### Interface Name
-POST /terminal/activate
-#### Request/Type
-application/json
-#### Reqeust/Parameter
+## Terminal Activation
+
+The purpose of activation is to register the terminal device information and to get `terminal_sn` and `terminal_key` to sign the terminal's transaction requests. Any request without a signature will be deemed invalid by Upay Web API.
+
+Similarly, `vendor_sn` and `vendor_key` should be used to sign activation requests. Please refer to *Workflow* and *Developer Guide* on how to sign your requests.
+
+### API Target
+
+POST `/terminal/activate`
+
+### Content-Type
+
+`application/json`
+
+### Reqeust Parameters
+
 Field | Type | Required | Description
 ------ | ----- | -----| -----
-code | string | Y | activation code
-device_id | string | Y | device identification
-os_info | string | N | OS info like: Android5.0
-sdk_version | string | Y | SDK version
-type | string | N | device type is optional。default "2"（SQB_SDK)
-#### Response
+code | String | Y | Terminal activation code
+device_id | String | Y | Device identification, such as IMEI of an Android device or `indentifierForVendor` of an iOS device.
+os_info | String | N | Terminal OS information, such as: Android 5.0.
+sdk_version | String | Y | Upay SDK version
+type | String | N | Terminal device type. Default is "2" (SQB_SDK).
+
+### Response Parameters
+
 Field | Type | Required | Description
 ------ | ----- | -----| -----
-terminal_sn | string | Y | terminal serial number
-terminal_key | string | Y | terminal key
+terminal_sn | String | Y | Terminal serial number
+terminal_key | String | Y | Terminal key
 
 Example：
 
 ```json
 {
-  "result_code": "200",
-  "biz_response": {
-    "terminal_sn": "10298371039",
-    "terminal_key": "68d499beda5f72116592f5c527465656"
-  }
+    "result_code": "200",
+    "biz_response": {
+        "terminal_sn": "10298371039",
+        "terminal_key": "68d499beda5f72116592f5c527465656"
+    }
 }
 ```
-### Checkin
-Checkin interface is used to update terminal key each day, otherwise terminal key will be expired each calendar day and you will get illegal signature response.
-#### Interface Name
-POST /terminal/checkin
-#### Request Type
-application/json
-#### Request Parameter
+
+## Terminal Checkin
+
+Your terminal needs to check in at least once per day to get latest `terminal_key`. Please keep in mind that a `terminal_key` is only valid for at most 48 hours, and after each checkin, only current and last `terminal_key`s are valid.
+
+Using expired or invalid `terminal_key` to sign your requests will result in illegal signature responses.
+
+We recommend each terminal checks in before the first transaction of each day.
+
+### API Target
+
+POST `/terminal/checkin`
+
+### Content-Type
+
+`application/json`
+
+### Request Parameters
+
 Field | Type | Required | Description
 ------ | ----- | -----| -----
-terminal_sn | string | Y | terminal serial number
-device_id | string | Y | device identification
-os_info | string | N | os info like: Android5.0
-sdk_version | string | N | SDK Version
-#### Response
+terminal_sn | String | Y | Terminal serial number
+device_id | String | Y | Device identification, such as IMEI of an Android device or `indentifierForVendor` of an iOS device.
+os_info | String | N | Terminal OS information, such as: Android 5.0.
+sdk_version | String | Y | Upay SDK version
+
+### Response Parameters
+
 Field | Type | Required | Description
 ------ | ----- | -----| -----
-terminal_sn | string | Y | terminal serial number
-terminal_key | string | Y | terminal key
+terminal_sn | String | Y | Terminal serial number
+terminal_key | String | Y | Terminal key
 
 Example：
 
 ```json
 {
-  "result_code": "200",
-  "biz_response": {
-    "terminal_sn": "10298371039",
-    "terminal_key": "68d499beda5f72116592f5c527465656"
-  }
+    "result_code": "200",
+    "biz_response": {
+        "terminal_sn": "10298371039",
+        "terminal_key": "68d499beda5f72116592f5c527465656"
+    }
 }
 ```
 
-### Upload Log
-This interface is use to upload local SDK log files to the remote server, optional. It is highly recommended to upload logs after checkin, and remove the old one if the upload action is successfully. This interface requires terminal sn and terminal key as the singature parameter, the signature algorithm is the same as Transcation API.
-#### Interface Name
-POST /terminal/uploadLog
-#### Request Parameter
-The Body part of http request is log file input, please use zip format to compress. 
-#### Resonpse
-Success：
+## Upload Terminal Log
+
+Even though not required, we recommend each terminal logs its own activities and uploads its log file each day after checking in. Terminal log is an important asset for debugging all sorts of terminal errors and failures.
+
+The terminal may delete the log file after a sucessful upload. We strongly recommend developers to keep log entries consise and rotate the log file on daily basis, so that log files are small enough to be uploaded without interfereing other terminal functionalities.
+
+Use `terminal_sn` and `terminal_key` to sign your log upload requests just like other types of requests.
+
+### API Target
+
+POST `/terminal/uploadLog`
+
+### Request Parameters
+
+The body of the request is the log file's binary stream compressed using gzip.
+
+### Resonpse Parameters
+
+Success:
 
 ```json
 {
-  "result_code": "200",
-  "error_code": "SUCCESS",
-  "error_message": "ok"
+    "result_code": "200",
+    "error_code": "SUCCESS",
+    "error_message": "ok"
 }
 ```
-Fail, result_code is not 200.
 
-#### Error Code
-TODO
+Result_code is not `"200"` if request fails.
+
+### Error Codes
+
+[TODO]
 
 ## Security
-The new gateway designed new authrization algorithm, as well as introduced new concept of terminal. 
-It requires SDK provide more interfaces besides Transcation API.
-### Interface Signature
-The client `sn` and signature value should be in the `Authorization` header of HTTP requests, the signature parameter is based on terminal key.
- The signature algorithm can be referd by Transcation API V2.0.
+
+Upay Web API adopts several mechanisms to ensure high level of transaction security:
+
+### HTTPs Protocol
+
+All Upay Web APIs use HTTPs protocol to encrypt communications between servers and clients.
+
+### Request Signature
+
+The client's `terminal_sn` and request signature should be in the `Authorization` header of each Upay Web API request. Request signature makes sure the request is signed by the right entity and not modified by any third party.
+
 ### Terminal Activation
-The new concept of terminal requires each of SDK instance has a set of terminal Sn and terminal Key, the configuration can be done by the the activate interface.
-By the input of activation code, SDK will send request to the Transcation API and get the response of terminal Sn and terminal key, the storage of terminal key is provided by SDK.
-### Terminal Key Update Strategy
-Similar to the POS machine, there is a 『Checkin』strategy inside the SDK to provide daily update of terminal KEY. It can be designed to do checkin automactically before the first transcation request each calendar day, and save the terminal Key locally.
+
+Every Upay terminal needs to be activated before any transaction takes place. Terminal will get `terminal_sn` and `terminal_key` in successful activation response. The terminal is responsible for saving and managing the `terminal_sn` and `terminal_key` which will be used for signature of every transaction request.
+
+### Terminal Key Update
+
+Similar to a POS terminal, Upay terminal needs to check in everyday to get latest `terminal_key`. Updating the `terminal_key` everyday helps keep your terminal and transactions safe.
 
