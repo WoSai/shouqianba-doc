@@ -8,6 +8,7 @@
 
 
 ## 激活
+
 激活接口用于通过终端激活码来获取terminalSn和terminalKey，以用于调用其他接口时的签名。
 
 激活接口对于同一台终端，只需要调用一次。
@@ -15,6 +16,7 @@
 ![](../img/NotActivited.png?raw=true) 
 
 ## 签到
+
 签到接口用于更新terminalKey。出于安全考虑，开发者可以自行决定何时调用签到接口。terminalKey一旦更新，历史的terminalKey将会失效。
 
 ![](../img/Activited.png?raw=true) 
@@ -36,11 +38,13 @@
 ### 主要交易功能时序
 
 #### 支付
-![B扫C](http://ww4.sinaimg.cn/large/48673013gw1ez7c45v2t4j20gq0rzdhm.jpg)
 
+![](../img/pay_sd.jpg?raw=true) 
 
 #### 二维码预下单
-![C扫B](http://ww4.sinaimg.cn/large/48673013gw1ez7c4lpqb1j20g80flmy3.jpg)
+
+![](../img/precreate_sd.jpg?raw=true) 
 
 #### 退款
-![退款](http://ww2.sinaimg.cn/large/48673013gw1ez7c4wsb9kj20gq0h3mxx.jpg)
+
+![](../img/refund_sd.jpg?raw=true) 
