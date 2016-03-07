@@ -693,11 +693,7 @@ UNEXPECTED_PROVIDER_ERROR|不认识的支付通道|收钱吧不支持的支付�
  
 开发语言|下载地址
 ----|----
-C++|--
-JAVA|--
-C#|--
-Vb6|--
-PB9|--
-PB12|--
+C++| （https://github.com/WoSai/shouqianba-winsdk2.0-demo)
+
 
 
