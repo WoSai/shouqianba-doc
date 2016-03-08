@@ -248,10 +248,10 @@ biz_response.operator  | 本次业务执行的操作员 |字符串 |业务执行
 
 #### 约定
 
-* 所有返回参数都为 <font color="red">**JSON**</font> 格式,请务必在HTTP请求头中加入Content-Type: application/json。
-* 所有请求的body都需采用UTF-8编码，所有响应也会采用相同编码
-* 所有返回数据的类型都是 <font color="red">**字符串**</font>；
-* 接口中所有涉及金额的地方都以 <font color="red">**分**</font> 为单位；
+* 所有返回参数都为 <font color="red">**JSON**</font> 格式，请务必在HTTP请求头中加入Content-Type: application/json。
+* 所有请求的body都需采用UTF-8编码，所有响应也会采用相同编码。
+* 所有返回数据的类型都是 <font color="red">**字符串**</font>。
+* 接口中所有涉及金额的地方都以 <font color="red">**分**</font> 为单位。
 * api_domain：https://api.shouqianba.com
 
 
