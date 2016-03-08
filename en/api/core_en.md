@@ -247,9 +247,10 @@ biz_response.operator  | Operator of the transaction | String | Returned only wh
 
 #### General Note
 
-* All responses are in <font color="red">**JSON**</font> format;
-* All response fields' data type is <font color="red">**string**</font>;
-* Amount of money is always in <font color="red">**cents**</font>;
+* All responses are in <font color="red">**JSON**</font> format,please make sure to add Content-Type header and set its value to application/json for all requests.
+* All requests must be UTF-8 encoded; all responses are UTF-8 encoded as well.
+* All response fields' data type is <font color="red">**string**</font>.
+* Amount of money is always in <font color="red">**cents**</font>.
 * All requests and responses should be encoded in <font color="red">**UTF-8**</font>.
 
 #### Pay
