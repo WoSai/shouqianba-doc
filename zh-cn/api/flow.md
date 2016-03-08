@@ -18,7 +18,7 @@
 
 接入域名(api_domain)：`https://api.shouqianba.com`
 
-支付平台所以的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`。
+支付平台所有的API仅支持JSON格式的请求调用，请务必在HTTP请求头中加入`Content-Type: application/json`。
 
 所有请求的body都需采用`UTF-8`编码，所有响应也会采用相同编码。
 
