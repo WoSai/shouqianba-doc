@@ -252,6 +252,7 @@ biz_response.operator  | Operator of the transaction | String | Returned only wh
 * All response fields' data type is <font color="red">**string**</font>.
 * Amount of money is always in <font color="red">**cents**</font>.
 * All requests and responses should be encoded in <font color="red">**UTF-8**</font>.
+* api_domain：https://api.shouqianba.com
 
 #### Pay
 
