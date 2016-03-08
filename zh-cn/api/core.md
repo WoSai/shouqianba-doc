@@ -251,8 +251,6 @@ biz_response.operator  | 本次业务执行的操作员 |字符串 |业务执行
 * 所有返回参数都为 <font color="red">**JSON**</font> 格式;
 * 所有返回数据的类型都是 <font color="red">**字符串**</font>；
 * 接口中所有涉及金额的地方都以 <font color="red">**分**</font> 为单位；
-
-
 * api_domain：https://api.shouqianba.com
 
 #### 付款
