@@ -36,3 +36,5 @@
 * 激活接口（/terminal/activate）的签名使用vendorSn和vendorKey
 * 其他接口均使用激活接口成功返回的terminalSn和terminalKey
 
+## Demo程序代码
+* Python：[Demo的github项目链接=>] https://github.com/WoSai/shouqianba-webapi-pythondemo
