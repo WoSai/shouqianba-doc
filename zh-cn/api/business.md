@@ -9,7 +9,7 @@
 
 ## 激活
 
-激活接口用于通过终端激活码来获取terminalSn和terminalKey，以用于调用其他接口时的签名。
+激活接口用于通过终端激活码（code）来获取终端号（terminal_sn）和终端密钥（terminal_key），以用于调用其他接口时的签名。
 
 激活接口对于同一台终端，只需要调用一次。
 
@@ -17,7 +17,7 @@
 
 ## 签到
 
-签到接口用于更新terminalKey。出于安全考虑，开发者可以自行决定何时调用签到接口。terminalKey一旦更新，历史的terminalKey将会失效。
+签到接口用于更新终端密钥（terminal_key）。出于安全考虑，开发者可以自行决定何时调用签到接口。终端密钥（terminal_key）一旦更新，旧密钥将会失效。
 
 ![](../img/Activited.png?raw=true) 
 

@@ -1,6 +1,6 @@
 # Summary
 
-* [API接入指南](api/README.md)
+* [Web API接入指南](api/README.md)
     * [接入流程](api/flow.md)
     * [业务流程](api/business.md)
     * [支付类API说明](api/core.md)
