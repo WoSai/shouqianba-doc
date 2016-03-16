@@ -253,9 +253,9 @@ const char* __stdcall activate(const char* params)|无|Activate Success、Activa
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-供应商|String|M|由收钱吧分配的供应商ID|--
-授权码|String|M|由收钱吧分配的供应商Key|--
-激活码|String(12)|C|由收钱吧分配的激活码，activate必传|411451574136
+服务商序列号|String|M|由收钱吧分配的服务商序列号|--
+服务商密钥|String|M|由收钱吧分配的服务商密钥|--
+终端激活码|String(12)|C|由收钱吧分配的终端激活码，activate必传|411451574136
 
 
 * 4.4.1.1.3 输出参数
@@ -284,7 +284,7 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-商户订单号|String(32)|M|商户系统内部的唯一订单标识|201660121175530001
+商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一，不超过64字符|201660121175530001
 商品名称|String(32)|M|本次交易的简要介绍|测试商品
 操作员|String(32)|M|发起本次交易的操作员|00
 商品描述|String(256)|P|对商品或本次交易的详细描述|雪碧 300ml
@@ -293,6 +293,8 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 付款码|String(32)|P|消费者用于付款的条码或二维码内容, 使用 UI 时可以传空值|130818341921441147
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
 扩展参数|String|P|商户系统与收钱吧系统约定的参数格式|--
+
+**商户系统订单号必须在商户系统内唯一，支付失败订单的二次支付请求，请创建新的商户订单号**
 
 * 4.4.1.2.3 输出参数
 
@@ -327,7 +329,7 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-商户订单号|String(32)|M|商户系统内部的唯一订单标识201660121175530001
+商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一，不超过64字符|201660121175530001
 商品名称|String(32)|M|本次交易的简要介绍测试商品
 操作员|String(32)|M|发起本次交易的操作员|00
 商品描述|String(256)|P|对商品或本次交易的详细描述|雪碧 300ml
@@ -337,6 +339,7 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
 扩展参数|String|P|商户系统与收钱吧系统约定的参数格式|--
 
+**商户系统订单号必须在商户系统内唯一，支付失败订单的二次支付请求，请创建新的商户订单号**
 
 * 4.4.1.3.3输出参数
 
