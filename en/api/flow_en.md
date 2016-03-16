@@ -36,3 +36,6 @@ All requests must be signed as instructed below:
 
 * For activation (`{api_domain}/terminal/activate`), please use `vendorSn` and `vendorKey` for signature.
 * For other requests (checkin, pay, refund, query, etc.), please use `terminalSn` and `terminalKey` returned in successful activation or checkin responses.
+
+## Demo Source Code
+* Python：[Demo github Link=>] https://github.com/WoSai/shouqianba-webapi-pythondemo
