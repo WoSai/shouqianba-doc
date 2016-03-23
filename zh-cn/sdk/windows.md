@@ -56,7 +56,7 @@ UpaySDK 主要的业务功能有如下五个:
 
 ###4.1 资源说明
 #### 4.1.1 下载
-[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK-2.1.0_build20160307.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
+[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK-2.1.0.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ####4.1.2 内容
 SDK 包含一个“CashBarV2.dll”动态库文件和两个配置文件,如下图:
@@ -81,11 +81,11 @@ SDK 包含一个“CashBarV2.dll”动态库文件和两个配置文件,如下�
 完整路径
 ```
 
-####4.1.3 环境
+####4.1.4 环境
 
 UpaySDK 默认是指向测试环境,如要部署到正式环境请参考 “4.5.1 KeyParams” 更改配置即可。
 
-####4.1.4 使用
+####4.1.5 使用
 UpaySDK 的使用步骤,一般包括:
 
 ```
@@ -99,10 +99,10 @@ UpaySDK 的使用步骤,一般包括:
 
 ![GitHub set up](http://ww4.sinaimg.cn/large/61df8f13gw1f12g9gkuw5j20n309o75o.jpg)
 
-####4.1.5 更新
+####4.1.6 更新
 
 第三方主动到“收钱吧”官方指定更新路径下下载最新的 UpaySDK 包内容(包括动态库文件),下载完成后,替换原来已经存在的 UpaySDK 包内容,即可完成更新。
-通常情况下 UpaySDK 会向下进行版本兼容,开发者更新无需重新开发,如有需要更改 的情况,收钱吧会在官网更新时做出明显提醒。
+通常情况下 UpaySDK 会向下进行版本兼容,开发者更新无需重新开发,如有需要更改的情况,收钱吧会在官网更新时做出明显提醒。
 
 ###4.2 协议规则
 	
@@ -141,9 +141,9 @@ UNKNOWN_SYSTEM_ERROR|不识别的支付通道
 响应码|响应描述
 ---|---
 PAY_SUCCESS|支付操作成功
- PAY_FAIL|支付操作失败并且已冲正
+PAY_FAIL|支付操作失败并且已冲正
 PAY_FAIL_ERROR|支付操作失败并且不确定第三方支付通道状态
- CANCEL_SUCCESS|撤单操作成功
+CANCEL_SUCCESS|撤单操作成功
 CANCEL_ERROR|撤单操作失败并且不确定第三方支付通道状态
 CANCEL_ABORT_ERROR|撤单操作试图终止进行中的支付流程,但是失 败,不确定第三方支付通道的状态
 CANCEL_ABORT_SUCCESS|撤单操作试图终止进行中的支付流程并且成功
@@ -397,6 +397,7 @@ const char* __stdcall refund(const char* params)|无|Refund Success、 Refund Fa
 函数原型|有无UI|返回状态
 ---|---|---
 const char* __stdcall query (const char* params)|无|Query Result、Query Failure
+const char* __stdcall queryEx (const char* params))|无|Query Result、Query Failure
 
 * 4.4.1.5.2 输入参数
 
@@ -407,6 +408,7 @@ const char* __stdcall query (const char* params)|无|Query Result、Query Failur
 
 * 4.4.1.5.3 输出参数
 
+* 4.4.1.5.3.1 query 接口输出参数
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
@@ -416,7 +418,7 @@ const char* __stdcall query (const char* params)|无|Query Result、Query Failur
 商户订单号String(32)||M|商户系统内部的唯一订单标识,若未传入则返回空值|20160122111520
 错误码|String|M|详细参见错误列表|x0001
 错误码描述|String|M|详细参见错误列表|加载服务失败
-**<font color="red">当返回状态为 Query Result 时会以 json 格式返回以下参数</font>**||||
+**<font color="red"> 当返回状态为 Query Result 时会以 json 格式返回以下参数</font>**||||
 result_code|String|M|通讯响应码,见参数规定|200
 error_code|String|C|通讯错误码(通讯失败时返回),见参数规定|UNKNOWN_SYSTEM_ERROR
 error_message|String|C|通讯错误描述(通讯失败时返回),见参数规定|未知的系统错误
@@ -443,6 +445,25 @@ channel_finish_time|String(13)|C|交易在支付平台(支付宝、微信等)完
 subject|String(32)|C|本次交易的简要介绍|测试商品
 operator|String(64)|C|操作员|00
 reflect|String|C|商户系统随订单提交的反射参数|--
+
+* 4.4.1.5.3.2 queryEx 接口输出参数
+
+名称|类型|必要性|参数说明|示例
+---|---|---|---|---
+返回状态|String|M|标识本次请求成功还是失败,见参数规定|Query Result
+**<font color="red">当返回状态为 Query Failure 时会以&连接形式返回以下参数</font>**|-|-|-|-
+收钱吧订单号|String(32)|M|收钱吧产生当前订单的唯一标识,若未传入则返回空值|7894259244017207
+商户订单号String(32)||M|商户系统内部的唯一订单标识,若未传入则返回空值|20160122111520
+错误码|String|M|详细参见错误列表|x0001
+错误码描述|String|M|详细参见错误列表|加载服务失败
+**<font color="red"> 当返回状态为 Query Result 时会以&连接形式返回以下参数</font>**|-|-|-|-
+订单状态|String(32)|M|见参数规定|REFUNDED
+收钱吧订单号|String(32)|M|收钱吧产生当前订单的唯一标识|7894259244017207
+商户订单号|String(32)|M|商户系统内部的唯一订单标识|20160122111520
+支付方式|String(1)|M|见参数规定|1
+支付平台交易凭证|String(64)|C|见参数规定|200610101620151209 0096528672
+反射参数|String|C|支付时商户系统随订单提交的反射参数|--
+
 
 * 4.4.1.5.4 使用示意
 
