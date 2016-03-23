@@ -397,7 +397,7 @@ const char* __stdcall refund(const char* params)|无|Refund Success、 Refund Fa
 函数原型|有无UI|返回状态
 ---|---|---
 const char* __stdcall query (const char* params)|无|Query Result、Query Failure
-const char* __stdcall queryEx (const char* params))|无|Query Result、Query Failure
+const char* __stdcall queryEx (const char* params)|无|Query Result、Query Failure
 
 * 4.4.1.5.2 输入参数
 
