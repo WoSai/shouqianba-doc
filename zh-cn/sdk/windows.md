@@ -626,8 +626,12 @@ NA
 
 参数名|参数解释|参数值|示例
 ---|---|---|---
-APPURL|业务的请求地址,默认测试环境|测试环境:RC;<br>正式环境:RTM;<br>自定义:http://xxxxxxx/|AppURL:RC
-EnableLog|是否开启SDK日志，默认不开启|开启:1,不开启:0|EnableLog:1
+APPURL|业务的请求地址,默认https://api.shouqianba.com|<br>正式环境:RTM;<br>自定义:http://xxxxxxx/|AppURL:RTM
+EnableLog|是否开启SDK日志，默认开启|开启:1,不开启:0|EnableLog:1
+Proxy|代理地址||Proxy:http-proxy-sha.corporate.example.com
+ProxyPort|代理端口||ProxyPort:80
+
+**建议开启日志，方便调试**
 
 
 ####4.5.2 KeySettings

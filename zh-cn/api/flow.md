@@ -27,7 +27,7 @@
 ### 签名算法
 
 * 采用应用层签名机制。将HTTP请求body部分的`UTF-8`编码字节流视为被签名的内容，不关心主体的格式。
-* 签名人序列号（vendor_sn）和签名值放在HTTP请求头中，在接入服务中统一校验。
+* 签名人序列号(sn)和签名值(sign)放在HTTP请求头中，在接入服务中统一校验。
 * 签名算法: sign = MD5( CONCAT( body + key ) )
 * 签名首部: `Authorization: sn + " " + sign`
 

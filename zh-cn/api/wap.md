@@ -41,7 +41,7 @@
 
 #### 3.1.2 请求参数
 
-具体请参考收钱吧支付网关[支付类API Reference](https://wosai.gitbooks.io/shouqianba-doc/content/api/core.html)
+具体请参考收钱吧支付网关[支付类API Reference](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn//api/core.html)
 
 #### 3.1.3 特别说明
 
