@@ -109,7 +109,7 @@ UpaySDK 的使用步骤,一般包括:
 协议|规则
 ---|---
 输入参数|按顺序以&符号连接，<br>例: 参数 1&参数 2&...&参数 n 
-输出参数|**激活、支付、预下单、退款、撤单接口**:返回状态.返回信息(&符号连接)<br>**查询接口**:返回状态:返回信息(json 格式)<br>例：<br>Pay Success.参数 1&参数 2&...&参数 n<br>Query Result:{param1=”1”, param1=”2”}<br>**扩展接口**:单一返回值
+输出参数|**激活、支付、预下单、退款、撤单接口**:返回状态.返回信息(&符号连接)<br>**查询接口(query)**:返回状态:返回信息(json 格式)<br>**查询接口(queryEx)**:返回状态:返回信息(&符号连接)<br>例：<br>Pay Success.参数 1&参数 2&...&参数 n<br>Query Result:{param1=”1”, param1=”2”}<br>**扩展接口**:单一返回值
 字符编码|统一采用 UTF-8 字符编码
 参数特殊字符及转义|所有的参数,不能含有&字符,除 extended 参数外的所有 参数中包含”字符的,需要使用\”转义代替
 输入参数必要性|M-必填,<br>C-满足条件则必填,<br>O-选填,<br>P-必须占位可传空值
@@ -346,7 +346,7 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 
 * 4.4.1.3.4使用示意
 
-![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12hxdatgyj20hk0l840a.jpg)
+![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/test%2FlALOCxUHOs0Cnc0CYA_608_669.png)
 
 
 
@@ -467,7 +467,7 @@ reflect|String|C|商户系统随订单提交的反射参数|--
 
 * 4.4.1.5.4 使用示意
 
-![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12j4c31jtj207h0h4js4.jpg)
+![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/test%2FlALOCxWgK80CW80BHg_286_603.png)
 
 **4.4.1.6撤单**
 
