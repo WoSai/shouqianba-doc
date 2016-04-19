@@ -586,7 +586,7 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 * API Target
 
-		{api_domain}/Upay/v2/precreate
+		{api_domain}/upay/v2/precreate
 
 * Request Paramters
 
