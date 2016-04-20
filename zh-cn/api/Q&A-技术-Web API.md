@@ -47,7 +47,7 @@
 		第二种是有有效期的。precreate接口生成的二维码的有效期：4min
 	
 		
-##哪些状态是订单最终状态
+##哪些状态是订单最终状态<a name="哪些状态是订单最终状态"></a>
 - PAID
 - PAY_CANCELED
 - REFUNDED
