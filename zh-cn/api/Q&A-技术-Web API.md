@@ -24,7 +24,7 @@
 
 ##何时发起轮询
 
-1. pay接口何时发起轮询：如果pay同步返回的order_status不是[最终状态](##哪些状态是订单最终状态)，就需要马上发起轮询。轮询时间可以在3~5s，总时长控制在40~50s左右。
+1. pay接口何时发起轮询：如果pay同步返回的order_status不是[最终状态](#status)，就需要马上发起轮询。轮询时间可以在3~5s，总时长控制在40~50s左右。
 
 	pay接口返回：biz_response.result_code是指一个动作的状态。biz_response.data罗列订单信息，biz_response.data.order_status是指订单状态。
 
@@ -47,7 +47,7 @@
 		第二种是有有效期的。precreate接口生成的二维码的有效期：4min
 	
 		
-##哪些状态是订单最终状态<a name="哪些状态是订单最终状态"></a>
+##哪些状态是订单最终状态<a name="status"></a>
 - PAID
 - PAY_CANCELED
 - REFUNDED
