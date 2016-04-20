@@ -39,3 +39,4 @@ All requests must be signed as instructed below:
 
 ## Demo Source Code
 * Python：[Demo github Link=>] https://github.com/WoSai/shouqianba-webapi-pythondemo
+* Java：[Demo github Link=>] https://github.com/WoSai/shouqianba-webapi-javademo
