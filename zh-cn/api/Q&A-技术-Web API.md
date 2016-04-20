@@ -24,14 +24,20 @@
 
 ##何时发起轮询
 
-1. pay接口何时发起轮询：如果pay同步返回的order_status不是最终状态，就需要马上发起轮询。轮询时间可以在3~5s，总时长控制在40~50s左右。
+1. pay接口何时发起轮询：如果pay同步返回的order_status不是[最终状态](##哪些状态是订单最终状态)，就需要马上发起轮询。轮询时间可以在3~5s，总时长控制在40~50s左右。
 
 	pay接口返回：biz_response.result_code是指一个动作的状态。biz_response.data罗列订单信息，biz_response.data.order_status是指订单状态。
 
 
 2. precreate接口何时发起轮询：
 
-	Web API接入：客户扫了二维码之后，建议马上发起轮询，轮询时间可以在3~5s。
+	Web API接入：在得到预下单成功的结果后，即可向收钱吧服务器发起轮询请求。
+	
+		预下单成功:biz_response.result_code="PRECREATE_SUCCESS" or biz_response.data.order_status="CREATED")
+		
+		收钱吧目前所有预下单的订单有效支付时长约为90秒，若超时仍未支付，收钱吧会自动取消该订单；因此轮询时间请控制在100-120秒左右。
+		
+		轮询的间隔建议为前30秒内2秒一次，之后5秒一次。
 	
 	SDK接入：如果是有UI模式，SDK会查询预支付结果，不需要额外写程序查询，如果是无UI模式，则需要轮询支付结果。
 
