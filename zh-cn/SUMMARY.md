@@ -15,7 +15,7 @@
     * [Windows SDK Q&A](sdk/Q&A-技术-SDK API.md)
     * [iOS SDK](sdk/ios.md)
     * [Android SDK](sdk/android.md)
-* [开发者Q&A](Q&A.md)
+* [开发者Q&A]
     * [产品Q&A](Q&A-产品.md)
     * [技术Q&A](Q&A-技术.md)
     * [返回码Q&A](Q&A-返回码.md)
