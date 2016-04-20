@@ -23,16 +23,29 @@
 4. 收钱吧服务器确认请求有效后，向指定的支付渠道发起预下单交易流程。
 5. 支付渠道同步返回预下单结果。
 6. 收钱吧服务器将订单信息和预下单结果返回给商户后端服务器。
-7. 商户后端服务器将预下单结果返回给自己的前端页面（其中包含唤起支付客户端支付控件所需的支付参数）。与此同时，商户后端服务器开始轮询收钱吧服务器该订单的支付状态。<span style="color:red; font-weight: bold;">*</span>
-8. 商户前端页面利用返回结果中的支付参数唤起客户端支付控件。<span style="color:red; font-weight: bold;">**</span>
+7. 商户后端服务器将预下单结果返回给自己的前端页面（其中包含唤起支付客户端支付控件所需的支付参数<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>）。与此同时，商户后端服务器开始轮询收钱吧服务器该订单的支付状态。<span style="color:red; font-weight: bold;">*</span>
+8. 商户前端页面利用返回结果中的支付参数（<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>）唤起客户端支付控件。<span style="color:red; font-weight: bold;">**</span>
 9. 用户输入密码，确认支付。
 10. 商户前端页面收到客户端前端Javascript SDK的回调，开始展示支付进行中的页面。与此同时，前端页面向商户后端服务器发起查询请求（建议使用长连接），等待最终支付结果的返回。
 11. 商户后端服务器收到前端页面的查询请求，则保持该连接直至从收钱吧服务器查询到最终支付结果。
 12. 商户后端服务器返回最终支付结果，前端页面展示支付成功页面和订单信息。
 
-<span style="color:red; font-weight: bold;">*</span>：目前Upay支付网关暂不支持异步回调通知，因此需要商户后端服务器进行轮询获取最新订单支付状态。
+<span style="color:red; font-weight: bold;">*</span>：wap_pay_request参数说明
 
-<span style="color:red; font-weight: bold;">**</span>：在前端页面中唤起微信支付控件需要调用微信的前端支付接口，请确保您在开发前充分了解[微信WAP支付](https://pay.weixin.qq.com/wiki/doc/api/wap.php?chapter=15_1)的相关业务流程和前端开发接口
+|字段名|变量名|必须|类型|示例值|描述
+|:----|:----|:----|:----|:----|:----
+|公众账号ID|appid|是|String(32)|wx8888888888888888|微信分配的公众账号ID
+|随机字符串|noncestr|是|String(32)|5K8264ILTKCH16CQ2502SI8ZNMTM67VS|随机字符串，不长于32位。推荐随机数生成算法
+|订单详情扩展字符串|package|是|String(32)|WAP|扩展字段，固定填写WAP
+|预支付交易会话标识|prepayid|是|String(64)	|wx201410272009395522657a690389285100|微信统一下单接口返回的预支付回话标识，用于后续接口调用中使用，该值有效期为2小时
+|签名|sign|是|String(32)	|C380BEC2BFD727A4B6845133519F3AD6|签名，详见签名生成算法
+|时间戳|timestamp|是	|String(32)|1414561699	|当前的时间，其他详见时间戳规则
+
+详见[微信WAP支付接口说明](https://pay.weixin.qq.com/wiki/doc/api/wap.php?chapter=15_4)
+
+<span style="color:red; font-weight: bold;">**</span>：目前Upay支付网关暂不支持异步回调通知，因此需要商户后端服务器进行轮询获取最新订单支付状态。
+
+<span style="color:red; font-weight: bold;">***</span>：在前端页面中唤起微信支付控件需要调用微信的前端支付接口，请确保您在开发前充分了解[微信WAP支付](https://pay.weixin.qq.com/wiki/doc/api/wap.php?chapter=15_1)的相关业务流程和前端开发接口
 
 
 ## 3. 接口说明
@@ -72,7 +85,17 @@
 
 ## 4. 名词解释
 
-**WAP支付：**<a name="wap"></a> 顾客通过支付客户端访问商家页面直接进行移动支付的支付方式。
+**WAP支付：**<a name="wap"></a> 
+
+- **公众号WAP:**公众号支付是用户在微信中打开商户的H5页面，商户在H5页面通过调用微信支付提供的JSAPI接口调起微信支付模块完成支付。
+
+	--用户在微信公众账号内进入商家公众号，打开某个主页面，完成支付
+
+	--用户的好友在朋友圈、聊天窗口等分享商家页面连接，用户点击链接打开商家页面，完成支付
+
+- **门店码WAP:**
+
+	--将商户页面转换成二维码，贴在门店里，消费者扫描二维码后在各种钱包浏览器中打开页面后，输入金额并完成支付
 
 ## 5. 版本记录
 
