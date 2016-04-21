@@ -941,7 +941,6 @@ WSUpayOrder的属性中有关支付操作的属性如下：
         order.subject = @"Dinner Order";
         order.order_operator = @"John Doe";
         order.order_description = @"Pumpkin Pie";
-        order.extended = @{@"open_id": @"wx2b5bkt7enklc"};
         order.reflect = @"Send me back";
     
         _upayTask = [[WSUpayTask alloc] initWithUpayOrder:order
