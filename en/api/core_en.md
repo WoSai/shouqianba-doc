@@ -13,25 +13,25 @@ biz_response | Business response data | Object | Returned only when request **su
 biz_response.result_code | Result code of business response | String. See "Business Response Result Codes" |
 biz_response.error_code | Error code of business response | String. See "Business Response Error Codes and Messages" | Returned only when **error occurs** during business process
 biz_response.error_message | Error message of business response | String. See "Business Response Error Codes and Messages" | Returned only when **error occurs** during business process
-biz_response.sn | Upay order serial number | 16 digit number string | Returned only when business process is **successfully completed**
-biz_response.client_sn | Order serial number in client system | String | Returned only when business process is **successfully completed**
-biz_response.status | The latest transaction status | String. See "Transaction Status" | Returned only when business process is **successfully completed**
-biz_response.order_status | The latest order status | String. See "Order Status" | Returned only when business process is **successfully completed**
-biz_response.payer_uid | The payer's user ID in payment service provider system | String | Returned only when business process is **successfully completed**
-biz_response.pay_login | The payer's login account in payment service provider system | String | Returned only when business process is **successfully completed**
-biz_response.trade_no | Order number in payment service provider system | String(32-128 characters) | Returned only when business process is **successfully completed**
-biz_response.total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Returned only when business process is **successfully completed**
-biz_response.net_amount | Net amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount`. Returned only when business process is **successfully completed**
-biz_response.payway | Payment service provider | String. See "Payment Service Providers" | Including Alipay, Wechat Payment, Jingdong Pay, Baifubao and more to come. Returned only when business process is **successfully completed**.
-biz_response.sub_payway | Payment method | String. See "Payment Methods" | Returned only when business process is **successfully completed**.
-biz_response.finish_time | Transaction finish time in Upay system | String. Unix Timestamp in milliseconds | Returned only when business process is **successfully completed**.
-biz_response.channel_finish_time | Transaction finish time in payment service provider's system | String. Unix Timestamp in milliseconds | Returned only when business process is **successfully completed**.
-biz_response.terminal_sn | Terminal serial number of the transaction | String | Returned only when business process is **successfully completed**.
-biz_response.store_id | Store ID of the transaction | String | Returned only when business process is **successfully completed**.
-biz_response.subject | Subject or brief summary of the transaction | String | Returned only when business process is **successfully completed**.
-biz_response.description | Detailed description of the transaction | String | Returned only when business process is **successfully completed**.
-biz_response.reflect | Anything that the client sent in `reflect` field of the request | String(64) | Returned only when business process is **successfully completed**.
-biz_response.operator  | Operator of the transaction | String | Returned only when business process is **successfully completed**.
+biz_response.data.sn | Upay order serial number | 16 digit number string | Returned only when business process is **successfully completed**
+biz_response.data.client_sn | Order serial number in client system | String | Returned only when business process is **successfully completed**
+biz_response.data.status | The latest transaction status | String. See "Transaction Status" | Returned only when business process is **successfully completed**
+biz_response.data.order_status | The latest order status | String. See "Order Status" | Returned only when business process is **successfully completed**
+biz_response.data.payer_uid | The payer's user ID in payment service provider system | String | Returned only when business process is **successfully completed**
+biz_response.data.pay_login | The payer's login account in payment service provider system | String | Returned only when business process is **successfully completed**
+biz_response.data.trade_no | Order number in payment service provider system | String(32-128 characters) | Returned only when business process is **successfully completed**
+biz_response.data.total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Returned only when business process is **successfully completed**
+biz_response.data.net_amount | Net amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount`. Returned only when business process is **successfully completed**
+biz_response.data.payway | Payment service provider | String. See "Payment Service Providers" | Including Alipay, Wechat Payment, Jingdong Pay, Baifubao and more to come. Returned only when business process is **successfully completed**.
+biz_response.data.sub_payway | Payment method | String. See "Payment Methods" | Returned only when business process is **successfully completed**.
+biz_response.data.finish_time | Transaction finish time in Upay system | String. Unix Timestamp in milliseconds | Returned only when business process is **successfully completed**.
+biz_response.data.channel_finish_time | Transaction finish time in payment service provider's system | String. Unix Timestamp in milliseconds | Returned only when business process is **successfully completed**.
+biz_response.data.terminal_sn | Terminal serial number of the transaction | String | Returned only when business process is **successfully completed**.
+biz_response.data.store_id | Store ID of the transaction | String | Returned only when business process is **successfully completed**.
+biz_response.data.subject | Subject or brief summary of the transaction | String | Returned only when business process is **successfully completed**.
+biz_response.data.description | Detailed description of the transaction | String | Returned only when business process is **successfully completed**.
+biz_response.data.reflect | Anything that the client sent in `reflect` field of the request | String(64) | Returned only when business process is **successfully completed**.
+biz_response.data.operator  | Operator of the transaction | String | Returned only when business process is **successfully completed**.
 
 #### Response Examples
 
