@@ -107,7 +107,7 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 * @param urlType 服务器地址类型:DEV:开发环境,PRO:生产环境 
 */
 DebugConfig.setDebug(true);//默认为非调试模式,如果需要调试,请设置为 true,打印和保存相关日志
-UpayTask.getInstance().initUpay(context,isPlaySound,Env.UrlType.DEV);
+UpayTask.getInstance().initUpay(context,isPlaySound,Env.UrlType.PRO);
 ```
 
 ###3.2 Android Studio下集成SDK
