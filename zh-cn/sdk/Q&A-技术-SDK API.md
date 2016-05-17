@@ -13,7 +13,11 @@
 
 **环境:**终端不能直接与外网通信
 
-**解决方案(Windows SDK):**增加代理设置就是在KeyParams文件中增加如下两行：
+###**解决方案(Windows SDK):**
+###端口转发
+
+###代理服务器
+增加代理设置就是在KeyParams文件中增加如下两行：
 
 	Proxy:http-proxy-sha.corporate.ge.com
 
