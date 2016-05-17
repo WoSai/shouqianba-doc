@@ -30,7 +30,7 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 *<font color="red">setPayModel(UpayOrder.PayModel.NO_UI)。</font>*
 
 ##2.开发指南
-[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK-2.1.0_build20160201.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
+[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK-2.1.1.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ##3.集成步骤
 ###3.1 Eclipse下集成SDK
