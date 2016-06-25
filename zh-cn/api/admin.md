@@ -1,6 +1,6 @@
 # 业务类API Reference
 
-### 激活
+### [激活](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/Q%26A-%E6%8A%80%E6%9C%AF.md#%E6%BF%80%E6%B4%BB%E7%A0%81%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98)
 激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考支付接口的文档。
 
 	请使用服务商序列号（vendor_sn）作为签名人序列号，服务商密钥（vendor_key）作为签名密钥。
@@ -35,7 +35,7 @@ terminal_key | string | Y | 终端密钥
 }
 ```
 
-### 签到
+### [签到](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/Q%26A-%E6%8A%80%E6%9C%AF.md#%E7%AD%BE%E5%88%B0%E6%8E%A5%E5%8F%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 签到接口用于获取每日最新的终端密钥（terminal_key）。如果使用过期的终端密钥（terminal_key）做签名，调用核心支付接口会收到签名错误的响应。签到接口的请求需要使用上一次有效的终端号（terminal_sn）和终端密钥（terminal_key）做签名，做法同支付接口一样。
 	
 	建议每自然天执行第一笔核心支付接口调用时，自动执行签到操作。
