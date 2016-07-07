@@ -1,11 +1,11 @@
-# WebProxy接口文档 - 非映射代理
+# WebProxy接口文档 - 映射代理
 
 ## 目录
 
 1. [约定](#convention)
     - [请求](#request)
     - [响应](#response)
-2. [core-proxy接口](#core-proxy)
+2. [业务接口](#core-proxy)
     - [门店接口](#store-api)
         - [响应参数](#store-response)
         - [创建门店](#create-store)
@@ -16,7 +16,7 @@
         - [创建终端](#create-terminal)
         - [更新终端信息](#update-terminal)
         - [获取终端信息](#get-terminal)
-3. [upay-proxy接口](#upay-proxy)
+3. [交易接口](#upay-proxy)
     - [支付](#upay-pay)
     - [退款](#upay-refund)
     - [撤单](#upay-revoke)
@@ -25,12 +25,12 @@
 4. [附录](#appendix)
     - [通讯错误码](#comm-error)
     - [业务结果码](#result-code)
-    - [core-proxy](#appendix-core)
+    - [业务接口](#appendix-core)
         - [业务执行错误码](#core-biz-error)
         - [门店状态](#store-status)
         - [终端状态](#terminal-status)
         - [终端类型](#terminal-type)
-    - [upay-proxy](#appendix-upay)
+    - [交易接口](#appendix-upay)
         - [业务执行错误码](#upay-biz-error)
         - [订单状态](#order-status)
         - [流水状态](#transaction-status)
@@ -39,7 +39,9 @@
 
 # 1. <a name="convention"></a>约定
 
-欢迎使用收钱吧WebProxy（非映射代理版）代理服务。该代理服务主要包含两大模块：core-proxy（业务代理）和upay-proxy（交易），分别对应连接收钱吧的业务系统和支付系统。该代理主要封装了请求的签名和复杂的请求时序，可以极大减轻您的开发和维护成本。
+欢迎使用收钱吧WebProxy（映射代理版）代理服务。该代理服务主要包含业务和交易两组接口，分别对应连接收钱吧的业务系统和支付系统。该代理主要完成了对接方门店和终端与收钱吧门店和终端的映射，并封装了请求的签名和复杂的请求时序，允许对接方直接以自己的门店和终端身份发起支付，极大减轻您的开发和维护成本。
+
+**注**：为了正常使用WebProxy的映射代理服务，维持映射关系的有效性，若需要创建和维护门店和终端，请不要通过商户管理后台，而应使用WebProxy的业务接口。
 
 ### 1.1 <a name="request"></a>请求
 
@@ -100,9 +102,9 @@ biz_response.error_code | 业务执行结果返回码 | N | 见附录[业务执�
 biz_response.error_message | 业务执行错误信息 | N | 见附录[业务执行错误码1](#core-biz-error)和[业务执行错误码2](#upay-biz-error) | 业务执行 **失败** 的时候才返回
 biz_response.data | 业务执行结果 | N | 对象结构，包含业务实体相关信息 | 业务执行 **成功** 的时候才返回
 
-## 2. <a name="core-proxy"></a>core-proxy接口
+## 2. <a name="core-proxy"></a>业务接口
 
-core-proxy接口主要用于创建、更新和查询门店和终端信息，是直接对接收钱吧业务系统对外接口的客户端代理，封装了请求的签名和一定的请求时序。
+业务接口主要用于创建、更新和查询门店和终端信息，是直接对接收钱吧业务系统对外接口的客户端代理，封装了请求的签名和一定的请求时序，并在完成业务操作的同时，创建和维护对接方门店终端与收钱吧门店终端的映射关系。
 
 ### 2.1 <a name="store-api"></a>门店接口
 
@@ -129,9 +131,9 @@ contact_phone | 联系固定电话号码 | 字符 | 门店联系人的固定电�
 contact_cellphone | 联系移动电话号码 | 字符 | 门店联系人的移动电话号码 | "13412345678"
 contact_email | 联系邮箱 | 字符 | 门店联系人的邮箱 | "zhang@abc.com"
 client_sn | 对接方内部门店号  | 字符 | 对接方系统内部对于该门店的唯一标识 | "1234567890"
-merchant_id | 商户ID | 字符 | 该门店对应的商户ID | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
-solicitor_id | 推广渠道ID | 字符 | 发展该门店入网的推广者ID | "cefb7e58-a75d-afb7-8481-ced71ec96abc"
-vendor_id | 服务商ID | 字符 | 该门店对应的服务商ID | "859d9f5f-af99-11e5-9ec3-00163e00625b"
+merchant_sn | 商户序列号 | 字符 | 该门店对应的商户标识 | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
+solicitor_sn | 推广渠道序列号 | 字符 | 发展该门店入网的推广者标识 | "cefb7e58-a75d-afb7-8481-ced71ec96abc"
+vendor_sn | 服务商序列号 | 字符 | 该门店对应的服务商标识 | "859d9f5f-af99-11e5-9ec3-00163e00625b"
 extra | 扩展字段 | JSON对象 | 该门店相关的额外信息 | {"title":"标题"}
 ctime | 创建时间 | 字符 | 门店在收钱吧业务系统中的创建时间 | "1449646835244"
 mtime | 最后修改时间 | 字符 | 门店在收钱吧业务系统中的最后修改时间 | "1449647735268"
@@ -146,7 +148,7 @@ version | 版本 | 字符 | 门店信息的版本号，随门店信息的变更�
 
 ##### 接口路径
 
-    {api_domain}/store/create
+    {api_domain}/proxy/store/create
 
 ##### 请求参数
 
@@ -156,16 +158,16 @@ name | 门店名称 | 字符 | Y | 门店名称 | "苏州江湖客栈"
 industry | 行业 | 字符 | N | 行业 | "1"
 longitude | 经度 | 字符 | N | 经度 | "120.311234"
 latitude | 纬度 | 字符 | N | 纬度 | "31.312345"
-province | 省 | 字符 | Y | 省 | "江苏省"
-city | 市 | 字符 | Y | 市 | "苏州市"
-district | 区 | 字符 | Y | 区 | "姑苏区"
-street_address | 街道 | 字符 | Y | 街道 | "平江路139号"
-contact_name | 联系人姓名 | 字符 | Y | 联系人姓名 | "张三"
+province | 省 | 字符 | N | 省 | "江苏省"
+city | 市 | 字符 | N | 市 | "苏州市"
+district | 区 | 字符 | N | 区 | "姑苏区"
+street_address | 街道 | 字符 | N | 街道 | "平江路139号"
+contact_name | 联系人姓名 | 字符 | N | 联系人姓名 | "张三"
 contact_phone | 联系固定电话号码 | 字符 | N | 联系固定电话号码 | "0512-12345678"
-contact_cellphone | 联系移动电话号码 | 字符 | Y | 联系移动电话号码 | "13412345678"
+contact_cellphone | 联系移动电话号码 | 字符 | N | 联系移动电话号码 | "13412345678"
 contact_email | 联系邮箱 | 字符 | N | 联系邮箱 | "zhang@abc.com"
 client_sn | 对接方内部门店号  | 字符 | Y | 对接方内部门店号  | "1234567890"
-merchant_id | 商户ID | 字符 | Y | 商户ID | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
+client_merchant_sn | 商户序列号 | 字符 | N | 对接方内部商户标识，**对于多商户的对接方该字段必填** | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
 extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
 
 ##### 响应示例
@@ -194,9 +196,9 @@ extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
                     "contact_cellphone": "13412345678",
                     "contact_email": "zhang@abc.com",
                     "client_sn": "1234567890",
-                    "merchant_id": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
-                    "solicitor_id": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
-                    "vendor_id": "859d9f5f-af99-11e5-9ec3-00163e00625b",
+                    "merchant_sn": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
+                    "solicitor_sn": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
+                    "vendor_sn": "859d9f5f-af99-11e5-9ec3-00163e00625b",
                     "extra": {"title":"标题"}
                 }
             }
@@ -210,13 +212,13 @@ extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
 
 ##### 接口路径
 
-    {api_domain}/store/update
+    {api_domain}/proxy/store/update
 
 ##### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-id | UUID | 字符 | Y | UUID | "26a1270a-aa97-4854-a489-2344e33b0338"
+client_sn | 对接方门店编号 | 字符 | Y | 对接方内部系统对该门店的唯一标识 | "26a1270a-aa97-4854-a489-2344e33b0338"
 name | 门店名称 | 字符 | N | 门店名称 | "苏州江湖客栈"
 industry | 行业 | 字符 | N | 行业 | "1"
 longitude | 经度 | 字符 | N | 经度 | "120.311234"
@@ -229,7 +231,6 @@ contact_name | 联系人姓名 | 字符 | N | 联系人姓名 | "张三"
 contact_phone | 联系固定电话号码 | 字符 | N | 联系固定电话号码 | "0512-12345678"
 contact_cellphone | 联系移动电话号码 | 字符 | N | 联系移动电话号码 | "13412345678"
 contact_email | 联系邮箱 | 字符 | N | 联系邮箱 | "zhang@abc.com"
-client_sn | 商户外部门店号  | 字符 | N | 商户外部门店号  | "1234567890"
 extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
 
 ##### 响应示例
@@ -242,6 +243,7 @@ extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
                 "result_code": "SUCCESS",
                 "data": {
                     "id": "26a1270a-aa97-4854-a489-2344e33b0338",
+                    "sn": "01234567890",
                     "name": "苏州江湖客栈",
                     "industry": "1",
                     "longitude": "120.311234",
@@ -268,13 +270,13 @@ extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
 
 ##### 接口路径
 
-    {api_domain}/store/get
+    {api_domain}/proxy/store/get
 
 ##### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-id | 门店ID | 字符 | Y |  | "26a1270a-aa97-4854-a489-2344e33b0338"
+client_sn | 对接方门店编号 | 字符 | Y | 对接方内部系统对该门店的唯一标识 | "26a1270a-aa97-4854-a489-2344e33b0338"
 
 ##### 响应示例
 
@@ -302,9 +304,9 @@ id | 门店ID | 字符 | Y |  | "26a1270a-aa97-4854-a489-2344e33b0338"
                     "contact_cellphone": "13412345678",
                     "contact_email": "zhang@abc.com",
                     "client_sn": "1234567890",
-                    "merchant_id": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
-                    "solicitor_id": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
-                    "vendor_id": "859d9f5f-af99-11e5-9ec3-00163e00625b",
+                    "merchant_sn": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
+                    "solicitor_sn": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
+                    "vendor_sn": "859d9f5f-af99-11e5-9ec3-00163e00625b",
                     "extra": {"title":"标题"},
                     "ctime": "1458404655938",
                     "mtime": "1458405255955",
@@ -338,13 +340,14 @@ last_secret | 次最新密钥 | 字符 | 该终端之前用于交易的密钥 | 
 longitude | 经度 | 字符 | 该终端的装机地理位置的经度 | "120.311234"
 latitude | 纬度 | 字符 | 该终端的装机地理位置的纬度 | "31.312345"
 client_sn | 对接方内部终端号 | 字符 | 对接方系统内部对于该终端的唯一标识 | "1234567890"
+client_store_sn | 对接方内部门店编号 | 字符 | 对接方系统内部对于该终端所属门店的唯一标识 | "1234567890"
 extra | 扩展字段 | JSON对象 | 该终端相关的额外信息 | {"title":"标题"}
 target | 回调通知设置 | 字符 | 该终端发起异步交易（如预下单）后，收钱吧回调的通知目标地址 | "https://shop.abc.com/callback"
 target_type | 回调通知方式 | 字符 | 收钱吧回调通知的方式 | "1"
-store_id | 门店ID | 字符 | 终端所属收钱吧门店的ID | "26a1270a-aa97-4854-a489-2344e33b0338"
-merchant_id | 商户ID | 字符 | 终端所属收钱吧商户的ID | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
-solicitor_id | 推广渠道ID | 字符 | 终端所属收钱吧推广者的ID | "cefb7e58-a75d-afb7-8481-ced71ec96abc"
-vendor_id | 服务商ID | 字符 | 终端所属收钱吧服务商的ID | "859d9f5f-af99-11e5-9ec3-00163e00625b"
+store_sn | 门店序列号 | 字符 | 终端所属收钱吧门店的标识 | "26a1270a-aa97-4854-a489-2344e33b0338"
+merchant_sn | 商户序列号 | 字符 | 终端所属收钱吧商户的标识 | "09a81a57-9225-4d07-b78e-4f93ee8a366d"
+solicitor_sn | 推广渠道序列号 | 字符 | 终端所属收钱吧推广者的标识 | "cefb7e58-a75d-afb7-8481-ced71ec96abc"
+vendor_sn | 服务商序列号 | 字符 | 终端所属收钱吧服务商的标识 | "859d9f5f-af99-11e5-9ec3-00163e00625b"
 vendor_app_id | 服务商应用ID | 字符 | 终端所安装的服务商的应用ID | "bdf9b7f1-e01d-11e5-9ec3-00163e00625b"
 ctime | 创建时间 | 字符 | 终端在收钱吧业务系统中的创建时间 | "1458404655938"
 mtime | 最后修改时间 | 字符 | 终端在收钱吧业务系统中的最后修改时间 | "1458405255955"
@@ -359,25 +362,21 @@ version | 版本 | 字符 | 终端信息的版本号，随终端信息的变更�
 
 ##### 接口路径
 
-    {api_domain}/terminal/create
+    {api_domain}/proxy/terminal/create
 
 ##### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-device_fingerprint | 设备指纹 | 字符 | N | 设备指纹 | "31499CCE184873CCA5A7CD45EFFA315C"
 name | 终端名 | 字符 | Y | 终端名 | "终端001号"
-type | 终端类型 | 字符 | Y | "10"
+client_sn | 对接方内部终端号  | 字符 | Y | 对接方内部终端号  | "1234567890"
+client_store_sn | 对接方内部门店编号 | 字符 | Y | 对接方系统内部对于该终端所属门店的唯一标识 | "1234567890"
+device_fingerprint | 设备指纹 | 字符 | N | 设备指纹 | "31499CCE184873CCA5A7CD45EFFA315C"
 sdk_version | SDK版本 | 字符 | N | SDK版本 | "2.1.0"
 os_version | 操作系统版本 | 字符 | N | 操作系统版本 | "Android-5.0.2"
 longitude | 经度 | 字符 | N | 经度 | "120.311234"
 latitude | 纬度 | 字符 | N | 纬度 | "31.312345"
-client_sn | 对接方内部终端号  | 字符 | Y | 对接方内部终端号  | "1234567890"
 extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
-target | 回调通知设置 | 字符 | N | 回调通知设置 | "https://shop.abc.com/callback"
-target_type | 回调通知方式 | 字符 | N | 回调通知方式 | "1"
-store_id | 门店ID | 字符 | Y | 门店ID | "26a1270a-aa97-4854-a489-2344e33b0338"
-vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e01d-11e5-9ec3-00163e00625b"
 
 ##### 响应示例
 
@@ -392,7 +391,7 @@ vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e
                     "sn": "0123456789012",
                     "device_fingerprint": "31499CCE184873CCA5A7CD45EFFA315C",
                     "name": "终端001号",
-                    "type": "2",
+                    "type": "10",
                     "status": "1",
                     "sdk_version": "2.1.0",
                     "os_version": "Android-5.0.2",
@@ -401,13 +400,12 @@ vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e
                     "longitude": "120.311234",
                     "latitude": "31.312345",
                     "client_sn": "1234567890",
+                    "client_store_sn": "1234567890",
                     "extra": {"title":"标题"},
-                    "target": "https://shop.abc.com/callback",
-                    "target_type": "1",
-                    "store_id": "26a1270a-aa97-4854-a489-2344e33b0338",
-                    "merchant_id": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
-                    "solicitor_id": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
-                    "vendor_id": "859d9f5f-af99-11e5-9ec3-00163e00625b",
+                    "store_sn": "26a1270a-aa97-4854-a489-2344e33b0338",
+                    "merchant_sn": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
+                    "solicitor_sn": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
+                    "vendor_sn": "859d9f5f-af99-11e5-9ec3-00163e00625b",
                     "vendor_app_id": "bdf9b7f1-e01d-11e5-9ec3-00163e00625b"
                 }
             }
@@ -421,26 +419,20 @@ vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e
 
 ##### 接口路径
 
-    {api_domain}/terminal/update
+    {api_domain}/proxy/terminal/update
 
 ##### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-id | UUID | 字符 | Y | 需要修改的终端ID | "400fb2ed-c68b-f8a7-1af2-b3761f36d579"
+client_sn | 对接方内部终端号 | 字符 | Y | 对接方系统内部对于该终端的唯一标识 | "1234567890"
 device_fingerprint | 设备指纹 | 字符 | N | 设备指纹 | "31499CCE184873CCA5A7CD45EFFA315C"
-name | 终端名 | 字符 | Y | 终端名 | "终端001号"
-type | 终端类型 | 字符 | Y | "10"
+name | 终端名 | 字符 | N | 终端名 | "终端001号"
 sdk_version | SDK版本 | 字符 | N | SDK版本 | "2.1.0"
 os_version | 操作系统版本 | 字符 | N | 操作系统版本 | "Android-5.0.2"
 longitude | 经度 | 字符 | N | 经度 | "120.311234"
 latitude | 纬度 | 字符 | N | 纬度 | "31.312345"
-client_sn | 对接方内部终端号  | 字符 | Y | 对接方内部终端号  | "1234567890"
 extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
-target | 回调通知设置 | 字符 | N | 回调通知设置 | "https://shop.abc.com/callback"
-target_type | 回调通知方式 | 字符 | N | 回调通知方式 | "1"
-store_id | 门店ID | 字符 | N | 如请求带有门店ID，则将终端移机至该门店 | "26a1270a-aa97-4854-a489-2344e33b0338"
-vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e01d-11e5-9ec3-00163e00625b"
 
 ##### 响应示例
 
@@ -466,12 +458,10 @@ vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e
                     "latitude": "31.312345",
                     "client_sn": "1234567890",
                     "extra": {"title":"标题"},
-                    "target": "1",
-                    "target_type": "https://shop.abc.com/callback",
-                    "store_id": "26a1270a-aa97-4854-a489-2344e33b0338",
-                    "merchant_id": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
-                    "solicitor_id": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
-                    "vendor_id": "859d9f5f-af99-11e5-9ec3-00163e00625b",
+                    "store_sn": "26a1270a-aa97-4854-a489-2344e33b0338",
+                    "merchant_sn": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
+                    "solicitor_sn": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
+                    "vendor_sn": "859d9f5f-af99-11e5-9ec3-00163e00625b",
                     "vendor_app_id": "bdf9b7f1-e01d-11e5-9ec3-00163e00625b",
                     "ctime": "1458404655938",
                     "mtime": "1458405255955",
@@ -489,13 +479,13 @@ vendor_app_id | 服务商应用ID | 字符 | N | 服务商应用ID | "bdf9b7f1-e
 
 ##### 接口路径
 
-    {api_domain}/terminal/get
+    {api_domain}/proxy/terminal/get
 
 ##### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-id | 终端ID | 字符 | Y | 需要查询的终端ID | "400fb2ed-c68b-f8a7-1af2-b3761f36d579"
+client_sn | 对接方内部终端号 | 字符 | Y | 对接方系统内部对于该终端的唯一标识 | "1234567890"
 
 ##### 响应示例
 
@@ -520,13 +510,12 @@ id | 终端ID | 字符 | Y | 需要查询的终端ID | "400fb2ed-c68b-f8a7-1af2-
                     "longitude": "120.311234",
                     "latitude": "31.312345",
                     "client_sn": "1234567890",
+                    "client_store_sn": "1234567890",
                     "extra": {"title":"标题"},
-                    "target": "1",
-                    "target_type": "https://shop.abc.com/callback",
-                    "store_id": "26a1270a-aa97-4854-a489-2344e33b0338",
-                    "merchant_id": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
-                    "solicitor_id": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
-                    "vendor_id": "859d9f5f-af99-11e5-9ec3-00163e00625b",
+                    "store_sn": "26a1270a-aa97-4854-a489-2344e33b0338",
+                    "merchant_sn": "09a81a57-9225-4d07-b78e-4f93ee8a366d",
+                    "solicitor_sn": "cefb7e58-a75d-afb7-8481-ced71ec96abc",
+                    "vendor_sn": "859d9f5f-af99-11e5-9ec3-00163e00625b",
                     "vendor_app_id": "bdf9b7f1-e01d-11e5-9ec3-00163e00625b",
                     "ctime": "1458404655938",
                     "mtime": "1458405255955",
@@ -536,11 +525,64 @@ id | 终端ID | 字符 | Y | 需要查询的终端ID | "400fb2ed-c68b-f8a7-1af2-
             }
         }
 
-## 3. <a name="upay-proxy"></a>upay-proxy接口
+## 3. <a name="upay-proxy"></a>交易接口
 
-upay-proxy接口主要帮助对接方发起支付、退款、撤单、查询和预下单等交易请求，是直接对接收钱吧支付系统对外接口的客户端代理，封装了请求的签名和一定的请求时序。
+交易接口主要帮助对接方发起支付、退款、撤单、查询和预下单等交易请求。在发起交易请求之前，WebProxy会检查对接方传入的门店和终端信息，若在本地映射记录中未找到相应记录，会进行自动创建，具体逻辑如下表。WebProxy交易接口是直接对接收钱吧支付系统对外接口的客户端代理，封装了门店和终端映射关系、请求的签名和一定的请求时序。
 
 **注**：upay-proxy接口的请求和响应中所有涉及金额的地方都以 <font color="red">**分**</font> 为单位。
+
+client_terminal_sn | client_store_sn | 终端所属门店 | 映射处理逻辑
+------------ | ------------- | ------------ | ------------
+存在 | 存在  | 未变化 | 映射至收钱吧终端后发起交易
+存在 | 存在  | 变化 | 更新终端信息，移机至新门店，映射至收钱吧终端后发起交易
+存在 | 不存在  | N/A | 创建门店，移机至新门店，映射至收钱吧终端后发起交易
+不存在 | 存在  | N/A | 在该门店下创建终端，映射至收钱吧终端后发起交易
+不存在 | 不存在  | N/A | 创建门店，在该门店下创建终端，映射至收钱吧终端后发起交易
+
+### 3.0 <a name="upay-meta"></a>交易请求中的终端及门店
+
+所有WebProxy的交易接口均需要传入对接方的终端和门店参数，若在本地映射记录中按编号未找到相应记录，则会进行自动创建。
+
+**注**：在发起交易时，若不涉及门店或终端的自动创建，则`client_terminal`和`client_store`节点下只有client_sn为必填参数；若需要由WebProxy在交易时自动创建门店或终端，则需要根据以下参数列表中的参数描述，传入相应的必填字段，否则门店或终端的自动创建会失败，将无法进行正常交易。
+
+终端及门店参数相应字段如下：
+
+- 终端参数
+
+以下参数均需要放在请求中的`client_terminal`节点下。
+
+参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
+--------- | ------ | ----- | ------- | --- | ----
+client_sn | 对接方内部终端号  | 字符 | Y | 对接方系统内部对于该终端的唯一标识 | "1234567890"
+device_fingerprint | 设备指纹 | 字符 | N | 设备指纹 | "31499CCE184873CCA5A7CD45EFFA315C"
+name | 终端名 | 字符 | N | 终端名 | "终端001号"
+sdk_version | SDK版本 | 字符 | N | SDK版本 | "2.1.0"
+os_version | 操作系统版本 | 字符 | N | 操作系统版本 | "Android-5.0.2"
+longitude | 经度 | 字符 | N | 经度 | "120.311234"
+latitude | 纬度 | 字符 | N | 纬度 | "31.312345"
+extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
+
+- 门店参数
+
+以下参数均需要放在请求中的`client_store`节点下。
+
+参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
+--------- | ------ | ----- | ------- | --- | ----
+client_sn | 对接方内部门店号 | 字符 | Y | 对接方系统内部对于该门店的唯一标识 | "1234567890"
+client_merchant_sn | 对接方内部商户号 | 字符 | N | 对接方系统内部对于该商户的唯一标识，**对于多商户的对接方该字段必填** | "1234567890"
+name | 门店名称 | 字符 | N | 门店名称，**需要自动创建时必填** | "苏州江湖客栈"
+industry | 行业 | 字符 | N | 行业 | "1"
+longitude | 经度 | 字符 | N | 经度 | "120.311234"
+latitude | 纬度 | 字符 | N | 纬度 | "31.312345"
+province | 省 | 字符 | N | 省 | "江苏省"
+city | 市 | 字符 | N | 市 | "苏州市"
+district | 区 | 字符 | N | 区 | "姑苏区"
+street_address | 街道 | 字符 | N | 街道 | "平江路139号"
+contact_name | 联系人姓名 | 字符 | N | 联系人姓名 | "张三"
+contact_phone | 联系固定电话号码 | 字符 | N | 联系固定电话号码 | "0512-12345678"
+contact_cellphone | 联系移动电话号码 | 字符 | N | 联系移动电话号码 | "13412345678"
+contact_email | 联系邮箱 | 字符 | N | 联系邮箱 | "zhang@abc.com"
+extra | 扩展字段 | JSON对象 | N | 扩展字段 | {"title":"标题"}
 
 ### 3.1 <a name="upay-pay"></a>支付
 
@@ -552,13 +594,14 @@ upay-proxy接口主要帮助对接方发起支付、退款、撤单、查询和�
 
 #### 接口路径
 
-    {api_domain}/pay
+    {api_domain}/proxy/pay
 
 #### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-terminal_sn | 收钱吧终端序列号 | String(32) | Y | 收钱吧终端序列号，不超过32位的纯数字 | "00101010029201012912"
+client_terminal | 对接方终端信息 | JSON对象 | Y | 包含对接方终端编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建终端，具体见[交易请求中的终端及门店](#upay-meta) | 
+client_store | 对接方门店信息 | JSON对象 | Y | 包含对接方门店编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建门店，具体见[交易请求中的终端及门店](#upay-meta) | 
 client_sn | 商户系统订单号 | String(32) | Y | 必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
 total_amount | 交易总金额 | String(10) | Y | 以分为单位，不超过10位纯数字字符串，超过1亿元的收款请使用银行转账 | "1000"
 payway | 支付方式 | String(2) | N | 内容为数字的字符串。一旦设置，则根据支付码判断支付通道的逻辑失效 | "1"
@@ -616,7 +659,7 @@ reflect	 | 反射参数 | String(64) | N | 透传参数 | "{ \"tips\": \"200\" }
                     "net_amount": "1",
                     "finish_time": "1449569460430",
                     "channel_finish_time": "1449569460000",
-                    "store_id": "00293001928483902",
+                    "store_sn": "00293001928483902",
                     "subject": "Domino's Pizza",
                     "operator": "Kan"
                 }
@@ -663,13 +706,14 @@ reflect	 | 反射参数 | String(64) | N | 透传参数 | "{ \"tips\": \"200\" }
 
 #### 接口路径
 
-    {api_domain}/refund
+    {api_domain}/proxy/refund
 
 #### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-terminal_sn | 收钱吧终端序列号 | String(32) | Y | 收钱吧终端序列号 | "00101010029201012912"
+client_terminal | 对接方终端信息 | JSON对象 | Y | 包含对接方终端编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建终端，具体见[交易请求中的终端及门店](#upay-meta) | 
+client_store | 对接方门店信息 | JSON对象 | Y | 包含对接方门店编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建门店，具体见[交易请求中的终端及门店](#upay-meta) | 
 sn | 收钱吧唯一订单号 | String(16) | N | 收钱吧系统内部唯一订单号 | "7892259488292938"
 client_sn | 商户订单号 | String(32) | N | 商户系统订单号 | "7654321132"
 refund_request_no | 退款序列号 | String(20) | Y | 商户退款所需序列号，为防止重复退款 | "23030349"
@@ -747,13 +791,14 @@ operator | 操作员 | String(32) | Y | 执行本次退款的操作员 | "Obama"
 
 #### 接口路径
 
-    {api_domain}/revoke
+    {api_domain}/proxy/revoke
 
 #### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-terminal_sn | 收钱吧终端序列号 | String(32) | Y | 收钱吧终端序列号 | "00101010029201012912"
+client_terminal | 对接方终端信息 | JSON对象 | Y | 包含对接方终端编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建终端，具体见[交易请求中的终端及门店](#upay-meta) | 
+client_store | 对接方门店信息 | JSON对象 | Y | 包含对接方门店编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建门店，具体见[交易请求中的终端及门店](#upay-meta) | 
 sn | 收钱吧系统订单号 | String(16) | N | 收钱吧系统唯一订单号 | "7894259244061958"
 client_sn | 商户自己的订单号 | String(64) | N | 商户自己订号 | "2324545839"
 
@@ -796,7 +841,7 @@ operator | 操作员 | String(64) | Y | 执行上次业务动作的操作员 | "
                     "net_amount": "0",
                     "finish_time": "1450090828489",
                     "subject": "wx",
-                    "store_id": "49"
+                    "store_sn": "49"
                 }
             }
         }
@@ -828,13 +873,14 @@ operator | 操作员 | String(64) | Y | 执行上次业务动作的操作员 | "
 
 #### 接口路径
 
-    {api_domain}/query
+    {api_domain}/proxy/query
 
 #### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-terminal_sn | 收钱吧终端序列号 | String(32) | Y | 收钱吧终端序列号 | "010382829292929"
+client_terminal | 对接方终端信息 | JSON对象 | Y | 包含对接方终端编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建终端，具体见[交易请求中的终端及门店](#upay-meta) | 
+client_store | 对接方门店信息 | JSON对象 | Y | 包含对接方门店编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建门店，具体见[交易请求中的终端及门店](#upay-meta) | 
 sn | 收钱吧系统订单号 | String(16) | N | 收钱吧系统唯一订单号 | "7894259244061958"
 client_sn | 商户自己的订单号 | String(64) | N | 商户自己订号 | "2324545839"
 
@@ -911,13 +957,14 @@ operator | 操作员 | String(64) | Y | 执行上次业务动作的操作员 | "
 
 #### 接口路径
 
-    {api_domain}/preCreate
+    {api_domain}/proxy/preCreate
 
 #### 请求参数
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
-terminal_sn | 收钱吧终端序列号 | String(32) | Y | 收钱吧终端序列号 | "23420593829"
+client_terminal | 对接方终端信息 | JSON对象 | Y | 包含对接方终端编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建终端，具体见[交易请求中的终端及门店](#upay-meta) | 
+client_store | 对接方门店信息 | JSON对象 | Y | 包含对接方门店编号，名称等信息，若WebProxy按编号查找不存在，则自动按所填写的信息创建门店，具体见[交易请求中的终端及门店](#upay-meta) | 
 client_sn | 商户系统订单号 | String(32) | Y | 必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
 total_amount | 交易总金额 | String(10) | Y | 以分为单位，不超过10位纯数字字符串，超过1亿元的收款请使用银行转账 | "1000"
 payway | 支付方式 | String(2) | Y | 内容为数字的字符串 | "1"
@@ -1035,7 +1082,7 @@ biz_response.result_code状态分为`SUCCESS`、`FAIL`、`INPROGRESS`和`ERROR`�
 <font color="red">SUCCESS</font> | 操作成功 | 
 <font color="red">FAIL</font> | 操作失败（不会触发流程） |
 
-### 4.3 <a name="appendix-core"></a>core-proxy
+### 4.3 <a name="appendix-core"></a>业务接口
 
 #### 4.3.1 <a name="core-biz-error"></a>业务执行错误码
 
@@ -1078,7 +1125,7 @@ terminal.type的可能取值如下：
 40 | WAP支付
 50 | 服务
 
-### 4.4 <a name="appendix-upay"></a>upay-proxy
+### 4.4 <a name="appendix-upay"></a>交易接口
 
 #### 4.4.1 <a name="upay-biz-error"></a>业务执行错误码
 
@@ -1159,7 +1206,7 @@ biz_response.data.payway的可能取值如下：
 4 | 百付宝
 5 | 京东
 
-#### 4.4.5 <a name="sub-payway"></a>二级支付方式
+#### 4.4.4 <a name="sub-payway"></a>二级支付方式
 
 biz_response.data.sub_payway的可能取值如下：
 
@@ -1168,4 +1215,3 @@ biz_response.data.sub_payway的可能取值如下：
 1 | 条码支付
 2 | 二维码支付
 3 | WAP支付
-- 二维码预下单：`{api_domain}/proxy/preCreate`
