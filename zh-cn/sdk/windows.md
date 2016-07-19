@@ -288,7 +288,7 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-返回状态|String|M|标识本次请求成功还是失败定|Pay Success
+返回状态|String|M|标识本次请求成功还是失败,见参数规定|Pay Success
 收钱吧订单号|String(32)|M|收钱吧生成的当前订单的唯一标识,返 回状态为 Failure 时可能为空值|7894259244017207
 商户订单号|String(32)|M|商户系统内部的唯一订单标识|20160122111520
 支付方式|String(1)|M|见参数规定,返回状态为 Failure 时可能 为空值|1
@@ -617,6 +617,29 @@ NA
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
 终端号|Stirng|M|当前SDK所使用的终端号|18878019483
+
+**4.4.2.6 手动签到**
+
+该接口负责向收钱吧发送签到请求，签到成功后将更新供应商及商户终端密钥
+
+* 4.4.2.6.1函数原型
+
+函数原型|有无UI|返回状态
+---|---|---
+const char* __stdcall signIn()|无|SignIn Success、 SignIn Failure
+
+* 4.4.2.6.2输入参数
+
+NA
+
+* 4.4.2.6.3输出参数
+
+
+名称|类型|必要性|参数说明|示例
+---|---|---|---|---
+返回状态|Stirng|M|标识本次请求成功还是失败 SignIn Success、 SignIn Failure|SignIn Success
+错误码|String|C|返回状态 Failure 时存在，详细参见错误列表|x1004
+错误描述|String|C|返回状态Failure时存在，详细参见错误列表|无法保存签到数据
 
 
 ###4.5 配置文件
