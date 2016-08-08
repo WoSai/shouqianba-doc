@@ -72,3 +72,7 @@ Windows SDK接入二维码名称后面会跟一个qrcode。
 ##Windows SDK最低支持的系统版本
 Windows SDK 最低支持 XP
 
+##使用PB接入SDK常见问题:
+### FUNCTION string activate(string params) LIBRARY "CashBarV2.dll"报错找不到函数？
+在后边加上alias for "_activate@4"
+所有函数都是stdcall标准，所以都需要按照stdcall的格式增加别名  有参数就加4 没参数就是0
