@@ -278,6 +278,7 @@ latitude | 维度 | String|N |经纬度必须同时出现 | "31.4056441552"
 device_id | 设备标示 |String(32) | | |
 extended | 扩展参数集合 | JSON map | N | 收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
 reflect | 反射参数 | String(64) | N | 任何调用者希望原样返回的信息，可以用于关联商户ERP系统的订单或记录附加订单内容 | { "tips": "200" }
+notify_url|回调|String(128)|N| 支付回调的地址|www.baidu.com
 
 **商户系统订单号必须在商户系统内唯一，支付失败订单的二次支付请求，请创建新的商户订单号**
 
@@ -608,7 +609,7 @@ longitude|	经度	|String|	N	|经纬度必须同时出现|
 latitude	|纬度	|String	|N|经纬度必须同时出现|
 extended	|扩展参数集合	|String(256)|	N|	收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
 reflect|	反射参数|	String(64)|	N|任何调用者希望原样返回的信息 | { "tips" : "100"}
-
+notify_url|回调|String(128)|N| 支付回调的地址|www.baidu.com
 **商户系统订单号必须在商户系统内唯一，支付失败订单的二次预下单请求，请创建新的商户订单号**
 
 * 同步返回参数说明
@@ -630,6 +631,27 @@ operator|	操作员|	String(32)|Y|门店操作员|张三丰
 reflect|	反射参数|	String(64)|	N|透传参数
 wap_pay_request|支付通道返回的调用WAP支付需要传递的信息|String(1024)|N|WAP支付一定会返回；
 
+**支付成功回调地址参数说明：**
+
+参数 | 参数名称 | 类型 | 必填|描述 |范例
+--------- | ------ | ----- | -------|---|----
+terminal_sn	|终端号|	String(32)|Y|收钱吧终端ID|"01939202039923029"
+sn|	收钱吧唯一订单号|	String(16)|Y|收钱吧系统内部唯一订单号|"7892259488292938"
+client_sn|商户订单号|	String(32)|Y|商户系统订单号|"7654321132"
+trade_no|支付服务商订单号|String(64)|Y|支付通道交易凭证号|"2013112011001004330000121536"
+status|流水状态|String(32)|	Y|本次操作产生的流水的状态| "SUCCESS"
+order_status	|订单状态	|String(32)|Y|当前订单状态|"PAID"
+payway|	支付方式|	String(2)|Y|一级支付方式，取值见附录《支付方式列表》|"1"
+sub_payway|二级支付方式|	String(2)|Y|二级支付方式，取值见附录《二级支付方式列表》|"1"
+payer_uid|	付款人ID|	String(64)|N|支付平台（微信，支付宝）上的付款人ID|"2801003920293239230239"
+payer_login|付款人账号|String(128)|N|支付平台上(微信，支付宝)的付款人账号|"134****3920"
+total_amount|交易总额	|String(10)|Y|本次交易总金额|"10000"
+net\_amount|实收金额|String(10)|Y|如果没有退款，这个字段等于total\_amount。否则等于 total_amount减去退款金额|"0"
+subject|	交易概述|	String(64)|	Y|本次交易概述|"Pizza"
+finish_time	|付款动作在收钱吧的完成时间|String(13)|Y|时间戳|"1449646835244"
+channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|时间戳|"1449646835244"
+operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
+reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
 ## 附录	
 
