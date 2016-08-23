@@ -594,13 +594,13 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 
 * 请求参数说明
 
-参数 | 参数名称 | 类型 | 必填|描述 |范例
---------- | ------ | ----- | -------|---|----
-terminal_sn|	收钱吧终端ID|	String(32)|	Y	|收钱吧终端ID |	"23420593829"
-client_sn|	商户系统订单号|	String(32)|	Y	|必须在商户系统内唯一；且长度不超过32字节|"18348290098298292838"
-total_amount|	交易总金额	|String(10)|	Y	|以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账|"1000"
+参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
+--------- | ------ | ----- | ------- | --- | ----
+terminal_sn | 收钱吧终端ID| String(32)| Y	 | 收钱吧终端ID | "23420593829"
+client_sn | 商户系统订单号 | String(32)| Y | 必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
+total_amount | 交易总金额 | String(10) | Y | 以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账 | "1000"
 payway	|支付方式|	String|	Y	|内容为数字的字符串 |"1"
-sub_payway	|二级支付方式|	String|N|内容为数字的字符串，<font color="red">如果要使用WAP支付，则必须传 "3" | "3"
+sub_payway	|二级支付方式|	String|N|内容为数字的字符串，<font color="red">如果要使用WAP支付，则必须传 "3"</font> | "3"
 payer\_uid|	付款人id|	String(64)|	N|消费者在支付通道的唯一id,**微信WAP支付必须传open_id**| "okSzXt_KIZVhGZe538aOKIMswUiI"
 subject|	交易简介|	String(64)|	Y|本次交易的概述| "pizza"
 operator	|门店操作员|	String(32)|	Y	|发起本次交易的操作员|	"Obama"
@@ -610,6 +610,7 @@ latitude	|纬度	|String	|N|经纬度必须同时出现|
 extended	|扩展参数集合	|String(256)|	N|	收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
 reflect|	反射参数|	String(64)|	N|任何调用者希望原样返回的信息 | { "tips" : "100"}
 notify_url|回调|String(128)|N| 支付回调的地址|www.baidu.com
+
 **商户系统订单号必须在商户系统内唯一，支付失败订单的二次预下单请求，请创建新的商户订单号**
 
 * 同步返回参数说明
@@ -785,6 +786,7 @@ UPAY\_TCP\_ORDER\_NOT\_REFUNDABLE | 订单参与了活动并且无法撤销
 4	|百付宝
 5   |京东
 6   |qq钱包
+
 **目前qq钱包只支持b扫c**
 
 #### 二级支付方式列表

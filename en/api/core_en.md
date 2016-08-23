@@ -19,7 +19,7 @@ biz_response.data.status | The latest transaction status | String. See "Transact
 biz_response.data.order_status | The latest order status | String. See "Order Status" | Returned only when business process is **successfully completed**
 biz_response.data.payer_uid | The payer's user ID in payment service provider system | String | Returned only when business process is **successfully completed**
 biz_response.data.pay_login | The payer's login account in payment service provider system | String | Returned only when business process is **successfully completed**
-biz_response.data.trade_no | Order number in payment service provider system | String(32-128 characters) | Returned only when business process is **successfully completed**
+biz_response.data.trade_no | Order number in payment service provider system | String (32-128 characters) | Returned only when business process is **successfully completed**
 biz_response.data.total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Returned only when business process is **successfully completed**
 biz_response.data.net_amount | Net amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Integer string | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount`. Returned only when business process is **successfully completed**
 biz_response.data.payway | Payment service provider | String. See "Payment Service Providers" | Including Alipay, Wechat Payment, Jingdong Pay, Baifubao and more to come. Returned only when business process is **successfully completed**.
@@ -265,7 +265,7 @@ biz_response.data.operator  | Operator of the transaction | String | Returned on
 Parameter | Description | Data Type | Required | Note | Example
 --------- | ------ | ----- | -------| --- | ----
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
-client_sn | Order serial number in client system | String(32) | Y | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
+client_sn* | Order serial number in client system | String(32) | Y | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Number string no longer than 10 characters; please use bank transfer for larger amount. | "1000"
 payway | Payment service provider | String | N | Number string; if present, Upay server will not use `dynamic_id` to decide payment service provider | "1"
 dynamic_id | Content of the payment barcode | String(32) | Y | No longer than 32 characters | "130818341921441147"
@@ -277,6 +277,9 @@ latitude | Latitude of the transaction location | String| N | Must be used simul
 device_id | Terminal device's unique identifier | String(32) | N | No longer than 32 characters | Such as IMEI of an Android device or `indentifierForVendor` of an iOS device
 extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
+notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
+
+<font color="red">**\*: `client_sn` must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.**</font>
 
 * Response Parameters
 
@@ -288,18 +291,18 @@ result_code | Request result code | String | Y | Result code of business respons
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "INVALID_BARCODE"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "不合法的支付条码"
 terminal_sn | Terminal serial number of the transaction | String(32) | Y | Used by Upay to identify a unique terminal | "01939202039923029"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "SUCCESS"
+status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
-payway | Payment service provider | Stirng(2) | Y | See "Payment Service Providers" | "1"
+payway | Payment service provider | String(2) | Y | See "Payment Service Providers" | "1"
 sub_payway | Payment method | String(2)| Y | See "Payment Methods" | "1"
-payer_uid | The payer's user ID in payment service provider system | Stirng(64) | N |  | "2801003920293239230239"
-payer_login | The payer's login account in payment service provider system | Stirng(128) | N |  | "134****3920"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+payer_uid | The payer's user ID in payment service provider system | String(64) | N |  | "2801003920293239230239"
+payer_login | The payer's login account in payment service provider system | String(128) | N |  | "134****3920"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
@@ -395,7 +398,7 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
 Parameter | Description | Data Type | Required | Note | Example
 --------- | ------ | ----- | ------- | --- | ----
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
-sn | Upay order serial number | Stirng(16) | N | Unique order serial number in Upay system | "7892259488292938"
+sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 refund_request_no | Refund request number | String(20) | Y | Used to prevent duplicate refund requests | "23030349"
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
@@ -413,14 +416,15 @@ result_code | Request result code | String | Y | Result code of business respons
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "ACCOUNT_BALANCE_NOT_ENOUGH"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "商户余额不足"
 terminal_sn | Terminal serial number of the transaction | String(32) | Y | Used by Upay to identify a unique terminal | "01939202039923029"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
+client_tsn | Refund transaction serial number | String(53) | Y | Indicates the most current transaction of this order. It is basically client_sn + '-' + refund_request_no | "7654321132-123"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "SUCCESS"
+status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
@@ -449,7 +453,7 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 Parameter | Description | Data Type | Required | Note | Example
 --------- | ------ | ----- | ------- | --- | ----
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
-sn | Upay order serial number | Stirng(16) | N | Unique order serial number in Upay system | "7892259488292938"
+sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
 <font color="red">**Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.**</font>
@@ -464,14 +468,14 @@ result_code | Request result code | String | Y | Result code of business respons
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "TRADE_TIMEOUT"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "交易超时自动撤单"
 terminal_sn | Terminal serial number of the transaction | String(32) | Y | Used by Upay to identify a unique terminal | "01939202039923029"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "SUCCESS"
+status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
@@ -489,7 +493,7 @@ To avoid business conflict, if the client cannot get successful payment result o
 Parameter | Description | Data Type | Required | Note | Example
 --------- | ------ | ----- | ------- | --- | ----
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
-sn | Upay order serial number | Stirng(16) | N | Unique order serial number in Upay system | "7892259488292938"
+sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
 <font color="red">**Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.**</font>
@@ -504,14 +508,14 @@ result_code | Request result code | String | Y | Result code of business respons
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "UPAY_TCP_ORDER_NOT_REFUNDABLE"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "订单7894259244061958参与了活动并且无法撤销"
 terminal_sn | Terminal serial number of the transaction | String(32) | Y | Used by Upay to identify a unique terminal | "01939202039923029"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "SUCCESS"
+status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
@@ -542,7 +546,7 @@ After a certain amount of time after the order is paid, the client can issue a r
 Parameter | Description | Data Type | Required | Note | Example
 --------- | ------ | ----- | ------- | --- | ----
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
-sn | Upay order serial number | Stirng(16) | N | Unique order serial number in Upay system | "7892259488292938"
+sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
 <font color="red">**Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.**</font>
@@ -557,14 +561,14 @@ result_code | Request result code | String | Y | Result code of business respons
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "UPAY_TCP_ORDER_NOT_REFUNDABLE"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "订单7894259244061958参与了活动并且无法撤销"
 terminal_sn | Terminal serial number of the transaction | String(32) | Y | Used by Upay to identify a unique terminal | "01939202039923029"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "SUCCESS"
+status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
@@ -606,6 +610,9 @@ latitude | Latitude of the transaction location | String| N | Must be used simul
 device_id | Terminal device's unique identifier | String(32) | N | No longer than 32 characters | Such as IMEI of an Android device or `indentifierForVendor` of an iOS device
 extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
+notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
+
+<font color="red">**\*: `client_sn` must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.**</font>
 
 * Response Parameters
 
@@ -616,17 +623,17 @@ Parameter | Description | Data Type | Required | Note | Example
 result_code | Request result code | String | Y | Result code of business response | "PRECREATE_SUCCESS"
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "UNEXPECTED_PROVIDER_ERROR"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "不认识的支付通道"
-sn | Upay order serial number | Stirng(16) | Y | Unique order serial number in Upay system | "7892259488292938"
-client_sn | Order serial number in client system | Stirng(32) | Y | Used by client to identify its own order | "7654321132"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
-status | The latest transaction status | Stirng(32) | Y |  | "CREATED"
+status | The latest transaction status | String(32) | Y |  | "CREATED"
 order_status | The latest order status | String(32) | Y |  | "CREATED"
-payway | Payment service provider | Stirng(2) | Y | See "Payment Service Providers" | "1"
+payway | Payment service provider | String(2) | Y | See "Payment Service Providers" | "1"
 sub_payway | Payment method | String(2)| Y | See "Payment Methods" | "2"
 qr_code | Payment QR code | String(128) | Y | "https://qr.alipay.com/bax00069h45nvvfc3tu9803a"
-total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | Stirng(10) | Y |  | "10000"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
-subject | Subject or brief summary of the transaction | Stirng(64) | Y |  | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
 reflect	 | Anything that the client sent in `reflect` field of the request | String(64) | N |  | {"tips": "200"}
 wap_pay_request | The parameters needed to call WAP payment function, returned from payment service providers | String(1024) | N | Returned when using WAP payment
@@ -736,9 +743,7 @@ FAIL_ERROR | After a failed payment transaction, Upay automatically initiates a 
 CANCEL_ERROR | A cancallation requested by client is initiated but failed | Same as FAIL_PROTOCOL_1
 REFUND_ERROR | A refund requested by client is initiated but failed | Same as FAIL_PROTOCOL_1	
 
-**Note**：[TODO]当系统返回状态为 失败但不确认消费者端状态的时候，
-一定要明确这笔订单是失败的，收钱吧会最终负责将这笔交易撤销。
-不能交货或者退货，请立即进行人工介入，联系客服人员，以防遭受损失。
+<font style="color:red;">**Note: If Upay responds with `FAIL*` status, the transaction is guaranteed to be failed, no matter what result the customer gets. If the customer does pay successfully, Upay system will eventually make sure the cancellation of this transaction. Please do not make deal in this situation, and contact our customer service to avoid any possible financial loss.**</font>
 
 #### Payment Service Providers
 
@@ -748,8 +753,11 @@ Value | Description
 --------- | ------
 1 | Alipay
 3 | Wechat Payment
-4 | Baifubao
+4 | Baidu Wallet
 5 | Jingdong Pay
+6 | QQ Wallet
+
+**Note: For QQ Wallet, pre-create is not supported.**
 
 
 #### Payment Methods
