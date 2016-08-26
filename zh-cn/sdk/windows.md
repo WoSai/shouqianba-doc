@@ -244,6 +244,9 @@ const char* __stdcall activate(const char* params)|无|Activate Success、Activa
 服务商序列号|String|M|由收钱吧分配的服务商序列号|--
 服务商密钥|String|M|由收钱吧分配的服务商密钥|--
 终端激活码|String(12)|C|由收钱吧分配的终端激活码，activate必传|411451574136
+appid|String|M|appid，从服务商平台获取|--
+终端号|String|O|第三方终端号，必须保证在app id下唯一|--
+终端名|String|O|终端名|--
 
 
 * 4.4.1.1.3 输出参数
