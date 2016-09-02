@@ -17,7 +17,7 @@ device_id | string | Y | 设备唯一身份ID
 client_sn | string | N | 第三方终端号，必须保证在app id下唯一
 name | string | N | 终端名
 os_info | string | N |当前系统信息，如: Android5.0
-sdk_version | string | Y | SDK版本
+sdk_version | string | N | SDK版本
 
 #### 响应
 字段名 | 类型 | 是否必填 | 说明

@@ -24,7 +24,7 @@ client_sn | string | N | Terminal identifier in client system. For a single vend
 name | string | N | A human recogizable name for this terminal.
 device_id | String | Y | Device identification, such as IMEI of an Android device or `indentifierForVendor` of an iOS device.
 os_info | String | N | Terminal OS information, such as: Android 6.0.
-sdk_version | String | Y | Upay SDK version.
+sdk_version | String | N | Upay SDK version.
 
 #### Response Parameters
 
