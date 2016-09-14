@@ -6,6 +6,7 @@
     * [支付类API说明](api/core.md)
     * [业务类API说明](api/admin.md)
     * [WAP支付接入说明](api/wap.md)
+    * [WAP2.0支付接入说明](api/wap2.md)
     * [Web API Q&A](api/Q&A-技术-Web API.md)
 
 * [SDK接入指南](sdk/README.md)
