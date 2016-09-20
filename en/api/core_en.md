@@ -279,7 +279,7 @@ extended | Extended paramters | JSON object | N | Special parameters that will b
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
 
-<font color="red"><b>\*: `client_sn` must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.</b></font>
+<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.</b></font>
 
 * Response Parameters
 
