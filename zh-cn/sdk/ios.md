@@ -1,16 +1,18 @@
 # iOS SDK开发接入
 
-*当前文档版本：0.1.3*
+*文档版本：0.2.0*
+
+*SDK版本：3.1.1*
 
 # 目录
 
-2. [开发接入指南](#deploy)
-3. [开发者文档](#documentation)
-4. [开发指引及示例](#tutorial)
-5. [附录](#Appendix)
-6. [常见问题](#FAQs)
-7. [联系我们](#Contact)
-8. [版本记录](#ChangeLog)
+1. [开发接入指南](#deploy)
+2. [开发者文档](#documentation)
+3. [开发指引及示例](#tutorial)
+4. [附录](#Appendix)
+5. [常见问题](#FAQs)
+6. [联系我们](#Contact)
+7. [版本记录](#ChangeLog)
 
 ## 1. <a name="deploy"></a> 开发接入指南
 
@@ -18,7 +20,11 @@
 
 ### 1.1 获取最新版SDK
 
-[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/upay_sdk_ios_3.0.0.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
+[下载最新版的SDK（3.1.1）](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/upay_sdk_ios_3.1.1.zip)
+
+*SHA-256 Digest: d25170bd8503f82dc9077d4f0550c94d9fba59b09b50bf3e2322ea22244256a6*
+
+为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ### 1.2 集成SDK
 
@@ -172,11 +178,68 @@ SDK订单类，代表所需操作的订单对象。
 
 #### 2.1.2 该类无方法成员
 
-### 2.2 <a name="WSUpayTask"></a> WSUpayTask
+### 2.2 <a name="WSUpayActivationInfo"></a> WSUpayActivationInfo
+
+SDK激活信息类，代表包含激活设备所需信息的对象。
+
+#### 2.2.1 属性成员
+
+<table>
+    <thead style="font-weight: bold;">
+        <tr>
+            <td>成员</td>
+            <td>类型</td>
+            <td>修饰</td>
+            <td>说明</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>code</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>由收钱吧提供的设备激活码，用于激活该设备作为收钱吧服务的终端</td>
+        </tr>
+        <tr>
+            <td>vendor_sn</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>服务商编号，由收钱吧提供，请妥善保管</td>
+        </tr>
+        <tr>
+            <td>vendor_key</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>服务商秘钥，由收钱吧提供，请妥善保管</td>
+        </tr>
+        <tr>
+            <td>vendor_app_id</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>服务商应用的ID，由服务商通过服务商平台（VSP）2.0创建</td>
+        </tr>
+        <tr>
+            <td>client_sn</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>服务商给该终端指定的编号，不超过50字符</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>服务商给该终端的命名，不超过64字符</td>
+        </tr>
+    </tbody>
+</table>
+
+#### 2.2.2 该类无方法成员
+
+### 2.3 <a name="WSUpayTask"></a> WSUpayTask
 
 SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单进行一系列操作。
 
-#### 2.2.1 <a name="WSUpayTaskProperties"></a> 属性成员
+#### 2.3.1 <a name="WSUpayTaskProperties"></a> 属性成员
 
 <table>
     <thead style="font-weight: bold;">
@@ -193,6 +256,12 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
             <td>WSUpayOrder</td>
             <td>readonly, strong, nonatomic</td>
             <td>本次任务需要执行的订单</td>
+        </tr>
+        <tr>
+            <td>upayActivationInfo</td>
+            <td>WSUpayActivationInfo</td>
+            <td>readonly, strong, nonatomic</td>
+            <td>本次终端激活任务需要执行的激活信息</td>
         </tr>
         <tr>
             <td>finishBlock</td>
@@ -241,7 +310,9 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
     </tbody>
 </table>
 
-#### 2.2.2 初始化方法成员
+#### 2.3.2 初始化方法成员
+
+##### 2.3.2.1 根据订单信息进行初始化
 
     - (instancetype)initWithUpayOrder:(WSUpayOrder *)upayOrder;
 
@@ -263,6 +334,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 ###### 适用性
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
+
+##### 2.3.2.2 根据订单信息和回调处理block进行初始化
 
     - (instancetype)initWithUpayOrder:(WSUpayOrder *)upayOrder
                              onFinish:(WSUpayTaskFinishBlock)finish;
@@ -289,6 +362,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 ###### 适用性
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
+
+##### 2.3.2.3 根据订单信息、预下单返回处理block和交易完成后的处理block进行初始化
 
     - (instancetype)initWithUpayOrder:(WSUpayOrder *)upayOrder
                           onPreCreate:(WSUpayTaskFinishBlock)preCreate
@@ -321,7 +396,57 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
 
-#### 2.2.3 实例方法成员
+##### 2.3.2.4 根据激活信息和回调block进行初始化
+
+    - (instancetype)initWithUpayActivationInfo:(WSUpayActivationInfo *)upayActivationInfo
+                                      onFinish:(void (^)(NSError *error))finish;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按传入的WSUpayActivationInfo，初始化WSUpayTask对象。
+
+###### 参数
+
+<table style="width: 100%;">
+    <tr>
+        <td><i>upayActivationInfo</i></td>
+        <td>收钱吧支付网关接收的激活信息对象</td>
+    </tr>
+    <tr>
+        <td><i>finish</i></td>
+        <td>激活结果返回的处理block</td>
+    </tr>
+</table>
+
+###### 返回值
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一个包含*upayActivationInfo*的WSUpayTask对象。当激活操作完成后，该对象会回调*finish*。
+
+###### 适用性
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.1.1
+
+#### 2.3.3 类（静态）方法成员
+
+##### 2.3.3.1 SDK版本接口
+
+    + (NSString *)sdkVersion;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取SDK的版本号。
+
+###### 参数
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+
+###### 返回值
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK的版本号，例如`"3.1.1"`。
+
+###### 适用性
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.1.1
+
+#### 2.3.4 实例方法成员
+
+##### 2.3.4.1 [DEPRECATED]旧版激活接口
 
     - (void)activateTerminal:(NSString *)code
                     vendorId:(NSString *)vendorId
@@ -359,6 +484,26 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
 
+##### 2.3.4.2 激活接口
+
+    - (void)activate;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向收钱吧支付网关发送终端激活请求，35秒超时。若超时未收到响应，则返回激活失败。
+
+###### 参数
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+
+###### 返回值
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+
+###### 适用性
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.1.1
+
+##### 2.3.4.3 支付（B扫C）接口
+
     - (void)pay;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向收钱吧服务器发起支付请求。若超时未收到响应，则发起查询。若规定时间内查询未果则自动冲正（撤单）。
@@ -374,6 +519,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 ###### 适用性
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
+
+##### 2.3.4.4 退款接口
 
     - (void)refund;
 
@@ -391,6 +538,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
 
+##### 2.3.4.5 查询接口
+
     - (void)query;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向收钱吧服务器发起查询订单请求
@@ -406,6 +555,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 ###### 适用性
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
+
+##### 2.3.4.6 预下单（C扫B）接口
 
     - (void)preCreate;
 
@@ -423,6 +574,8 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
 
+##### 2.3.4.7 撤单接口
+
     - (void)revoke;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向收钱吧支付网关发送撤单请求。若超时未收到响应，则发起查询并返回查询结果。
@@ -439,11 +592,47 @@ SDK任务。配置好任务后，调用相关方法，可对收钱吧的订单�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.0.0
 
-### 2.3 <a name="WSUpayResult"></a> WSUpayResult
+##### 2.3.4.8 设备激活状态接口
+
+    - (BOOL)currentDeviceActivated;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取当前设备的激活状态。
+
+###### 参数
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+
+###### 返回值
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;若当前设备已激活，返回`YES`；否则返回`NO`。
+
+###### 适用性
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.1.1
+
+##### 2.3.4.9 设备编号接口
+
+    - (NSString *)terminalSerialNumber;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取当前设备的（收钱吧）终端编号。
+
+###### 参数
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+
+###### 返回值
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;若当前设备已激活，返回该设备的（收钱吧）终端编号；否则返回`nil`。
+
+###### 适用性
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK 3.1.1
+
+### 2.4 <a name="WSUpayResult"></a> WSUpayResult
 
 SDK交易结果类，包含操作完成后返回的订单信息和交易结果。
 
-#### 2.3.1 属性成员
+#### 2.4.1 属性成员
 
 <table>
     <thead style="font-weight: bold;">
@@ -516,6 +705,12 @@ SDK交易结果类，包含操作完成后返回的订单信息和交易结果�
             <td>支付渠道（微信，支付宝等）的交易流水号</td>
         </tr>
         <tr>
+            <td>client_tsn</td>
+            <td>NSString</td>
+            <td>strong, nonatomic</td>
+            <td>商户交易序列号，不超过32字符</td>
+        </tr>
+        <tr>
             <td>finish_time</td>
             <td>double</td>
             <td>assign, nonatomic</td>
@@ -560,9 +755,9 @@ SDK交易结果类，包含操作完成后返回的订单信息和交易结果�
     </tbody>
 </table>
 
-#### 2.3.2 该类无方法成员
+#### 2.4.2 该类无方法成员
 
-### 2.4 <a name="WSUpayTaskFinishBlock"></a> WSUpayTaskFinishBlock
+### 2.5 <a name="WSUpayTaskFinishBlock"></a> WSUpayTaskFinishBlock
 
 SDK定义的处理任务结果或错误信息的block类型，WSUpayTask的`finishBlock`和`preCreateBlock`属性的类型均为该类型。该类型声明如下：
 
@@ -571,7 +766,7 @@ SDK定义的处理任务结果或错误信息的block类型，WSUpayTask的`fini
 - 当任意操作正常完成时，WSUpayTask回调时传入正常的WSUpayResult实例以及`nil`的NSError；
 - 当操作失败时，传入包含错误信息的NSError实例，并根据情况，尽可能返回WSUpayResult实例。
 
-### 2.5 <a name="WSUpayPayway"></a> WSUpayPayway
+### 2.6 <a name="WSUpayPayway"></a> WSUpayPayway
 
 SDK定义了名为WSUpayPayway的NS_ENUM，常量类型为NSInteger，方便开发者指定和判断订单的支付渠道。
 
@@ -609,10 +804,15 @@ SDK定义了名为WSUpayPayway的NS_ENUM，常量类型为NSInteger，方便开�
             <td>5</td>
             <td>京东钱包</td>
         </tr>
+        <tr>
+            <td>WSUpayPaywayQQ</td>
+            <td>6</td>
+            <td>QQ钱包</td>
+        </tr>
     </tbody>
 </table>
 
-### 2.6 <a name="WSUpaySubPayway"></a> WSUpaySubPayway
+### 2.7 <a name="WSUpaySubPayway"></a> WSUpaySubPayway
 
 SDK定义了名为WSUpaySubPayway的NS_ENUM，常量类型为NSInteger，方便开发者指定和判断订单的支付方式。
 
@@ -638,7 +838,7 @@ SDK定义了名为WSUpaySubPayway的NS_ENUM，常量类型为NSInteger，方便�
     </tbody>
 </table>
 
-### 2.7 <a name="WSUpayGeneralErrorCode"></a> WSUpayGeneralErrorCode
+### 2.8 <a name="WSUpayGeneralErrorCode"></a> WSUpayGeneralErrorCode
 
 SDK定义了名为WSUpaySubPayway的NS_ENUM，常量类型为NSInteger，方便开发者根据SDK返回的NSError中的`code`属性判断错误原因。
 
@@ -676,12 +876,17 @@ SDK定义了名为WSUpaySubPayway的NS_ENUM，常量类型为NSInteger，方便�
             <td>-10600</td>
             <td>终端设备错误代码</td>
         </tr>
+        <tr>
+            <td>WSUpayGeneralErrorCodeUnknownError</td>
+            <td>-11000</td>
+            <td>未知错误代码</td>
+        </tr>
     </tbody>
 </table>
 
-### 2.8 <a name="OtherConstants"></a> 其他常量
+### 2.9 <a name="OtherConstants"></a> 其他常量
 
-#### 2.8.1 <a name="WSUpayErrorDomains"></a> SDK自定义Error Domain
+#### 2.9.1 <a name="WSUpayErrorDomains"></a> SDK自定义Error Domain
 
 SDK定义了一组类型为NSString的Error Domains，方便开发者根据SDK返回的NSError中的`domain`属性判断错误原因。
 
@@ -727,7 +932,7 @@ SDK定义了一组类型为NSString的Error Domains，方便开发者根据SDK�
     </tbody>
 </table>
 
-#### 2.8.2 <a name="WSOrderStatus"></a> 收钱吧订单状态
+#### 2.9.2 <a name="WSOrderStatus"></a> 收钱吧订单状态
 
 SDK定义了一组类型为NSString的订单状态常量，方便开发者根据SDK返回的WSUpayResult中的`order_status`属性判断当前收钱吧订单的状态。
 
@@ -800,16 +1005,16 @@ SDK定义了一组类型为NSString的订单状态常量，方便开发者根据
 
 <br />
 
-## 4. <a name="tutorial"></a> 开发指引及示例
+## 3. <a name="tutorial"></a> 开发指引及示例
 
-### 4.1 激活
+### 3.1 [DEPRECATED] 旧版激活
 
-激活操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
+**从3.1.1开始，旧版激活接口仅支持无界面模式，不再支持标准界面模式。**~~激活操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。~~
 
 WSUpayTask实例的`activateTerminal`方法的`code`参数是由收钱吧提供的设备激活码，用于激活该设备作为收钱吧服务的终端。而`vendorId`和`vendorKey`是验证服务商身份的重要凭证，由开发者和服务商管理，请在应用内确保其安全性。`finish`参数是处理激活结果的block。当激活成功时，SDK会回调block并传入`nil`；激活失败时，SDK会回调block并传入包含错误信息的NSError实例。
 
 - 无界面模式下，激活方法的所有参数均为必选，若缺少`code`，`vendorId`或`vendorKey`，方法会回调并返回参数错误；若缺少`finish`，则不进行任何操作。
-- 标准界面模式下，激活方法忽略`code`参数，由输入控件的输入值作为激活码；`vendorId`或`vendorKey`为必填，否则进行激活时会回调并返回参数错误；若缺少`finish`，则不进行任何操作。
+- ~~标准界面模式下，激活方法忽略`code`参数，由输入控件的输入值作为激活码；`vendorId`或`vendorKey`为必填，否则进行激活时会回调并返回参数错误；若缺少`finish`，则不进行任何操作。~~
 
 #### 示例代码
 
@@ -829,8 +1034,7 @@ WSUpayTask实例的`activateTerminal`方法的`code`参数是由收钱吧提供�
      */
     - (void)activateTerminal {
         _upayTask = [[WSUpayTask alloc] init];
-        _upayTask.needsUserInterface = YES; // 启用标准界面模式
-        _upayTask.baseViewController = self;
+        _upayTask.needsUserInterface = NO; // 启用无界面模式
         _upayTask.devMode = YES; // 使用开发模式
         [_upayTask activateTerminal:@"123456"
                            vendorId:@"someid"
@@ -848,7 +1052,105 @@ WSUpayTask实例的`activateTerminal`方法的`code`参数是由收钱吧提供�
     
     @end
 
-### 4.2 支付
+### 3.2 激活
+
+激活操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
+
+WSUpayTask实例的`activate`方法调用前，需要利用激活信息初始化方法指定设备的激活信息（`upayActivationInfo`）和回调处理block（`finish`）。
+
+`upayActivationInfo`的`code`属性是由收钱吧提供的设备激活码（可由商户在商户服务平台2.0上自行生成或由收钱吧运营代为生成），用于激活该设备作为收钱吧服务的终端。而`vendor_sn`和`vendor_key`是验证服务商身份的重要凭证，由开发者和服务商管理，请在应用内确保其安全性。`vendor_app_id`是为了在服务商开发了多款基于收钱吧SDK的应用产品时便于区分和管理。`client_sn`和`name`是为了便于服务商或商户对激活好的终端进行辨认。
+
+`finish`参数是处理激活结果的block。当激活成功时，SDK会回调block并传入`nil`；激活失败时，SDK会回调block并传入包含错误信息的NSError实例。若缺少`finish`，则`activate`方法不执行任何操作。
+
+#### 激活参数
+
+WSUpayActivationInfo的属性中有关支付操作的属性如下：
+
+<table>
+    <thead style="font-weight: bold;">
+        <tr>
+            <td>属性</td>
+            <td>无界面模式</td>
+            <td>标准界面模式</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>vendor_sn</td>
+            <td><b>必填</b></td>
+            <td><b>必填</b></td>
+        </tr>
+        <tr>
+            <td>vendor_key</td>
+            <td><b>必填</b></td>
+            <td><b>必填</b></td>
+        </tr>
+        <tr>
+            <td>vendor_app_id</td>
+            <td><b>必填</b></td>
+            <td><b>必填</b></td>
+        </tr>
+        <tr>
+            <td>code</td>
+            <td><b>必填</b></td>
+            <td>代码无需填写，界面输入框<b>必填</b></td>
+        </tr>
+        <tr>
+            <td>client_sn</td>
+            <td>选填</td>
+            <td>代码无需填写，界面输入框选填</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>选填</td>
+            <td>代码无需填写，界面输入框选填</td>
+        </tr>
+    </tbody>
+</table>
+
+#### 示例代码
+
+    #import "ViewController.h"
+    #import <WSUpayKit/WSUpayKit.h>
+    
+    @interface ViewController
+    
+    @property (strong, nonatomic) WSUpayTask *upayTask;
+
+    @end
+
+    @implementation ViewController
+    
+    /**
+     @brief 利用SDK激活该设备，以便进行交易
+     */
+    - (void)activateTerminal {
+        WSUpayActivationInfo *upayActivationInfo = [[WSUpayActivationInfo alloc] init];
+        upayActivationInfo.vendor_sn = @"someSn";
+        upayActivationInfo.vendor_key = @"someKey";
+        upayActivationInfo.vendor_app_id = @"someId";
+        // upayActivationInfo.code = @"someCode"; // 无界面模式下需要预先指定激活码
+        // upayActivationInfo.client_sn = @"someClientSn"; // 无界面模式下需要预先指定商户终端编号
+        // upayActivationInfo.name = @"someName"; // 无界面模式下需要预先指定终端名称
+        _upayTask = [[WSUpayTask alloc] initWithUpayActivationInfo:upayActivationInfo
+                                                          onFinish:^(NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error) {
+                    // 激活失败，展示激活失败结果
+                } else {
+                    // 激活成功，展示激活成功结果
+                }
+            });
+        }];
+        _upayTask.needsUserInterface = YES; // 启用标准界面模式
+        _upayTask.baseViewController = self;
+        _upayTask.devMode = YES; // 使用开发模式
+        [_upayTask activate];
+    }
+    
+    @end
+
+### 3.3 支付
 
 支付操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
 
@@ -964,7 +1266,7 @@ WSUpayOrder的属性中有关支付操作的属性如下：
     
     @end
 
-### 4.3 退款
+### 3.4 退款
 
 退款操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
 
@@ -1071,7 +1373,7 @@ WSUpayOrder的属性中有关退款操作的属性如下：
     
     @end
 
-### 4.4 预下单
+### 3.5 预下单
 
 预下单操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
 
@@ -1196,7 +1498,7 @@ WSUpayOrder的属性中有关预下单操作的属性如下：
     
     @end
 
-### 4.5 查询
+### 3.6 查询
 
 查询操作仅支持无界面开发模式。开发者仅需传入WSUpayOrder实例，并指定其收钱吧订单号（`sn`）或商户订单号（`client_sn`）属性。若都未指定，则SDK直接返回参数错误。
 
@@ -1264,7 +1566,7 @@ WSUpayOrder的属性中有关查询操作的属性如下：
 
 <br />
 
-### 4.6 撤单
+### 3.7 撤单
 
 撤单操作提供了无界面和标准界面两种开发模式。当指定`needsUserInterface`为`YES`且`baseViewController`为当前的ViewController时，则启用标准界面模式；否则启用无界面模式。
 
@@ -1350,9 +1652,9 @@ WSUpayOrder的属性中有关撤单操作的属性如下：
     
     @end
 
-## 5 <a name="Appendix"></a> 附录
+## 4 <a name="Appendix"></a> 附录
 
-### 5.1 <a name="devMode"></a> 开发模式
+### 4.1 <a name="devMode"></a> 开发模式
 
 为了方便开发者进行调试，SDK提供了 **开发模式** 。开发模式下，设备端和服务器端都采用开发环境的数据和参数。这样可以避免开发者因开发调试而影响到正式环境的商户交易数据。因此，收钱吧建议开发者在开发调试和发布测试版本时，采用开发模式；在发布正式版本时，则采用非开发模式。
 
@@ -1361,15 +1663,15 @@ SDK在[WSUpayTask](#WSUpayTask)中提供了`devMode`属性。该属性决定当�
 - SDK将调用收钱吧开发环境服务器，所有交易数据保存在开发环境，与正式环境隔离；
 - SDK将使用开发环境的终端配置。这意味着如果开发者在开发模式下成功激活某台设备后，切换到非开发模式下，该设备仍处于未激活状态。
 
-### 5.2 <a name="noUI"></a> 无界面模式
+### 4.2 <a name="noUI"></a> 无界面模式
 
 如果开发者产品设计和开发能力较强，且希望最大程度自定义用户界面和交互流程，可以选择无界面开发模式。该模式下，所有操作均不会展示SDK自带的用户界面，而仅通过回调与集成SDK的应用沟通。有关如何开启或关闭无界面模式，请参考[开发指引及示例](#tutorial)。
 
-### 5.3 <a name="withUI"></a> 标准界面模式
+### 4.3 <a name="withUI"></a> 标准界面模式
 
 如果开发者不希望投入过多成本，且希望使用标准化用户界面和交互流程，可以选择标准界面开发模式。该模式下，除查询操作以外，均会展示SDK自带的用户界面。该模式可以极大降低开发和维护成本，同时保证用户使用SDK的体验。有关如何开启或关闭标准界面模式，请参考[开发指引及示例](#tutorial)。
 
-### 5.6 SDK返回错误处理
+### 4.4 SDK返回错误处理
 
 SDK在操作过程中遇到任何异常时，会将错误信息通过回调方式传递NSError实例给开发者处理。SDK同时定义了一系列[错误代码](#WSUpayGeneralErrorCode)及[Error Domain](#WSUpayErrorDomains)分别作为NSError实例的`code`和`domain`的值，以便开发者判断错误的原因。
 
@@ -1408,7 +1710,7 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
         </tr>
         <tr>
             <td>WSUpayUnknownErrorDomain</td>
-            <td>-10500<br />或其他</td>
+            <td>-10500<br />-11000<br />或其他</td>
             <td>未知错误。出现该错误时，操作最终结果未知。当收款或退款时遇到该错误，建议开发者提示用户联系收钱吧客服。调试时可检查<code>userInfo</code>属性确认错误原因。</td>
         </tr>
     </tbody>
@@ -1416,9 +1718,9 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
 
 除以上错误信息以外，在遇到网络通信错误、JSON解析错误和Keychain错误等异常时，SDK还会返回`domain`为`NSURLErrorDomain`、`NSCocoaErrorDomain`和`com.samsoffes.sskeychain`的NSError实例。
 
-## 6. <a name="FAQs"></a> 常见问题
+## 5. <a name="FAQs"></a> 常见问题
 
-#### 1. 在支付、预下单或退款时，为何未收到任何回调？
+#### 5.1 在支付、预下单或退款时，为何未收到任何回调？
 
 **解决方案：**
 
@@ -1433,7 +1735,7 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
 
 **注：如果您在开发时遇到任何问题需要咨询，请 [联系我们](#Contact)**
 
-## 7. <a name="Contact"></a> 联系我们
+## 6. <a name="Contact"></a> 联系我们
 
 如果您在使用SDK进行开发时遇到任何问题，请及时联系收钱吧。联系方式为：
 
@@ -1441,7 +1743,7 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
 
 **收钱吧运营&客服：**<shou@wosai-inc.com>
 
-## 8. <a name="ChangeLog"></a> 版本记录
+## 7. <a name="ChangeLog"></a> 版本记录
 
 <table>
     <thead style="font-weight: bold;">
@@ -1471,6 +1773,11 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
             <td>0.1.3</td>
             <td>2016年2月1日</td>
             <td>更新SDK版本为3.0.0，更新联系方式，正式发布</td>
+        </tr>
+        <tr>
+            <td>0.2.0</td>
+            <td>2016年9月20日</td>
+            <td>更新SDK版本为3.1.1。<ul><li>WSUpayPayway新增QQ钱包；</li><li>新增WSUpayActivitionInfo类；</li><li>WSUPayTask新增upayActivationInfo属性及对应的初始化方法；</li><li>WSUpayTask新增新版激活接口，废弃原有激活接口（原有激活接口仍可用，但不再支持标准界面模式）；</li><li>WSUpayTask新增获取设备编号、激活状态和SDK版本信息的接口；</li><li>WSUpayResult新增client_tsn属性；</li><li>WSUpayGeneralErrorCode新增WSUpayGeneralErrorCodeUnknownError（未知错误，-11000）；</li><li>所有交易的标准界面模式下，若遇到交易异常，提示错误信息后会自动退出当前界面；</li><li>预下单查询时间延长至4分钟；</li><li>修复支付网关返回特定错误时SDK崩溃的问题。</li></ul></td>
         </tr>
     </tbody>
 </table>
