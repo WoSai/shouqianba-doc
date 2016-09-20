@@ -279,7 +279,7 @@ extended | Extended paramters | JSON object | N | Special parameters that will b
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
 
-<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.</b></font>
+<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new <code>client_sn</code>. Otherwise Upay system will complain about duplicate <code>client_sn</code>.</b></font>
 
 * Response Parameters
 
@@ -404,7 +404,7 @@ refund_request_no | Refund request number | String(20) | Y | Used to prevent dup
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
 refund_amount | Refund amount | String(10) | Y | Should be less or equal to the total amount of the order | "100"
 
-<font color="red"><b>Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.</b></font>
+<font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
 
 * Response Paramters
 
@@ -456,7 +456,7 @@ terminal_sn | Terminal serial number | String(32) | Y | Represents a unique iden
 sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
-<font color="red"><b>Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.</b></font>
+<font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
 
 * Response Paramters
 
@@ -496,7 +496,7 @@ terminal_sn | Terminal serial number | String(32) | Y | Represents a unique iden
 sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
-<font color="red"><b>Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.</b></font>
+<font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
 
 * Response Paramters
 
@@ -549,7 +549,7 @@ terminal_sn | Terminal serial number | String(32) | Y | Represents a unique iden
 sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 
-<font color="red"><b>Note: Either `sn` or `client_sn` must be presented in the request, otherwise the request is invalid; if both are presented, `sn` will be used to identify the order.</b></font>
+<font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
 
 * Response Paramters
 
@@ -612,7 +612,7 @@ extended | Extended paramters | JSON object | N | Special parameters that will b
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
 
-<font color="red"><b>*: `client_sn` must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new `client_sn`. Otherwise Upay system will complain about duplicate `client_sn`.</b></font>
+<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new <code>client_sn</code>. Otherwise Upay system will complain about duplicate <code>client_sn</code>.</b></font>
 
 * Response Parameters
 
@@ -743,7 +743,7 @@ FAIL_ERROR | After a failed payment transaction, Upay automatically initiates a 
 CANCEL_ERROR | A cancallation requested by client is initiated but failed | Same as FAIL_PROTOCOL_1
 REFUND_ERROR | A refund requested by client is initiated but failed | Same as FAIL_PROTOCOL_1	
 
-<font style="color:red;"><b>Note: If Upay responds with `FAIL*` status, the transaction is guaranteed to be failed, no matter what result the customer gets. If the customer does pay successfully, Upay system will eventually make sure the cancellation of this transaction. Please do not make deal in this situation, and contact our customer service to avoid any possible financial loss.</b></font>
+<font style="color:red;"><b>Note: If Upay responds with <code>FAIL*</code> status, the transaction is guaranteed to be failed, no matter what result the customer gets. If the customer does pay successfully, Upay system will eventually make sure the cancellation of this transaction. Please do not make deal in this situation, and contact our customer service to avoid any possible financial loss.</b></font>
 
 #### Payment Service Providers
 
