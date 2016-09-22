@@ -1,5 +1,6 @@
 # 微信公众号支付 wap 收银台
 
+**激活接口用于通过终端激活码（code）来获取终端号（terminal_sn）和终端密钥（terminal_key），以用于调用wap支付接口时的签名。激活接口对于同一台终端，只需要调用一次，调用wap支付之前需要先进行激活获取terminal_sn和terminal_key。激活接口调用方法就是api对接文档里的激活接口调用。**
 ##网关地址
 https://m.wosai.cn/qr/gateway
 
