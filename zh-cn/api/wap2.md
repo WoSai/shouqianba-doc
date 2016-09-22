@@ -116,3 +116,14 @@ stringA="client_sn=123&terminal_sn=123&total_amount=1"
 stringSignTemp = "stringA&key=19b820737ace6937a7808c"
 md5生成sign
 sign = md5(stringSignTemp).toUpperCase()
+
+##注：
+  需要使用微信浏览器，使用302跳转的方式访问https://m.wosai.cn/qr/gateway
+  示例：
+  <?php
+
+$paramsStr = "client_sn=***&operator=TEST&return_url=***&subject=TEST&terminal_sn=***&total_amount=*";
+$sign = strtoupper(md5($paramsStr.'&key=**********'));
+$paramsStr = $paramsStr."&sign=".$sign;
+
+header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
