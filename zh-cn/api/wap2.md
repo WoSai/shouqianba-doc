@@ -122,8 +122,8 @@ sign = md5(stringSignTemp).toUpperCase()
   示例：
   <?php
 
-$paramsStr = "client_sn=***&operator=TEST&return_url=***&subject=TEST&terminal_sn=***&total_amount=*";
-$sign = strtoupper(md5($paramsStr.'&key=**********'));
+$paramsStr = "client_sn=test&operator=TEST&return_url=test&subject=TEST&terminal_sn=test&total_amount=3";
+$sign = strtoupper(md5($paramsStr.'&key=test'));
 $paramsStr = $paramsStr."&sign=".$sign;
 
 header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
