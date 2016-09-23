@@ -24,7 +24,7 @@
 3. 交易
 
 ##API接口文档及常见问题说明文档
-[API接口文档](webapiinterface.md)
+[API接口文档](apiinterface.md)
 
 [API对接常见问题说明文档](api/Q&A-技术-Web API.md)
 ## 激活 
