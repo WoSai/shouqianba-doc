@@ -12,7 +12,7 @@
     * [接入流程](sdk/flow.md)
     * [业务流程](sdk/business.md)
     * [Windows SDK](sdk/windows.md)
-    * [Windows SDK Q&A](sdk/Q&A-技术-SDK API.md)
+    * [Windows SDK 常见问题](sdk/Q&A-技术-SDK API.md)
     * [iOS SDK](sdk/ios.md)
     * [Android SDK](sdk/android.md)
 
@@ -20,7 +20,7 @@
     * [映射代理](proxy/webproxy-auto.md)
     * [非映射代理](proxy/webproxy.md)
 
-* [开发者Q&A]()
-    * [产品Q&A](Q&A-产品.md)
-    * [技术Q&A](Q&A-技术.md)
-    * [返回码Q&A](Q&A-返回码.md)
+* [开发者常见问题说明]()
+    * [产品常见问题说明](Q&A-产品.md)
+    * [技术对接常见问题说明](Q&A-技术.md)
+    * [响应返回码说明](Q&A-返回码.md)
