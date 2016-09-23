@@ -1,13 +1,12 @@
 # Summary
 
 * [Web API接入指南](api/README.md)
-    * [接入流程](api/flow.md)
-    * [业务流程](api/business.md)
-    * [支付类API说明](api/core.md)
-    * [业务类API说明](api/admin.md)
+    * [Web API对接流程文档](api/apiflow.md)
+    * [Web API对接接口文档](api/apiinterface.md)
+    * [Web API 对接常见问题](api/Q&A-技术-Web API.md)
     * [WAP支付接入说明](api/wap.md)
     * [WAP2.0支付接入说明](api/wap2.md)
-    * [Web API Q&A](api/Q&A-技术-Web API.md)
+    
 
 * [SDK接入指南](sdk/README.md)
     * [接入流程](sdk/flow.md)
