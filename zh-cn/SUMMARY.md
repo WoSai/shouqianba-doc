@@ -5,7 +5,7 @@
     * [Web API对接接口文档](api/apiinterface.md)
     * [Web API 对接常见问题](api/Q&A-技术-Web API.md)
     * [WAP支付接入说明](api/wap.md)
-    * [WAP2.0支付接入说明](api/wap2.md)
+    * [WAP API PRO支付接入说明](api/wap2.md)
     
 
 * [SDK接入指南](sdk/README.md)
