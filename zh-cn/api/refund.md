@@ -65,6 +65,7 @@ operator|	操作员	|String(32)|Y|执行本次退款的操作员|"Obama"
     ```
 
 2.退款失败
+
     ```json
     {
         "result_code": "200",
