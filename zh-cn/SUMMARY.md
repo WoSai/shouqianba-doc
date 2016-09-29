@@ -12,7 +12,7 @@
        * [查询接口](api/interface/query.md)
        * [上传日志接口](api/interface/uploadLog.md)
     * [WAP支付接入说明](api/wap.md)
-    * [WAP API PRO支付接入说明](api/wap2.md)
+    * [WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)
     
 
 * [SDK接入指南](sdk/README.md)
