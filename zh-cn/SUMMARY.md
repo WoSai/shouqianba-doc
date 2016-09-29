@@ -10,7 +10,7 @@
        * [退款接口](api/interface/refund.md)
        * [撤单接口](api/interface/revoke&cancel.md)
        * [查询接口](api/interface/query.md)
-       * [上传日志接口](api/interface/unloadLog.md)
+       * [上传日志接口](api/interface/uploadLog.md)
     * [WAP支付接入说明](api/wap.md)
     * [WAP API PRO支付接入说明](api/wap2.md)
     
