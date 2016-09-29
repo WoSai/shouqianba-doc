@@ -2,8 +2,15 @@
 
 * [Web API接入指南](api/README.md)
     * [Web API对接流程文档](api/apiflow.md)
-    * [Web API对接接口文档](api/apiinterface.md)
-    * [Web API 对接常见问题](api/Q&A-技术-Web API.md)
+    * [Web API对接接口列表](api/Q&A-技术-Web API.md)
+       * [激活接口](api/interface/activate.md)
+       * [签到接口](api/interface/checkin.md)
+       * [支付接口](api/interface/pay.md)
+       * [预下单接口](api/interface/precreate.md)
+       * [退款接口](api/interface/refund.md)
+       * [撤单接口](api/interface/revoke&cancel.md)
+       * [查询接口](api/interface/query.md)
+       * [上传日志接口](api/interface/unloadLog.md)
     * [WAP支付接入说明](api/wap.md)
     * [WAP API PRO支付接入说明](api/wap2.md)
     
