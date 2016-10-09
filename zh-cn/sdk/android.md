@@ -159,10 +159,13 @@ UpayTask.getInstance()
 * @param code 激活码内容
 * @param vendor_id 服务商 ID
 * @param vendor_key 服务商 KEY 
+* @param appId 服务商应用ID
+* @param deviceSn 设备号
+* @param deviceName 设备名称
 * @param payModel 支付模式
 * @param callBack 请求回调
 */
-public void activate(String code, String vendor_id, String vendor_key, UpayOrder.PayModel payModel, UpayCallBack callBack)
+public void activate(String code, String vendor_id, String vendor_key,String appId,String deviceSn,String deviceName, UpayOrder.PayModel payModel, UpayCallBack callBack)
 
 ```
 
@@ -316,8 +319,10 @@ FAIL|操作失败（不会触发流程）|
 ```java
 String vendorId = "10298371039";//服务商 ID
 String vendorKey = "68d499beda5f72116592f5c527465656";//服务商 KEY
- 
-UpayTask.getInstance().activate("", vendorId, vendorKey,
+String appId="12313123223";  //服务商应用ID
+String deviceSn="213213343323"; //商户设备号，在商户下要唯一，非必传
+String deviceName="设备名"; //商户设备名，非必传
+UpayTask.getInstance().activate("", vendorId, vendorKey, appId, deviceSn, deviceName
 UpayOrder.PayModel.UI, new UpayCallBack() { 
 	@Override
 	public void onExecuteResult(UpayResult result) {
@@ -409,8 +414,11 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 String code = "131451574136";//激活码
 String vendorId = "10298371039";//服务商 ID
 String vendorKey = "68d499beda5f72116592f5c527465656";//服务商 KEY
+String appId="12313123223";  //服务商应用ID
+String deviceSn="213213343323"; //商户设备号，在商户下要唯一，非必传
+String deviceName="设备名"; //商户设备名，非必传
 
-UpayTask.getInstance().activate(code, vendorId, vendorKey,
+UpayTask.getInstance().activate(code, vendorId, vendorKey,appId,deviceSn, deviceName
 UpayOrder.PayModel.NO_UI, new UpayCallBack() { 
 	@Override
 	public void onExecuteResult(UpayResult result) {
@@ -513,9 +521,4 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 如以上信息无法帮助你解决在开发中遇到的问题,请通过一下方式联系我们 邮箱:sdk@wosai-inc.com
 我们的工程师会在第一时间回复您。
 
-##8.版本记录
-版本|日期|作者|说明
----|---|---|---
-V2.1.0|2016/01/25|叶金新|初稿
-V2.1.1|2016/01/28|叶金新|更新激活接口,增加 revoke 接口说明
 
