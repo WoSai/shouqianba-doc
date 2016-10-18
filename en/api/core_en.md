@@ -680,7 +680,7 @@ Value | Description | Indication
 <font color="red">SUCCESS</font> | Transaction (such as query) successful | 
 <font color="red">FAIL</font> | Transaction failed (will not affect order status) | 
 
-#### Business Response Error Codes and Messages {##business_errors}
+#### Business Response Error Codes and Messages {#business_errors}
 
 `biz_response.error_code` and `biz_response.error_message` (currently Chinese only) are returned when requested transaction fails. Possible values are as follows:
 
