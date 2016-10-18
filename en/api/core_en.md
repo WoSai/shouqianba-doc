@@ -12,7 +12,7 @@ error_message | Request error message | String. See "Request Error Codes and Mes
 biz_response | Business response data | Object | Returned only when request **succeeds**
 biz_response.result_code | Result code of business response | String. See "Business Response Result Codes" |
 biz_response.error_code | Error code of business response | String. See "Business Response Error Codes and Messages" | Returned only when **error occurs** during business process
-biz_response.error_message | Error message of business response | String. See [Business Response Error Codes and Messages](#business_errors) | Returned only when **error occurs** during business process
+biz_response.error_message | Error message of business response | String. See "Business Response Error Codes and Messages" | Returned only when **error occurs** during business process
 biz_response.data.sn | Upay order serial number | 16 digit number string | Returned only when business process is **successfully completed**
 biz_response.data.client_sn | Order serial number in client system | String | Returned only when business process is **successfully completed**
 biz_response.data.status | The latest transaction status | String. See "Transaction Status" | Returned only when business process is **successfully completed**
