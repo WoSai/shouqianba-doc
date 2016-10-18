@@ -38,5 +38,5 @@ All requests must be signed as instructed below:
 * For other requests (checkin, pay, refund, query, etc.), please use `terminalSn` and `terminalKey` returned in successful activation or checkin responses.
 
 ## Demo Source Code
-* Python：[Demo github Link=>] https://github.com/WoSai/shouqianba-webapi-pythondemo
+* Python：[Github](https://github.com/WoSai/shouqianba-webapi-pythondemo) [TEST](core_en.md#business_errors)
 * Java：[Demo github Link=>] https://github.com/WoSai/shouqianba-webapi-javademo
