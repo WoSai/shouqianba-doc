@@ -142,7 +142,7 @@ header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
 
 
 ## wap支付接入常见问题
-### 1.使用wap支付，需要在微信后台配置https://m.wosai.cn/qr/这个地址。具体配置流程：
+### 1.使用wap支付，需要在微信后台配置https://m.wosai.cn/qr/ 这个地址。具体配置流程：
     1）登录微信公众号后台（https://mp.weixin.qq.com/)，点击左侧的微信支付，再点击开发配置，点击修改
     2）进入之后，勾选“JS API网页支付”，填写相关信息：支付授权目录：https://m.wosai.cn/qr/
        共享收货地址选择“是”，告警通知URL开发者自己填写。
