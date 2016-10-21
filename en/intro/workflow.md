@@ -14,7 +14,7 @@ Now, you are ready to use Upay services.
 
 ## Step 3 - Develop and Test Your Client Application
 
-To help you develop your client application utilizing Upay services, we provide [Upay Web API](../api/index.md), Upay SDK and Web Proxy (Documentation is not yet ready in English for Upay SDK and Web Proxy). <!--For a detailed explanation and comparison of the three, please refer to the [Integration Options](integration_options.md).-->
+To help you develop your client application utilizing Upay services, we provide [Upay Web API](/api/index.md), Upay SDK and Web Proxy (Documentation is not yet ready in English for Upay SDK and Web Proxy). <!--For a detailed explanation and comparison of the three, please refer to the [Integration Options](integration_options.md).-->
 
 Once you decide on a implementation plan, Upay will provide relevant technical support resources to guide you through the development phase.
 
