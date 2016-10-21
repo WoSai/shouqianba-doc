@@ -42,13 +42,13 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 ### Response Example - Failed
 
-    ```json
-    {
-        "result_code": "200",
-        "biz_response": {
-            "result_code": "FAIL",
-            "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
-            "error_message": "订单已全额退款,可退金额不足"
-        }
+```json
+{
+    "result_code": "200",
+    "biz_response": {
+        "result_code": "FAIL",
+        "error_code": "UPAY_REFUND_INVALID_ORDER_STATE",
+        "error_message": "订单已全额退款,可退金额不足"
     }
-    ```
+}
+```

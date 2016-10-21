@@ -40,13 +40,13 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 ### Response Example - Failed
 
-    ```json
-    {
-        "result_code": "200",
-        "biz_response": {
-            "result_code": "CANCEL_ERROR",
-            "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
-            "error_message": "订单7894259244061958参与了活动并且无法撤销"
-        }
+```json
+{
+    "result_code": "200",
+    "biz_response": {
+        "result_code": "CANCEL_ERROR",
+        "error_code": "UPAY_TCP_ORDER_NOT_REFUNDABLE",
+        "error_message": "订单7894259244061958参与了活动并且无法撤销"
     }
-    ```
+}
+```
