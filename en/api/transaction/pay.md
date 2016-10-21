@@ -54,78 +54,79 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
 
 ### Response Example - Failed
 
-    ```json
-    {
-        "result_code": "400",
-        "error_code": "INVALID_PARAMS",
-        "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
-    }
-    ```
+```json
+{
+    "result_code": "400",
+    "error_code": "INVALID_PARAMS",
+    "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
+}
+```
 
 ### Client Pseudo-code Example
 
-    ```python
-    Sub pay(request, timeout):
-      Try:
-        response = POST (pay_url, request)
-      Except NetworkConnectError ex:
-        raise ("Network error", ex)
-      Except NetworkIOError ex:
-        return poll (request.client_sn, timeout)
-      handle_response_error(response)
-      biz_response = response.biz_response
-      if biz_response.result_code == "PAY_SUCCESS":
+```python
+Sub pay(request, timeout):
+  Try:
+    response = POST (pay_url, request)
+  Except NetworkConnectError ex:
+    raise ("Network error", ex)
+  Except NetworkIOError ex:
+    return poll (request.client_sn, timeout)
+  handle_response_error(response)
+  biz_response = response.biz_response
+  if biz_response.result_code == "PAY_SUCCESS":
+    return ("Payment received", response)
+  elif biz_response.result_code == "PAY_FAIL":
+    return ("Payment failed and refunded, please retry", response)
+  elif biz_response.result_code == "PAY_FAIL_ERROR":
+    raise ("Payment error, please contact Upay customer service", response)
+  elif biz_response.result_code == "FAIL":
+    raise ("Payment failed and no transaction was made", response)
+  else:
+    return poll(request.client_sn, timeout)
+
+Sub poll(client_sn, remaining_time):
+  if remaining_time < 0:
+    Try:
+      response = POST(cancel_url, client_sn)
+    Except NetworkError ex:
+      raise "Order cancellation failed due to network error, please contact Upay customer service", ex
+    handle_response_error(response)
+    result_code = response.biz_response.result_code
+    error_code = response.biz_response.error_code
+    if result_code == "CANCEL_SUCCESS" or 
+       result_code == "CANCEL_ABORT_SUCCESS":
+      return ("Order expired and has been canceled", response)
+    elif result_code == "FAIL" and error_code == "UPAY_ORDER_NOT_EXISTS":
+      return ("Order expired and does not require cancellcation", response)
+    else:
+      raise ("Order cancellation error, please contact Upay customer service", response)
+  else:
+    stopwatch.start()
+    Try
+      response = POST(query_url, client_sn)
+    Except NetworkError ex:
+      sleep(5)
+      return poll(client_sn, remaining_time – stopwatch.reading())
+    handle_reponse_error(response)
+    biz_response = response.biz_response
+    if biz_response.result_code == "FAIL" and
+       biz_response.error_code == "UPAY_ORDER_NOT_EXISTS":
+      return ("Order payment failed and does not require cancellcation", response)
+    elif biz_response.result_code == "SUCCESS":
+      if biz_response.data.order_status == "CREATED":
+        sleep(5)
+        return poll(client_sn, remaining_time – stopwatch.reading())
+      elif biz_response.data.order_status == "PAID":
         return ("Payment received", response)
-      elif biz_response.result_code == "PAY_FAIL":
+      elif biz_response.data.order_status == "PAY_CANCELED":
         return ("Payment failed and refunded, please retry", response)
-      elif biz_response.result_code == "PAY_FAIL_ERROR":
-        raise ("Payment error, please contact Upay customer service", response)
-      elif biz_response.result_code == "FAIL":
-        raise ("Payment failed and no transaction was made", response)
-      else:
-        return poll(request.client_sn, timeout)
-    
-    Sub poll(client_sn, remaining_time):
-      if remaining_time < 0:
-        Try:
-          response = POST(cancel_url, client_sn)
-        Except NetworkError ex:
-          raise "Order cancellation failed due to network error, please contact Upay customer service", ex
-        handle_response_error(response)
-        result_code = response.biz_response.result_code
-        error_code = response.biz_response.error_code
-        if result_code == "CANCEL_SUCCESS" or 
-           result_code == "CANCEL_ABORT_SUCCESS":
-          return ("Order expired and has been canceled", response)
-        elif result_code == "FAIL" and error_code == "UPAY_ORDER_NOT_EXISTS":
-          return ("Order expired and does not require cancellcation", response)
-        else:
-          raise ("Order cancellation error, please contact Upay customer service", response)
-      else:
-        stopwatch.start()
-        Try
-          response = POST(query_url, client_sn)
-        Except NetworkError ex:
-          sleep(5)
-          return poll(client_sn, remaining_time – stopwatch.reading())
-        handle_reponse_error(response)
-        biz_response = response.biz_response
-        if biz_response.result_code == "FAIL" and
-           biz_response.error_code == "UPAY_ORDER_NOT_EXISTS":
-          return ("Order payment failed and does not require cancellcation", response)
-        elif biz_response.result_code == "SUCCESS":
-          if biz_response.data.order_status == "CREATED":
-            sleep(5)
-            return poll(client_sn, remaining_time – stopwatch.reading())
-          elif biz_response.data.order_status == "PAID":
-            return ("Payment received", response)
-          elif biz_response.data.order_status == "PAY_CANCELED":
-            return ("Payment failed and refunded, please retry", response)
-          elif biz_response.data.order_status == "PAY_ERROR":
-            return ("Payment error, please contact Upay customer service", response)
-    
-    Sub handle_response_error(response):
-      if response.result_code == "400":
-        raise ("Please contact terminal manufacturer", response.error_message)
-      elif response.result_code == "500":
-        raise ("Payment error, please contact Upay customer service", response.error_message)
+      elif biz_response.data.order_status == "PAY_ERROR":
+        return ("Payment error, please contact Upay customer service", response)
+
+Sub handle_response_error(response):
+  if response.result_code == "400":
+    raise ("Please contact terminal manufacturer", response.error_message)
+  elif response.result_code == "500":
+    raise ("Payment error, please contact Upay customer service", response.error_message)
+```
