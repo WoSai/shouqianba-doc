@@ -2,7 +2,8 @@
 
 * [Web API接入指南](api/README.md)
     * [Web API对接流程文档](api/apiflow.md)
-    * [Web API对接接口列表](api/Q&A-技术-Web API.md)
+    * [对接过程注意事项](api/Q&A-技术-Web API.md)
+    * [Web API对接接口列表]()
        * [激活接口](api/interface/activate.md)
        * [签到接口](api/interface/checkin.md)
        * [支付接口](api/interface/pay.md)
