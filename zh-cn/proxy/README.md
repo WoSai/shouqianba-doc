@@ -83,6 +83,10 @@ Web Proxy支持两种对接方式：
 - 撤单：`{api_domain}/proxy/revoke`
 - 查询：`{api_domain}/proxy/query`
 - 二维码预下单：`{api_domain}/proxy/preCreate`
-
+#### WebProxy下载
+ * WebProxy:[下载最新版WebProxy](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/proxy-server.zip)
+ 
 [image-1]:	http://images.wosaimg.com/b0/490f0909a58ef7537d608ffe080e87d5643698.png
 [image-2]:	http://images.wosaimg.com/bd/4630bf968fbc8801a0fab4e17860517fb36f34.png
+
+
