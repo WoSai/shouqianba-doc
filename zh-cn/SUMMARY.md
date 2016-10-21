@@ -2,7 +2,7 @@
 
 * [Web API接入指南](api/README.md)
     * [Web API对接流程文档](api/apiflow.md)
-    * [对接过程注意事项](api/Q&A-技术-Web API.md)
+    * [对接过程注意事项](api/Q&A-技术-Web API.md)
     * [Web API对接接口列表]()
        * [激活接口](api/interface/activate.md)
        * [签到接口](api/interface/checkin.md)
@@ -13,7 +13,7 @@
        * [查询接口](api/interface/query.md)
        * [上传日志接口](api/interface/uploadLog.md)
     * [WAP支付接入说明](api/wap.md)
-    * [WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)
+* [WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)
     
 
 * [SDK接入指南](sdk/README.md)
