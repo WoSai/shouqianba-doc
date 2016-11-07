@@ -38,6 +38,7 @@ channel\_finish_time	|退款动作在支付平台完成的时间|String(13)|	Y	|
 subject|	商品概述	|String(32)	|Y|交易时候的商品概述| "wx"
 operator|	操作员	|String(32)|Y|执行本次退款的操作员|"Obama"
 
+返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
 
 ## 退款返回示例
 1. 退款成功
