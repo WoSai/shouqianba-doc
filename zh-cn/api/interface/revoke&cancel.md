@@ -37,6 +37,7 @@ channel\_finish_time	|上次操作在支付平台完成的时间|String(13)|	Y	|
 subject	|商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obama"
 
+返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
 
 # 手动撤单
 如果一笔订单已经支付成功，在系统规定的时间范围内，可以调用这个接口完成全额退款，并且不会触发任何手续费。手动撤单和自动撤单的区别只是撤单目的不同，实际执行的业务逻辑是完全一样的。
@@ -77,7 +78,7 @@ subject	|商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obama"
 
 
-
+返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
 
 ## 撤单返回示例
 
