@@ -65,6 +65,9 @@ channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|
 operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
+
+返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
+
 ##预下单返回示例
  预下单成功
 
