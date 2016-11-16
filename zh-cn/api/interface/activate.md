@@ -1,5 +1,5 @@
 # [激活](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/Q%26A-%E6%8A%80%E6%9C%AF.md#%E6%BF%80%E6%B4%BB%E7%A0%81%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98)
-激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考对接流程文档。
+激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考[对接流程文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/apiflow.html)。
 
 	请使用服务商序列号（vendor_sn）作为签名人序列号，服务商密钥（vendor_key）作为签名密钥。
 ## 接口名
@@ -11,11 +11,11 @@ application/json
 ------ | ----- | -----| -----
 app_id | string | Y | app id，从服务商平台获取
 code | string | Y | 激活码内容
-device_id | string | Y | 设备唯一身份ID
-client_sn | string | N | 第三方终端号，必须保证在app id下唯一
-name | string | N | 终端名
-os_info | string | N |当前系统信息，如: Android5.0
-sdk_version | string | N | SDK版本
+device_id | string(128) | Y | 设备唯一身份ID
+client_sn | string(50) | N | 第三方终端号，必须保证在app id下唯一
+name | string(128) | N | 终端名
+os_info | string(45) | N |当前系统信息，如: Android5.0
+sdk_version | string(45) | N | SDK版本
 
 ### 响应
 字段名 | 类型 | 是否必填 | 说明
@@ -23,7 +23,7 @@ sdk_version | string | N | SDK版本
 terminal_sn | string | Y | 终端号
 terminal_key | string | Y | 终端密钥
 
-返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
+返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
 
 如：
 
