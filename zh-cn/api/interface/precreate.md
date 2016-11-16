@@ -66,7 +66,7 @@ operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
 
-返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
 
 ##预下单返回示例
  预下单成功
