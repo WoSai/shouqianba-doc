@@ -1,5 +1,14 @@
 ## 附录	
 
+### 通讯响应码说明
+200：通讯成功；400：客户端错误；500:服务端错误
+
+error_code为本次通讯的错误码，error_message为对应的中文描述。当result_code不等于200的时候才会出现error_code和error_message。
+
+result_code:400，客户端错误。客户端请求错误。INVALID_PARAMS/参数错误；INVALID_TERMINAL/终端错误；ILLEGAL_SIGN/签名错误。
+
+result_code:500，服务端错误。收钱吧服务端异常。可提示“服务端异常，请联系收钱吧客服”。
+
 ### 通讯错误码列表
 
 error_code为本次通讯的错误码
@@ -14,7 +23,6 @@ result_code |error_code | error_message
 **400**|INVALID_TERMINAL	|终端错误
 **400**|ILLEGAL_SIGN	|签名错误
 **500**|	UNKNOWN_SYSTEM_ERROR	|系统错误
-
 
 ### 业务结果码列表
 
@@ -43,14 +51,13 @@ ERROR: 本次业务执行结果未知
 <font color="pink">REFUND_ERROR|	退款操作失败并且不确定第三方支付通状态|联系客服
 <font color="blue">PRECREATE_SUCCESS	|预下单操作成功
 <font color="blue">PRECREATE_FAIL	|预下单操作失败	
-<font color="red">SUCCESS|	操作成功
+<font color="red">SUCCESS|	操作成功,**开发者根据返回的biz_response.data.order_status属性判断当前收钱吧订单的状态。**
 <font color="red">FAIL	|操作失败（不会触发流程）
-
 
 ### 订单状态列表
 
-biz_response.data.order_status
-	
+biz_response.data.order_status	
+
 取值 |含义  
 --------- | ------
 <font color="green">CREATED</font>	| <font color="red">订单已创建/支付中</font>
@@ -62,6 +69,15 @@ biz_response.data.order_status
 <font color="green">REFUND_ERROR</font>	   |    <font color="red">退款失败并且不确定第三方支付通道的最终退款状态</font>
 <font color="green">CANCELED</font>        |    <font color="red">客户端发起的撤单已成功</font>
 <font color="green">CANCEL_ERROR</font>	   |    <font color="red">客户端发起的撤单失败并且不确定第三方支付通道的最终状态</font>
+
+**开发者根据返回的biz_response.data.order_status属性判断当前收钱吧订单的状态。**
+
+### 哪些状态是订单最终状态
+- PAID
+- PAY_CANCELED
+- REFUNDED
+- PARTIAL_REFUNDED
+- CANCELED
 
 
 ### 流水状态列表
