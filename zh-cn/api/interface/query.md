@@ -34,7 +34,7 @@ channel\_finish_time|上次操作再支付平台完成的时间|String(13)|	Y|	�
 subject|	商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator	|操作员	|String(64)|	Y|	执行上次业务动作的操作员| "Obama"
 
-返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
+返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
 
 ##查询接口返回示例
    查单成功
