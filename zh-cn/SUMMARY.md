@@ -1,8 +1,8 @@
 # Summary
-
-* [Web API接入指南](api/README.md)
+* [介绍](api/README.md)
+* [对接过程常见问题](api/Q&A-技术-Web API.md)
+* [Web API接入指南]()
     * [Web API对接流程文档](api/apiflow.md)
-    * [对接过程注意事项](api/Q&A-技术-Web API.md)
     * [Web API对接接口列表]()
        * [激活接口](api/interface/activate.md)
        * [签到接口](api/interface/checkin.md)
@@ -15,7 +15,6 @@
     * [WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)
     * [附录](api/annex.md) 
     
-
 * [SDK接入指南](sdk/README.md)
     * [接入流程](sdk/flow.md)
     * [业务流程](sdk/business.md)
@@ -28,7 +27,3 @@
     * [映射代理](proxy/webproxy-auto.md)
     * [非映射代理](proxy/webproxy.md)
 
-* [开发者常见问题说明]()
-    * [产品常见问题说明](Q&A-产品.md)
-    * [技术对接常见问题说明](Q&A-技术.md)
-    * [响应返回码说明](Q&A-返回码.md)
