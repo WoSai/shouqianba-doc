@@ -10,7 +10,7 @@
 terminal_sn | 收钱吧终端ID| String(32)| Y	 | 收钱吧终端ID | "23420593829"
 client_sn | 商户系统订单号 | String(32)| Y | 必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
 total_amount | 交易总金额 | String(10) | Y | 以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账 | "1000"
-payway	|支付方式|	String|	Y	|内容为数字的字符串 |"1"
+payway	|支付方式|	String|	Y	|内容为数字的字符串 |1:支付宝<br/>3:微信<br/>4:百度钱包<br/>5:京东钱包<br/>6:qq钱包
 sub_payway	|二级支付方式|	String|N|内容为数字的字符串，<font color="red">如果要使用WAP支付，则必须传 "3"</font> | "3"
 payer\_uid|	付款人id|	String(64)|	N|消费者在支付通道的唯一id,**微信WAP支付必须传open_id**| "okSzXt_KIZVhGZe538aOKIMswUiI"
 subject|	交易简介|	String(64)|	Y|本次交易的概述| "pizza"
