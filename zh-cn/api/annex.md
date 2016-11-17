@@ -147,7 +147,6 @@ UPAY\_TCP\_ORDER\_NOT\_REFUNDABLE | 订单参与了活动并且无法撤销
 5   |京东
 6   |qq钱包
 
-**目前qq钱包只支持b扫c**
 
 ### 二级支付方式列表
 
