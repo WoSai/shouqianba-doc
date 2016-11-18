@@ -42,15 +42,26 @@ ERROR: 本次业务执行结果未知
 --------- | ------ | -----  
 <font color="red">PAY_SUCCESS</font>|	支付操作成功	| 银货两讫
 <font color="red">PAY_FAIL</font>	| 支付操作失败并且已冲正	| 重新进行一笔交易
+<font color="red">PAY_IN_PROGRESS</font> | 支付中  | 调用查询接口查询
 <font color="red">PAY\_FAIL_ERROR</font>	|支付操作失败并且不确定第三方支付通道状态|联系客服
-<font color="green">CANCEL_SUCCESS	|撤单操作成功	
-<font color="green">CANCEL_ERROR	|撤单操作失败并且不确定第三方支付通道状态|联系客服
-<font color="green">CANCEL\_ABORT_ERROR|	撤单操作试图终止进行中的支付流程，但是失败，不确定第三方支付通道的状态|联系客服
-<font color="green">CANCEL\_ABORT_SUCCESS|	撤单操作试图终止进行中的支付流程并且成功	
-<font color="pink">REFUND_SUCCESS|	退款操作成功	
-<font color="pink">REFUND_ERROR|	退款操作失败并且不确定第三方支付通状态|联系客服
-<font color="blue">PRECREATE_SUCCESS	|预下单操作成功
-<font color="blue">PRECREATE_FAIL	|预下单操作失败	
+<font color="red">PAY_\FAIL_IN_PROGRESS</font>  |支付操作失败中并且不清楚状态 |联系客服
+<font color="green">CANCEL_SUCCESS</font>	|撤单操作成功	
+<font color="green">CANCEL_ERROR</font>	|撤单操作失败并且不确定第三方支付通道状态|联系客服
+<font color="green">CANCEL\_ABORT_ERROR</font>|	撤单操作试图终止进行中的支付流程，但是失败，不确定第三方支付通道的状态|联系客服
+<font color="green">CANCEL\_ABORT_SUCCESS</font>|	撤单操作试图终止进行中的支付流程并且成功	
+<font color="green">CANCEL\_IN_PROGRESS</font>  |撤单进行中调用查询接口进行查询
+<font color="green">CANCEL\_ABORT_IN_PROGRESS</font> |撤单操作试图终止进行中的支付流程，但是撤单状态不明确
+<font color="green">撤单交易状态不正确</font> |
+<font color="green">撤单交易类型不正确</font> |
+<font color="pink">REFUND_SUCCESS</font>|	退款操作成功	
+<font color="pink">REFUND_ERROR</font>|	退款操作失败并且不确定第三方支付通状态|联系客服
+<font color="pink">REFUND\_IN_PROGRESS</font>  |撤单进行中
+<font color="pink">撤单交易类型不正确</font> | 
+<font color="blue">PRECREATE_SUCCESS</font>	|预下单操作成功
+<font color="blue">PRECREATE_FAIL</font>	|预下单操作失败	
+<font color="blue">PRECREATE\_FAIL_ERROR</font> |预下单状态失败并且不确定第三方支付通道状态|联系客服
+<font color="blue">PRECREATE_FAIL_IN_PROGRESS</font> |预下单状态失败并且不清楚状态|联系客服
+<font color="blue">预下单状态错误</font> |
 <font color="red">SUCCESS|	操作成功,**开发者根据返回的biz_response.data.order_status属性判断当前收钱吧订单的状态。**
 <font color="red">FAIL	|操作失败（不会触发流程）
 
@@ -69,6 +80,8 @@ biz_response.data.order_status
 <font color="green">REFUND_ERROR</font>	   |    <font color="red">退款失败并且不确定第三方支付通道的最终退款状态</font>
 <font color="green">CANCELED</font>        |    <font color="red">客户端发起的撤单已成功</font>
 <font color="green">CANCEL_ERROR</font>	   |    <font color="red">客户端发起的撤单失败并且不确定第三方支付通道的最终状态</font>
+<font color="green">CANCEL_INPROGRESS</font>  | <font color="red">撤单进行中</font>
+<font color="green">INVALID_STATUS_CODE</font> |<font color="red">无效的状态码</font>
 
 **开发者根据返回的biz_response.data.order_status属性判断当前收钱吧订单的状态。**
 
