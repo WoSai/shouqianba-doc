@@ -44,7 +44,7 @@ ERROR: 本次业务执行结果未知
 <font color="red">PAY_FAIL</font>	| 支付操作失败并且已冲正	| 重新进行一笔交易
 <font color="red">PAY_IN_PROGRESS</font> | 支付中  | 调用查询接口查询
 <font color="red">PAY\_FAIL_ERROR</font>	|支付操作失败并且不确定第三方支付通道状态|联系客服
-<font color="red">PAY_\FAIL_IN_PROGRESS</font>  |支付操作失败中并且不清楚状态 |联系客服
+<font color="red">PAY\_FAIL_IN_PROGRESS</font>  |支付操作失败中并且不清楚状态 |联系客服
 <font color="green">CANCEL_SUCCESS</font>	|撤单操作成功	
 <font color="green">CANCEL_ERROR</font>	|撤单操作失败并且不确定第三方支付通道状态|联系客服
 <font color="green">CANCEL\_ABORT_ERROR</font>|	撤单操作试图终止进行中的支付流程，但是失败，不确定第三方支付通道的状态|联系客服
