@@ -277,6 +277,7 @@ error_message|业务执行错误信息
 3|微信
 4|百付宝
 5|京东
+6|qq钱包
 
 `未来会不断补充`
 
@@ -303,7 +304,6 @@ FAIL|操作失败（不会触发流程）|
 
 **备注**
 
- 
 * 如果 **激活** 接口 result_code返回的不是 <font color="red">ACTIVATE_SUCCESS</font>，则认为激活失败
 * 如果 **付款** 接口 result_code返回的不是 <font color="red">PAY_SUCCESS</font>，则认为付款失败
 * 如果 **退款** 接口 result_code返回的不是 <font color="red">REFUND_SUCCESS</font>，则认为退款失败
