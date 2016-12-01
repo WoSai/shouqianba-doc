@@ -58,7 +58,7 @@ operator | 门店操作员 | String(32) | Y | s发起本次交易的操作员 | 
 reflect | 反射参数 | String(64) | N | 任何调用者希望原样返回的信息 | { "tips" : "100"}
 sign | 签名 | String(32) | Y | 签名，规则请参考附录 《签名规则》 | 
 
-**商户务必以查单为主、服务器异步通知的订单结果为辅作出正确的处理。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里查询接口**
+**商户务必以查单或者服务器异步通知的订单结果为主作出正确的处理。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里查询接口**
 
 # 附录
 
@@ -108,6 +108,8 @@ result_code | result_message | 说明
 get_brand_wcpay_request:ok |get_brand_wcpay_request:ok |支付成功
 get_brand_wcpay_request:fail | get_brand_wcpay_request:fail |支付失败
 get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel |用户取消支付
+
+**商户务必以查单或者服务器异步通知的订单结果为主作出正确的处理。这里的结果仅供参考。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里查询接口**
 说明：一般除 get_brand_wcpay_request:ok 外皆认为支付失败，无需细分处理。
 
 ## 签名规则
@@ -116,30 +118,31 @@ get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel |用户取消支�
 3. 拼接 将排序后的参数与其对应值，组合成“参数=参数值”的格式，并且把这些参数用&字符连接起来，此时生成的字符串为待签名字符串。将key的值拼接在字符串后面，调用MD5算法生成sign。将sign转换成大写。
 
 例：
-传入参数如下
-terminal_sn: "123"
-client_sn:"123"
-total_amount:"1"
- 
-拼接参数字符串
-stringA="client_sn=123&terminal_sn=123&total_amount=1"
-拼接密钥
-stringSignTemp = "stringA&key=19b820737ace6937a7808c"
-md5生成sign
-sign = md5(stringSignTemp).toUpperCase()
 
+         传入参数如下
+         terminal_sn: "123"
+         client_sn:"123"
+         total_amount:"1"
+          
+         拼接参数字符串
+         stringA="client_sn=123&terminal_sn=123&total_amount=1"
+         拼接密钥
+         stringSignTemp = "stringA&key=19b820737ace6937a7808c"
+         md5生成sign
+         sign = md5(stringSignTemp).toUpperCase()
+         
 ## 注：
   需要使用微信浏览器，使用302跳转的方式访问https://m.wosai.cn/qr/gateway
   示例：
-  <?php
-
-$paramsStr = "client_sn=test&operator=TEST&return_url=test&subject=TEST&terminal_sn=test&total_amount=3";
-$sign = strtoupper(md5($paramsStr.'&key=test'));
-$paramsStr = $paramsStr."&sign=".$sign;
-
-header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
-?>
-
+  
+      <?php
+        $paramsStr = "client_sn=test&operator=TEST&return_url=test&subject=TEST&terminal_sn=test&total_amount=3";
+        $sign = strtoupper(md5($paramsStr.'&key=test'));
+        $paramsStr = $paramsStr."&sign=".$sign;
+        
+        header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
+      ?>
+ 
 
 ## wap支付接入常见问题
 ### 1.使用wap支付，需要在微信后台配置https://m.wosai.cn/qr/ 这个地址。具体配置流程：
