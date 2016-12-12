@@ -168,7 +168,15 @@ UpayTask.getInstance()
 public void activate(String code, String vendor_id, String vendor_key,String appId,String deviceSn,String deviceName, UpayOrder.PayModel payModel, UpayCallBack callBack)
 
 ```
+**检查终端是否激活**
+```java
+/**
+ * 终端是否已经激活
+ * @return true:终端已激活，false：终端未激活
+ */
+ public boolean isActivated()
 
+```
 **付款**
 
 ```java
