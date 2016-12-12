@@ -658,7 +658,10 @@ EnableLog|是否开启SDK日志，默认开启|开启:1,不开启:0|EnableLog:1
 Proxy|代理地址||Proxy:http-proxy-sha.corporate.example.com
 ProxyPort|代理端口||ProxyPort:80
 
+**注:如果终端不能直接与外网通信,增加代理设置就是在KeyParams文件中增加Proxy和ProxyPort**
+
 **建议开启日志，方便调试**
+
 
 
 ####4.5.2 KeySettings
