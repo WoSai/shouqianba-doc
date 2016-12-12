@@ -18,6 +18,7 @@ operator |门店操作员  |String(32) |Y|发起本次交易的操作员 | Obama
 description | 商品详情 |String(256) |N |对商品或本次交易的描述 |
 longitude | 经度 | String| N|经纬度必须同时出现 | "121.615459404"
 latitude | 维度 | String|N |经纬度必须同时出现 | "31.4056441552"
+device_id|设备指纹|String|N|
 extended | 扩展参数集合 | JSON map | N | 收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
 reflect | 反射参数 | String(64) | N | 任何调用者希望原样返回的信息，可以用于关联商户ERP系统的订单或记录附加订单内容 | { "tips": "200" }
 notify_url|回调|String(128)|N| 支付回调的地址|例如：www.baidu.com 如果支付成功通知时间间隔为1s,5s,30s,600s 
