@@ -525,6 +525,15 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 	} 
 });
 ```
+
+##7.本地日志文件存放路径
+```
+sdk本地日志格式是txt,日志保存路径：
+内部存储路径：/data/data/应用包名/files/
+SD卡路径：/Android/data/应用包名/Log/
+	      
+```	      
+	      
 ##7.联系我们
 如以上信息无法帮助你解决在开发中遇到的问题,请通过一下方式联系我们 邮箱:sdk@wosai-inc.com
 我们的工程师会在第一时间回复您。
