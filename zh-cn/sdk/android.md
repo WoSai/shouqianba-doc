@@ -228,7 +228,23 @@ public void revoke(UpayOrder order, UpayCallBack callBack)
 */
 public void preCreate(UpayOrder order, UpayCallBack callBack)
 ```
+**横竖屏设置**
 
+```java
+/**
+* 设置UI横屏显示
+* 如果发现SDK的UI无法适配屏幕分辨率，调用这个方法
+* @param horizontalScreen
+*/
+public void setHorizontalScreen(boolean horizontalScreen)
+/**
+* 设置UI竖屏显示
+* 如果发现SDK的UI无法适配屏幕分辨率，调用这个方法
+* @param verticalScreen
+*/
+public void setVerticalScreen(boolean verticalScreen) 
+    
+```
 ###4.2 UpayOrder类说明
 
 属性 |属性名称 |类型 |描述 |付款 |退款 |预下单 |查询 |撤单  
