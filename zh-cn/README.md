@@ -95,6 +95,7 @@
    - **非映射代理:**对接方愿意维护自己门店终端与收钱吧门店终端的映射关系，Web Proxy仅做时序和签名的封装，角色类似于SDK（对接方调用core-proxy接口和upay-proxy接口）
    
    具体请查看[webproxy对接文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/proxy/)
+   
 # 收钱吧支持场景？
 
 **B扫C:**消费者展示各种钱包内的“刷卡条码/二维码”给商户系统扫描后直接完成支付的模式。主要应用线下面对面收银的场景。
