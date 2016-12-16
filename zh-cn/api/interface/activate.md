@@ -1,4 +1,4 @@
-# [激活](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/Q%26A-%E6%8A%80%E6%9C%AF.md#%E6%BF%80%E6%B4%BB%E7%A0%81%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98)
+# 激活
 激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考[对接流程文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/apiflow.html)。
 
 	请使用服务商序列号（vendor_sn）作为签名人序列号，服务商密钥（vendor_key）作为签名密钥。
