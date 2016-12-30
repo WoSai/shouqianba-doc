@@ -1,9 +1,11 @@
-#预下单
+# 预下单
+
 ## 入口
 
         {api_domain}/upay/v2/precreate
-
-##请求参数说明
+## 签名验证
+  请见[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
 --------- | ------ | ----- | ------- | --- | ----
@@ -66,7 +68,7 @@ operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
 
-返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+返回的状态码请参考<font color="red">**附录**</font>
 
 ##预下单返回示例
  预下单成功
