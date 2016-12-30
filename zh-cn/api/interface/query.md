@@ -4,6 +4,10 @@
 
 	    {api_domain}/upay/v2/query
 
+## 签名验证
+
+   请参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+   
 ## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
@@ -34,7 +38,8 @@ channel\_finish_time|上次操作再支付平台完成的时间|String(13)|	Y|	�
 subject|	商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator	|操作员	|String(64)|	Y|	执行上次业务动作的操作员| "Obama"
 
-返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+返回的状态码请参考<font color="red">**附录**</font>
+
 
 ##查询接口返回示例
    查单成功
