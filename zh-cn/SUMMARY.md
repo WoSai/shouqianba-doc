@@ -22,8 +22,8 @@
     * [6.3 Windows SDK]()
        * [6.3.1 Windows SDK对接文档](sdk/windows.md)
        * [6.3.2 Windows SDK 常见问题](sdk/Q&A-技术-SDK API.md)
-    * [6.4 iOS SDK对接文档](sdk/ios.md)
-    * [6.5 Android SDK对接文档](sdk/android.md)
+    * [6.4 iOS SDK对接文档](sdk/ios.md)
+    * [6.5 Android SDK对接文档](sdk/android.md)
 
 * [7.Web Proxy接入指南](proxy/README.md)
     * [7.1 映射代理](proxy/webproxy-auto.md)
