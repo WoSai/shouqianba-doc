@@ -14,7 +14,11 @@
        * [4.3.6 撤单接口](api/interface/revoke&cancel.md)
        * [4.3.7 查询接口](api/interface/query.md)
        * [4.3.8 上传日志接口](api/interface/uploadLog.md)
-    * [4.4 附录](api/annex.md) 
+    * [4.4 附录]() 
+       * [4.4.1 接口响应字段](api/annex/responseParams.md)
+       * [4.4.2 通讯状态码](api/annex/responseCode.md)
+       * [4.4.3 业务结果码](api/annex/resultCode.md)
+       * [4.4.4 支付方式](api/annex/payway.md)
 * [5.WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)   .
 * [6.SDK接入指南](sdk/README.md)
     * [6.1 接入流程](sdk/flow.md)
