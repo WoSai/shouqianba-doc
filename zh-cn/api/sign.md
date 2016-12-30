@@ -21,7 +21,7 @@
    * 7.查询(/upay/v2/query)
    * 8.上传日志(/terminal/uploadLog)
    
-    <font color="red">**注：如果使用了签到接口，支付的时候请以签到返回的terminal_sn和terminal_key作为其他接口的签名参数**</font>
+    <font color="red">**注：如果使用了签到接口，请以签到返回的terminal_sn和terminal_key作为其他接口的签名参数**</font>
 
      
 ## 签名方法
