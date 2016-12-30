@@ -22,7 +22,7 @@ sdk_version | string | N | SDK版本
 terminal_sn | string | Y | 终端号
 terminal_key | string | Y | 终端密钥
 
-返回的状态请参考[相应状态吗说明文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/Q&A-%E8%BF%94%E5%9B%9E%E7%A0%81.html)
+返回的状态请参考<font color="red">**附录**</font>
 
 如：
 
