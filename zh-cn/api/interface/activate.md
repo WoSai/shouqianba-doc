@@ -1,5 +1,5 @@
 # 激活
-激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考[对接流程文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/apiflow.html)。
+激活接口用于获取交易接口签名需要的参数（终端号和终端密钥）。激活接口需要使用服务商的密钥签名。签名方法参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)。
 
 	请使用服务商序列号（vendor_sn）作为签名人序列号，服务商密钥（vendor_key）作为签名密钥。
 ## 接口名
@@ -23,7 +23,7 @@ sdk_version | string(45) | N | SDK版本
 terminal_sn | string | Y | 终端号
 terminal_key | string | Y | 终端密钥
 
-返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+返回的状态请参考<font color="red">**附录**</font>
 
 如：
 
