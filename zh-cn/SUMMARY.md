@@ -19,6 +19,7 @@
        * [4.4.2 通讯状态码](api/annex/responseCode.md)
        * [4.4.3 业务结果码](api/annex/resultCode.md)
        * [4.4.4 支付方式](api/annex/payway.md)
+       * [4.4.5 接口响应模板](api/annex/responseExample.md)
 * [5.WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)   .
 * [6.SDK接入指南](sdk/README.md)
     * [6.1 接入流程](sdk/flow.md)
