@@ -3,7 +3,11 @@
 ##入口
 
 	    {api_domain}/upay/v2/pay
+	    
+## 签名验证
 
+  请参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+  
 ## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
