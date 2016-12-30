@@ -1,4 +1,4 @@
-#自动撤单
+# 自动撤单
 
 当终端的支付流程在进行过程中如果调用支付接口没有返回成功，为了避免交易纠纷，需要调用自动撤单接口完成冲正。
 
@@ -6,6 +6,10 @@
 	
 	    {api_domain}/upay/v2/cancel
 
+## 签名验证
+
+  请参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+  
 ## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
@@ -37,7 +41,7 @@ channel\_finish_time	|上次操作在支付平台完成的时间|String(13)|	Y	|
 subject	|商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obama"
 
-返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+返回的状态码请参考<font color="red">**附录**</font>
 
 # 手动撤单
 如果一笔订单已经支付成功，在系统规定的时间范围内，可以调用这个接口完成全额退款，并且不会触发任何手续费。手动撤单和自动撤单的区别只是撤单目的不同，实际执行的业务逻辑是完全一样的。
@@ -46,6 +50,10 @@ operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obam
 
 	    {api_domain}/upay/v2/revoke
 
+## 签名验证
+
+  请参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+  
 ## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
@@ -78,7 +86,7 @@ subject	|商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator|	操作员|	String(64)|	Y	|执行上次业务动作的操作员	| "Obama"
 
 
-返回的状态请参考[附录](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/annex.html)
+请参考返回码的状态请参考<font color="red">**附录**</font>
 
 ## 撤单返回示例
 
