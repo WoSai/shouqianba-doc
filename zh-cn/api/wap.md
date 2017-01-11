@@ -40,11 +40,11 @@
 |签名|sign|是|String(32)	|C380BEC2BFD727A4B6845133519F3AD6|签名，详见签名生成算法
 |时间戳|timestamp|是	|String(32)|1414561699	|当前的时间，其他详见时间戳规则
 
-详见[微信WAP支付接口说明](https://pay.weixin.qq.com/wiki/doc/api/wap.php?chapter=15_4)
+详见各支付渠道WAP支付接口说明
 
-<span style="color:red; font-weight: bold;">**</span>：目前Upay支付网关暂不支持异步回调通知，因此需要商户后端服务器进行轮询获取最新订单支付状态。
+<span style="color:red; font-weight: bold;">**</span>：目前Upay支付网关可以通过异步回调通知或者商户后端服务器进行轮询获取最新订单支付状态，建议使用两者结合的方式去获取交易状态，具体请参考web api预下单接口文档。
 
-<span style="color:red; font-weight: bold;">***</span>：在前端页面中唤起支付通道控件需要调用微信的前端支付接口，请确保您在开发前充分了解[微信WAP支付](https://pay.weixin.qq.com/wiki/doc/api/wap.php?chapter=15_1)的相关业务流程和前端开发接口
+<span style="color:red; font-weight: bold;">***</span>：在前端页面中唤起支付通道控件需要调用支付通道的前端支付接口，请确保您在开发前充分了解[各个支付渠道WAP支付的相关业务流程和前端开发接口
 
 
 ## 3. 接口说明
@@ -57,13 +57,12 @@
 
 #### 3.1.2 请求参数
 
-具体请参考收钱吧支付网关[支付类API Reference](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/api/core.md#预下单)
+具体请参考收钱吧支付网关[预下单接口文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/precreate.html)
 
 #### 3.1.3 特别说明
 
-- 目前预下单接口的WAP支付请求暂时只支持微信)支付。
 - 对于WAP支付请求，请求参数中的`sub_payway`的值必须为`"3"`，`payer_uid`为**必填**，取值为商户公众号下该用户的open_id；
-- 对于WAP支付请求，返回结果中的`wap_pay_request`包含了商户支付的前端页面需要唤起微信支付控件所需的必要参数。
+- 对于WAP支付请求，返回结果中的`wap_pay_request`包含了商户支付的前端页面需要唤起支付通道控件所需的必要参数。
 
 ### 3.2 查询
 
@@ -73,13 +72,13 @@
 
 #### 3.2.2 请求参数
 
-具体请参考收钱吧支付网关[支付类API Reference](https://wosai.gitbooks.io/shouqianba-doc/content/api/core.html)
+具体请参考收钱吧支付网关[查询接口文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/query.html)
 
 #### 3.2.3 特别说明
 
 - 商户后端服务器在得到预下单成功的结果后，即可向收钱吧服务器发起轮询请求。
 - 收钱吧目前所有预下单的订单有效支付时长约为90秒，若超时仍未支付，收钱吧会自动取消该订单；因此轮询时间请控制在**100-120秒**左右。
-- 轮询的间隔建议为**前30秒内2秒一次，之后5秒一次**。
+- 轮询的间隔建议为**前30秒内2秒一次，之后5秒一次**（注：如果使用回掉，则轮询间隔可以扩大）。
 
 
 ## 4. 名词解释
