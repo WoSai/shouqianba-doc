@@ -20,17 +20,20 @@
        * [4.4.3 业务结果码](api/annex/resultCode.md)
        * [4.4.4 支付方式](api/annex/payway.md)
        * [4.4.5 接口响应模板](api/annex/responseExample.md)
-* [5.WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)   .
-* [6.SDK接入指南](sdk/README.md)
-    * [6.1 接入流程](sdk/flow.md)
-    * [6.2 业务流程](sdk/business.md)
-    * [6.3 Windows SDK]()
-       * [6.3.1 Windows SDK对接文档](sdk/windows.md)
-       * [6.3.2 Windows SDK 常见问题](sdk/Q&A-技术-SDK API.md)
-    * [6.4 iOS SDK对接文档](sdk/ios.md)
-    * [6.5 Android SDK对接文档](sdk/android.md)
-
-* [7.Web Proxy接入指南](proxy/README.md)
-    * [7.1 映射代理](proxy/webproxy-auto.md)
-    * [7.2 非映射代理](proxy/webproxy.md)
+* [5 wap支付对接文档](api/wap.md)     
+* [6.WAP API PRO支付(微信公众号支付)接入说明](api/wap2.md)
+* [7.SDK接入指南](sdk/README.md)
+    * [7.1 接入流程](sdk/flow.md)
+    * [7.2 业务流程](sdk/business.md)
+    * [7.3 Windows SDK]()
+       * [7.3.1 Windows SDK对接文档](sdk/windows.md)
+       * [7.3.2 Windows SDK 常见问题](sdk/Q&A-技术-SDK API.md)
+    * [7.4 iOS SDK对接文档](sdk/ios.md)
+    * [7.5 Android SDK对接文档](sdk/android.md)  
+* [8.Web Proxy接入指南](proxy/README.md)
+    * [8.1 映射代理](proxy/webproxy-auto.md)
+    * [8.2 非映射代理](proxy/webproxy.md)
+    
+    
+   
 
