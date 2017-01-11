@@ -44,7 +44,7 @@
 
 <span style="color:red; font-weight: bold;">**</span>：目前Upay支付网关可以通过异步回调通知或者商户后端服务器进行轮询获取最新订单支付状态，建议使用两者结合的方式去获取交易状态，具体请参考web api预下单接口文档。
 
-<span style="color:red; font-weight: bold;">***</span>：在前端页面中唤起支付通道控件需要调用支付通道的前端支付接口，请确保您在开发前充分了解[各个支付渠道WAP支付的相关业务流程和前端开发接口
+<span style="color:red; font-weight: bold;">***</span>：在前端页面中唤起支付通道控件需要调用支付通道的前端支付接口，请确保您在开发前充分了解各个支付渠道WAP支付的相关业务流程和前端开发接口
 
 
 ## 3. 接口说明
