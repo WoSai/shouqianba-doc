@@ -1,6 +1,6 @@
 # 付款
 
-##入口
+## 入口
 
 	    {api_domain}/upay/v2/pay
 	    
@@ -78,7 +78,7 @@ reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
 返回的状态码请参考<font color="red">**附录**</font>
 
-##返回示例
+## 返回示例
 1. 交易成功
 
     ```json
@@ -159,6 +159,7 @@ reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
         "error_message": "total_amount金额为整数，长度不超过10位，以分为单位"
     }
     ```
+    
 ## 支付接口接入常见问题
 
 ### 1.出现支付签名错误
