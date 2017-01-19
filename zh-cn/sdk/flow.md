@@ -17,9 +17,9 @@
 ## SDK下载
 * Windows：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK.rar)
 * Android：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK.zip)
-* iOS：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/upay_sdk_ios_3.0.0.zip)
+* iOS：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-IOS-SDK.zip)
 
-## SDK调用Demo程序代码
+## Windows SDK调用Demo程序代码
 * Windows：[Qt Demo链接=>] https://github.com/WoSai/shouqianba-winsdk2.0-demo
 * Windows：[C# Demo链接=>] https://github.com/WoSai/shouqianba-winsdk2.0-CSharp-demo
 * Windows: [PB Demo链接=>] http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/PB-shouqianba-demo.rar
