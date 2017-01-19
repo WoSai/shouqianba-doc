@@ -2,7 +2,7 @@
 
 *文档版本：0.2.0*
 
-*SDK版本：3.1.1*
+*SDK版本：3.1.2*
 
 # 目录
 
@@ -20,7 +20,7 @@
 
 ### 1.1 获取最新版SDK
 
-[下载最新版的SDK（3.1.1）](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/upay_sdk_ios_3.1.1.zip)
+[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-IOS-SDK.zip)
 
 *SHA-256 Digest: d25170bd8503f82dc9077d4f0550c94d9fba59b09b50bf3e2322ea22244256a6*
 
