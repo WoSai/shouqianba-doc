@@ -25,17 +25,13 @@ ERROR: 本次业务执行结果未知
 <font color="green">CANCEL\_ABORT_SUCCESS</font>|	撤单操作试图终止进行中的支付流程并且成功	
 <font color="green">CANCEL\_IN_PROGRESS</font>  |撤单进行中调用查询接口进行查询
 <font color="green">CANCEL\_ABORT_IN_PROGRESS</font> |撤单操作试图终止进行中的支付流程，但是撤单状态不明确
-<font color="green">撤单交易状态不正确</font> |
-<font color="green">撤单交易类型不正确</font> |
 <font color="pink">REFUND_SUCCESS</font>|	退款操作成功	
 <font color="pink">REFUND_ERROR</font>|	退款操作失败并且不确定第三方支付通状态|联系客服
-<font color="pink">REFUND\_IN_PROGRESS</font>  |撤单进行中
-<font color="pink">撤单交易类型不正确</font> | 
+<font color="pink">REFUND\_IN_PROGRESS</font>  |撤单进行中| 
 <font color="blue">PRECREATE_SUCCESS</font>	|预下单操作成功
 <font color="blue">PRECREATE_FAIL</font>	|预下单操作失败	
 <font color="blue">PRECREATE\_FAIL_ERROR</font> |预下单状态失败并且不确定第三方支付通道状态|联系客服
 <font color="blue">PRECREATE_FAIL_IN_PROGRESS</font> |预下单状态失败并且不清楚状态|联系客服
-<font color="blue">预下单状态错误</font> |
 <font color="red">SUCCESS|	操作成功,**开发者根据返回的biz_response.data.order_status属性判断当前收钱吧订单的状态。**
 <font color="red">FAIL	|操作失败（不会触发流程）
 
