@@ -1,8 +1,8 @@
 # iOS SDK开发接入
 
-*文档版本：0.2.0*
+*文档版本：0.2.1*
 
-*SDK版本：3.1.2*
+*SDK版本：3.1.3*
 
 # 目录
 
@@ -20,9 +20,9 @@
 
 ### 1.1 获取最新版SDK
 
-[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-IOS-SDK.zip)
+[下载最新版的SDK](https://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/upay_sdk_ios_3.1.3.zip)
 
-*SHA-256 Digest: d25170bd8503f82dc9077d4f0550c94d9fba59b09b50bf3e2322ea22244256a6*
+*SHA-256 Digest: ead47a005d080a58816178133c39e18c787818c8b49752482b152b7c1c9dcb00*
 
 为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
@@ -36,7 +36,7 @@
 
 只需解压您下载的SDK文件，其中应包含WSUpayKit.framework和WSUpayKit.bundle两个文件。WSUpayKit.framework中包含了SDK的全部代码，WSUpayKit.bundle中包含了SDK所用到的所有视图、多语言支持和多媒体等资源。请将这两个文件拖拽至您的iOS开发项目中，并确保`Copy items if needed`和您的目标是被勾选的，如下图所示。
 
-![](http://images.wosaimg.com/53/c80f7d9e65afe2aecd1f742ab8868d15e79bea.png "向项目中添加SDK")
+![](https://images.wosaimg.com/53/c80f7d9e65afe2aecd1f742ab8868d15e79bea.png "向项目中添加SDK")
 
 #### 1.2.3 向目标中添加依赖
 
@@ -48,13 +48,15 @@ SDK需要的依赖如下：
 
 请选择`您的目标 -> Build Phases -> Link Binary With Libraries`，单击`+`按钮。如下图所示：
 
-![](http://images.wosaimg.com/aa/ffd81f9fa49e3fb46912ac230f7618801c659e.png "添加目标依赖")
+![](https://images.wosaimg.com/aa/ffd81f9fa49e3fb46912ac230f7618801c659e.png "添加目标依赖")
 
 在弹出的窗口中搜索Security.framework和CoreLocation.framework，然后确认添加。
 
 添加libz.dylib依赖时，请在弹出的窗口中点击`Add Other...`，会弹出资源管理器窗口，此时按下`Cmd + Shift + G`，在输入框中输入`/usr/lib`，然后进入该文件夹。选中libz.dylib，点击确定后，即完成该步骤。
 
 #### 1.2.4 更新项目设置
+
+##### Info部分
 
 在您的项目中，选择`您的目标 -> Info -> Custom iOS Target Properties`，在其中加入以下属性：
 
@@ -71,9 +73,15 @@ SDK需要的依赖如下：
 
 具体配置如下图所示：
 
-![](http://images.wosaimg.com/c5/ce312919c78e238579eca8b748a7cf53ed63b0.png "更新项目设置")
+![](https://images.wosaimg.com/c5/ce312919c78e238579eca8b748a7cf53ed63b0.png "更新项目设置1")
 
-#### 1.2.4 在代码中引用SDK
+##### Build Settings部分
+
+在您的项目中，选择`您的目标 -> Build Settings -> Linking`，请确认`Other Linker Flags`中包含`-ObjC`。如下图所示：
+
+![](https://images.wosaimg.com/af/8ec5cfcab6e921c046ba546edb4838e3339508.png "更新项目设置2")
+
+#### 1.2.5 在代码中引用SDK
 
     #import <WSUpayKit/WSUpayKit.h>
 
@@ -1778,6 +1786,11 @@ SDK在操作过程中遇到任何异常时，会将错误信息通过回调方�
             <td>0.2.0</td>
             <td>2016年9月20日</td>
             <td>更新SDK版本为3.1.1。<ul><li>WSUpayPayway新增QQ钱包；</li><li>新增WSUpayActivitionInfo类；</li><li>WSUPayTask新增upayActivationInfo属性及对应的初始化方法；</li><li>WSUpayTask新增新版激活接口，废弃原有激活接口（原有激活接口仍可用，但不再支持标准界面模式）；</li><li>WSUpayTask新增获取设备编号、激活状态和SDK版本信息的接口；</li><li>WSUpayResult新增client_tsn属性；</li><li>WSUpayGeneralErrorCode新增WSUpayGeneralErrorCodeUnknownError（未知错误，-11000）；</li><li>所有交易的标准界面模式下，若遇到交易异常，提示错误信息后会自动退出当前界面；</li><li>预下单查询时间延长至4分钟；</li><li>修复支付网关返回特定错误时SDK崩溃的问题。</li></ul></td>
+        </tr>
+        <tr>
+            <td>0.2.1</td>
+            <td>2017年3月20日</td>
+            <td>更新SDK版本为3.1.3，优化服务器证书错误的判断逻辑。</td>
         </tr>
     </tbody>
 </table>
