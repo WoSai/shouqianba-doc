@@ -27,7 +27,7 @@ ERROR: 本次业务执行结果未知
 <font color="green">CANCEL\_ABORT_IN_PROGRESS</font> |撤单操作试图终止进行中的支付流程，但是撤单状态不明确
 <font color="pink">REFUND_SUCCESS</font>|	退款操作成功	
 <font color="pink">REFUND_ERROR</font>|	退款操作失败并且不确定第三方支付通状态|联系客服
-<font color="pink">REFUND_FAIL</font>|	退款失败并且已经冲正|重新退款
+<font color="pink">REFUND_FAIL</font>|	退款失败|
 <font color="pink">REFUND\_IN_PROGRESS</font>  |退款进行中| 
 <font color="blue">PRECREATE_SUCCESS</font>	|预下单操作成功
 <font color="blue">PRECREATE_FAIL</font>	|预下单操作失败	
