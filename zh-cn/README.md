@@ -28,7 +28,7 @@
   
    SDK为开发者提供了一套完整的接入解决方案，涵盖了 终端激活、支付、退款、查询、预下单 及 撤单 一系列主要功能，并提供了 无界面模式 和 标准界面模式 两种调用模式，最大程度的降低开发者的开发和调试难度，满足不同程度的自定义需求。
    
-   目前SDK已支持 iOS ，Android 及 Windows 三大平台。具体对接请看相应的[sdk对接文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-   cn/sdk/flow.html)。
+   目前SDK已支持 iOS ，Android 及 Windows 三大平台。具体对接请看相应的[sdk对接文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/sdk/flow.html)。
 
 ## WAP支付(目前仅支持微信支付):
 
