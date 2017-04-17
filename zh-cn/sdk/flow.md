@@ -15,7 +15,7 @@
 至此，您已经可以开始使用收钱吧支付平台的SDK了。
 
 ## SDK下载
-* Windows：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK.rar)
+* Windows：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK.zip)
 * Android：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK.zip)
 * iOS：[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-IOS-SDK.zip)
 
