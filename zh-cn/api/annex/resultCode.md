@@ -45,7 +45,7 @@ biz_response.data.order_status
 <font color="green">CREATED</font>	| <font color="red">订单已创建/支付中</font>
 <font color="green">PAID</font>	    | <font color="red">订单支付成功</font>
 <font color="green">PAY_CANCELED</font> |   <font color="red">支付失败并且已经成功充正</font>
-<font color="green">PAY_ERROR</font>    |   <font color="red">支付失败，不确定是否已经成功充正</font>
+<font color="green">PAY_ERROR</font>    |   <font color="red">支付失败，不确定是否已经成功充正,请联系收钱吧客服确认是否支付成功</font>
 <font color="green">REFUNDED</font>     |   <font color="red">已成功全额退款</font>
 <font color="green">PARTIAL_REFUNDED</font>|    <font color="red">已成功部分退款</font>
 <font color="green">REFUND_ERROR</font>	   |    <font color="red">退款失败并且不确定第三方支付通道的最终退款状态</font>
