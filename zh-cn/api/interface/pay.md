@@ -53,8 +53,33 @@ finish_time	|付款动作在收钱吧的完成时间|String(13)|Y|时间戳|"144
 channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|时间戳|"1449646835244"
 operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
+payment_list |活动优惠 |JSON |N |格式为json payment_list的值为数组，每一个元素包含两个字段，一个是type支付名称，一个amount_total支付金额 |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
 
-##支付成功回调地址参数说明：
+
+## payment_list参数说明
+type |描述
+--------- | ------ 
+HONGBAO_WOSAI |喔噻红包
+HONGBAO_WOSAI_MCH |喔噻商户红包 免充值
+DISCOUNT_WOSAI |喔噻立减
+DISCOUNT_WOSAI_MCH |喔噻商户立减 免充值
+DISCOUNT_CHANNEL |支付通道 折扣(立减优惠)
+DISCOUNT_CHANNEL_MCH |折扣(立减优惠) 支付通道商户 免充值
+DISCOUNT_CHANNEL_MCH_TOP_UP |折扣(立减优惠) 支付通道商户 充值
+HONGBAO_CHANNEL |支付通道红包
+HONGBAO_CHANNEL_MCH |支付通道商户红包 免充值
+HONGBAO_CHANNEL_MCH_TOP_UP |支付通道商户红包 充值
+CARD_PRE |支付通道商户预付卡
+CARD_BALANCE |支付通道商户储值卡
+BANKCARD_CREDIT |信用卡 银行卡
+BANKCARD_DEBIT |储蓄卡 银行卡
+WALLET_ALIPAY |余额 支付宝钱包
+WALLET_ALIPAY_FINANCE |余额 余额宝
+WALLET_WEIXIN |余额 微信钱包
+ALIPAY_HUABEI |支付宝 花呗
+ALIPAY_POINT  |支付宝 集分宝
+
+## 支付成功回调地址参数说明：
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
 --------- | ------ | ----- | -------|---|----
@@ -75,6 +100,30 @@ finish_time	|付款动作在收钱吧的完成时间|String(13)|Y|时间戳|"144
 channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|时间戳|"1449646835244"
 operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
+payment_list |活动优惠 |JSON |N |格式为json payment_list的值为数组，每一个元素包含两个字段，一个是type支付名称，一个amount_total支付金额 |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
+
+## payment_list参数说明
+type |描述
+--------- | ------ 
+HONGBAO_WOSAI |喔噻红包
+HONGBAO_WOSAI_MCH |喔噻商户红包 免充值
+DISCOUNT_WOSAI |喔噻立减
+DISCOUNT_WOSAI_MCH |喔噻商户立减 免充值
+DISCOUNT_CHANNEL |支付通道 折扣(立减优惠)
+DISCOUNT_CHANNEL_MCH |折扣(立减优惠) 支付通道商户 免充值
+DISCOUNT_CHANNEL_MCH_TOP_UP |折扣(立减优惠) 支付通道商户 充值
+HONGBAO_CHANNEL |支付通道红包
+HONGBAO_CHANNEL_MCH |支付通道商户红包 免充值
+HONGBAO_CHANNEL_MCH_TOP_UP |支付通道商户红包 充值
+CARD_PRE |支付通道商户预付卡
+CARD_BALANCE |支付通道商户储值卡
+BANKCARD_CREDIT |信用卡 银行卡
+BANKCARD_DEBIT |储蓄卡 银行卡
+WALLET_ALIPAY |余额 支付宝钱包
+WALLET_ALIPAY_FINANCE |余额 余额宝
+WALLET_WEIXIN |余额 微信钱包
+ALIPAY_HUABEI |支付宝 花呗
+ALIPAY_POINT  |支付宝 集分宝
 
 收到成功的回调需要响应<font color="red">**success**给服务器端
 
@@ -85,29 +134,41 @@ reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 
     ```json
     {
-        "result_code": "200",
-        "biz_response": {
-            "result_code": "PAY_SUCCESS",
-            "data": {
-                "sn": "7894259244067349",
-                "client_sn": "12345677767776",
-                "status": "SUCCESS",
-                "payway": "3",
-                "sub_payway": "1",
-                "order_status": "PAID",
-                "payer_uid": "okSzXt3uY4-W8fKBH7B4z8seMzBU",
-                "trade_no": "1006101016201512081965934048",
-                "total_amount": "1",
-                "net_amount": "1",
-                "finish_time": "1449569460430",
-                "channel_finish_time": "1449569460000",
-                "terminal_sn": "1122234-dewls02s2",
-                "store_id": "00293001928483902",
-                "subject": "Domino's Pizza",
-                "operator": "Kan",
-            }
-        }
-    }
+       "result_code": "200",
+       "biz_response": {
+         "result_code": "PAY_SUCCESS",
+         "data": {
+           "sn": "7893259247405832",
+           "client_sn": "w145206259311176",
+           "client_tsn": "w145206259311176",
+           "ctime": "1492506701411",
+           "status": "SUCCESS",
+           "payway": "3",
+           "sub_payway": "1",
+           "order_status": "PAID",
+           "payer_login": "oyBevtwYm70JVPTFyGlvmKW3IO9U",
+           "payer_uid": "oSTAxt7Rkjr7Jtk0vtf-cFWiHjcs",
+           "trade_no": "4003262001201704187463804544",
+           "total_amount": "101",
+           "net_amount": "101",
+           "finish_time": "1492506702864",
+           "channel_finish_time": "1492506702000",
+           "subject": "Apple iPhone 6s plus (A1699) 16G 玫瑰金色 移动联通电信4G手机",
+           "store_id": "100ed809-af9a-11e5-9ec3-00163e00625b",
+           "operator": "test",
+           "payment_list": [
+             {
+               "type": "BANKCARD_DEBIT",
+               "amount_total": "1"
+             },
+             {
+               "type": "DISCOUNT_CHANNEL_MCH",
+               "amount_total": "100"
+             }
+           ]
+         }
+       }
+     }
     ```
     
 2. 交易进行中
