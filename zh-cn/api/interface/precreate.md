@@ -66,6 +66,30 @@ finish_time	|付款动作在收钱吧的完成时间|String(13)|Y|时间戳|"144
 channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|时间戳|"1449646835244"
 operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
+payment_list |活动优惠 |JSON |N |格式为json payment_list的值为数组，每一个元素包含两个字段，一个是type支付名称，一个amount_total支付金额 |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
+
+## payment_list参数说明
+type |描述
+--------- | ------ 
+HONGBAO_WOSAI |喔噻红包
+HONGBAO_WOSAI_MCH |喔噻商户红包 免充值
+DISCOUNT_WOSAI |喔噻立减
+DISCOUNT_WOSAI_MCH |喔噻商户立减 免充值
+DISCOUNT_CHANNEL |支付通道 折扣(立减优惠)
+DISCOUNT_CHANNEL_MCH |折扣(立减优惠) 支付通道商户 免充值
+DISCOUNT_CHANNEL_MCH_TOP_UP |折扣(立减优惠) 支付通道商户 充值
+HONGBAO_CHANNEL |支付通道红包
+HONGBAO_CHANNEL_MCH |支付通道商户红包 免充值
+HONGBAO_CHANNEL_MCH_TOP_UP |支付通道商户红包 充值
+CARD_PRE |支付通道商户预付卡
+CARD_BALANCE |支付通道商户储值卡
+BANKCARD_CREDIT |信用卡 银行卡
+BANKCARD_DEBIT |储蓄卡 银行卡
+WALLET_ALIPAY |余额 支付宝钱包
+WALLET_ALIPAY_FINANCE |余额 余额宝
+WALLET_WEIXIN |余额 微信钱包
+ALIPAY_HUABEI |支付宝 花呗
+ALIPAY_POINT  |支付宝 集分宝
 
 收到成功的回调需要响应<font color="red">**success**给服务器端
 
