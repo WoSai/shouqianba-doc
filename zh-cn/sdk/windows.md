@@ -449,7 +449,7 @@ reflect|String|C|商户系统随订单提交的反射参数|--
 
 * 4.4.1.5.4 使用示意
 
-![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/test%2FlALOCxWgK80CW80BHg_286_603.png)
+![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/Query.png)
 
 **4.4.1.6撤单**
 
