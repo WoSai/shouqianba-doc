@@ -58,7 +58,7 @@ UpaySDK 主要的业务功能有如下五个:
 
 #### 4.1.1 内容
 UpaySDK 包含一个“Upay.dll”动态库文件和两个配置文件,如下图:
-![GitHub set up](http://ww2.sinaimg.cn/mw690/839dbc19gw1f180uytbjvj21hw09gjt2.jpg)
+![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/UpaySDK.png)
 
 #### 4.1.2 部署
 
