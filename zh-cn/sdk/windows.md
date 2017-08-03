@@ -55,14 +55,12 @@ UpaySDK 主要的业务功能有如下五个:
 ## 4 接入指南
 
 ### 4.1 资源说明
-#### 4.1.1 下载
-[下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Windows-SDK.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
-#### 4.1.2 内容
-SDK 包含一个“CashBarV2.dll”动态库文件和两个配置文件,如下图:
+#### 4.1.1 内容
+UpaySDK 包含一个“Upay.dll”动态库文件和两个配置文件,如下图:
 ![GitHub set up](http://ww2.sinaimg.cn/mw690/839dbc19gw1f180uytbjvj21hw09gjt2.jpg)
 
-#### 4.1.3 部署
+#### 4.1.2 部署
 
 一般情况下,开发者只需要将 dll 和配置文件拷贝到需要集成的第三方应用执行文件同级目录下,即完成了部署。 
 
@@ -81,6 +79,8 @@ SDK 包含一个“CashBarV2.dll”动态库文件和两个配置文件,如下�
 完整路径
 ```
 
+#### 4.1.3 环境
+UpaySDK默认是指向测试环境，如要部署到正式环境请参考“4.5.1 KeyParams”更改配置即可。
 
 #### 4.1.4 使用
 UpaySDK 的使用步骤,一般包括:
@@ -180,7 +180,6 @@ UNEXPECTED_PROVIDER_ERROR|不认识的支付通道
 3|微信
 4|百付宝
 5|京东钱包
-6|QQ钱包
 
 #### 4.3.6 二级支付方式
 
@@ -224,27 +223,10 @@ Revoke Failure|撤单失败
 
 ### 4.4 接口列表
 #### 4.4.1 业务接口
-函数名称|函数调用方式
----|---
-激活无UI|_activate@4
-激活有UI|_activateUI@4
-支付无UI|_pay@4
-支付有UI|_payUI@4
-退款无UI|_refund@4
-退款有UI|_refundUI@4
-查询返回json|_query@4
-查询返回返回用&符号连接的字符串|_queryEx@4
-预下单无UI|_preCreate@4
-预下单有UI|_preCreateUI@4
-跟据收钱吧订单号撤单有UI|_revokeUIWithSN@4
-跟据商户订单号撤单有UI|_revokeUIWithClientSN@4
-撤单无UI|_revoke@4
 
 **4.4.1.1激活**
 
 该接口负责向收钱吧发送激活请求,激活成功后方可正常使用 SDK
-
-**一个终端只需激活一次便可永久使用，无需每次加载都进行激活**
 
 * 4.4.1.1.1  函数原型
 
@@ -257,12 +239,9 @@ const char* __stdcall activate(const char* params)|无|Activate Success、Activa
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-服务商序列号|String|M|由收钱吧分配的服务商序列号|--
-服务商密钥|String|M|由收钱吧分配的服务商密钥|--
-终端激活码|String(12)|C|由收钱吧分配的终端激活码，activate必传|411451574136
-appid|String|M|appid，从服务商平台获取|--
-终端号|String|O|第三方终端号，必须保证在app id下唯一|--
-终端名|String|O|终端名|--
+供应商|String|M|由收钱吧分配的供应商ID|--
+授权码|String|M|由收钱吧分配的供应商Key|--
+激活码|String(12)|C|由收钱吧分配的激活码，activate必传|411451574136
 
 
 * 4.4.1.1.3 输出参数
@@ -280,6 +259,8 @@ appid|String|M|appid，从服务商平台获取|--
 
 **4.4.1.2 支付**
 
+该接口负责向收钱吧发送支付请求并返回支付结果
+
 * 4.4.1.2.1 函数原型
 
 函数原型|有无UI|返回状态
@@ -291,17 +272,16 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一，不超过32字符|201660121175530001
-商品名称|String(64)|M|本次交易的简要介绍|测试商品
+商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一|201660121175530001
+商品名称|String(32)|M|本次交易的简要介绍|测试商品
 操作员|String(32)|M|发起本次交易的操作员|00
 商品描述|String(256)|P|对商品或本次交易的详细描述|雪碧 300ml
-支付方式|String(1)|P|见参数规定,若传空值,接口会自动根据付款码识别|1:支付宝<br/>3:微信<br/>4:百度钱包<br/>5:京东钱包
+支付方式|String(1)|P|见参数规定,若传空值,接口会自动根据付款码识别|1
 交易金额|String(10)|M|以分为单位,不超过 10 位纯数字字符串|1000
 付款码|String(32)|P|消费者用于付款的条码或二维码内容, 使用 UI 时可以传空值|130818341921441147
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
-扩展参数|JSON Map|P|商户系统与收钱吧系统约定的参数格式|--
-
-**商户系统订单号必须在商户系统内唯一，支付失败订单的二次支付请求，请创建新的商户订单号**
+扩展参数|String|P|商户系统与收钱吧系统约定的参数格式|--
+	
 
 * 4.4.1.2.3 输出参数
 
@@ -312,6 +292,7 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 商户订单号|String(32)|M|商户系统内部的唯一订单标识|20160122111520
 支付方式|String(1)|M|见参数规定,返回状态为 Failure 时可能 为空值|1
 支付平台交易凭证|String(64)|C|返回状态 Success 时存在|10054810162016012 22834933179
+支付平台交易时间|String(32)|C|返回状态 Success 时存在，毫秒为单位的Unix时间戳|1500949287000
 错误码|String|C|返回状态 Failure 时存在,详细参见错误 列表|CLIENT_SN_CONFLICT
 错误码描述|String|C|返回状态 Failure 时存在,详细参见错误 列表|client_sn 20160122111519 在系统中已经存在
 反射参数|String|P|商户系统上报的字符内容|--
@@ -336,17 +317,16 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一，不超过32字符|201660121175530001
-商品名称|String(64)|M|本次交易的简要介绍测试商品
+商户订单号|String(32)|M|<font color="red">商户系统订单号，必须在商户系统内唯一|201660121175530001
+商品名称|String(32)|M|本次交易的简要介绍|测试商品
 操作员|String(32)|M|发起本次交易的操作员|00
 商品描述|String(256)|P|对商品或本次交易的详细描述|雪碧 300ml
 支付方式|String(1)|M|本次交易使用的支付通道,见参数规定|1
 交易金额|String(10)|M|以分为单位,不超过 10 位纯数字字符串|1000
 保存路径|String(32)|C|用于保存二维码图片,preCreate时必传|C:\prcode\
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
-扩展参数|JSON Map|P|商户系统与收钱吧系统约定的参数格式|--
+扩展参数|String|P|商户系统与收钱吧系统约定的参数格式|--
 
-**商户系统订单号必须在商户系统内唯一，支付失败订单的二次预下单请求，请创建新的商户订单号**
 
 * 4.4.1.3.3输出参数
 
@@ -357,7 +337,7 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 商户订单号|String(32)|M|商户系统内部的唯一订单标识|20160122111520
 支付方式|String(1)|C|见参数规定,返回状态为 Pay Success 或 Pay Failure 时存在|1
 二维码路径|String|C|生成的二维码在客户端的完整路径,返 回状态为 PreCreate Success 时存在|C:\Users\andy\Desktop\qrcode.bmp
-支付平台交易凭证|String(64)|C|支付平台的唯一交易流水标识,返回状 态为 Pay Success 时存在|1005481016201601222834933179
+支付平台交易凭证|String(64)|C|支付平台的唯一交易流水标识,返回状 态为 Pay Success 时存在|10054810162016012 22834933179
 错误码|String|C|见错误列表,返回状态为 PreCreate Failure 或 Pay Failure 时存在|CLIENT_SN_CONFLICT
 错误码描述|String|C|见错误列表,返回状态为 PreCreate Failure 或 Pay Failure 时存在|client_sn 20160122111519 在系统中已经存在
 反射参数|String|P|商户系统上报的字符内容|--
@@ -367,10 +347,10 @@ const char* __stdcall preCreate (const char* params)|无|PreCreate Success、 Pr
 
 ![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/test%2FlALOCxUHOs0Cnc0CYA_608_669.png)
 
-* 4.4.1.3.5preCreate业务流程
-![GitHub set up](http://wosai-images.oss-cn-hangzhou.aliyuncs.com/test%2F%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-14%20%E4%B8%8B%E5%8D%884.17.43.png)
 
 **4.4.1.4退款**
+
+该接口负责向收钱吧发送退款请求并返回退款结果，支持对一笔订单进行多次退款
 
 * 4.4.1.4.1 函数原型
 
@@ -387,7 +367,7 @@ const char* __stdcall refund(const char* params)|无|Refund Success、 Refund Fa
 ---|---|---|---|---
 收钱吧订单号|String(32)|C|收钱吧系统内的唯一订单标识;<br>refundUIWithSN 时必须;<br>refund 时必要性为 P,与商户订单号必须有一项不为空,<br>若同时不为空,则收钱吧订单号优先级高|7894259244017207
 商户订单号|String(32)|C|商户系统内的唯一订单标识;<br>refundUIWithClientSN 时必须;<br>refund时必要性为P,与收钱吧订单号必须有一项不为空,<br>若同时不为空,则收钱吧订单号优先级高|20160122111520
-退款序列号|String(32)|M|商户系统退款的唯一标识，不超过30个字符|20160122111521
+退款序列号|String(32)|M|商户系统退款的唯一标识|20160122111521
 操作员|String(32)|M|发起本次退款的操作员|00
 退款金额|String(10)|M|以分为单位,不超过 10 位纯数字字符串|1000
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
@@ -399,7 +379,9 @@ const char* __stdcall refund(const char* params)|无|Refund Success、 Refund Fa
 返回状态|String|M|标识本次请求成功还是失败,见参数规定|Refund Success
 收钱吧订单号|String(32)|M|收钱吧产生当前订单的唯一标识,若未 传入则返回空值|7894259244017207
 商户订单号|String(32)|M|商户系统内部的唯一订单标识,若未传 入则返回空值|20160122111520
+交易通道|String(1)|C|返回状态 Success 时存在|1
 支付通道交易凭证|String(64)|C|返回状态 Success 时存在|10054810162016012 22834933179
+支付平台交易时间|String(32)|C|返回状态 Success 时存在，毫秒为单位的Unix时间戳|1500949287000
 错误码|String|C|返回状态 Failure 时存在,详细参见错误列表|REFUNDABLE_AMOU NT_NOT_ENOUGH
 错误码描述|String|C|返回状态 Failure 时存在,详细参见错误列表|退款金额错误,可退金额不足
 反射参数|String|P|商户系统上报的字符内容|--
@@ -417,7 +399,6 @@ const char* __stdcall refund(const char* params)|无|Refund Success、 Refund Fa
 函数原型|有无UI|返回状态
 ---|---|---
 const char* __stdcall query (const char* params)|无|Query Result、Query Failure
-const char* __stdcall queryEx (const char* params)|无|Query Result、Query Failure
 
 * 4.4.1.5.2 输入参数
 
@@ -465,25 +446,6 @@ channel_finish_time|String(13)|C|交易在支付平台(支付宝、微信等)完
 subject|String(32)|C|本次交易的简要介绍|测试商品
 operator|String(64)|C|操作员|00
 reflect|String|C|商户系统随订单提交的反射参数|--
-
-* 4.4.1.5.3.2 queryEx 接口输出参数
-
-名称|类型|必要性|参数说明|示例
----|---|---|---|---
-返回状态|String|M|标识本次请求成功还是失败,见参数规定|Query Result
-**<font color="red">当返回状态为 Query Failure 时会以&连接形式返回以下参数</font>**|-|-|-|-
-收钱吧订单号|String(32)|M|收钱吧产生当前订单的唯一标识,若未传入则返回空值|7894259244017207
-商户订单号String(32)||M|商户系统内部的唯一订单标识,若未传入则返回空值|20160122111520
-错误码|String|M|详细参见错误列表|x0001
-错误码描述|String|M|详细参见错误列表|加载服务失败
-**<font color="red"> 当返回状态为 Query Result 时会以&连接形式返回以下参数</font>**|-|-|-|-
-订单状态|String(32)|M|见参数规定|REFUNDED
-收钱吧订单号|String(32)|M|收钱吧产生当前订单的唯一标识|7894259244017207
-商户订单号|String(32)|M|商户系统内部的唯一订单标识|20160122111520
-支付方式|String(1)|M|见参数规定|1
-支付平台交易凭证|String(64)|C|见参数规定|200610101620151209 0096528672
-反射参数|String|C|支付时商户系统随订单提交的反射参数|--
-
 
 * 4.4.1.5.4 使用示意
 
@@ -553,9 +515,25 @@ NA
 
 **4.4.2.2设置配置文件路径**
 
- 一般不需要配置，默认当前目录下去读写配置文件。
+ 该接口负责设置配置文件在客户端的位置，以便动态库获取配置信息
+ 
+ * 4.4.2.2.1函数原型
 
- 如果需要自定义地址，直接在系统环境变量里面加一个WosaiSDKPath
+函数原型|有无UI|返回状态
+---|---|---
+const int __stdcall setSDKPath (const char* params)|无|NA
+
+* 4.4.2.2.2输入参数
+
+名称|类型|必要性|参数说明|示例
+---|---|---|---|---
+文件路径|String|M|配置文件所在目录完整路径|C:\config\
+
+* 4.4.2.2.3输出参数
+
+名称|类型|必要性|参数说明|示例
+---|---|---|---|---
+应答码|Int|M|返回0代表成功|0
 
 **4.4.2.3自动编码**
 
@@ -616,7 +594,6 @@ NA
 
 * 4.4.2.5.3输出参数
 
-
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
 终端号|Stirng|M|当前SDK所使用的终端号|18878019483
@@ -629,7 +606,7 @@ NA
 
 函数原型|有无UI|返回状态
 ---|---|---
-const char* __stdcall signIn()|无|SignIn Success、 SignIn Failure
+const char* __stdcall signIn()|无|SignIn Success、SignIn Failure
 
 * 4.4.2.6.2输入参数
 
@@ -637,12 +614,11 @@ NA
 
 * 4.4.2.6.3输出参数
 
-
 名称|类型|必要性|参数说明|示例
 ---|---|---|---|---
-返回状态|Stirng|M|标识本次请求成功还是失败 SignIn Success、 SignIn Failure|SignIn Success
-错误码|String|C|返回状态 Failure 时存在，详细参见错误列表|x1004
-错误描述|String|C|返回状态Failure时存在，详细参见错误列表|无法保存签到数据
+返回状态|Stirng|M|标识本次请求成功还是失败 SignIn Success、SignIn Failure|SignIn Success
+错误码|String|C|返回状态Failure 时存在，详细参见错误列表|x1004
+错误码描述|String|C|返回状态Failure 时存在，详细参见错误列表|无法保存签到数据
 
 
 ### 4.5 配置文件
@@ -653,16 +629,8 @@ NA
 
 参数名|参数解释|参数值|示例
 ---|---|---|---
-APPURL|业务的请求地址,默认https://api.shouqianba.com|<br>正式环境:RTM;<br>自定义:http://xxxxxxx/|AppURL:RTM
-EnableLog|是否开启SDK日志，默认开启|开启:1,不开启:0|EnableLog:1
-Proxy|代理地址||Proxy:http-proxy-sha.corporate.example.com
-ProxyPort|代理端口||ProxyPort:80
-
-**注:如果终端不能直接与外网通信,增加代理设置就是在KeyParams文件中增加Proxy和ProxyPort**
-
-**建议开启日志，方便调试**
-
-
+APPURL|业务的请求地址,默认测试环境|<br>测试环境:RC;<br>正式环境:RTM;<br>自定义:http://xxxxxxx/|AppURL:RC
+EnableLog|是否开启SDK日志，默认不开启|开启:1,不开启:0|EnableLog:1
 
 #### 4.5.2 KeySettings
 
@@ -739,7 +707,12 @@ UNEXPECTED_PROVIDER_ERROR|不认识的支付通道|收钱吧不支持的支付�
  
 开发语言|下载地址
 ----|----
-C++| （https://github.com/WoSai/shouqianba-winsdk2.0-demo)
+C++|
+Java|
+C#|
+Vb6|
+PB9|
+PB12|
 
 
 
