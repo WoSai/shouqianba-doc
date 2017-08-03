@@ -471,8 +471,6 @@ const char* __stdcall revoke(const char* params)|无|Revoke Success、 Revoke Fa
 商户订单号|String(32)|C|商户系统内的唯一订单标识; <br>revokeUIWithClientSN 时必须;<br>revoke 时与收钱吧订单号必须有一项不为空,<br>若同时存在,则收钱吧订单号优先级高|20160122111520
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
 
-
-
 * 4.4.1.6.3输出参数
 
 名称|类型|必要性|参数说明|示例
@@ -486,11 +484,11 @@ const char* __stdcall revoke(const char* params)|无|Revoke Success、 Revoke Fa
 反射参数|String|P|商户系统上报的字符内容|--
 
 
-* 4.4.1.5.4 使用示意
+* 4.4.1.6.4 使用示意
 
 ![GitHub set up](http://ww3.sinaimg.cn/large/61df8f13gw1f12p1g8oaxj20g80je3zw.jpg)
 
-####4.4.2 扩展接口
+#### 4.4.2 扩展接口
 **4.4.2.1获取二维码内容**
 
 该接口负责返回二维码的实际内容,方便调用者进行自己的业务处理,
