@@ -1,5 +1,4 @@
-# Summary
-* [收钱吧支付接口文档]
+# 收钱吧支付接口文档
 * [介绍](README.md)
 * [对接前准备](business.md)
 * [对接过程常见问题](api/Q&A-技术-Web API.md)
