@@ -57,7 +57,7 @@
 
 #### 3.1.2 请求参数
 
-具体请参考收钱吧支付网关[预下单接口文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/precreate.html)
+具体请参考收钱吧支付网关[预下单接口文档](https://book.shouqianba.com/shouqianba-doc/content/zh-cn/api/interface/precreate.html)
 
 #### 3.1.3 特别说明
 
@@ -72,7 +72,7 @@
 
 #### 3.2.2 请求参数
 
-具体请参考收钱吧支付网关[查询接口文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/query.html)
+具体请参考收钱吧支付网关[查询接口文档](https://book.shouqianba.com/shouqianba-doc/content/zh-cn/api/interface/query.html)
 
 #### 3.2.3 特别说明
 

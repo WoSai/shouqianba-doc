@@ -5,7 +5,7 @@
 {api_domain}/terminal/uploadLog
 
 ## 签名验证
-   请参考[签名机制文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+   请参考[签名机制文档](https://book.shouqianba.com/shouqianba-doc/content/zh-cn/api/sign.html)
 ## 请求参数
 Body内容即为日志，请使用zip格式压缩。
 
