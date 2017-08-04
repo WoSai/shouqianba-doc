@@ -1,0 +1,11 @@
+version: '2'
+services:
+  shouqianba-doc:
+    build: .
+    image: tobegit3hub/gitbook-server
+    restart: always
+    container_name: shouqianba-doc
+    ports:
+      - "11135:4000"
+    volumes:
+      - /app/bin/shouqianbaBook/shouqianba-doc:/gitbook
