@@ -4,7 +4,7 @@
 
         {api_domain}/upay/v2/precreate
 ## 签名验证
-  请见[签名机制文档](https://book.shouqianba.com/shouqianba-doc/content/zh-cn/api/sign.html)
+  请见[签名机制文档](https://book.shouqianba.com/zh-cn/api/sign.html)
 ## 请求参数说明
 
 参数 | 参数名称 | 类型 | 必填 | 描述 | 范例
