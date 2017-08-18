@@ -8,4 +8,3 @@ ADD . /gitbook
 WORKDIR /gitbook
 RUN gitbook build
 ENTRYPOINT gitbook serve
-EOF
