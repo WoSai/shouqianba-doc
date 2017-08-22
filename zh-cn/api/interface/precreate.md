@@ -21,10 +21,20 @@ description	|商品详情	|String(256)|N|对商品或本次交易的描述|
 longitude|	经度	|String|	N	|经纬度必须同时出现|
 latitude	|纬度	|String	|N|经纬度必须同时出现|
 extended	|扩展参数集合	|String(256)|	N|	收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
+goods_details |商品详情 |JSON |N |格式为json goods_details的值为数组，每一个元素包含五个字段，一个是goods_id商品的编号，一个goods_name商品名称，一个是quantity商品数量，一个是price商品单价，单位为分，一个是promotion_type优惠类型 | "goods_details": [{"goods_id": "wx001","goods_name": "苹果笔记本电脑","quantity": 1,"price": 2,"promotion_type": 0},{"goods_id": "wx002","goods_name":"tesla","quantity": 1,"price": 2,"promotion_type": 1}]
 reflect|	反射参数|	String(64)|	N|任何调用者希望原样返回的信息 | { "tips" : "100"}
 notify_url|回调|String(128)|N| 支付回调的地址|例如：www.baidu.com 如果支付成功通知时间间隔为1s,5s,30s,600s
 
 **商户系统订单号必须在商户系统内唯一，支付失败订单的二次预下单请求，请创建新的商户订单号**
+
+## 请求参数中关于goods_details说明
+字段名称 | 数值格式 | 长度 | 字段描述
+--------- | ------ | ----- | -------
+goods_id | String必填 | 32 | 商品的编号
+goods_name | String必填 |32 | 商品名称，如ipad
+quantity | Number必填 | 10 | 商品数量，如10
+price | Number必填 | 9 | 商品单价，单位为分，如2000
+promotion_type |Number必填 | 1 |优惠类型，0表示没有优惠，1表示支付机构优惠，为1会把相关信息送到支付机构
 
 ## 同步返回参数说明
 
