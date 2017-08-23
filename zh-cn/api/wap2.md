@@ -2,11 +2,11 @@
 
 对于具有一定开发能力的商户，可以通过对接Upay支付网关来支持WAP支付，让顾客可以直接在商户的网页上进行移动支付，从而拓展商户的线上业务渠道。
 
-## 1. 业务场景
+## 业务场景
 
 顾客在支付客户端（如微信）中访问商户的商城页面，选择商品后结账，触发支付控件（如点击支付按钮），支付客户端会弹出支付控件提示用户输入支付密码，用户输入密码后完成支付，商户页面提示交易进行中，在商户获取到支付结果后，在页面上展示支付结果和订单信息。
 
-## 2. WAP接入须知
+## WAP接入须知
 在对接WAP接口前，请联系收钱吧销售人员填写服务商入网申请资料和测试商户入网资料。入网资料中填写的微信相关参数必须与开发者使用的微信相关参数保持一致。
 
 
@@ -15,17 +15,20 @@
 ## 网关地址
 https://m.wosai.cn/qr/gateway
 
-##请求方式
+## 请求方式
+
 GET
 
-### 请求参数
+***需要使用302跳转的方式访问 https://m.wosai.cn/qr/gateway?QUERY***
+
+## 请求参数
 参数 | 参数名称 | 类型 | 是否必填 | 描述 |范例
 ------ | ----- | ----- | ----- |----- | -----
 terminal_sn | 收钱吧终端ID | String(32) |	Y |收钱吧终端ID | "23420593829"
 client_sn | 商户系统订单号 | String(32) |	Y |必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
 total_amount | 交易总金额 | String(10) |	Y |以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账 | "1000"
 subject | 交易概述 | String(64) |	Y |本次交易的概述 | "pizza"
-payway | 支付方式 | String | N |支付方式，目前支持的支付方式参照附录 《支付方式》。不传默认为微信 |3
+payway | 支付方式 | String | N |支付方式，目前支持的支付方式参照附录 《支付方式》。不传默认选择当前环境支持的支付方式。如在支付宝客户端打开则使用支付宝支付。 | 3
 operator | 	门店操作员 | String(32) |	Y |发起本次交易的操作员 | "Obama"
 description | 商品详情 | String(256) | N |对商品或本次交易的描述 | 
 longitude | 经度 | 	String | N |经纬度必须同时出现 | 
@@ -37,39 +40,41 @@ return_url | 页面跳转同步通知页面路径 | String(128) |	Y |处理完�
 sign | 签名 | String(32) |	Y |签名，规则请参考附录 《签名规则》 | 
 
 
-### 页面同步跳转参数说明
+## 页面同步跳转参数说明
 商户的请求数据处理完成后，会将处理的结果通知给商户网站。这些处理结果数据就是页面跳转同步通知参数(当消费者付完款之后，会从付款界面跳转回return_url地址下，然后处理的数据也相应的同步到这个地址下)。
+
+**商户务必以查单或者服务器异步通知的订单结果为主作出正确的处理。return_url的结果仅供参考。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里[查询接口](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/query.html)，轮询的时间控制在100-120s之间，轮询的间隔建议为前30秒内2秒一次，之后5秒一次**
 
 参数 | 参数名称 | 类型 | 必填 |描述 |范例
 ------ | ----- | -----| ----- | ----- | -----
-is_success | 成功标识 | String(1) | Y | 表示接口调用是否成功，并不表明业务处理结果。 | T
+is_success | 成功标识 | String(1) | Y | 表示接口调用是否成功，并不表明业务处理结果。取值范围：["T","F"] | T
 error_code | 错误码 | String | N | 仅 is_success 为 F 时出现 | 见附录 《错误码》
 error_message | 错误描述 | String | N | 仅 is_success 为 F 时出现 | 见附录 《错误码》
 terminal_sn | 收钱吧终端ID | String(32) | Y | 收钱吧终端ID | "23420593829"
 sn | 收钱吧唯一订单号 | String(16) | Y | 收钱吧系统内部唯一订单号 | 7892259488292938
 trade_no | 支付服务商订单号 | String(64)| Y | 支付通道交易凭证号 | 2013112011001004330000121536
 client_sn | 商户系统订单号 | String(32) | Y | 必须在商户系统内唯一；且长度不超过32字节 | "18348290098298292838"
-status | 支付状态 | String | N | 标志支付是否成功 | "SUCCESS"
-result_code | 业务错误码 | String(64)| N | status 为 FAIL 时出现 | 见附录 《错误码》
-result_message | 业务错误描述 | String | N | status 为 FAIL 时出现 | 见附录 《错误码》
+status | 支付状态 | String | N | 标志支付是否成功。取值范围：["SUCCESS","FAIL"] | SUCCESS
+result_code | 业务错误码 | String(64)| N | 仅 status 为 FAIL 且是微信支付时存在该字段 | 见附录 《错误码》
+result_message | 业务错误描述 | String | N | 仅 status 为 FAIL 且是微信支付时存在该字段 | 见附录 《错误码》
 total_amount | 交易总金额 | String(10) | Y | 以分为单位,不超过10位纯数字字符串,超过1亿元的收款请使用银行转账 | "1000"
 subject | 交易概述 | String(64) | Y | 本次交易的概述 | "pizza"
 operator | 门店操作员 | String(32) | Y | s发起本次交易的操作员 | "Obama"
 reflect | 反射参数 | String(64) | N | 任何调用者希望原样返回的信息 | { "tips" : "100"}
 sign | 签名 | String(32) | Y | 签名，规则请参考附录 《签名规则》 | 
 
-**商户务必以查单或者服务器异步通知的订单结果为主作出正确的处理。return_url的结果仅供参考。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里[查询接口](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/interface/query.html)，轮询的时间控制在100-120s之间，轮询的间隔建议为前30秒内2秒一次，之后5秒一次**
+## 附录
 
-# 附录
-
-## 支付方式
+### 支付方式
 
 取值 | 含义
 ----- | -----
+1 | 支付宝
 3 | 微信
+6 | QQ
 
 
-## 错误码 
+### 错误码 
 
 error_code | error_message
 ----- | -----
@@ -109,10 +114,7 @@ get_brand_wcpay_request:ok |get_brand_wcpay_request:ok |支付成功
 get_brand_wcpay_request:fail | get_brand_wcpay_request:fail |支付失败
 get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel |用户取消支付
 
-**商户务必以查单或者服务器异步通知的订单结果为主作出正确的处理。return_url的结果仅供参考。查询订单请使用轮询方式获取为主，具体的轮询方式请使用web api接口里[查询接口](https://doc.shouqianba.com/zh-cn/api/interface/query.html)，轮询的时间控制在100-120s之间，轮询的间隔建议为前30秒内2秒一次，之后5秒一次**
-
-说明：一般除 get_brand_wcpay_request:ok 外皆认为支付失败，无需细分处理。
-
+**注意**：result_code 和 result_message 只在微信支付时返回且被标记为 Deprecated，未来可能会被删除请勿继续使用。请使用 status 作为判断成功与否标识。result_code 一般除 get_brand_wcpay_request:ok 外皆认为支付失败，无需细分处理。
 
 ## 签名规则
 1. 筛选 获取所有请求参数，不包括字节类型参数，如文件、字节流，剔除sign与sign_type参数。
@@ -133,9 +135,7 @@ get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel |用户取消支�
          md5生成sign
          sign = md5(stringSignTemp).toUpperCase()
          
-## 注：
-  需要使用微信浏览器，使用302跳转的方式访问https://m.wosai.cn/qr/gateway
-  示例：
+PHP 示例：
   
       <?php
         $paramsStr = "client_sn=test&operator=TEST&return_url=test&subject=TEST&terminal_sn=test&total_amount=3";
@@ -147,6 +147,7 @@ get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel |用户取消支�
  
 
 ## wap支付接入常见问题
+
 ### 1.使用wap支付，需要在微信后台配置https://m.wosai.cn/qr/ 这个地址。具体配置流程：
     1）登录微信公众号后台（https://mp.weixin.qq.com/)，点击左侧的微信支付，再点击开发配置，点击修改
     2）进入之后，勾选“JS API网页支付”，填写相关信息：支付授权目录：https://m.wosai.cn/qr/
