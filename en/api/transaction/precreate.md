@@ -30,6 +30,7 @@ notify_url| Callback URL | String(128) | N | If provided, Upay server will also 
 ### Description of goods_details in request parameters
 
 Parameter | Data Type | Length | Required | Description | Example
+--------- | ------ | ----- | -------| --------- | ----
 goods_id       | String | 32 | Y | The serial number of goods
 goods_name     | String | 32 | Y | The name of the goods    | "ipad"
 quantity       | Number | 10 | Y | the number of the goods  |  10
