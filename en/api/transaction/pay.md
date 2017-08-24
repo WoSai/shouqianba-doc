@@ -20,10 +20,20 @@ longitude | Longitude of the transaction location | String | N | Must be used si
 latitude | Latitude of the transaction location | String| N | Must be used simultaneously with `longitude` | "31.4056441552"
 device_id | Terminal device's unique identifier | String(32) | N | No longer than 32 characters | Such as IMEI of an Android device or `indentifierForVendor` of an iOS device
 extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
+goods_details | Description of the goods | JSON | N | The value of goods_details is Array,each element contains five fields,including goods_id,goods_name,quantity,price,promotion_type,respectively represent the serial number of goods,the name of the goods,the number of the goods,commodity price,preferential type | "goods_details": [{"goods_id": "wx001","goods_name": "mac pro","quantity": 1,"price": 2,"promotion_type": 0},{"goods_id": "wx002","goods_name":"tesla","quantity": 1,"price": 2,"promotion_type": 1}]
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
 
 <font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new <code>client_sn</code>. Otherwise Upay system will complain about duplicate <code>client_sn</code>.</b></font>
+
+### Description of goods_details in request parameters
+
+Parameter | Data Type | Length | Required | Description | Example
+goods_id       | String | 32 | Y | The serial number of goods
+goods_name     | String | 32 | Y | The name of the goods    | "ipad"
+quantity       | Number | 10 | Y | the number of the goods  |  10
+price          | Number | 9  | Y | commodity price,unit for points | 2000
+promotion_type | Number | 1  | Y | preferential type,0 represents no discount,1 represents institution discount and will send the information to the payment institution
 
 ### Response Parameters
 
