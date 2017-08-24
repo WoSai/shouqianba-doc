@@ -7,7 +7,7 @@
 ### Request Paramters
 
 Parameter | Description | Data Type | Required | Note | Example
---------- | ------ | ----- | -------| ----------------------------------------------- | -------------------
+------- | ------ | ----- | -----| ----- | -------------
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
 client_sn* | Order serial number in client system | String(32) | Y | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Number string no longer than 10 characters; please use bank transfer for larger amount. | "1000"
@@ -33,7 +33,7 @@ Parameter | Data Type | Length | Required | Description | Example
 goods_id       | String | 32 | Y | The serial number of goods
 goods_name     | String | 32 | Y | The name of the goods    | "ipad"
 quantity       | Number | 10 | Y | The number of the goods  |  10
-price          | Number | 9  | Y | Commodity price,unit for points | 2000
+price          | Number | 9  | Y | Commodity price in cents | 2000
 promotion_type | Number | 1  | Y | Preferential type,0 represents no discount,1 represents institution discount and will send the information to the payment institution
 
 ### Response Parameters
