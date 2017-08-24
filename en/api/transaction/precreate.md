@@ -34,7 +34,7 @@ Parameter | Data Type | Length | Required | Description | Example
 goods_id       | String | 32 | Y | The serial number of goods
 goods_name     | String | 32 | Y | The name of the goods    | "ipad"
 quantity       | Number | 10 | Y | The number of the goods  |  10
-price          | Number | 9  | Y | Commodity price,unit for points | 2000
+price          | Number | 9  | Y | Commodity price in cents | 2000
 promotion_type | Number | 1  | Y | Preferential type,0 represents no discount,1 represents institution discount and will send the information to the payment institution
 
 ### Response Parameters
