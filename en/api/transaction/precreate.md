@@ -41,7 +41,7 @@ promotion_type | Number | 1  | Y | preferential type,0 represents no discount,1 
 All following parameters refer to the fields in `biz_response` and `biz_response.data`
 
 Parameter | Description | Data Type | Required | Note | Example
---------- | ------ | ----- | -------| --- | ----
+--------- | ------ | ----- | -------| -------- | ----
 result_code | Request result code | String | Y | Result code of business response | "PRECREATE_SUCCESS"
 error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "UNEXPECTED_PROVIDER_ERROR"
 error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "不认识的支付通道"
