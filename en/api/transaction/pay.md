@@ -7,7 +7,7 @@
 ### Request Paramters
 
 Parameter | Description | Data Type | Required | Note | Example
---------- | ------ | ----- | -------| --- | ----
+--------- | ------ | ----- | -------| ----------------------------------------------- | -------------------
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
 client_sn* | Order serial number in client system | String(32) | Y | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Number string no longer than 10 characters; please use bank transfer for larger amount. | "1000"
