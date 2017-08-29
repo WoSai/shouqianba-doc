@@ -281,6 +281,7 @@ const char* __stdcall pay(const char* params)|无|Pay Success、Pay Failure
 付款码|String(32)|P|消费者用于付款的条码或二维码内容, 使用 UI 时可以传空值|130818341921441147
 反射参数|String|P|商户系统希望收钱吧接口服务原样返回的字符内容|--
 扩展参数|String|P|商户系统与收钱吧系统约定的参数格式|--
+优惠信息|String|P|优惠金额详细信息|--
 	
 
 * 4.4.1.2.3 输出参数
