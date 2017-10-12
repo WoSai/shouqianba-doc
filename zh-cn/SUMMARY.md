@@ -21,7 +21,7 @@
        * [4.4.4 支付方式](api/annex/payway.md)
        * [4.4.5 接口响应模板](api/annex/responseExample.md)
 * [5.WAP支付对接文档](api/wap.md)     
-* [6.WAP API PRO支付 接入说明](api/wap2.md)
+* [6.WAP API PRO 支付 接入说明](api/wap2.md)
 * [7.SDK接入指南](sdk/README.md)
     * [7.1 接入流程](sdk/flow.md)
     * [7.2 业务流程](sdk/business.md)
