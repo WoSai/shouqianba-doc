@@ -24,6 +24,7 @@ goods_details |商品详情 |JSON |N |格式为json goods_details的值为数组
 
 <p style="color:red; font-weight: bold;">sn与client_sn不能同时为空，优先按照sn查找订单，如果没有，再按照client_sn查询</p>
 
+
 ## 请求参数中关于goods_details说明
 字段名称 | 数值格式 | 长度 | 字段描述
 --------- | ------ | ----- | -------
