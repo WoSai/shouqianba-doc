@@ -14,8 +14,21 @@ client_sn | Order serial number in client system | String(32) | N | Must be uniq
 refund_request_no | Refund request number | String(20) | Y | Used to prevent duplicate refund requests | "23030349"
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
 refund_amount | Refund amount | String(10) | Y | Should be less or equal to the total amount of the order | "100"
+extended | Extended paramters | JSON object | N | Special parameters that will be passed along to payment providers by Upay server. 24 fields at most, with keys no longer than 64 characters and values no longer than 256 characters. | { "goods_tag": "beijing"}
+goods_details | Description of the goods | JSON | N | The value of goods_details is Array,each element contains five fields,including goods_id,goods_name,quantity,price,promotion_type,respectively represent the serial number of goods,the name of the goods,the number of the goods,commodity price,preferential type | "goods_details": [{"goods_id": "wx001","goods_name": "mac pro","quantity": 1,"price": 2,"promotion_type": 0},{"goods_id": "wx002","goods_name":"tesla","quantity": 1,"price": 2,"promotion_type": 1}]
 
 <font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
+
+### Description of goods_details in request parameters
+
+Parameter | Data Type | Length | Required | Description | Example
+--------- | ------ | ----- | -------| ------------- | ----
+goods_id       | String | 32 | Y | The serial number of goods |
+goods_name     | String | 32 | Y | The name of the goods    | "ipad"
+quantity       | Number | 10 | Y | the number of the goods  |  10
+price          | Number | 9  | Y | commodity price in cents | 2000
+promotion_type | Number | 1  | Y | preferential type,0 represents no discount,1 represents institution discount and will send the information to the payment institution | 
+
 
 ### Response Paramters
 
