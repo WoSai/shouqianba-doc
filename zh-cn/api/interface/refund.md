@@ -19,8 +19,20 @@ client_tsn      |商户退款流水号  |String(32)|N|商户退款流水号，�
 refund\_request_no|退款序列号|	String(20)|Y|商户退款所需序列号，用于唯一标识某次退款请求，以防止意外的重复退款。**正常情况下，对同一笔订单进行多次退款请求时该字段不能重复；而当通信质量不佳，终端不确认退款请求是否成功，自动或手动发起的退款请求重试，则务必要保持序列号不变**|"23030349"
 operator|操作员	|String(64)	|Y|执行本次退款的操作员|"Obama"
 refund_amount|	退款金额	|String(10)|Y|退款金额|"100"
+extended | 扩展参数集合 | JSON map | N | 收钱吧与特定第三方单独约定的参数集合,json格式，最多支持24个字段，每个字段key长度不超过64字节，value长度不超过256字节 | { "goods_tag": "beijing"}
+goods_details |商品详情 |JSON |N |格式为json goods_details的值为数组，每一个元素包含五个字段，一个是goods_id商品的编号，一个是goods_name商品名称，一个是quantity商品数量，一个是price商品单价，单位为分，一个是promotion_type优惠类型，0:没有优惠 1: 支付机构优惠，为1会把相关信息送到支付机构| "goods_details": [{"goods_id": "wx001","goods_name": "苹果笔记本电脑","quantity": 1,"price": 2,"promotion_type": 0},{"goods_id": "wx002","goods_name":"tesla","quantity": 1,"price": 2,"promotion_type": 1}]
 
 <p style="color:red; font-weight: bold;">sn与client_sn不能同时为空，优先按照sn查找订单，如果没有，再按照client_sn查询</p>
+
+## 请求参数中关于goods_details说明
+字段名称 | 数值格式 | 长度 | 字段描述
+--------- | ------ | ----- | -------
+goods_id       | String必填 | 32 | 商品的编号
+goods_name     | String必填 |32  | 商品名称，如ipad
+quantity       | Number必填 | 10 | 商品数量，如10
+price          | Number必填 | 9  | 商品单价，单位为分，如2000
+promotion_type | Number必填 | 1  | 优惠类型，0表示没有优惠，1表示支付机构优惠，为1会把相关信息送到支付机构
+
 
 ##同步返回参数说明
 
