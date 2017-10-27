@@ -18,7 +18,7 @@
    
    接入者只需要对接这几个接口，即可方便的使用多种移动支付来收款。
    
-   具体对接方式请查看[web api对接文档](https://doc.shouqianba.com/shouqianba-doc/content/zh-cn/api/apiflow.html)
+   具体对接方式请查看[web api对接文档](https://doc.shouqianba.com/zh-cn/api/apiflow.html)
    
 ## 收钱吧sdk对接:
 
@@ -28,11 +28,11 @@
   
    SDK为开发者提供了一套完整的接入解决方案，涵盖了 终端激活、支付、退款、查询、预下单 及 撤单 一系列主要功能，并提供了 无界面模式 和 标准界面模式 两种调用模式，最大程度的降低开发者的开发和调试难度，满足不同程度的自定义需求。
    
-   目前SDK已支持 iOS ，Android 及 Windows 三大平台。具体对接请看相应的[sdk对接文档](https://doc.shouqianba.com/shouqianba-doc/content/zh-cn/sdk/flow.html)。
+   目前SDK已支持 iOS ，Android 及 Windows 三大平台。具体对接请看相应的[sdk对接文档](https://doc.shouqianba.com/zh-cn/sdk/flow.html)。
 
 ## WAP支付(目前仅支持微信支付):
 
-   顾客在支付客户端（如微信）中访问商户的商城页面，选择商品后结账，触发支付控件（如点击支付按钮），支付客户端会弹出支付控件提示用户输入支付密码，用户  输入密码后完成支付，商户页面提示交易进行中，在商户获取到支付结果后，在页面上展示支付结果和订单信息，具体对接流程请查看[wap支付对接文档](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/wap2.html)
+   顾客在支付客户端（如微信）中访问商户的商城页面，选择商品后结账，触发支付控件（如点击支付按钮），支付客户端会弹出支付控件提示用户输入支付密码，用户  输入密码后完成支付，商户页面提示交易进行中，在商户获取到支付结果后，在页面上展示支付结果和订单信息，具体对接流程请查看[wap支付对接文档](https://doc.shouqianba.com/zh-cn/api/wap2.html)
    
 ## WebProxy对接:
 
@@ -44,7 +44,7 @@
 
    - **非映射代理:**对接方愿意维护自己门店终端与收钱吧门店终端的映射关系，Web Proxy仅做时序和签名的封装，角色类似于SDK（对接方调用core-proxy接口和upay-proxy接口）
    
-   具体请查看[webproxy对接文档](https://doc.shouqianba.com/shouqianba-doc/content/zh-cn/proxy/)
+   具体请查看[webproxy对接文档](https://doc.shouqianba.com/zh-cn/proxy/)
    
 # 收钱吧支持场景？
 
