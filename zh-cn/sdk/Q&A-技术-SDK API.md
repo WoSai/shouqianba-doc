@@ -23,7 +23,7 @@
 
 	ProxyPort:80
 	
-参考[收钱吧支付网关2.0-windowsSDK开发接入文档](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/sdk/windows.md)“4.5.1 KeyParams” 
+参考[收钱吧支付网关2.0-windowsSDK开发接入文档](https://doc.shouqianba.com/zh-cn/sdk/windows.html)“4.5.1 KeyParams” 
 
 注释掉则不生效
 
@@ -49,7 +49,7 @@ preCreateUI不可以，preCreateUI需要得到第一张订单支付结果之后�
 preCreate可以。
 
 ##Windows SDK业务的请求地址（接入域名）是写死在dll里的吗？可以换成内网IP吗？
-业务请求地址不是写死的。可以通过KeyParams文件配置 SDK 的基本参数。AppURL:后面跟需要的地址，以/结束。参考[收钱吧支付网关2.0-windowsSDK开发接入文档](https://github.com/WoSai/shouqianba-doc/blob/master/zh-cn/sdk/windows.md)“4.5.1 KeyParams” 
+业务请求地址不是写死的。可以通过KeyParams文件配置 SDK 的基本参数。AppURL:后面跟需要的地址，以/结束。参考[收钱吧支付网关2.0-windowsSDK开发接入文档](https://doc.shouqianba.com/zh-cn/sdk/windows.html)“4.5.1 KeyParams” 
 
 ##关于Window SDK时序
 Windows SDK对于业务时序都是封装好的，不需要用户自己查询和撤单，SDK自动完成。SDK调用的结果只有成功和失败。（preCreate除外）
