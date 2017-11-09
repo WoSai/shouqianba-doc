@@ -6,6 +6,7 @@
     * [对接流程文档](api/apiflow.md)
     * [签名机制](api/sign.md)
     * [对接接口列表]()
+    
        * [商户入网OpenAPI](api/interface/createMerchantOpenAPI.md)
        * [激活接口](api/interface/activate.md)
        * [签到接口](api/interface/checkin.md)
