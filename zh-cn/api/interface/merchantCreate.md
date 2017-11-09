@@ -39,6 +39,7 @@
 
 ## 请求示例
 
+
     ```json
     {
     "name": "XXX苏州园区二部",
@@ -76,7 +77,7 @@
 
 
    ```json
-    {
+   {
     "result_code": "200",
     "biz_response": {
         "result_code": "SUCCESS",
@@ -87,7 +88,7 @@
             "terminal_key": "3196c6eda99fc7de71513e7633d39cf8"
           }
        }
-     }
+    }
     ```
 
 
