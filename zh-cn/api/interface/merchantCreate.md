@@ -71,13 +71,13 @@
        "user_id": "58461be09386167746c0f319",
        "client_sn": "12345678"
     } 
-    ```
+   ```
     
 ## 响应示例
 
-
+   
    ```json
-   {
+    {
       "result_code": "200",
       "biz_response": {
           "result_code": "SUCCESS",
@@ -88,7 +88,7 @@
               "terminal_key": "3196c6eda99fc7de71513e7633d39cf8"
             }
          }
-    }
+     }
     ```
    
 
