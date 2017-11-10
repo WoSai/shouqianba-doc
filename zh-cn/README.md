@@ -16,6 +16,8 @@
    
    对外提供包括支付，退款，撤单，查询，预下单等功能。
    
+   同时还提供[商户入网OpenAPI](https://doc.shouqianba.com/zh-cn/api/merchantOpenAPI.html)，支持客户的个性化需求，提供更加全流程的解决方案。
+   
    接入者只需要对接这几个接口，即可方便的使用多种移动支付来收款。
    
    具体对接方式请查看[web api对接文档](https://doc.shouqianba.com/zh-cn/api/apiflow.html)
