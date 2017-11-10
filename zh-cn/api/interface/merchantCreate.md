@@ -78,18 +78,18 @@
    
    ```json
     {
-      "result_code": "200",
-      "biz_response": {
-          "result_code": "SUCCESS",
-          "data": {
-              "merchant_sn": "21680002791829",
-              "store_sn": "21580000000521747",
-              "terminal_sn": "2100000830002211983",
-              "terminal_key": "3196c6eda99fc7de71513e7633d39cf8"
-            }
-         }
-     }
-    ```
+       "result_code": "200",
+       "biz_response": {
+           "result_code": "SUCCESS",
+           "data": {
+               "merchant_sn": "21680002791829",
+               "store_sn": "21580000000521747",
+               "terminal_sn": "2100000830002211983",
+               "terminal_key": "3196c6eda99fc7de71513e7633d39cf8"
+             }
+          }
+      }
+     ```
    
 
 
