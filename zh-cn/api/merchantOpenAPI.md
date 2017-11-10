@@ -10,15 +10,15 @@
 
    需要使用服务商序列号(vendor_sn)和服务商密钥(vendor_key)进行签名的接口：
   
-   [商户入网接口](https://doc.shouqianba.com/zh-cn/api/interface/merchantCreate.html)
+   [商户入网接口     /merchant/create](https://doc.shouqianba.com/zh-cn/api/interface/merchantCreate.html)
    
-   [商户信息接口](https://doc.shouqianba.com/zh-cn/api/interface/merchantInfo.html)
+   [商户信息接口     /merchant/info](https://doc.shouqianba.com/zh-cn/api/interface/merchantInfo.html)
    
-   [商户禁用接口](https://doc.shouqianba.com/zh-cn/api/interface/merchantClose.html)
+   [商户禁用接口     /merchant/close](https://doc.shouqianba.com/zh-cn/api/interface/merchantClose.html)
    
-   [开户银行接口](https://doc.shouqianba.com/zh-cn/api/interface/merchantBanks.html)
+   [开户银行接口     /merchant/banks](https://doc.shouqianba.com/zh-cn/api/interface/merchantBanks.html)
    
-   [支行列表接口](https://doc.shouqianba.com/zh-cn/api/interface/merchantBranches.html)
+   [支行列表接口     /merchant/branches](https://doc.shouqianba.com/zh-cn/api/interface/merchantBranches.html)
    
 ## 3.签名方法
 
