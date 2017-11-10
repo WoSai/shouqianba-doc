@@ -33,3 +33,7 @@
  * 所有返回参数都为 JSON 格式，请务必在HTTP请求头中加入Content-Type: application/json。
  * 所有请求的body都需采用UTF-8编码，所有响应也会采用相同编码。
  * 所有返回数据的类型都是 字符串。
+
+## 4.通讯响应码说明及通讯错误码列表
+
+   [见附录](https://doc.shouqianba.com/zh-cn/api/annex/responseCode.html)
