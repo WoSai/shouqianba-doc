@@ -5,7 +5,7 @@
 * [Web API接入指南](api/README.md)
     * [对接流程文档](api/apiflow.md)
     * [签名机制](api/sign.md) 
-    * [商户入网OpenAPI]()
+    * [商户入网OpenAPI](api/merchantOpenAPI.md)
        * [商户入网接口](api/interface/merchantCreate.md)
        * [商户信息接口](api/interface/merchantInfo.md)
        * [商户禁用接口](api/interface/merchantClose.md)
