@@ -1,4 +1,4 @@
-# 商户禁用接口（/merchant/close）
+# 商户禁用接口（/v2/merchant/close）
 
 ## 请求参数
 
@@ -23,9 +23,9 @@ merchant_sn | 商户号 |String(32)|Y|
    
    ```json
     {
-       "result_code": "200",
-       "biz_response": {
-           "result_code": "SUCCESS"
-    }
+      "result_code": "200",
+      "biz_response": {
+        "result_code": "SUCCESS"
+      }
     }
    ```

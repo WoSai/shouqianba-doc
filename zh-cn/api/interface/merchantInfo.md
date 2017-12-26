@@ -1,4 +1,4 @@
-# 商户信息接口（/merchant/info）
+# 商户信息接口（/v2/merchant/info）
 
 ## 请求参数
 
@@ -40,7 +40,8 @@ merchant_sn | 商户号 |String(32)|Y|
                 "branch_name": null,
                 "holder": "张三",
                 "bank_cellphone": "15195951826",
-                "unified_status": 1
+                "unified_status": 1,
+                "error_message": null
             }
         }
     }

@@ -1,4 +1,4 @@
-# 支行列表接口（/merchant/branches）
+# 支行列表接口（/v2/merchant/branches）
 
 ## 请求参数
 

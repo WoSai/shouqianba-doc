@@ -1,4 +1,4 @@
-# 开户银行接口（/merchant/banks）
+# 开户银行接口（/v2/merchant/banks）
 
 ## 请求参数
 

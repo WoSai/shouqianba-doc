@@ -15,15 +15,17 @@
   
 ## 接口
 
-  1.  [商户入网接口(/merchant/create)](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
+  1.  [商户入网接口(/v2/merchant/create)](https://wosai.gitbooks.io/shouqianba-doc/content/zh-cn/api/sign.html)
   
-  2.  [商户信息接口(/merchant/info)]()
+  2.  [商户信息接口(/v2/merchant/info)]()
   
-  3.  [商户禁用接口(/merchant/close)]()
+  3.  [商户禁用接口(/v2/merchant/close)]()
   
-  4.  [开户银行接口(/merchant/banks)]()
+  4.  [开户银行接口(/v2/merchant/banks)]()
   
-  5.  [支行列表接口(/merchant/branches)]()
+  5.  [支行列表接口(/v2/merchant/branches)]()
+
+  6.  [上传图片接口(/v2/merchant/upload)]()
   
 ##  附录
 

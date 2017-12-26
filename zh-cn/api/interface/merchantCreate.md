@@ -1,4 +1,4 @@
-# 商户入网接口（/merchant/create）
+# 商户入网接口（/v2/merchant/create）
 
 ## 请求参数
 
@@ -7,9 +7,9 @@
 商户名 | name |String(32)|Y|至少有一个汉字
 联系人 |contact_name  | String(16)|Y |
 联系电话 | contact_cellphone |String(32) |Y |
-行业 | industry |String(36) |Y |
+行业 | industry |String(36) |N |快递行业: 7a542419-312d-11e6-aebb-ecf4bbdee2f0
 地区 | area |String(6) |Y |标准地区编码，参见附录
-详细地址 | street_address |String(128) |Y | 快递行业: 7a542419-312d-11e6-aebb-ecf4bbdee2f0
+详细地址 | street_address |String(128) |Y | 
 账户类型 | account_type |Integer |Y | 1 个人账户; 2 企业账户
 银行卡号 | bank_card |String(45) |Y |
 开户银行 | bank_name |String(45) |Y |
@@ -69,8 +69,6 @@
         "latitude": 31.308309,
         "vendor_app_id": "2017110600000001",
         "vendor_sn": "91800129",
-        "organization_id": "583fecce34bc5368f85841c9",
-        "user_id": "58461be09386167746c0f319",
         "client_sn": "12345678"
     }   
    ```
