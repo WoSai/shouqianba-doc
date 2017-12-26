@@ -11,6 +11,7 @@
        * [商户禁用接口](api/interface/merchantClose.md)
        * [开户银行接口](api/interface/merchantBanks.md)
        * [支行列表接口](api/interface/merchantBranches.md)
+       * [上传图片接口](api/interface/merchantUpload.md)
     * [对接接口列表]()
        * [激活接口](api/interface/activate.md)
        * [签到接口](api/interface/checkin.md)

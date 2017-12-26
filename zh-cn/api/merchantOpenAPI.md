@@ -19,6 +19,8 @@
 -   [开户银行接口     /v2/merchant/banks](https://doc.shouqianba.com/zh-cn/api/interface/merchantBanks.html)
    
 -   [支行列表接口     /v2/merchant/branches](https://doc.shouqianba.com/zh-cn/api/interface/merchantBranches.html)
+
+-   [上传图片接口     /v2/merchant/upload](https://doc.shouqianba.com/zh-cn/api/interface/merchantUpload.html)
    
 ## 3.签名方法
 
