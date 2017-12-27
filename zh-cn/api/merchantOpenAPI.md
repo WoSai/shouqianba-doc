@@ -2,7 +2,7 @@
 
 ## 1.请求域名
 
-收钱吧接入域名(api_domain)：https://api.shouqianba.com
+收钱吧接入域名(api_domain)：https://api-vendor.shouqianba.com
 
 测试环境域名：https://api-sandbox.test.shouqianba.com
 
