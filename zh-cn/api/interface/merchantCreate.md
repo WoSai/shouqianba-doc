@@ -37,7 +37,7 @@
 组织 | organization_id |String(36)) |N |收钱吧提供的商户所属组织id
 推广者 | user_id |String(36) |N |收钱吧提供的商户推广人id
 外部商户号 | client_sn |String(50) |N |外部商户号, 可以根据此商户号查询商户信息
-是否创建商户账号 |create_account |Boolean |N |默认(false)不创建商户账号, 传true则创建账号
+是否创建商户账号 |create_account |Boolean |N |默认(true)创建商户账号, 传false则不创建账号
 
 ## 请求示例
 
