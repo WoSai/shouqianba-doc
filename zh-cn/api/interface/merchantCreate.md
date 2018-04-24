@@ -5,7 +5,7 @@
 参数 | 参数名称 | 类型(长度) | 必传| 参数说明
 --------- | ------ | ----- | -------|-------------------
 商户名 | name |String(32)|Y|至少有一个汉字
-商户经营名称 | name |String(32)|N|至少有一个汉字,商家实际在经营场所使用的名称,默认和商户名一样
+商户经营名称 | business_name |String(32)|N|至少有一个汉字，商家实际在经营场所使用的名称，默认和商户名一样
 联系人 |contact_name  | String(16)|Y |
 联系电话 | contact_cellphone |String(32) |Y |
 行业 | industry |String(36) |N |快递行业: 7a542419-312d-11e6-aebb-ecf4bbdee2f0
@@ -13,19 +13,19 @@
 详细地址 | street_address |String(128) |Y | 
 账户类型 | account_type |Integer |Y | 1 个人账户; 2 企业账户
 银行卡号 | bank_card |String(45) |Y |
-银行卡照片 | bank_card_image |String(255) |Y |必须传真实的银行卡照片,需要跟银行卡号匹配
+银行卡照片 | bank_card_image |String(255) |Y |必须传真实的银行卡照片，需要跟银行卡号匹配
 开户银行 | bank_name |String(45) |Y |
 开户地区 | bank_area |String(6) |Y | 标准地区编码，参见附录
 开户支行 | branch_name |String(45) |Y | 根据查询支行列表接口传支行名
-开户姓名 | holder |String(45) |Y | 个人账户为开户人, 企业账户为开户公司名
+开户姓名 | holder |String(45) |Y | 个人账户为开户人，企业账户为开户公司名
 预留手机号 | bank_cellphone |String(32) |N |
 法人姓名 | legal_person_name |String(100) |N | 企业账户需要传
 营业执照 | business_license_photo |String(255) |N | 企业账户需要传
 工商注册号 | tax_payer_id |String(45) |N | 企业账户需要传
 证件类型 | id_type |Integer |Y | 1 身份证; 2 护照; 3 台胞证; 4 港澳通行证;
 身份证号 | identity |String(18) |Y |
-身份证正面照 | holder_id_front_photo |String(255) |Y |必须传真实的身份证照片,且身份证信息需要和开户姓名和身份证号匹配
-身份证反面照 | holder_id_back_photo |String(255) |Y |必须传真实的身份证照片,且身份证有效期限不能过期
+身份证正面照 | holder_id_front_photo |String(255) |Y |必须传真实的身份证照片，且身份证信息需要和开户姓名和身份证号匹配
+身份证反面照 | holder_id_back_photo |String(255) |Y |必须传真实的身份证照片，且身份证有效期限不能过期
 门头照片 | brand_photo |String(255) |Y |
 室内照片 | indoor_photo |String(255) |Y |
 室外照片 | outdoor_photo |String(255) |Y |
@@ -38,8 +38,8 @@
 服务商sn | vendor_sn |String(32)) |Y |收钱吧提供的服务商sn
 组织 | organization_id |String(36)) |N |收钱吧提供的商户所属组织id
 推广者 | user_id |String(36) |N |收钱吧提供的商户推广人id
-外部商户号 | client_sn |String(50) |N |外部商户号, 可以根据此商户号查询商户信息
-是否创建商户账号 |create_account |Boolean |N |默认(true)创建商户账号, 传false则不创建账号
+外部商户号 | client_sn |String(50) |N |外部商户号，可以根据此商户号查询商户信息
+是否创建商户账号 |create_account |Boolean |N |默认(true)创建商户账号，传false则不创建账号
 
 ## 请求示例
 
