@@ -112,6 +112,7 @@ The value of `biz_response.data.payway` in responses may be one of the following
 Value | Description  
 --------- | ------
 1 | Alipay
+2 | Alipay
 3 | Wechat Payment
 4 | Baidu Wallet
 5 | Jingdong Pay
