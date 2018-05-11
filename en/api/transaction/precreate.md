@@ -52,6 +52,7 @@ trade_no | Order number in payment service provider system | String(64) | Y | Us
 status | The latest transaction status | String(32) | Y |  | "CREATED"
 order_status | The latest order status | String(32) | Y |  | "CREATED"
 payway | Payment service provider | String(2) | Y | See "Payment Service Providers" | "1"
+payway_name | Payment service name | String(128) | Y |  | "支付宝"
 sub_payway | Payment method | String(2)| Y | See "Payment Methods" | "2"
 qr_code | Payment QR code | String(128) | Y | "https://qr.alipay.com/bax00069h45nvvfc3tu9803a"
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
