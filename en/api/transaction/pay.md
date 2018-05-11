@@ -52,6 +52,7 @@ trade_no | Order number in payment service provider system | String(64) | Y | Us
 status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
 payway | Payment service provider | String(2) | Y | See "Payment Service Providers" | "1"
+payway_name | Payment service name | String(128) | Y |  | "支付宝"
 sub_payway | Payment method | String(2)| Y | See "Payment Methods" | "1"
 payer_uid | The payer's user ID in payment service provider system | String(64) | N |  | "2801003920293239230239"
 payer_login | The payer's login account in payment service provider system | String(128) | N |  | "134****3920"
