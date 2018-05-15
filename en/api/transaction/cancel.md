@@ -31,6 +31,8 @@ client_sn | Order serial number in client system | String(32) | Y | Used by clie
 trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
 status | The latest transaction status | String(32) | Y |  | "SUCCESS"
 order_status | The latest order status | String(32) | Y |  | "PAID"
+payway  | Payment service provider |  String(32)   | Y  |  |  "3"
+payway_name  |  Payment service provider name |  String(128)   | Y  |   |  "微信"
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
 net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
 subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
@@ -49,6 +51,7 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
                 "client_sn": "22345677767776",
                 "status": "SUCCESS",
                 "payway": "3",
+		"payway_name": "微信",
                 "sub_payway": "1",
                 "order_status": "CANCELED",
                 "total_amount": "1",
