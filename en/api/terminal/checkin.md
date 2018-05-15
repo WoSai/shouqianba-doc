@@ -2,7 +2,7 @@
 
 The purpose of terminal check-in is to limit the valid duration of your current `terminal_key` so to reduce the theoretical risk of someone using brute-force algorithm to decrypt your request and steal your `terminal_key`.
 
-Your terminal needs to check in at least once per day to get latest `terminal_key`. Please keep in mind that ~~a `terminal_key` is only valid for at most 48 hours, and~~ after each check-in, only current and last `terminal_key`s are valid.
+Your terminal needs to check in at least once per day to get latest `terminal_key`.  After each check-in, only current and last `terminal_key`s are valid.
 
 Use the terminal's `terminal_sn` and its current `terminal_key` to sign its check-in request. Please refer to [API Guide](../api_guide.md) on how to sign your requests. Using expired or invalid `terminal_key` to sign your requests will result in illegal signature responses (response code: `ILLEGAL_SIGN`).
 
