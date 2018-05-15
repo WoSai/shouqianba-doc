@@ -61,3 +61,32 @@ subject | Subject or brief summary of the transaction | String(64) | Y |  | "Piz
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
 reflect	 | Anything that the client sent in `reflect` field of the request | String(64) | N |  | {"tips": "200"}
 wap_pay_request | The parameters needed to call WAP payment function, returned from payment service providers | String(1024) | N | Returned when using WAP payment
+
+## Response Example - Success
+
+```json
+{
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PRECREATE_SUCCESS",
+            "data": {
+                "sn": "7894259244096169",
+                "client_sn": "765432112",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "operator ": "张三丰",
+                "subject ": "coca cola",
+                "qr_code": "https://qr.alipay.com/bax8z75ihyoqpgkv5f"
+            }
+        }
+}
+```
+
+## Questions & Answers
+
+### 1.Take the initiative to query the order status after calling the `precreate` successfully
+Once you get the successful result(biz_response.result_code="PRECREATE_SUCCESS" or biz_response.data.order_status="CREATED"), then just send polling requests to the Upay server.
+The effective payment time of precreate orders is about 4 minutes, if it times out without payment, upay gateway will automatically cancel the oreder, so please control the polling time,  we suggest that every 2s as a polling interval in the first 30s ,then 5s each time. 
+
