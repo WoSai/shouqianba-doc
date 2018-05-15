@@ -47,6 +47,8 @@ sn	|收钱吧唯一订单号	|String(16)	|Y|	收钱吧系统内部唯一订单�
 client_sn	|商户订单号|	String(64)|	Y	|商户系统订单号。	| "22345677767776"
 status|	退款流水状态	|String(32)|	Y	|本次退款对应的流水的状态| "SUCCESS"
 order_status|	订单状态	|String(32)|	Y	|当前订单状态	| "REFUNDED"
+payway  | 支付方式  |  String(32)   | Y  |  订单支付方式  |  "3"
+payway_name  | 支付方式名称  |  String(128)   | Y  |   |  "微信"
 trade_no	|支付平台的订单凭证号|	String(64)|	Y	|支付宝或微信的订单号| "2006101016201512090096528672"
 total_amount	|交易总金额	|String(10)|	Y	|原始交易实收金额	| "100"
 net_amount|	剩余金额	|String(10)|	Y	|实收金额减退款金额| "0"
