@@ -240,7 +240,7 @@ final status <a name="status"></a>
 - PARTIAL_REFUNDED
 - CANCELED
 
-### 3.Suggest to add a query button to manually processing possible unilateral orders.
+### 3.Suggest to add a query button to manually process possible unilateral orders.
 if consumers pay successfully, but the terminal display a fail payment or unclear status, and the cashier can manually check the order status, if it is still not successful, then you need to contact to our customer service.
 
 
