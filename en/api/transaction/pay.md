@@ -64,6 +64,91 @@ channel_finish_time | Transaction finish time in payment service provider's syst
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
 reflect	 | Anything that the client sent in `reflect` field of the request | String(64) | N |  | {"tips": "200"}
 
+### Response Example - Success
+
+    ```json
+    {
+       "result_code": "200",
+       "biz_response": {
+         "result_code": "PAY_SUCCESS",
+         "data": {
+           "sn": "7893259247405832",
+           "client_sn": "w145206259311176",
+           "client_tsn": "w145206259311176",
+           "ctime": "1492506701411",
+           "status": "SUCCESS",
+           "payway": "3",
+           "sub_payway": "1",
+           "order_status": "PAID",
+           "payer_login": "oyBevtwYm70JVPTFyGlvmKW3IO9U",
+           "payer_uid": "oSTAxt7Rkjr7Jtk0vtf-cFWiHjcs",
+           "trade_no": "4003262001201704187463804544",
+           "total_amount": "101",
+           "net_amount": "101",
+           "finish_time": "1492506702864",
+           "channel_finish_time": "1492506702000",
+           "subject": "Apple iPhone 6s plus (A1699) 16G 玫瑰金色 移动联通电信4G手机",
+           "store_id": "100ed809-af9a-11e5-9ec3-00163e00625b",
+           "operator": "test",
+           "payment_list": [
+             {
+               "type": "BANKCARD_DEBIT",
+               "amount_total": "1"
+             },
+             {
+               "type": "DISCOUNT_CHANNEL_MCH",
+               "amount_total": "100"
+             }
+           ]
+         }
+       }
+     }
+     ```
+   
+### Response Example - In progress
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_IN_PROGRESS",
+            "data": {
+                "sn": "789200393929142",
+                "client_sn": "230202l2-2-2002",
+                "trade_no": "0019101002020384822248",
+                "ctime": "2015-11-01 18:01:00",
+                "status": "IN_PROG",
+                "order_status": "CREATED",
+                "total_amount ": "1000"
+            }
+        }
+    }
+    ```
+
+### Response Example - Pay Failed
+
+    ```json
+    {
+        "result_code": "200",
+        "biz_response": {
+            "result_code": "PAY_FAIL",
+            "error_code": "EXPIRED_BARCODE",
+            "error_message": "过期的支付条码",
+            "data": {
+                "sn": "7894259244067344",
+                "client_sn": "12345677767776",
+                "status": "FAIL_CANCELED",
+                "payway": "3",
+                "sub_payway": "1",
+                "order_status": "PAY_CANCELED",
+                "total_amount": "1",
+                "net_amount": "1",
+                "finish_time": "1449569494595"
+            }
+        }
+    }
+    ```
+
 ### Response Example - Failed
 
 ```json
