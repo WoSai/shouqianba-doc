@@ -67,6 +67,7 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
                 "client_sn": "12345677767776",
                 "status": "SUCCESS",
                 "payway": "3",
+                "payway_name": "微信",
                 "sub_payway": "1",
                 "order_status": "REFUNDED",
                 "trade_no": "2006101016201512080095793262",
