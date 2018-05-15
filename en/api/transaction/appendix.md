@@ -113,9 +113,9 @@ payway | payway_name | note
 --------- | ------ | ---------
 1 | 支付宝1.0 / Alipay-Local |`Alipay-Local` represents Overseas local Alipay wallet , else displays `支付宝1.0`
 2 | 支付宝 | representing `Alipay`
-3 | 微信 | representing `Wechat`
+3 | 微信 | representing `Wechat pay`
 4 | 百度钱包 | representing `Baidu Wallet`
-5 | 京东 | representing `Jingdong`
+5 | 京东钱包 | representing `JD wallet`
 6 | qq钱包 | representing `qq wallet`
 7 | NFC支付 | representing `NFC`
 8 | 拉卡拉钱包 | representing `Lakala wallet`
