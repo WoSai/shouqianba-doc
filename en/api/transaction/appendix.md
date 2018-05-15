@@ -109,14 +109,19 @@ REFUND_ERROR | A refund requested by client is initiated but failed | Same as FA
 
 The value of `biz_response.data.payway` in responses may be one of the following:
 
-Value | Description  
+payway | payway_name  
 --------- | ------
-1 | Alipay
-2 | Alipay
+1 | Alipay 1.0
+2 | Alipay 2.0
 3 | Wechat Payment
 4 | Baidu Wallet
 5 | Jingdong Pay
 6 | QQ Wallet
+7 | NFC
+8 | Lakala Wallet
+15 | Lakala Wechat Payment
+17 | Unionpay
+
 
 **Note: For QQ Wallet, pre-create is not supported.**
 
@@ -130,3 +135,4 @@ Value | Description
 1 | Barcode Payment
 2 | QR Code Payment
 3 | WAP Payment
+4 | Mini Payment
