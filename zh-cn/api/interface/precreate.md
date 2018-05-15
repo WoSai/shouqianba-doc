@@ -66,6 +66,7 @@ trade_no|支付服务商订单号|String(64)|Y|支付通道交易凭证号|"2013
 status|流水状态|String(32)|	Y|本次操作产生的流水的状态| "SUCCESS"
 order_status	|订单状态	|String(32)|Y|当前订单状态|"PAID"
 payway|	支付方式|	String(2)|Y|一级支付方式，取值见附录《支付方式列表》|"1"
+payway_name| 支付方式名称 |String(128)|Y| | "支付宝"
 sub_payway|二级支付方式|	String(2)|Y|二级支付方式，取值见附录《二级支付方式列表》|"1"
 payer_uid|	付款人ID|	String(64)|N|支付平台（微信，支付宝）上的付款人ID|"2801003920293239230239"
 payer_login|付款人账号|String(128)|N|支付平台上(微信，支付宝)的付款人账号|"134****3920"
