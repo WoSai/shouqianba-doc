@@ -111,21 +111,21 @@ The value of `biz_response.data.payway` in responses may be one of the following
 
 payway | payway_name | note 
 --------- | ------ | ---------
-1 | 支付宝 |Oversea Alipay local displays `Alipay-Local`, Oversea Alipay Oversea wallet displays `支付宝1.0`)
-2 | 支付宝 | *
-3 | 微信 | *
-4 | 百度钱包 | *
-5 | 京东 | *
-6 | qq钱包 | *
-7 | NFC支付 | *
-8 | 拉卡拉钱包 | *
-9 | 和包支付 | *
-15 | 拉卡拉微信 | *
-16 | 招商银行 | *
-17 | 银联二维码 | *
-18 | 翼支付 | *
-19 | 微信境外-香港 | Oversea Wechat local displays `Weixin-Local`
-100 | 储值支付 | *
+1 | 支付宝1.0 / Alipay-Local |`Alipay-Local` represents Overseas local Alipay wallet , else displays `支付宝1.0`
+2 | 支付宝 | representing `Alipay`
+3 | 微信 | representing `Wechat`
+4 | 百度钱包 | representing `Baidu Wallet`
+5 | 京东 | representing `Jingdong`
+6 | qq钱包 | representing `qq wallet`
+7 | NFC支付 | representing `NFC`
+8 | 拉卡拉钱包 | representing `Lakala wallet`
+9 | 和包支付 | representing `CMCC`
+15 | 拉卡拉微信 | representing `Lakala wechat payment`
+16 | 招商银行 | representing `China Merchants Bank`
+17 | 银联二维码 | representing `UnionPay`
+18 | 翼支付 | representing `YiPay`
+19 | Weixin-Local | Oversea Wechat local displays `Weixin-Local`
+100 | 储值支付 | representing `Stored-value-card payment`
 
 
 **Note: For QQ Wallet, pre-create is not supported.**
