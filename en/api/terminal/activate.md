@@ -49,5 +49,5 @@ Example：
 Activation code is needed every time you try to activate a Upay terminal. There are several things to consider when you use your activation codes:
 
 - Each activation code belongs to a store. Say activation code (A1) belongs to store (S1), the terminal device activated by A1 will thus belong to S1.
-- Activation code has two usage limits: **number of usage** and **expiration date**. In most cases, the number of usage of an activation code is 1. So you will get a activation code for each of your terminal device. [TODO expiration date default value unknown]
+- Activation code has two usage limits: **number of usage** and **expiration date**. In most cases, the number of usage of an activation code is 1. So you will get a activation code for each of your terminal device which is valid for 7 days.
 - If an activation code has a number of usage larger than 1. You can use it to activate multiple devices. Each activation request with this activation code will give you a new terminal identity (a new set of `terminal_sn` and `terminal_key`).
