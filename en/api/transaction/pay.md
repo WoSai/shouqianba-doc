@@ -227,3 +227,20 @@ Sub handle_response_error(response):
   elif response.result_code == "500":
     raise ("Payment error, please contact Upay customer service", response.error_message)
 ```
+
+## Questions & Answers
+
+### 1.It will prompt `timeout` if there is no password to enter for 40s where using `pay` (BSC), then it is needed to use the `pay` interface to recall.
+
+### 2. If you don't get the final order status of a successful payment(check it with `order_status`), then just invoke `query` to get it.
+final status <a name="status"></a>
+- PAID
+- PAY_CANCELED
+- REFUNDED
+- PARTIAL_REFUNDED
+- CANCELED
+
+### 3.Suggest to add a query button to manually processing possible unilateral orders.
+if consumers pay successfully, but the terminal display a fail payment or unclear status, and the cashier can manually check the order status, if it is still not successful, then you need to contact to our customer service.
+
+
