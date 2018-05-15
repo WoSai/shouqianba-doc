@@ -87,6 +87,6 @@ wap_pay_request | The parameters needed to call WAP payment function, returned f
 ## Questions & Answers
 
 ### 1.Take the initiative to query the order status after calling the `precreate` successfully
-Once you get the successful result(biz_response.result_code="PRECREATE_SUCCESS" or biz_response.data.order_status="CREATED"), then just send polling requests to the Upay server.
+Once you get the successful result(`biz_response.result_code="PRECREATE_SUCCESS" or biz_response.data.order_status="CREATED"`), then just send polling requests to the Upay server.
 The effective payment time of precreate orders is about 4 minutes, if it times out without payment, upay gateway will automatically cancel the oreder, so please control the polling time,  we suggest that every 2s as a polling interval in the first 30s ,then 5s each time. 
 
