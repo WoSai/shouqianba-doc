@@ -66,8 +66,8 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
 
 ### Response Example - Success
 
-    ```json
-    {
+```json
+{
        "result_code": "200",
        "biz_response": {
          "result_code": "PAY_SUCCESS",
@@ -102,13 +102,13 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
            ]
          }
        }
-     }
-     ```
+}
+```
    
 ### Response Example - In progress
 
-    ```json
-    {
+```json
+{
         "result_code": "200",
         "biz_response": {
             "result_code": "PAY_IN_PROGRESS",
@@ -122,13 +122,13 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
                 "total_amount ": "1000"
             }
         }
-    }
-    ```
+}
+```
 
 ### Response Example - Pay Failed
 
-    ```json
-    {
+```json
+{
         "result_code": "200",
         "biz_response": {
             "result_code": "PAY_FAIL",
@@ -146,8 +146,8 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
                 "finish_time": "1449569494595"
             }
         }
-    }
-    ```
+ }
+ ```
 
 ### Response Example - Failed
 
