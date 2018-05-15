@@ -37,3 +37,64 @@ subject | Subject or brief summary of the transaction | String(64) | Y |  | "Piz
 finish_time | Transaction finish time in Upay system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 channel_finish_time | Transaction finish time in payment service provider's system | String(13) | Y | Unix Timestamp in milliseconds | "1449646835244"
 operator | Operator of the transaction | String(32) | Y |  | "Peter"
+payment_list | Preferential information |JSON | N |value of 'payment_list' is array，each elements includes 2 fields, 'type' as
+preferential name , amount_total as preferential amount |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
+
+### Details of payment_list
+type |description
+--------- | ------ 
+HONGBAO_WOSAI |喔噻红包
+HONGBAO_WOSAI_MCH |喔噻商户红包 免充值
+DISCOUNT_WOSAI |喔噻立减
+DISCOUNT_WOSAI_MCH |喔噻商户立减 免充值
+DISCOUNT_CHANNEL |支付通道 折扣(立减优惠)
+DISCOUNT_CHANNEL_MCH |折扣(立减优惠) 支付通道商户 免充值
+DISCOUNT_CHANNEL_MCH_TOP_UP |折扣(立减优惠) 支付通道商户 充值
+HONGBAO_CHANNEL |支付通道红包
+HONGBAO_CHANNEL_MCH |支付通道商户红包 免充值
+HONGBAO_CHANNEL_MCH_TOP_UP |支付通道商户红包 充值
+CARD_PRE |支付通道商户预付卡
+CARD_BALANCE |支付通道商户储值卡
+BANKCARD_CREDIT |信用卡 银行卡
+BANKCARD_DEBIT |储蓄卡 银行卡
+WALLET_ALIPAY |余额 支付宝钱包
+WALLET_ALIPAY_FINANCE |余额 余额宝
+WALLET_WEIXIN |余额 微信钱包
+ALIPAY_HUABEI |支付宝 花呗
+ALIPAY_POINT  |支付宝 集分宝
+
+### Response example - Success
+
+```json
+    {
+      "biz_response": {
+        "result_code": "SUCCESS",
+        "data": {
+          "client_tsn": "726d47ded14818c906cd1a006d4e5050",
+          "store_id": "test",
+          "subject": "test",
+          "payway": "2",
+          "description": "[{\"id\":\"\",\"name\":\"未命名商品\",\"num\":\"1\",\"price\":\"3000\"}]\n",
+          "payment_list": [ {
+          "type": "BANKCARD_DEBIT",
+          "amount_total": "1"
+        },
+        {
+          "type": "DISCOUNT_CHANNEL_MCH",
+          "amount_total": "100"
+        }],
+          "client_sn": "test",
+          "operator": "test",
+          "sub_payway": "1",
+          "order_status": "PAID",
+          "total_amount": "300000",
+          "ctime": "1498446309605",
+          "sn": "7895259867120667",
+          "net_amount": "0",
+          "terminal_id": "a2369b8b-546f-42e1-baec-e1d54690bab8",
+          "status": "SUCCESS"
+        }
+      },
+      "result_code": "200"
+}
+```
