@@ -4,6 +4,7 @@
     * [Workflow](intro/workflow.md)
     * [Payment Methods](intro/payment_methods.md)
     * [Integration Options](intro/integration_options.md)
+    * [Identity and Security](intro/identity_security.md)
 * [Downloads](downloads.md)
 * [Upay Web API](api/index.md)
     * [Business Processes](api/business_processes.md)
