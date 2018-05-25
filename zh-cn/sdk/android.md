@@ -29,7 +29,7 @@ SDK 默认的工作模式,激活、付款、退款、撤单、预下单集成了
 SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数中指定调用模式为
 *<font color="red">setPayModel(UpayOrder.PayModel.NO_UI)。</font>*
 
-##2.开发指南
+## 2.开发指南
 [下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
 ## 3.集成步骤
@@ -305,7 +305,7 @@ error_message|业务执行错误信息
 
 `未来会不断补充`
 
-###4.4 UpayResult中result_code 状态码说明
+### 4.4 UpayResult中result_code 状态码说明
 取值|含义|下一步动作
 ---|---|---
 200|通讯成功|
@@ -504,7 +504,7 @@ UpayTask.getInstance().query(order, new UpayCallBack() {
 	} 
 });
 ```
-###6.5 撤单
+### 6.5 撤单
 
 ```java
 UpayOrder order = new UpayOrder(); 
@@ -543,14 +543,15 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 ```
 
 ## 7.本地日志文件存放路径
+
 ```
 sdk本地日志格式是txt,日志保存路径：
 内部存储路径：/data/data/应用包名/files/
 SD卡路径：/Android/data/应用包名/Log/
-	      
-```	      
-	      
-##8.联系我们
+	  
+```      
+
+## 8.联系我们
 如以上信息无法帮助你解决在开发中遇到的问题,请通过一下方式联系我们 邮箱:lihebin@wosai-inc.com
 我们的工程师会在第一时间回复您。
 
