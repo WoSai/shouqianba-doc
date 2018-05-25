@@ -1,12 +1,12 @@
-#Android SDK开发接入
+# Android SDK开发接入
 
-##1.SDK简介
+## 1.SDK简介
 
-###1.1 前言
+### 1.1 前言
   收钱吧 Android SDK集成了各种支付方式,第三方通过调用本 SDK,可以轻松将支付宝,微 信,百度钱包,京东钱包支付等多种支付方式集成到自己的应用。
 
 
-###1.2 主要功能
+### 1.2 主要功能
 
 * 激活:  新的终端使用 SDK,需要先激活终端,才可以进行交易 
 * 付款:  支持支付宝、微信、百度钱包、京东钱包支付 
@@ -16,15 +16,15 @@
 * 预下单: 支持支付宝、微信、百度钱包、京东钱包支付
 
 
-###1.3 框架设计
+### 1.3 框架设计
 
 第三方用户通过集成收钱吧 SDK,面对前方商户提供多种可选的支付方式,同时喔噻可以将交易 路由至支付宝,微信等服务器。
 
-###1.4 工作模式
-####1.4.1、SDK 标准界面模式
+### 1.4 工作模式
+#### 1.4.1、SDK 标准界面模式
 SDK 默认的工作模式,激活、付款、退款、撤单、预下单集成了 UI 界面,不需要特别配置。 
 
-####1.4.2、SDK 无界面标准模式
+#### 1.4.2、SDK 无界面标准模式
 
 SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数中指定调用模式为
 *<font color="red">setPayModel(UpayOrder.PayModel.NO_UI)。</font>*
@@ -32,13 +32,13 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 ##2.开发指南
 [下载最新版的SDK](http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/SQB-Android-SDK.zip)。为保证您的财产和数据安全，请勿使用从其他非收钱吧渠道获取的SDK。对由于使用了非官方SDK而导致的任何物质或非物质损失，收钱吧概不负责。
 
-##3.集成步骤
-###3.1 Eclipse下集成SDK
-####3.1.1 解压 SDK,得到以下文件夹;
+## 3.集成步骤
+### 3.1 Eclipse下集成SDK
+#### 3.1.1 解压 SDK,得到以下文件夹;
 ![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12bio2xqpj20dz02at8o.jpg)
-####3.1.2 打开 eclipse 文件夹,将文件夹下面的 libs,与 res 文件夹 copy 到集成的项目中
+#### 3.1.2 打开 eclipse 文件夹,将文件夹下面的 libs,与 res 文件夹 copy 到集成的项目中
 ![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12bj4t1onj20dl01owed.jpg)
-####3.1.3 在 AndroidManifest.xml 中声明以下权限;
+#### 3.1.3 在 AndroidManifest.xml 中声明以下权限;
 
 ``` java
 
@@ -68,7 +68,7 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 <uses-permission android:name="android.permission.VIBRATE" />
 
 ```
-####3.1.4、在 AndroidManifest.xml 中声明以下 SDK 用到的 activity、service、receiver;
+#### 3.1.4、在 AndroidManifest.xml 中声明以下 SDK 用到的 activity、service、receiver;
 
 ```java
 <activity
@@ -96,7 +96,7 @@ SDK 无界面的工作模式,在调用接口时,需要在 UpayOrder 订单参数
 	android:enabled="true" android:process=":remote">
 </service>
 ```
-####3.1.5、初始化 SDK,在程序入口处初始化 SDK,如果初始化提示 AndroidManifest.xml 文件配置 有误,请检查配置文件;
+#### 3.1.5、初始化 SDK,在程序入口处初始化 SDK,如果初始化提示 AndroidManifest.xml 文件配置 有误,请检查配置文件;
 
 ```java
 
@@ -110,12 +110,12 @@ DebugConfig.setDebug(true);//默认为非调试模式,如果需要调试,请设�
 UpayTask.getInstance().initUpay(context,isPlaySound,Env.UrlType.PRO);
 ```
 
-###3.2 Android Studio下集成SDK
-####3.2.1、解压 SDK,得到以下文件夹:
+### 3.2 Android Studio下集成SDK
+#### 3.2.1、解压 SDK,得到以下文件夹:
 ![GitHub set up](http://ww4.sinaimg.cn/large/61df8f13gw1f12c1s130yj20e4028mx4.jpg)
-####3.2.2、打开 studio 文件夹,拷贝 SQB-Android-SDK-x.x.x.aar 结尾的压缩包到项目的 libs 下:
+#### 3.2.2、打开 studio 文件夹,拷贝 SQB-Android-SDK-x.x.x.aar 结尾的压缩包到项目的 libs 下:
 ![GitHub set up](http://ww2.sinaimg.cn/large/61df8f13gw1f12c2odywdj20bs02laa0.jpg)
-####3.2.3、在 build.gradle 文件中添加以下代码;
+#### 3.2.3、在 build.gradle 文件中添加以下代码;
 
 ```java
 repositories { 
@@ -127,7 +127,7 @@ dependencies {
 	compile(name: 'SQB-Android-SDK-2.1.0', ext: 'aar'))//name 后面紧跟的为引入的 aar 包名 
 }
 ```
-####3.2.4、初始化 SDK,在程序入口处初始化 SDK,如果初始化提示 AndroidManifest.xml 文件配置 有误,请检查配置文件;
+#### 3.2.4、初始化 SDK,在程序入口处初始化 SDK,如果初始化提示 AndroidManifest.xml 文件配置 有误,请检查配置文件;
 
 ```java
 /**
@@ -140,17 +140,17 @@ DebugConfig.setDebug(true);//默认为非调试模式,如果需要调试,请设�
 UpayTask.getInstance().initUpay(context,isPlaySound,Env.UrlType.PRO);
 ```
 
-####3.2.5、SDK 成功集成到项目
+#### 3.2.5、SDK 成功集成到项目
 
-##4.重要参数说明
+## 4.重要参数说明
 
-###4.1 UpayTask类
+### 4.1 UpayTask类
 
-####4.1.1、UpayTask 对象获取
+#### 4.1.1、UpayTask 对象获取
 ```java
 UpayTask.getInstance()
 ```
-####4.1.2 UpayTask方法说明
+#### 4.1.2 UpayTask方法说明
 **激活**
 
 ```java
@@ -245,7 +245,7 @@ public void setHorizontalScreen(boolean horizontalScreen)
 public void setVerticalScreen(boolean verticalScreen) 
     
 ```
-###4.2 UpayOrder类说明
+### 4.2 UpayOrder类说明
 
 属性 |属性名称 |类型 |描述 |付款 |退款 |预下单 |查询 |撤单  
 --------- | ----| ----| ----| ----| ----| ----| ----| ----
@@ -267,7 +267,7 @@ revokeModel|退款模式|RefundModel(enum)|有节目模式，通过商户订单�
 
 
 
-###4.3 UpayResult类说明
+### 4.3 UpayResult类说明
 属性|属性名称|描述
 ----|----|----
 sn|收钱吧订单号|收钱吧系统内部唯一订单号
@@ -337,8 +337,8 @@ FAIL|操作失败（不会触发流程）|
 * 如果 **result_code** 返回值为  <font color="red">null </font> 或者<font color="red"> 0</font>，通过 error_code 和 error_message 信息处理。
 * 如果 **result_code** 返回的是失败响应码,可先通过 error_code 和 error_message 信息处理,如果不存在 error_code 和 error_message,再根据 result_code 的含义及下一步处理。
  
-##5.SDK有界面模式调用示例
-###5.1 激活
+## 5.SDK有界面模式调用示例
+### 5.1 激活
 
 ```java
 String vendorId = "10298371039";//服务商 ID
@@ -355,7 +355,7 @@ UpayOrder.PayModel.UI, new UpayCallBack() {
 });
 ```
 
-###5.2 支付
+### 5.2 支付
 
 ```java
 UpayOrder order = new UpayOrder(); 
@@ -375,7 +375,7 @@ UpayTask.getInstance().pay(order, new UpayCallBack() {
 ```
 
 
-###5.3 退款
+### 5.3 退款
 
 ```java
 UpayOrder order = new UpayOrder();
@@ -395,7 +395,7 @@ UpayTask.getInstance().refund(order, new UpayCallBack() {
 });
 ```
 
-###5.4 撤单
+### 5.4 撤单
 
 ```java
 UpayOrder order = new UpayOrder(); 
@@ -411,7 +411,7 @@ UpayTask.getInstance().revoke(order, new UpayCallBack() {
 	} 
 });
 ```
-###5.5 预下单
+### 5.5 预下单
 
 ```java
 UpayOrder order = new UpayOrder();
@@ -431,8 +431,8 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 });
 ```
 
-##6.SDK无界面模式调用示例
-###6.1 激活
+## 6.SDK无界面模式调用示例
+### 6.1 激活
 
 ```java
 String code = "131451574136";//激活码
@@ -451,7 +451,7 @@ UpayOrder.PayModel.NO_UI, new UpayCallBack() {
 });
 ```
 
-###6.2 支付
+### 6.2 支付
 
 ```java
 UpayOrder order = new UpayOrder();
@@ -471,7 +471,7 @@ UpayTask.getInstance().pay(order, new UpayCallBack() {
 	} 
 });
 ```
-###6.3 退款
+### 6.3 退款
 
 ```java
 UpayOrder order = new UpayOrder(); 
@@ -490,7 +490,7 @@ UpayTask.getInstance().refund(order, new UpayCallBack() {
 	}
 });
 ```
-###6.4 查询
+### 6.4 查询
 
 ```java
 UpayOrder order = new UpayOrder(); 
@@ -520,7 +520,7 @@ UpayTask.getInstance().revoke(order, new UpayCallBack() {
 	}
 });
 ```
-###6.6 预下单
+### 6.6 预下单
 
 ```java
     
@@ -542,7 +542,7 @@ UpayTask.getInstance().preCreate(order, new UpayCallBack() {
 });
 ```
 
-##7.本地日志文件存放路径
+## 7.本地日志文件存放路径
 ```
 sdk本地日志格式是txt,日志保存路径：
 内部存储路径：/data/data/应用包名/files/
