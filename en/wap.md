@@ -1,4 +1,4 @@
-## Upay WAP developer documentation
+## Upay WAP --- Development Documentation
 
 For clients interested in developing mobile shopping websites, Upay provides a special WAP API that can be intergrated to help them building mobile payment solutions within web browsers in apps such as Wechat and Alipay,so that the customers can use the mobile payment directly on the merchant's web page,thus expanding the online business channels of the merchants.
 
@@ -20,27 +20,27 @@ For WAP payment, currently only Wechat is supported. Alipay support is to be add
 
 1. User visits the mobile terminal payment page of the merchant, triggering payment control (such as clicking the payment button).
 
-2.The front logic of the payment page verifies the payment parameters and initiates the request to create an order.
+2. The front logic of the payment page verifies the payment parameters and initiates the request to create an order.
 
-3.After receiving the request, merchant's server revalidates request parameters and initiates a pre-order request to Shouqianba.
+3. After receiving the request, merchant's server revalidates request parameters and initiates a pre-order request to Shouqianba.
 
-4.Once Shouqianba confirms that payment request is valid, it will initiate the transaction to the specific payment channel.
+4. Once Shouqianba confirms that payment request is valid, it will initiate the transaction to the specific payment channel.
 
-5.Payment channel returns the pre_order result synchronously.
+5. Payment channel returns the pre_order result synchronously.
 
-6.Shouqianba returns the order information and the result to merchants.
+6. Shouqianba returns the order information and the result to merchants.
 
-7.Merchant's server responses to its own front-end page (which contains the payment parameter <span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span> required to evoke payment clients to pay the controls).At the same time,  merchant begins polling the order status.<span style="color:red; font-weight: bold;">*</span>
+7. Merchant's server responses to its own front-end page (which contains the payment parameter <span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span> required to evoke payment clients to pay the controls).At the same time,  merchant begins polling the order status.<span style="color:red; font-weight: bold;">*</span>
 
-8.The front page of the merchant calls the client by using payment parameter (<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>) in the return result.
+8. The front page of the merchant calls the client by using payment parameter (<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>) in the return result.
 
-9.Consumers input the password and confirm the payment.
+9. Consumers input the password and confirm the payment.
 
-10.Front-end page of the merchant receives a callback from the client's front-end Javascript SDK and displays the payment processing pages. At the same time, front-end page initiates a query request to the merchant server (suggests using long connections) , waiting for the final payment result.
+10. Front-end page of the merchant receives a callback from the client's front-end Javascript SDK and displays the payment processing pages. At the same time, front-end page initiates a query request to the merchant server (suggests using long connections) , waiting for the final payment result.
 
-11.Merchant's server receives the query request from the front page, then maintains the connection until it receives the final payment result from Shouqianba.
+11. Merchant's server receives the query request from the front page, then maintains the connection until it receives the final payment result from Shouqianba.
 
-12.Merchant's server returns the final payment result, and front page displays the successful payment and order information.
+12. Merchant's server returns the final payment result, and front page displays the successful payment and order information.
 
 ## 3. Before Integration
 
