@@ -1,6 +1,10 @@
-##Upay WAP developer documentation
+## Upay WAP developer documentation
 
 For clients interested in developing mobile shopping websites, Upay provides a special WAP API that can be intergrated to help them building mobile payment solutions within web browsers in apps such as Wechat and Alipay,so that the customers can use the mobile payment directly on the merchant's web page,thus expanding the online business channels of the merchants.
+
+**Note:**
+
+For WAP payment, currently only Wechat is supported. Alipay support is to be added in the future.
 
 ## 1. Payment Scenario
 
@@ -14,18 +18,29 @@ For clients interested in developing mobile shopping websites, Upay provides a s
 
 ### Process introduction
 
-1.The user visits the mobile terminal payment page of the merchant, triggering payment control (such as clicking the payment button).
-2.The front logic of the payment page verifies the payment parameters and initiates the creation of the order request to the back end server of the merchant.
-3.After receiving the request, the merchant's back end server re validates the request parameters and initiates the pre order transaction request to Upay server.
-4.If Upay server confirms that the request is valid, it will initiate the pre order transaction process to the designated payment channel.
-5.The payment channel synchronously returns the result of the preorder.
-6.Upay server returns the order information and the pre order result to the merchant backend server.
-7.The merchant backend server returns a single result to its own front-end page (which contains the payment parameter <span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span> required to evoke payment clients to pay the controls).At the same time, the merchant backend server begins to query the payment status of Upay server.<span style="color:red; font-weight: bold;">*</span>
-8.The front page of the merchant calls the client to pay the control by using the payment parameter (<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>) in the return result.
-9.The user enters the password and confirms the payment.
-10.The front end page of the merchant receives the callback from the front end of the client Javascript SDK and starts displaying the pages in the payment process. At the same time, the front-end page initiates a query request to the merchant backend server (suggests using long connections) to wait for the return of the final payment result.
-11.The merchant's back-end server receives the query request from the front page, then maintains the connection until it receives the final payment result from Upay server.
-12.The merchant backend server returns the final payment result, and the front page displays the successful payment page and order information.
+1. User visits the mobile terminal payment page of the merchant, triggering payment control (such as clicking the payment button).
+
+2.The front logic of the payment page verifies the payment parameters and initiates the request to create an order.
+
+3.After receiving the request, merchant's server revalidates request parameters and initiates a pre-order request to Shouqianba.
+
+4.Once Shouqianba confirms that payment request is valid, it will initiate the transaction to the specific payment channel.
+
+5.Payment channel returns the pre_order result synchronously.
+
+6.Shouqianba returns the order information and the result to merchants.
+
+7.Merchant's server responses to its own front-end page (which contains the payment parameter <span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span> required to evoke payment clients to pay the controls).At the same time,  merchant begins polling the order status.<span style="color:red; font-weight: bold;">*</span>
+
+8.The front page of the merchant calls the client by using payment parameter (<span style="color:red; font-weight: bold;">biz_response.data.wap_pay_request</span>) in the return result.
+
+9.Consumers input the password and confirm the payment.
+
+10.Front-end page of the merchant receives a callback from the client's front-end Javascript SDK and displays the payment processing pages. At the same time, front-end page initiates a query request to the merchant server (suggests using long connections) , waiting for the final payment result.
+
+11.Merchant's server receives the query request from the front page, then maintains the connection until it receives the final payment result from Shouqianba.
+
+12.Merchant's server returns the final payment result, and front page displays the successful payment and order information.
 
 ## 3. Before Integration
 
@@ -44,9 +59,9 @@ Before starting your integration process, please contact our sales representativ
 
 See each payment channel WAP payment interface description
 
-<span style="color:red; font-weight: bold;">**</span>：At present, the Upay payment gateway can obtain the latest order payment status by asynchronous callback notification or merchant backend server. It is suggested to use the combination of both to obtain the transaction status, and specifically refer to the web API to pre-create document.
+<span style="color:red; font-weight: bold;">**</span>：At present, Upay gateway can obtain the latest order status by asynchronous callback notification or merchant's backend server. It is suggested to use the combination of both to obtain the transaction status, and specifically refer to the web API to pre-create document.
 
-<span style="color:red; font-weight: bold;">**</span>：arousing the front end payment interface to call the payment channel in the front page, please ensure that you fully understand the related business processes and front-end development interfaces for each payment channel WAP before development.
+<span style="color:red; font-weight: bold;">**</span>：Calling the front-end payment interface to arouse the payment channel modules in the front page, please ensure that you fully understand the related business processes and front-end development interfaces for each payment channel WAP before development.
 
 ## 3.Api description
 
