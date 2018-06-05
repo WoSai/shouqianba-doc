@@ -2,21 +2,14 @@
 
 For clients interested in developing mobile shopping websites, Upay provides a special WAP API to help them building mobile payment solutions within web browsers in apps such as Wechat and Alipay.
 
-**Note:**
 
-For WAP payment, currently only Wechat is supported. Alipay support is to be added in the future.
-
-## 1. Payment Scenario
+## Payment Scenario
 
 - A customer visits your mobile website with a built-in web browser in a mobile payment app, such as Wechat;
 - The customer initiate a payment (such as by clicking a pay button on your website), and the mobile payment client app will pop up a confirmation to ask for payment authorization;
 - The customer confirm the payment (a password may be required), and your website will display the payment result to the customer.
 
-## 2. Business Process
-
-![image](http://images.wosaimg.com/c2/ac6c6f981622118880ccd95ddfad1d2af260be.png "Upay WAP Pay Business Process")
-
-## 3. Before Integration
+## Before Integration
 
 Before starting your integration process, please contact our sales representatives and technical support for implementation suggestions and provide your business information to apply for a set of vendor and merchant accounts for development and testing. The Wechat related information you provide must match those of your Wechat official account.
 
@@ -24,17 +17,14 @@ Before starting your integration process, please contact our sales representativ
 
 `terminal_sn` and `terminal_key` (your server can be viewed as a terminal in this case) are required to sign each of your WAP API request. To get your `terminal_sn` and `terminal_key`, your service needs to initiate an activation request once and only once for each terminal. Please refer to our [documentation](https://wosai.gitbooks.io/shouqianba-doc/content/en/api/admin_en.html) for detailed explanation of the activation process.
 
-## 4. WAP API
+## API Target
 
-### 4.1 WAP Pay
-
-#### API Target
-
-	https://m.wosai.cn/qr/gateway
-
-#### HTTP Method
+     https://qr.shouqianba.com/gateway
+     
+## Request Method
 
 	GET
+***Accessing by using 302 jump  https://qr.shouqianba.com/gateway?QUERY***
 
 #### Request Parameters
 
@@ -57,7 +47,12 @@ sign | Request signature | String(32) | Y | See "Request Signature" in "Appendix
 
 #### Return URL Callback Parameters
 
-After the WAP payment process finishes, Upay will ask the web browser to redirect back to the URL which is specified by `return_url` in previous request, with additional callback parameters containing the payment result.
+-  After the WAP payment process finishes, Upay will ask the web browser to redirect back to the URL which is specified by `return_url` in previous request, with additional callback parameters containing the payment result .
+
+-  Please use query result or the callback result received in your notify_url as final payment result. The result in the return URL callback parameters should be deemed as an intermediate payment result .
+
+-  Polling time should be 100-120 seconds, the interval between each query should be once every 2 seconds in the first 30 seconds，and then once every 5 seconds .
+
 
 Field | Description | Type | Required | Note | Example
 ------ | ----- | -----| ----- | ----- | -----
@@ -77,40 +72,18 @@ operator | Operator of the transaction | String(32) | Y |  | "Obama"
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips" : "100"}
 sign | Request signature | String(32) | Y | See "Request Signature" in "Appendix" section | 
 
-**Note:**
+## Appendix
 
-**Please use query result or the callback result received in your notify_url as final payment result. The result in the return URL callback parameters should be deemed as an intermediate payment result.**
-
-### 4.2 Query
-
-#### API Target
-
-	{api_domain}/upay/v2/query
-
-#### HTTP Method
-
-	POST
-
-#### Request Parameters
-
-Please refer to [Upay Web API Reference - Transaction](https://wosai.gitbooks.io/shouqianba-doc/content/en/api/core_en.html)
-
-#### Note
-
-- Right after the callback, client system can start querying the order status;
-- The availabe payment window for the order is 90 seconds in Upay system, so your query period should be no longer than **100-120** seconds.
-- The interval between each query should be **once every 2 seconds in the first 30 seconds，and then once every 5 seconds**.
-
-## 5. Appendix
-
-### 5.1 Payway (supported payment service providers)
+### Payway 
 
 Value | Definition
 ----- | -----
+1 | Alipay
 3 | Wechat
+6 | QQ
 
 
-### 5.2 Error Codes
+### Error Codes
 
 error_code | error_message
 ----- | -----
@@ -144,7 +117,7 @@ UPAY_REFUND_INVALID_ORDER_STATE | 当前订单状态不可退款
 UPAY_STORE_OVER_DAILY_LIMIT | 商户日收款额超过上限
 UPAY_TCP_ORDER_NOT_REFUNDABLE | 订单参与了活动并且无法撤销
 
-### 5.3 Result Codes
+###  Result Codes
 
 result_code | result_message | Explanation
 ----- | ----- | -----
@@ -156,7 +129,7 @@ get_brand_wcpay_request:cancel |get_brand_wcpay_request:cancel | Payment cancele
 
 Generally, any result code other than `get_brand_wcpay_request:ok` can be treated as a failed payment.
 
-### 5.4 Request Signature
+### Request Signature
 
 #### Instruction
 
@@ -200,7 +173,7 @@ Generate request signature:
 
 	sign = md5(packageStr).toUppercase()
 
-### 5.5 Additional Notes
+###  Additional Notes
 
 Please use redirect (302) to visit `https://m.wosai.cn/qr/gateway` inside the built-in browser of Wechat client app.
 
