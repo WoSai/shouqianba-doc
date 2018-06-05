@@ -21,5 +21,6 @@
         * [Cancel](api/transaction/cancel.md)
         * [Revoke](api/transaction/revoke.md)
         * [Appendix](api/transaction/appendix.md)
-    * [WAP Payment](api/wap.md)
+    * [WAP Payment](api/wap2.md)
+    * [WAP API PRO](api/wap.md)
 * [Glossary](glossary.md)
