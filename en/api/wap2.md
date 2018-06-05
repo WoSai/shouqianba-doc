@@ -2,10 +2,6 @@
 
 For clients interested in developing mobile shopping websites, Upay provides a special WAP API that can be intergrated to help them building mobile payment solutions within web browsers in apps such as Wechat and Alipay,so that the customers can use the mobile payment directly on the merchant's web page,thus expanding the online business channels of the merchants.
 
-**Note:**
-
-For WAP payment, currently only Wechat is supported. Alipay support is to be added in the future.
-
 ## 1. Payment Scenario
 
 - A customer visits your mobile website with a built-in web browser in a mobile payment app, such as Wechat;
