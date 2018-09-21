@@ -184,5 +184,5 @@ Example:
 		$sign = strtoupper(md5($paramsStr.'&key=test'));
 		$paramsStr = $paramsStr."&sign=".$sign;
 
-		header("Location:https://m.wosai.cn/qr/gateway?".$paramsStr);
+		header("Location:https://qr.shouqianba.com/gateway?".$paramsStr);
 	?>
