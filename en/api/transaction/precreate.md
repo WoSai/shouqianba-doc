@@ -13,7 +13,7 @@ client_sn | Order serial number in client system | String(32) | Y | Must be uniq
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Number string no longer than 10 characters; please use bank transfer for larger amount. | "1000"
 payway | Payment service provider | String | Y | Number string; if present, Upay server will not use `dynamic_id` to decide payment service provider | "1"
 sub_payway	| Payment method | String | N | See "Payment Methods" | "3"
-payer_uid | The payer's user ID in payment service provider system | String(64) | N | **`open_id` if using Wechat WAP payment** | "okSzXt_KIZVhGZe538aOKIMswUiI"
+payer_uid | The payer's user ID in payment service provider system | String(64) | N | <font color="red" style="font-weight: bold;">Necessary when using WAP or Mini payment </font>，**`open_id` if using Wechat WAP payment** | "okSzXt_KIZVhGZe538aOKIMswUiI"
 subject | Subject or brief summary of the transaction | String(64) | Y | No longer than 64 characters | "Pizza"
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
 description | Detailed description of the transaction | String(256) | N | No longer than 256 characters | "Chicago style pizza, extra cheese"
