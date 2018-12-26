@@ -1,4 +1,4 @@
-# 开户银行接口（/v2/merchant/pub_banks）
+# 对公银行列表接口（/v2/merchant/pub_banks）
 
 ## 请求参数
 
