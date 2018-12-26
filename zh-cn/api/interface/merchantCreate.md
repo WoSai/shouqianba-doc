@@ -40,6 +40,7 @@
 推广者 | user_id |String(36) |N |收钱吧提供的商户推广人id
 外部商户号 | client_sn |String(50) |N |外部商户号，可以根据此商户号查询商户信息
 是否创建商户账号 |create_account |Boolean |N |默认(true)创建商户账号，传false则不创建账号
+微信客服电话 |customer_phone |String(32 |N |为空则取联系电话contact_cellphone
 
 ## 请求示例
 
@@ -74,7 +75,8 @@
         "latitude": 31.308309,
         "vendor_app_id": "2017110600000001",
         "vendor_sn": "91800129",
-        "client_sn": "12345678"
+        "client_sn": "12345678",
+        "customer_phone": "13900000000"
     }   
    ```
     
