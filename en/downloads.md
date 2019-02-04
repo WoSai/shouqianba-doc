@@ -7,11 +7,3 @@ The source code of Upay Web API client demo is available in the following langua
 * Python：[Github](https://github.com/WoSai/shouqianba-webapi-pythondemo)
 * Java：[Github](https://github.com/WoSai/shouqianba-webapi-javademo)
 * C#: [Github](https://github.com/WoSai/shouqianba-webapi-csharpdemo)
-
-## Upay SDK
-
-[TODO]
-
-## Web Proxy
-
-[TODO]
