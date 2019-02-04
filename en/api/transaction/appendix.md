@@ -125,6 +125,7 @@ payway | payway_name | note
 17 | 银联二维码 | representing `UnionPay`
 18 | 翼支付 | representing `China Telecom Wallet`
 19 | Weixin-Local | Oversea Wechat wallet displays `Weixin-Local`
+20 | Alipay global | 
 100 | 储值支付 | representing `Stored-value-card payment`
 
 
