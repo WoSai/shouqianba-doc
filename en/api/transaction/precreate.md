@@ -62,6 +62,32 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 reflect	 | Anything that the client sent in `reflect` field of the request | String(64) | N |  | {"tips": "200"}
 wap_pay_request | The parameters needed to call WAP payment function, returned from payment service providers | String(1024) | N | Returned when using WAP payment
 
+### Callback Parameters
+
+All following parameters refer to the fields in `biz_response` and `biz_response.data`
+
+Parameter | Description | Data Type | Required | Note | Example
+--------- | ------ | ----- | -------| --- | ----
+result_code | Request result code | String | Y | Result code of business response | "PRECREATE_SUCCESS"
+error_code | Error code of business response | String | N | See "Business Response Error Codes and Messages" | "UNEXPECTED_PROVIDER_ERROR"
+error_message | Error message of business response | String | N | See "Business Response Error Codes and Messages" | "不认识的支付通道"
+sn | Upay order serial number | String(16) | Y | Unique order serial number in Upay system | "7892259488292938"
+client_sn | Order serial number in client system | String(32) | Y | Used by client to identify its own order | "7654321132"
+trade_no | Order number in payment service provider system | String(64) | Y | Used by payment service provider to identify its own order | "2013112011001004330000121536"
+status | The latest transaction status | String(32) | Y |  | "CREATED"
+order_status | The latest order status | String(32) | Y |  | "CREATED"
+payway | Payment service provider | String(2) | Y | [Appendix-Payment Service Providers](https://doc.shouqianba.com/en/api/transaction/appendix.html) | "1"
+payway_name | Payment service name | String(128) | Y |  | "支付宝"
+sub_payway | Payment method | String(2)| Y | [Appendix-Payment Service Providers](https://doc.shouqianba.com/en/api/transaction/appendix.html) | "2"
+qr_code | Payment QR code | String(128) | Y | "https://qr.alipay.com/bax00069h45nvvfc3tu9803a"
+total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y |  | "10000"
+net_amount | Net amount of the order (the actual amount seller receives) in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Equals to total amount if the order has not been refunded, otherwise equals to `total amount - refund amount` | "0"
+subject | Subject or brief summary of the transaction | String(64) | Y |  | "Pizza"
+operator | Operator of the transaction | String(32) | Y |  | "Peter"
+reflect	 | Anything that the client sent in `reflect` field of the request | String(64) | N |  | {"tips": "200"}
+wap_pay_request | The parameters needed to call WAP payment function, returned from payment service providers | String(1024) | N | Returned when using WAP payment
+payment_list | Preferential information |JSON | N |value of 'payment_list' is array，each elements includes 2 fields, 'type' as preferential name , amount_total as preferential amount |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
+
 ### Response Example - Success
 
 ```json
