@@ -66,27 +66,27 @@ reflect	 | Anything that the client sent in `reflect` field of the request | Str
 payment_list | Preferential information |JSON | N |value of 'payment_list' is array，each elements includes 2 fields, 'type' as preferential name , amount_total as preferential amount |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
 
 ### Details of payment_list
-type |description
---------- | ------ 
-HONGBAO_WOSAI |喔噻红包
-HONGBAO_WOSAI_MCH |喔噻商户红包 免充值
-DISCOUNT_WOSAI |喔噻立减
-DISCOUNT_WOSAI_MCH |喔噻商户立减 免充值
-DISCOUNT_CHANNEL |支付通道 折扣(立减优惠)
-DISCOUNT_CHANNEL_MCH |折扣(立减优惠) 支付通道商户 免充值
-DISCOUNT_CHANNEL_MCH_TOP_UP |折扣(立减优惠) 支付通道商户 充值
-HONGBAO_CHANNEL |支付通道红包
-HONGBAO_CHANNEL_MCH |支付通道商户红包 免充值
-HONGBAO_CHANNEL_MCH_TOP_UP |支付通道商户红包 充值
-CARD_PRE |支付通道商户预付卡
-CARD_BALANCE |支付通道商户储值卡
-BANKCARD_CREDIT |信用卡 银行卡
-BANKCARD_DEBIT |储蓄卡 银行卡
-WALLET_ALIPAY |余额 支付宝钱包
-WALLET_ALIPAY_FINANCE |余额 余额宝
-WALLET_WEIXIN |余额 微信钱包
-ALIPAY_HUABEI |支付宝 花呗
-ALIPAY_POINT  |支付宝 集分宝
+type |description   |properties |chinese description in receipt
+--------- | ------  | ------ | ------
+HONGBAO_WOSAI |Red packet from Wosai |From Trading platform |平台优惠
+HONGBAO_WOSAI_MCH |Red packet from Wosai’s merchant |From Merchant  |商家优惠
+DISCOUNT_WOSAI |Discount from Wosai |From Trading platform  |平台优惠
+DISCOUNT_WOSAI_MCH |Discount from Wosai’s merchant  |From Merchant  |商家优惠
+DISCOUNT_CHANNEL |Discount from Alipay or Wechat pay or others  |From Trading platform  |平台优惠
+DISCOUNT_CHANNEL_MCH |Discount from merchant, not need to top up    |From Merchant  |商家优惠
+DISCOUNT_CHANNEL_MCH_TOP_UP |Discount from merchant, need to top up  |From Trading platform  |平台优惠
+HONGBAO_CHANNEL |Red packet from Alipay or Wechat pay or others  |From Trading platform  |平台优惠
+HONGBAO_CHANNEL_MCH |Red packet from merchant through Alipay or Wechat pay or others, not need to top up    |From Merchant  |商家优惠
+HONGBAO_CHANNEL_MCH_TOP_UP |Red packet from merchant through Alipay or Wechat pay or others, need to top up  |From Trading platform  |平台优惠
+CARD_PRE |支付通道商户预付卡    |N/A    |N/A
+CARD_BALANCE |支付通道商户储值卡    |N/A    |N/A
+BANKCARD_CREDIT |Credit card    |N/A    |N/A
+BANKCARD_DEBIT |Debit card  |N/A    |N/A
+WALLET_ALIPAY |Balance of Alipay  |N/A    |N/A
+WALLET_ALIPAY_FINANCE |Yu'E Bao  |N/A    |N/A
+WALLET_WEIXIN |Wallet of Wechat Pay
+ALIPAY_HUABEI |Anti Creidt Pay  |N/A    |N/A
+ALIPAY_POINT  |Alipay Point  |N/A    |N/A
 
 ### Response Example - Success
 
