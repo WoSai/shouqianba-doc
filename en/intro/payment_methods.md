@@ -1,5 +1,7 @@
 ### Payment Service Providers
 
+Upay integrates multiple payment tenders, such as Alipay, Wechat Pay including China mainland, Hong Kong and other global countries and areas. Please confirm with Upay technical support team for the payment tenders to be added.
+
 payway | payway_name | note 
 --------- | ------ | ---------
 1 | 支付宝1.0 / Alipay-Local |`Alipay-Local` represents Overseas local Alipay wallet , else displays `支付宝1.0`
