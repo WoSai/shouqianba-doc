@@ -1,6 +1,6 @@
 # Upay Web API
 
-Upay offers a set of simple yet flexible and powerful Web APIs that can help you manage your Upay terminals and making mobile transactions. Upay Web API supports all major mobile service providers in Chinese market, including Wechat, Alipay, QQ Wallet, Baidu Wallet and Jingdong Wallet. So by integrating a single set of APIs, client applications can dynamically support new mobile payment services with no or very little development cost.
+Upay offers a set of simple yet flexible and powerful Web APIs that can help you manage your Upay terminals and making mobile transactions. Upay Web API supports all major mobile service providers in China mainland market, including Wechat Pay, Alipay, QQ Wallet, Baidu Wallet and JD Wallet and also Wechat Pay and Alipay in Hong Kong and other countries and regions. So by integrating a single set of APIs, client applications can dynamically support new mobile payment services with no or very little development cost.
 
 ### [Upay Terminal APIs](terminal/index.md)
 
