@@ -3,7 +3,7 @@
 To make sure your services or client application works properly with Upay Web API, the following types of business processes need to be implemented:
 
 1. Terminal activation (once per terminal)
-2. Terminal check-in (optional)
+2. Terminal check-in (optional,suggested)
 3. Transactions
 
 
@@ -17,7 +17,7 @@ Every terminal only needs to be activated once and only once.
 
 ## Terminal Check-in
 
-`terminal_sn` and `terminal_key` are like username and password to your terminal. To keep your terminals and transactions safe, we recommend `terminal_key`s be updated on daily basis. Developers may pick any time during the day to perfrom the check-in. But keep in mind that ~~a `terminal_key` is only valid for at most 48 hours, and~~ after each check-in, only current and last `terminal_key`s are valid.
+`terminal_sn` and `terminal_key` are like username and password to your terminal. To keep your terminals and transactions safe, we recommend `terminal_key`s be updated on daily basis. Developers may select any time during the day to perform the check-in. But keep in mind that  after each check-in, only current and last `terminal_key`s are valid.
 
 ![](../img/checkin_sd.png?raw=true) 
 
@@ -29,11 +29,11 @@ Upay Web API supports the following transactions:
 
 * **Refund**: Issue an order refund based on order serial number; Upay supports multiple refunds of a single order.
 
-* **Revoke**: Orders can be revoked within the day it is created; compared to refund, revoke an order will issue a full refund without incurring any service fee.
+* **Revoke**: Orders can be revoked within the day it is created<!--; compared to refund, revoke an order will issue a full refund without incurring any service fee-->.**This API is not suggested to adopt**.
 
-* **Query**: Get the latest order information by either your or Upay's order serial number.
+* **Query**: Get the latest order status information by submitting either your or Upay's order serial number.
 
-* **Pre-create**: Cashier pre-creates the order with Upay terminal and show customer the QR code; customer scans the QR code with payment app to finish the transaction. Note: Upay Web API only returns the QR code value and URL; your service or client app is responsible for generating the QR code picture from the value or displaying the image using the URL.
+* **Pre-create**: Terminal (such as Website, vending machine, etc.) pre-creates the order with Upay terminal and show customer the QR code; customer scans the QR code with payment app to finish the transaction. Note: Upay Web API only returns the QR code value and URL; your service or client app is responsible for generating the QR code picture from the value or displaying the image using the URL.
 
 
 ### Transaction Sequence Diagrams
