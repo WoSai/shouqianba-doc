@@ -15,7 +15,7 @@ All requests must be signed as instructed below:
 * Signature algorithm: `sign = MD5(CONCAT(body + key))`
 * HTTP header: `Authorization: sn + " " + sign`
 
-### sn & key
+### Upay different sn & key
 
-* For activation (`/terminal/activate`), please use `vendor_sn` and `vendor_key` for signature.
-* For other requests (check-in, pay, refund, query, etc.), please use `terminal_sn` and `terminal_key` returned in successful activation or check-in responses.
+* For activation (`/terminal/activate`), please use `vendor_sn` and `vendor_key` for signature.Verdor_sn and key will be provided offline.
+* For other requests (check-in, pay, refund, query, etc.), please use `terminal_sn` and `terminal_key` , which isreturned in successful activation or check-in responses.
