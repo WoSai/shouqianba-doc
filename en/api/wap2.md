@@ -97,15 +97,15 @@ Please refer to [Upay Web API Reference - Transaction](https://doc.shouqianba.co
 
 **WAP payment:**
 
-- **The public number WAP:** Public number payment is the user's H5 page that opens the merchant in WeChat or other payment channels. The merchant is paid by the WeChat payment module in the H5 page by calling the JSAPI interface provided by the payment channel.
+- **Wechat Official Account Payment（WAP）:** Wechat Official Account Payment is the user's H5 page that opened the merchant in WeChat Browser.The payment is made by the WeChat payment module in the H5 page by calling the JSAPI interface provided by the payment channel.
 
--- the user enters the business public number in WeChat or other public accounts, opens a main page, and completes the payment.
+-- User enters the Wechat Official Account in WeChat APP or other public accounts, opens a main page, and completes the payment.
 
--- users of friends in the friends circle, chat window and so on to share business page connection, users click on the link to open the merchant page, complete the payment.
+-- Users open a link shared by friends of in Wechat moments and complete the payment in H5 page.
 
--**Store code WAP:**
+-**Store Payment Code (WAP):**
 
--- convert the merchant page into a QR code and stick it in a store. After the consumer has scanned the QR code and opening the page in a variety of wallet browsers, the amount is entered and the payment is completed.
+-- Developer converts the merchant page into a QR code and stick it in a store. After the consumer scanned the QR code and opening the page in a variety of wallet browsers, the amount is entered and the payment is completed.
 
 ## 5. Version record
 
