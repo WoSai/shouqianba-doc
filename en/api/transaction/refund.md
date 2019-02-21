@@ -95,5 +95,5 @@ operator | Operator of the transaction | String(32) | Y |  | "Peter"
 
 ### Questions & Answers
 
-#### 1.When to submit a refund request?
+#### 1.How long can submit a refund request after the payment?
 Within 3 months after the order completes successfully.
