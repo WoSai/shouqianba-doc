@@ -14,7 +14,7 @@ total_amount | Total amount of the order in <font color="red" style="font-weight
 payway | Payment service provider | String | Y | Number string; if present, Upay server will not use `dynamic_id` to decide payment service provider | "1"
 sub_payway	| Payment method | String | N | See "Payment Methods" | "3"
 payer_uid | The payer's user ID in payment service provider system | String(64) | N | <font color="red" style="font-weight: bold;">Necessary when using WAP or Mini payment </font>，**`open_id` if using Wechat WAP payment** | "okSzXt_KIZVhGZe538aOKIMswUiI"
-subject | Subject or brief summary of the transaction | String(64) | Y | No longer than 64 characters | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y | Generally, merchant would give the brand name or store name to this feild | "H&M"
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
 description | Detailed description of the transaction | String(256) | N | No longer than 256 characters | "Chicago style pizza, extra cheese"
 longitude | Longitude of the transaction location | String | N | Must be used simultaneously with `latitude` | "121.615459404"
@@ -114,5 +114,5 @@ payment_list | Preferential information |JSON | N |value of 'payment_list' is ar
 
 #### 1.Take the initiative to query the order status after calling the `precreate` successfully
 Once you get the successful result(`biz_response.result_code="PRECREATE_SUCCESS" or biz_response.data.order_status="CREATED"`), then just send polling requests to the Upay server.
-The effective payment time of precreate orders is about 4 minutes, if it times out without payment, upay gateway will automatically cancel the oreder, so please control the polling time,  we suggest that every 2s as a polling interval in the first 30s ,then 5s each time. 
+The effective payment time of precreate orders is about 4 minutes, if it times out without payment, upay gateway will automatically cancel the oreder, so please control the polling time,  we suggest that every 2s as a polling interval in the first 30s ,then 5s each time or turn to our technical support team for best practice under different payment scenarios.
 
