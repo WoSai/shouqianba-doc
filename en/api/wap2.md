@@ -103,7 +103,7 @@ Please refer to [Upay Web API Reference - Transaction](https://doc.shouqianba.co
 
 -- Users open a link shared by friends of in Wechat moments and complete the payment in H5 page.
 
--**Store Payment Code (WAP):**
+- **Store Payment Code (WAP):**
 
 -- Developer converts the merchant page into a QR code and stick it in a store. After the consumer scanned the QR code and opening the page in a variety of wallet browsers, the amount is entered and the payment is completed.
 
