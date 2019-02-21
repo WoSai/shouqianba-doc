@@ -13,7 +13,7 @@ client_sn* | Order serial number in client system | String(32) | Y | Must be uni
 total_amount | Total amount of the order in <font color="red" style="font-weight: bold;">cents</font> | String(10) | Y | Number string no longer than 10 characters; please use bank transfer for larger amount. | "1000"
 payway | Payment service provider | String | N | Number string; if present, Upay server will not use `dynamic_id` to decide payment service provider | "1"
 dynamic_id | Content of the payment barcode | String(32) | Y | No longer than 32 characters | "130818341921441147"
-subject | Subject or brief summary of the transaction | String(64) | Y | No longer than 64 characters | "Pizza"
+subject | Subject or brief summary of the transaction | String(64) | Y | Generally, merchant would give the brand name or store name to this feild | "H&M"
 operator | Operator of the transaction | String(32) | Y | No longer than 32 characters | "Obama"
 description | Detailed description of the transaction | String(256) | N | No longer than 256 characters | "Chicago style pizza, extra cheese"
 longitude | Longitude of the transaction location | String | N | Must be used simultaneously with `latitude` | "121.615459404"
@@ -23,8 +23,9 @@ extended | Extended paramters | JSON object | N | Special parameters that will b
 goods_details | Description of the goods | JSON | N | The value of goods_details is Array,each element contains five fields,including goods_id,goods_name,quantity,price,promotion_type,respectively represent the serial number of goods,the name of the goods,the number of the goods,commodity price,preferential type | "goods_details": [{"goods_id": "wx001","goods_name": "mac pro","quantity": 1,"price": 2,"promotion_type": 0},{"goods_id": "wx002","goods_name":"tesla","quantity": 1,"price": 2,"promotion_type": 1}]
 reflect | Reflect parameter | String(64) | N | Anything that the client wants Upay server to send back. Can be used by client's ERP system to relate to its own order or to integrate with any additional business process. | { "tips": "200" }
 notify_url| Callback URL | String(128) | N | If provided, Upay server will also send payment result to the callback URL | www.baidu.com
+payment_list| Preferential information| JSON| N| Value of 'payment_list' is array，each elements includes 2 fields, 'type' as preferential name , amount_total as preferential amount| "payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
 
-<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. Also, if a payment transaction fails, to retry, new transaction must be submitted with a new <code>client_sn</code>. Otherwise Upay system will complain about duplicate <code>client_sn</code>.</b></font>
+<font color="red"><b>*: <code>client_sn</code> must be unique in the client system. If a payment transaction fails in first attempt, the retry should be seen as a new transaction and be submitted with a new <code>client_sn</code>. Otherwise Upay system will report error due to duplicated <code>client_sn</code>.</b></font>
 
 ### Description of goods_details in request parameters
 
@@ -254,17 +255,17 @@ Sub handle_response_error(response):
 
 ## Questions & Answers
 
-### 1.It will prompt `timeout` if there is no password to enter for 40s where using `pay` (BSC), then it is needed to use the `pay` interface to recall.
+### 1.It will prompt `timeout` if there is no password to enter after the query time, then the terminal needs to issue a new payment to retry. Please consult technical support team for this best practice.
 
-### 2. If you don't get the final order status of a successful payment(check it with `order_status`), then just invoke `query` to get it.
-final status <a name="status"></a>
+### 2. If you don't get the final order status of a successful payment(check it with `order_status`), then use `query` to get it.
+There are the final status <a name="status"></a> of each transaction:
 - PAID
 - PAY_CANCELED
 - REFUNDED
 - PARTIAL_REFUNDED
 - CANCELED
 
-### 3.Suggest to add a query button to manually process possible unilateral orders.
-if consumers pay successfully, but the terminal display a fail payment or unclear status, and the cashier can manually check the order status, if it is still not successful, then you need to contact to our customer service.
+### 3.Suggest to add a query button in error message to manually process unilateral orders situation.
+If consumers pay successfully, but the terminal display a failed payment or unclear status. Then it is suggested that to add Query button(to use Query interface to obtain the order status from Upay), then cashier can manually click the button to re-check the order status. If it is still not responded, then cashier needs to contact to WOSAI customer service.
 
 
