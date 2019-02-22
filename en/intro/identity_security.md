@@ -10,9 +10,7 @@
 ## Multiple Access Points
 | Location      | Access Entrypoint          | Domain        | IP            |
 | ------------- | -------------              | ------------- | ------------- |
-<!--| Hongkong  | Hongkong with OCSP Stapling          |ocsp-hk.shouqianba.com| 47.75.167.145 |-->
 | Hongkong  | Hongkong without OCSP Stapling       |hk-api.shouqianba.com | 47.90.17.0  |
-<!--| Hangzhou  | China mainland with OCSP Stapling|ocsp-api.shouqianba.com |120.27.143.18 |-->
 | Hangzhou  | China mainland without OCSP Stapling|api.shouqianba.com | 120.55.199.154|
 
 ## Dual Identity Certification
