@@ -1,18 +1,18 @@
 # Security and Identity Certification
 
 ## HTTPS Protocol
-- The communication between equipment and cloud using HTTPS protocol.It is for secure communication over a computer network, the communication protocol is encrypted by Transport Layer Security (TLS).
+- The communication between equipment and cloud using HTTPS protocol.It is for secure communication over a computer network, the communication protocol is encrypted by Transport Layer Security (TLS 1.2).
 - HTTPS connections were primarily used for payment transactions on the internet for sensitive transactions in corporate information systems.
-## OCSP Stapling
+<!--## OCSP Stapling
 - OCSP stapling, formally known as the TLS Certificate Status Request extension, is an alternative approach to the Online Certificate Status Protocol (OCSP) for checking the revocation status of X.509 digital certificates.[1] It allows the presenter of a certificate to bear the resource cost involved in providing OCSP responses by appending ("stapling") a time-stamped OCSP response signed by the CA to the initial TLS handshake, eliminating the need for clients to contact the CA.
-- OCSP stapling is designed to reduce the cost of an OCSP validation, both for the client and the OCSP responder, especially for those big traffic scenario.
+- OCSP stapling is designed to reduce the cost of an OCSP validation, both for the client and the OCSP responder, especially for those big traffic scenario.-->
 
 ## Multiple Access Points
 | Location      | Access Entrypoint          | Domain        | IP            |
 | ------------- | -------------              | ------------- | ------------- |
-| Hongkong  | Hongkong with OCSP Stapling          |ocsp-hk.shouqianba.com| 47.75.167.145 |
+<!--| Hongkong  | Hongkong with OCSP Stapling          |ocsp-hk.shouqianba.com| 47.75.167.145 |-->
 | Hongkong  | Hongkong without OCSP Stapling       |hk-api.shouqianba.com | 47.90.17.0  |
-| Hangzhou  | China mainland with OCSP Stapling|ocsp-api.shouqianba.com |120.27.143.18 |
+<!--| Hangzhou  | China mainland with OCSP Stapling|ocsp-api.shouqianba.com |120.27.143.18 |-->
 | Hangzhou  | China mainland without OCSP Stapling|api.shouqianba.com | 120.55.199.154|
 
 ## Dual Identity Certification
