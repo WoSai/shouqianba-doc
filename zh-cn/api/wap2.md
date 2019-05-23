@@ -144,7 +144,5 @@ PHP 示例：
         
         header("Location:https://qr.shouqianba.com/gateway?".$paramsStr);
       ?>
- 
 
-## wap支付接入常见问题
 
