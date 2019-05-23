@@ -175,7 +175,7 @@ Generate request signature:
 
 ###  Additional Notes
 
-Please use redirect (302) to visit `https://m.wosai.cn/qr/gateway` inside the built-in browser of Wechat client app.
+Please use redirect (302) to visit `https://qr.shouqianba.com/gateway` inside the built-in browser of Wechat client app.
 
 Example:
 
