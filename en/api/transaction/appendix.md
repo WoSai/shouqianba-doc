@@ -122,11 +122,12 @@ payway | payway_name | note
 9 | 和包支付 | representing `China Mobile Wallet`
 15 | 拉卡拉微信 | representing `Lakala wechat payment`
 16 | 招商银行 | representing `China Merchants Bank`
-17 | 银联二维码 | representing `UnionPay`
+17 | 银联云闪付 | representing `UnionPay`
 18 | 翼支付 | representing `China Telecom Wallet`
 19 | Weixin-Local | Oversea Wechat wallet displays `Weixin-Local`
 20 | Alipay global | 
 100 | 储值支付 | representing `Stored-value-card payment`
+101 | 礼品卡 | representing `Gift card payment`
 
 
 **Note: For QQ Wallet, pre-create is not supported.**
