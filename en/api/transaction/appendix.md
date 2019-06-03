@@ -88,6 +88,13 @@ Value | Description
 <font color="green">CANCELED</font> | <font color="red">The order has been successfully canceled by client</font>
 <font color="green">CANCEL_ERROR</font>	 | <font color="red">Cancellation by client has failed and the transaction's result is unknown</font>
 
+# The final status of order are below:
+- PAID
+- PAY_CANCELED
+- REFUNDED
+- PARTIAL_REFUNDED
+- CANCELED
+
 ### Transaction Status
 
 Value | Description | Indication 
