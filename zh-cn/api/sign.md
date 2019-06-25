@@ -53,5 +53,5 @@ curl --request POST
 ## Demo程序代码
    * Python：[Demo的github项目链接=>] https://github.com/WoSai/shouqianba-webapi-pythondemo
    * Java：[Demo的github项目链接=>] https://github.com/WoSai/shouqianba-webapi-javademo
-   * C#:[Demo的github项目链接=>] http://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/shouqianba-webapi-csharpdemo-master.rar
-   * PHP:[Demo项目链接=>] https://shouqianba-sdk.oss-cn-hangzhou.aliyuncs.com/PHP%20-%20Demo.php
+   * C#:[Demo的github项目链接=>] 
+   * PHP:[Demo项目链接=>] 
