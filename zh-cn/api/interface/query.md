@@ -15,7 +15,7 @@
 terminal_sn|	收钱吧终端ID	|String(32)|Y|收钱吧终端ID| "010382829292929"
 sn	|收钱吧系统订单号|	String(16)|N|收钱吧系统唯一订单号| "7894259244061958"
 client_sn|	商户自己的订单号	|String(64)|N|商户自己订号|"2324545839"
-refund_request_no|退款序列号|	String(20)|Y|调用退款接口时，传入得值，可用于多次部分退款场景下，查询某次部分退款的结果|"01"
+refund_request_no|退款序列号|	String(20)|N|调用退款接口时，传入得值，可用于多次部分退款场景下，查询某次部分退款的结果|"01"
 
 <p style="color:red; font-weight: bold;">sn与client_sn不能同时为空，优先按照sn查找订单，如果没有，再按照client_sn查询</p>
 
