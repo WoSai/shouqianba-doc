@@ -11,6 +11,7 @@ Parameter | Description | Data Type | Required | Note | Example
 terminal_sn | Terminal serial number | String(32) | Y | Represents a unique identifier of a Upay terminal; returned in responses for requesting activation or check-in; number string no longer than 32 characters. | "00101010029201012912"
 sn | Upay order serial number | String(16) | N | Unique order serial number in Upay system | "7892259488292938"
 client_sn | Order serial number in client system | String(32) | N | Must be unique in client system; no longer than 32 characters. | "18348290098298292838"
+refund_request_no | Refund request number | String(20) | N | You can use this field to query the result of a partial refund. | "01"
 
 <font color="red"><b>Note: Either <code>sn</code> or <code>client_sn</code> must be presented in the request, otherwise the request is invalid; if both are presented, <code>sn</code> will be used to identify the order.</b></font>
 
