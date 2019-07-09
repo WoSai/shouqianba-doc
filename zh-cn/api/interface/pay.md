@@ -39,6 +39,13 @@ quantity | Number必填 | 10 | 商品数量，如10
 price | Number必填 | 9 | 商品单价，单位为分，如2000
 promotion_type |Number必填 | 1 |优惠类型，0表示没有优惠，1表示支付机构优惠，为1会把相关信息送到支付机构
 
+## 花呗分期交易请求参数
+参数 | 参数名称 | 类型 | 必填|描述 |范例
+--------- | ------ | ----- | -------|---|----
+hb_fq_num | 花呗分期数 |String|Y|目前支持3/6/12期，前置参数为extended.extend_params | "extended":{"extend_params": {"hb_fq_num": "12"}}
+hb_fq_seller_percent |花呗分期卖家承担手续费比例  | String|Y | 商家承担手续费传入100，用户承担手续费传入0，前置参数为extended.extend_params| "extended": {"extend_params": {"hb_fq_seller_percent": "0"}}
+
+
 ## 同步返回参数说明
 
 参数 | 参数名称 | 类型 | 必填|描述 |范例
@@ -140,7 +147,29 @@ ALIPAY_POINT  |支付宝 集分宝
 
 返回的状态码请参考<font color="red">**附录**</font>
 
+## 请求示例  
+
+   ```json
+    {
+  	"total_amount": "1",
+  	"subject": "收钱吧",
+  	"dynamic_id": "281234305112341234",
+  	"operator": "Roy",
+  	"terminal_sn": "100003612347111234",
+  	"client_sn": "8529061153479888",
+  	"extended": 
+	{
+    		"extend_params": 
+		{
+      		"hb_fq_seller_percent": "0",
+      		"hb_fq_num": "12"
+    		}
+  	}
+     }
+    ```
+    
 ## 返回示例
+
 1. 交易成功
 
     ```json
@@ -201,6 +230,7 @@ ALIPAY_POINT  |支付宝 集分宝
         }
     }
     ```
+    
 3. 交易失败
 
     ```json
