@@ -48,7 +48,7 @@ hb_fq_seller_percent |花呗分期卖家承担手续费比例  | String|Y | 商�
 --------- | ------ | ----- | -------|---|----
 sn|	收钱吧唯一订单号|	String(16)|	Y|	收钱吧系统内部唯一订单号	|7892259488292938
 client_sn|	商户订单号|	String(64)|	Y	|商户系统订单号|	7654321132
-trade_no	|支付服务商订单号|	String(64)|	Y	|支付通道交易凭证号|	2013112011001004330000121536
+trade_no	|支付服务商订单号|	String(64)|	N	|支付通道交易凭证号|	2013112011001004330000121536
 status	|流水状态	|String(32)|	Y	|本次操作产生的流水的状态|CREATED
 order_status	|订单状态	|String(32)|	Y	|当前订单状态	|CREATED
 payway	|支付方式	|String(2)|	Y	|一级支付方式，取值见附录《支付方式列表》|1
@@ -68,7 +68,7 @@ wap_pay_request|支付通道返回的调用WAP支付需要传递的信息|String
 terminal_sn	|终端号|	String(32)|Y|收钱吧终端ID|"01939202039923029"
 sn|	收钱吧唯一订单号|	String(16)|Y|收钱吧系统内部唯一订单号|"7892259488292938"
 client_sn|商户订单号|	String(32)|Y|商户系统订单号|"7654321132"
-trade_no|支付服务商订单号|String(64)|Y|支付通道交易凭证号|"2013112011001004330000121536"
+trade_no|支付服务商订单号|String(64)|N|支付通道交易凭证号|"2013112011001004330000121536"
 status|流水状态|String(32)|	Y|本次操作产生的流水的状态| "SUCCESS"
 order_status	|订单状态	|String(32)|Y|当前订单状态|"PAID"
 payway|	支付方式|	String(2)|Y|一级支付方式，取值见附录《支付方式列表》|"1"
@@ -77,10 +77,10 @@ sub_payway|二级支付方式|	String(2)|Y|二级支付方式，取值见附录�
 payer_uid|	付款人ID|	String(64)|N|支付平台（微信，支付宝）上的付款人ID|"2801003920293239230239"
 payer_login|付款人账号|String(128)|N|支付平台上(微信，支付宝)的付款人账号|"134****3920"
 total_amount|交易总额	|String(10)|Y|本次交易总金额|"10000"
-net\_amount|实收金额|String(10)|Y|如果没有退款，这个字段等于total\_amount。否则等于 total_amount减去退款金额|"0"
+net_amount|实收金额|String(10)|Y|如果没有退款，这个字段等于total\_amount。否则等于 total_amount减去退款金额|"0"
 subject|	交易概述|	String(64)|	Y|本次交易概述|"Pizza"
 finish_time	|付款动作在收钱吧的完成时间|String(13)|Y|时间戳|"1449646835244"
-channel\_finish_time|付款动作在支付服务商的完成时间|String(13)|Y|时间戳|"1449646835244"
+channel_finish_time|付款动作在支付服务商的完成时间|String(13)|N|时间戳|"1449646835244"
 operator	|操作员	|String(32)	|Y	|门店操作员	|"张三丰"
 reflect	|反射参数|	String(64)	|N|	透传参数	| {"tips": "200"}
 payment_list |活动优惠 |JSON |N |格式为json payment_list的值为数组，每一个元素包含两个字段，一个是type支付名称，一个amount_total支付金额 |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
