@@ -37,8 +37,8 @@ payer_uid  | 付款人id |  String(64)   | Y  |  订单付款人的id  |  如�
 trade_no|	支付平台的订单凭证号|String(64)|	Y	|支付宝或微信的订单号	|"2006101016201512090096528672"
 total_amount	|交易总金额	|String(10)|	Y	|原始交易实收金额	|"100"
 net_amount|	剩余金额	|String(10)|	Y|	实收金额减退款金额| "0"
-finish_time	|上次操作在收钱吧的完成时间|String(13)|Y|时间戳，本次动作在收钱吧的完成时间|"1449646835244"
-channel\_finish_time|上次操作再支付平台完成的时间|String(13)|	Y|	时间戳，本次动作在微信或支付宝的完成时间|"1449646835221"
+finish_time	|上次操作在收钱吧的完成时间|String(13)|N|时间戳，本次动作在收钱吧的完成时间，只有支付成功、退款成功、撤单成功才有值返回|"1449646835244"
+channel\_finish_time|上次操作再支付平台完成的时间|String(13)|	N|	时间戳，本次动作在微信或支付宝的完成时间，只有支付成功、退款成功、撤单成功才有值返回|"1449646835221"
 subject|	商品概述	|String(32)|	Y	|交易时候的商品概述	| "wx"
 operator	|操作员	|String(64)|	Y|	执行上次业务动作的操作员| "Obama"
 payment_list |活动优惠 |JSON |N |格式为json payment_list的值为数组，每一个元素包含两个字段，一个是type支付名称，一个amount_total支付金额 |"payment_list": [{"type": "BANKCARD_DEBIT","amount_total": "1"},{"type": "DISCOUNT_CHANNEL_MCH","amount_total": "100"}]
