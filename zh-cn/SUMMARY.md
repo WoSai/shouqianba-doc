@@ -21,7 +21,6 @@
        * [退款接口](api/interface/refund.md)
        * [撤单接口](api/interface/revoke&cancel.md)
        * [查询接口](api/interface/query.md)
-       * [上传日志接口](api/interface/uploadLog.md)
     * [附录]()
        * [接口响应字段](api/annex/responseParams.md)
        * [通讯状态码](api/annex/responseCode.md)
