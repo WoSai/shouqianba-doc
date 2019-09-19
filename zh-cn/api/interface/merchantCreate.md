@@ -25,15 +25,17 @@
 身份证反面照 | holder_id_back_photo |String(255) |Y |必须传真实的身份证照片，且身份证有效期限不能过期
 证件有效期 | id_validity | Long |N | 时间戳 , 毫秒级，证件类型为身份证时会自动识别
 预留手机号 | bank_cellphone |String(32) |N |
-证照类型 | license_type | Integer |N | 1、营业执照 2、事业单位法人证书
 法人姓名 | legal_person_name |String(100) |N | 企业账户需要传
 法人证件类型 | legal_person_id_type |Integer |N | 1 身份证; 2 非中国护照; 3 台胞证; 4 港澳通行证; 5 中国护照
 法人证件号码 | legal_person_id_number |String(18) |N |
 法人证件正面照 | legal_person_id_card_front_photo|String(255) |N |必须传真实的身份证照片，且身份证信息需要和法人姓名和身份证号匹配
 法人证件反面照 | legal_person_id_card_back_photo|String(255) |N |必须传真实的身份证照片，且身份证有效期限不能过期
 法人证件有效期 | legal_id_validity | Long | N |时间戳 , 毫秒级，证件类型为身份证时会自动识别
-营业执照 | business_license_photo |String(255) |N | 企业账户需要传,license_type为2代表法人证书
+法人证件类型 | license_type | Integer | N | 0、无营业执照、1、个体工商户营业执照 2、企业营业执照 3、事业单位法人证书 4、民办非企业单位登记证书 5、社会团体法人登记证书 6、基金会法人登记证书 7、律师事务所执业许可证
+营业执照 | business_license_photo |String(255) |N | license_type不为0时必传
 营业执照名称 | license_name |String(100) |N | 企业账户需要传,license_type为2代表证照名称
+营业执照注册地址 | license_address | String(255) | N | license_type不为0时必传
+营业执照有效期 | license_validity | String(128) | N | license_type不为0时必传
 工商注册号 | tax_payer_id |String(45) |N | 企业账户需要传,license_type为2代表证照注册号
 门头照片 | brand_photo |String(255) |Y |
 室内照片 | indoor_photo |String(255) |Y |
@@ -85,7 +87,12 @@
         "vendor_app_id": "2017110600000001",
         "vendor_sn": "91800129",
         "client_sn": "12345678",
-        "customer_phone": "13900000000"
+        "customer_phone": "13900000000",
+        "license_type" : 1,
+        "business_license_photo" : "http://www.shouqianba.com",
+        "license_address" : "苏州市苏州工业园区苏州工业园区直属镇工业园区东长路88号2-5产业园g1栋18楼",
+        "license_validity" : "20190919-99991231"
+        
     }   
    ```
     
