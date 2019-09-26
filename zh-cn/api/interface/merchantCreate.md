@@ -31,12 +31,12 @@
 法人证件正面照 | legal_person_id_card_front_photo|String(255) |N |必须传真实的身份证照片，且身份证信息需要和法人姓名和身份证号匹配
 法人证件反面照 | legal_person_id_card_back_photo|String(255) |N |必须传真实的身份证照片，且身份证有效期限不能过期
 法人证件有效期 | legal_id_validity | Long | N |时间戳 , 毫秒级，证件类型为身份证时会自动识别
-法人证件类型 | license_type | Integer | N | 0、无营业执照、1、个体工商户营业执照 2、企业营业执照 3、事业单位法人证书 4、民办非企业单位登记证书 5、社会团体法人登记证书 6、基金会法人登记证书 7、律师事务所执业许可证
+营业执照类型 | license_type | Integer | N | 0、无营业执照、1、个体工商户营业执照 2、企业营业执照 3、事业单位法人证书 4、民办非企业单位登记证书 5、社会团体法人登记证书 6、基金会法人登记证书 7、律师事务所执业许可证
 营业执照 | business_license_photo |String(255) |N | license_type不为0时必传
-营业执照名称 | license_name |String(100) |N | 企业账户需要传,license_type为2代表证照名称
+营业执照名称 | license_name |String(100) |N | 企业账户需要传,license_type不为0必传
 营业执照注册地址 | license_address | String(255) | N | license_type不为0时必传
 营业执照有效期 | license_validity | String(128) | N | license_type不为0时必传
-工商注册号 | tax_payer_id |String(45) |N | 企业账户需要传,license_type为2代表证照注册号
+工商注册号 | tax_payer_id |String(45) |N | license_type不为0必传
 门头照片 | brand_photo |String(255) |Y |
 室内照片 | indoor_photo |String(255) |Y |
 室外照片 | outdoor_photo |String(255) |Y |
