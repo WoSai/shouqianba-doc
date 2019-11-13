@@ -133,6 +133,7 @@ payway | payway_name | note
 18 | 翼支付 | representing `China Telecom Wallet`
 19 | Weixin-Local | Oversea Wechat wallet displays `Weixin-Local`
 20 | Alipay global | 
+22 | 索迪斯预付卡| representing `Sodexo card`
 100 | 储值支付 | representing `Stored-value-card payment`
 101 | 礼品卡 | representing `Gift card payment`
 
