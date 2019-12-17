@@ -84,9 +84,12 @@ Value | Description
 <font color="green">PAY_ERROR</font> | <font color="red">Payment has failed and the transaction's result is unknown</font>
 <font color="green">REFUNDED</font> | <font color="red">The order has been fully refunded</font>
 <font color="green">PARTIAL_REFUNDED</font> | <font color="red">The order has been partially refunded</font>
+<font color="green">REFUND_INPROGRESS</font> | <font color="red">Refund is in progress</font>
 <font color="green">REFUND_ERROR</font>	 | <font color="red">Refund has failed and the transaction's result is unknown</font>
 <font color="green">CANCELED</font> | <font color="red">The order has been successfully canceled by client</font>
 <font color="green">CANCEL_ERROR</font>	 | <font color="red">Cancellation by client has failed and the transaction's result is unknown</font>
+<font color="green">CANCEL_INPROGRESS</font> | <font color="red">Cancel is in progress</font>
+<font color="green">INVALID_STATUS_CODE</font> | <font color="red">Invalid status code</font>
 
 ### The final status of order are below:
 - PAID
