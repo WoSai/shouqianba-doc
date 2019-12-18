@@ -9,6 +9,7 @@
 联系人 |contact_name  | String(16)|Y |2至10个字，支持中文，不支持英文、数字、特殊符号、emoji
 联系电话 | contact_cellphone |String(32) |Y |11位数字
 行业 | industry |String(36) |N |快递行业: 7a542419-312d-11e6-aebb-ecf4bbdee2f0
+行业许可证照片 | trade_license |String(255) |N |对特定行业的商户，必须上传与该行业对应的行业许可证照片。。
 地区 | area |String(6) |Y |标准地区编码，参见附录
 详细地址 | street_address |String(128) |Y | 5至128字符，支持中英文、数字，支持符号（），。-；不支持特殊符号，emoji
 账户类型 | account_type |Integer |Y | 1 个人账户; 2 企业账户
