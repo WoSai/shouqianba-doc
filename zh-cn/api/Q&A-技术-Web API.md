@@ -18,7 +18,7 @@
 有的。
 
 # 收钱吧服务器IP
-域名：https://api.shouqianba.com
+域名：https://vsi-api.shouqianba.com
 
 端口：443
 
