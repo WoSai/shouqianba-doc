@@ -8,10 +8,10 @@
 - OCSP stapling is designed to reduce the cost of an OCSP validation, both for the client and the OCSP responder, especially for those big traffic scenario.-->
 
 ## Multiple Access Points
-| Location      | Access Entrypoint          | Domain        | IP            |
-| ------------- | -------------              | ------------- | ------------- |
-| Hongkong  | Hongkong without OCSP Stapling       |hk-api.shouqianba.com | 47.90.17.0  |
-| Hangzhou  | China mainland without OCSP Stapling|api.shouqianba.com | 120.55.199.154|
+| Location      | Domain        | 
+| ------------- | ------------- | 
+| Hongkong  | hk-api.shouqianba.com | 
+| Hangzhou  | vsi-api.shouqianba.com | 
 
 ## Dual Identity Certification
 ### Service Provider Certificate,
