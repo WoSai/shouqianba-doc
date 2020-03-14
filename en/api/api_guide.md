@@ -1,6 +1,6 @@
 # API Guide
 
-Upay Web API domain: `https://api.shouqianba.com`
+Upay Web API domain: `https://vsi-api.shouqianba.com`
 
 Upay Web API accepts only JSON formatted HTTP requests. Please make sure to add `Content-Type` header and set its value to `application/json` for all requests.
 

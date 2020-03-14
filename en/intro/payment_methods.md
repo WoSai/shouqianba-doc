@@ -4,8 +4,7 @@ Upay integrates multiple payment tenders, such as Alipay, Wechat Pay including C
 
 payway | payway_name | note 
 --------- | ------ | ---------
-1 | 支付宝1.0 / Alipay-Local |`Alipay-Local` represents Overseas local Alipay wallet , else displays `支付宝1.0`
-2 | 支付宝 | representing `Alipay`
+1 | 支付宝1.0 / Alipay-Local | representing `Alipay`(`Alipay-Local` represents Overseas local Alipay wallet , else displays `支付宝1.0`)
 3 | 微信 | representing `Wechat pay`
 4 | 百度钱包 | representing `Baidu Wallet`
 5 | 京东钱包 | representing `JD wallet`

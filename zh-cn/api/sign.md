@@ -2,7 +2,7 @@
 
 ## 请求域名
 
-   收钱吧接入域名(api_domain)：`https://api.shouqianba.com`
+   收钱吧接入域名(api_domain)：`https://vsi-api.shouqianba.com`
    
    <font color="red">**注：收钱吧的Web API接口是https协议，当发起请求时，会要求检查证书，在发起请求时规避ssl的证书检查或者
   携带证书请求**</font>
@@ -44,7 +44,7 @@
 ### 签名案例
 ```
 curl --request POST
-  --url http://api.shouqianba.com/upay/v2/pay
+  --url https://vsi-api.shouqianba.com/upay/v2/pay
   --header 'Authorization: sn+" "+sign' 
   --header 'content-type: application/json'
   --data '{"params": "test"}'
