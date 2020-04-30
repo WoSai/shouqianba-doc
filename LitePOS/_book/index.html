@@ -1,0 +1,3532 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LitePOS · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    LitePOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./#1">
+            
+                    
+                    公共定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./#1_1">
+            
+                    
+                    请求通用定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="./">
+            
+                <a href="./#1_2">
+            
+                    
+                    响应通用定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="./">
+            
+                <a href="./#1_3">
+            
+                    
+                    签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="./">
+            
+                <a href="./#1_4">
+            
+                    
+                    参数数量定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="./">
+            
+                <a href="./#1_5">
+            
+                    
+                    时间数据元素定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2">
+            
+                    
+                    销售类操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./#2_1">
+            
+                    
+                    购买
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="./">
+            
+                <a href="./#2_2">
+            
+                    
+                    退款
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./#3">
+            
+                    
+                    授权类操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./#3_1">
+            
+                    
+                    预授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="./">
+            
+                <a href="./#3_2">
+            
+                    
+                    预授权撤销
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./#4">
+            
+                    
+                    取消订单操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./#5">
+            
+                    
+                    通知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="./">
+            
+                <a href="./#5_1">
+            
+                    
+                    授权结果通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="./">
+            
+                <a href="./#5_2">
+            
+                    
+                    销售结果通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./#6">
+            
+                    
+                    查询
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="./">
+            
+                <a href="./#6_1">
+            
+                    
+                    授权结果查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="./">
+            
+                <a href="./#6_2">
+            
+                    
+                    销售结果查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >LitePOS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6536;&#x94B1;&#x5427;-&#x8F7B;pos--api">&#x6536;&#x94B1;&#x5427; &#x8F7B;POS  API</h1>
+<h2 id="1&#x516C;&#x5171;&#x5B9A;&#x4E49;"><span id="1">1.<strong>&#x516C;&#x5171;&#x5B9A;&#x4E49;</strong></span></h2>
+<h3 id="11&#x8BF7;&#x6C42;&#x901A;&#x7528;&#x5B9A;&#x4E49;"><span id="1_1">1.1.<strong>&#x8BF7;&#x6C42;&#x901A;&#x7528;&#x5B9A;&#x4E49;</strong></span></h3>
+<p>&#x672C;&#x5E73;&#x53F0;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x683C;&#x5F0F;&#x5747;&#x91C7;&#x7528;JSON&#x683C;&#x5F0F;&#xFF0C;&#x8BF7;&#x6C42;&#x5B57;&#x7B26;&#x96C6;&#x91C7;&#x7528;UTF-8&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x5747;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x4E00;&#x6B21;&#x63A5;&#x53E3;&#x8BF7;&#x6C42;&#x7684;&#x8BF7;&#x6C42;&#x4F53;</td>
+</tr>
+<tr>
+<td>request.head</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x516C;&#x5171;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>request.body</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>1</td>
+<td>String</td>
+<td>&#x7B7E;&#x540D;&#xFF0C;RSA&#x52A0;&#x5BC6;</td>
+<td>&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x8BF7;&#x6C42;&#x4F53;&#x7684;&#x52A0;&#x5BC6;&#x7B7E;&#x540D;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x53E3;&#x5B89;&#x5168;&#x6027;&#x6821;&#x9A8C;&#x3002;&#x7B7E;&#x540D;&#x89C4;&#x5219;&#x89C1;&#x672C;&#x6587;&#x6863;&#x76EE;&#x5F55;<a href="./#1_3">1.3.&#x7B7E;&#x540D;</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F; </strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request.head.appid</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x8F7B;POS&#x5E94;&#x7528;&#x7F16;&#x53F7;&#xFF0C;&#x5546;&#x6237;&#x5165;&#x7F51;&#x540E;&#x7531;&#x6536;&#x94B1;&#x5427;&#x6280;&#x672F;&#x652F;&#x6301;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>request.head.sign_type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x7B7E;&#x540D;&#x7B97;&#x6CD5;</td>
+<td>&#x652F;&#x6301;&#x7684;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#xFF1A;            <br>1. SHA1&apos;:SHA1withRSA;   <br>2. SHA256&apos;:SHA256withRSA</td>
+</tr>
+<tr>
+<td>request.head.request_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;&#xFF0C;&#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>request.head.reserve</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x957F;&#x5EA6;&#x4E0D;&#x9650;</td>
+<td></td>
+</tr>
+<tr>
+<td>request.head.version</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;10&#x4F4D;</td>
+<td>&#x6536;&#x94B1;&#x5427;&#x5E94;&#x7528;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5F53;&#x524D;&#x7248;&#x672C;1.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8BF7;&#x6C42;&#x4F53;&#x6837;&#x4F8B;&#xFF1A;</p>
+<p>{</p>
+<p>&quot;request&quot;:{</p>
+<p>&quot;head&quot;:{</p>
+<p>&quot;version&quot;:&quot;1.0.0&quot;,</p>
+<p>&quot;sign_type&quot;:&quot;SHA1&quot;,</p>
+<p>&quot;appid&quot;:&quot;28lp61847655&quot;,</p>
+<p>&quot;request_time&quot;:&quot;2001-07-04T12:08:56+05:30&quot;,</p>
+<p>&quot;reserve&quot;:&quot;{}&quot;</p>
+<p>},</p>
+<p>&quot;body&quot;:{</p>
+<p>&quot;subject&quot;:&quot;this is request business body&quot;</p>
+<p>}</p>
+<p>},</p>
+<p>&quot;signature&quot;:&quot;blmSaxUF6/N2XOcz7UWRRVQ5XsVCEz1BpZl6R9Rc6TA3+IfWhJtmCsUZjtw72w1QQ8rEV6+uMh3GWbyzH02Y9dJQCW&quot;</p>
+<p>}</p>
+<h3 id="12&#x54CD;&#x5E94;&#x901A;&#x7528;&#x5B9A;&#x4E49;"><span id="1_2">1.2.<strong>&#x54CD;&#x5E94;&#x901A;&#x7528;&#x5B9A;&#x4E49;</strong></span></h3>
+<p>&#x672C;&#x5E73;&#x53F0;&#x6240;&#x6709;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x5747;&#x91C7;&#x7528;JSON&#x683C;&#x5F0F;&#xFF0C;body&#x5747;&#x91C7;&#x7528;UTF-8&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x54CD;&#x5E94;&#x5747;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>response</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x672C;&#x6B21;&#x4E1A;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4F53;</td>
+</tr>
+<tr>
+<td>response.head</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x672C;&#x6B21;&#x4E1A;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4F53;&#x5934;&#x90E8;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>response.body</td>
+<td>1</td>
+<td>String</td>
+<td>JSON&#x683C;&#x5F0F;&#x7684;string&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x6807;&#x5FD7;&#x672C;&#x6B21;&#x4E1A;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4F53;&#x7684;&#x4E1A;&#x52A1;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>1</td>
+<td>String</td>
+<td>&#x7B7E;&#x540D;&#xFF0C;RSA&#x52A0;&#x5BC6;</td>
+<td>&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x8FD4;&#x56DE;&#x4F53;&#x7684;&#x52A0;&#x5BC6;&#x7B7E;&#x540D;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x53E3;&#x5B89;&#x5168;&#x6027;&#x6821;&#x9A8C;&#x3002;&#x7B7E;&#x540D;&#x89C4;&#x5219;&#x89C1;&#x672C;&#x6587;&#x6863;&#x76EE;&#x5F55;<a href="./#1_3">1.3.&#x7B7E;&#x540D;</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>&#x5B57;&#x6BB5;&#x540D;</strong></th>
+<th><strong>&#x5B57;&#x6BB5;&#x542B;&#x4E49;</strong></th>
+<th><strong>&#x53D6;&#x503C;</strong></th>
+<th><strong>&#x5907;&#x6CE8;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>response.body.result_code</td>
+<td>&#x901A;&#x8BAF;&#x54CD;&#x5E94;&#x7801;</td>
+<td>200&#xFF0C;400&#xFF0C;500</td>
+<td>200&#xFF1A;&#x901A;&#x8BAF;&#x6210;&#x529F;&#xFF1B;400&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x9519;&#x8BEF;&#xFF1B;500:&#x670D;&#x52A1;&#x7AEF;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>response.body.error_code</td>
+<td>&#x901A;&#x8BAF;&#x9519;&#x8BEF;&#x7801;</td>
+<td>&#x89C1;&#x901A;&#x4FE1;&#x9519;&#x8BEF;&#x7801;&#x8868;</td>
+<td>&#x901A;&#x8BAF;  <strong>&#x5931;&#x8D25;</strong>  &#x7684;&#x65F6;&#x5019;&#x624D;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>response.body.error_message</td>
+<td>&#x901A;&#x8BAF;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;</td>
+<td>&#x89C1; &#x901A;&#x4FE1;&#x9519;&#x8BEF;&#x7801;&#x8868;</td>
+<td>&#x901A;&#x8BAF;  <strong>&#x5931;&#x8D25;</strong>  &#x7684;&#x65F6;&#x5019;&#x624D;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>response.body.biz_response</td>
+<td>&#x4E1A;&#x52A1;&#x54CD;&#x5E94;&#x6570;&#x636E;</td>
+<td>JSON&#x7ED3;&#x6784;</td>
+<td>&#x901A;&#x8BAF;  <strong>&#x6210;&#x529F;</strong>  &#x7684;&#x65F6;&#x5019;&#x624D;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>response.body.biz_response.result_code</td>
+<td>&#x4E1A;&#x52A1;&#x6267;&#x884C;&#x54CD;&#x5E94;&#x7801;</td>
+<td>&#x89C1; &#x4E1A;&#x52A1;&#x54CD;&#x5E94;&#x5B9A;&#x4E49;</td>
+<td></td>
+</tr>
+<tr>
+<td>response.body.biz_response.error_code</td>
+<td>&#x4E1A;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7801;</td>
+<td>&#x89C1; &#x4E1A;&#x52A1;&#x54CD;&#x5E94;&#x5B9A;&#x4E49;</td>
+<td>&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>response.body.biz_response.error_message</td>
+<td>&#x4E1A;&#x52A1;&#x6267;&#x884C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</td>
+<td>&#x89C1; &#x4E1A;&#x52A1;&#x54CD;&#x5E94;&#x5B9A;&#x4E49;</td>
+<td>&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>response.body.biz_response.data</td>
+<td>&#x4E1A;&#x52A1;&#x6267;&#x884C;&#x8FD4;&#x56DE;&#x53C2;&#x6570;</td>
+<td>&#x89C1;&#x5404;&#x5177;&#x4F53;&#x63A5;&#x53E3;&#x7684;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x5B9A;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4F53;&#x6837;&#x4F8B;&#xFF1A;</p>
+<p>{</p>
+<p>&quot;response&quot;: {</p>
+<p>&quot;head&quot;: {</p>
+<p>&quot;version&quot;: &quot;1.0.0&quot;,</p>
+<p>&quot;sign_type&quot;:&quot;SHA1&quot;,</p>
+<p>&quot;appid&quot;: &quot;28lp61847655&quot;,</p>
+<p>&quot;response_time&quot;: &quot;2001-07-04T12:08:56+05:30&quot;,</p>
+<p>&quot;reserve&quot;: &quot;{}&quot;</p>
+<p>},</p>
+<p>&quot;body&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;</p>
+<p>&quot;biz_response&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;</p>
+<p>&quot;data&quot;: {</p>
+<p>&quot;check_sn&quot;: &quot;76526166340&quot;,</p>
+<p>&quot;order_sn&quot;: &quot;1b7efc395f754c60b5c28b96dd402174&quot;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>},</p>
+<p>&quot;signature&quot;: &quot;blmSaxUF6/N2XOcz7UWRRVQ5XsVCEz1BpZl6R9Rc6TA3+IfWhJtmCsUZjtw72w1QQ8rEV6+uMh3GWbyzH02Y9dJQCW&quot;</p>
+<p>}</p>
+<p>&#x901A;&#x8BAF;&#x9519;&#x8BEF;&#x7801;&#x8868;&#xFF1A;</p>
+<p>error_code&#x4E3A;&#x672C;&#x6B21;&#x901A;&#x8BAF;&#x7684;&#x9519;&#x8BEF;&#x7801;</p>
+<p>error_message&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x4E2D;&#x6587;&#x63CF;&#x8FF0;</p>
+<p>&#x5F53;result_code&#x4E0D;&#x7B49;&#x4E8E;200&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x51FA;&#x73B0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7F16;&#x53F7;</th>
+<th>result_code</th>
+<th>error_code</th>
+<th>error_message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>400</td>
+<td>INVALID_PARAMS</td>
+<td>&#x53C2;&#x6570;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>400</td>
+<td>ILLEGAL_SIGN</td>
+<td>&#x7B7E;&#x540D;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>500</td>
+<td>UNKNOWN_SYSTEM_ERROR</td>
+<td>&#x7CFB;&#x7EDF;&#x9519;&#x8BEF;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-&#x7B7E;&#x540D;"><span id="1_3">1.3. <strong>&#x7B7E;&#x540D;</strong></span></h3>
+<h5 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#xFF1A;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#xFF1A;</h5>
+<p>&#x2022;&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5546;&#x6237;&#x751F;&#x6210;&#x4E00;&#x4EFD;RSA&#x516C;&#x94A5;&#x79C1;&#x94A5;&#xFF0C;&#x5C06;&#x516C;&#x94A5;&#x4EA4;&#x4ED8;&#x4E8E;&#x6536;&#x94B1;&#x5427;&#xFF0C;&#x6536;&#x94B1;&#x5427;&#x4F1A;&#x4F7F;&#x7528;&#x8BE5;&#x516C;&#x94A5;&#x9A8C;&#x8BC1;&#x7B7E;&#x540D;&#xFF0C;RSA&#x5BC6;&#x94A5;&#x4F7F;&#x7528;2048&#x4F4D;</p>
+<p>&#x2022;&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x5B8C;&#x6574;&#x7684;&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#xFF08;&#x4E0D;&#x5305;&#x542B;&quot;request&quot;&#x5B57;&#x6BB5;&#xFF0C;&#x4EC5;&#x5305;&#x62EC;request&#x7684;&#x503C;&#xFF09;&#x4F7F;&#x7528;RSA&#x79C1;&#x94A5;&#x7B7E;&#x540D;&#xFF0C;&#x5E76;&#x8F6C;&#x6362;&#x4E3A;BASE64&#x7F16;&#x7801;</p>
+<p>&#x2022;&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5C06;&#x751F;&#x6210;&#x7684;&#x7B7E;&#x540D;&#x586B;&#x5145;&#x5230;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#x7684;signature&#x5F53;&#x4E2D;</p>
+<h5 id="&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x9A8C;&#x7B7E;&#xFF1A;">&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x9A8C;&#x7B7E;&#xFF1A;</h5>
+<p>&#x2022;&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6536;&#x94B1;&#x5427;&#x751F;&#x6210;&#x4E00;&#x4EFD;RSA&#x516C;&#x94A5;&#x79C1;&#x94A5;&#xFF0C;&#x5C06;&#x516C;&#x94A5;&#x4EA4;&#x4ED8;&#x4E8E;&#x5546;&#x6237;&#xFF0C;&#x5546;&#x6237;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x516C;&#x94A5;&#x9A8C;&#x8BC1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;RSA&#x5BC6;&#x94A5;&#x4F7F;&#x7528;2048&#x4F4D;</p>
+<p>&#x2022;&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5C06;&#x8BF7;&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x7B7E;&#x540D;&#x5B57;&#x7B26;&#x4E32;&#x4ECE;&#x5B8C;&#x6574;&#x7684;&#x8BF7;&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x6765;</p>
+<p>&#x2022;&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;&#x6536;&#x94B1;&#x5427;&#x7684;&#x516C;&#x94A5;&#x5BF9;&#x4E8E;&#x8FD4;&#x56DE;&#x4F53;&#x7B7E;&#x540D;&#x8FDB;&#x884C;&#x9A8C;&#x7B7E;</p>
+<h5 id="&#x7B7E;&#x540D;&#x793A;&#x4F8B;&#xFF1A;">&#x7B7E;&#x540D;&#x793A;&#x4F8B;&#xFF1A;</h5>
+<p>&#x7B7E;&#x540D;&#x79C1;&#x94A5;&#xFF08;&#x4EC5;&#x7528;&#x4E8E;&#x5546;&#x6237;&#x8C03;&#x8BD5;&#x7B7E;&#x540D;&#x4F7F;&#x7528;&#xFF09;&#xFF1A;</p>
+<p>MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkNGOzVWVpLAE9yMN0iqONAGniYp8JrzwdDO7lONzVyR0AC+9XRkrJohfYyF6LeZOMXZorzF+1m28I/lNKNvd0EqK30N/7vXt09cAj0D2oHTwwPIZFvTeWS2fKjfo1lcWvOIpSZmXDuo1KhitHlSo6blNf3kXjnpmshwt3skE2WKw4m0PLo2UJbmnbYi9WCSBHhYkAVxXPCATWymkZfOW9cUYGugg6dLzKH2Z0arNVtUbdmSJOPTuB7wpyAmk4IupXYdw+mYPD5wpHCQrGTxO6OW0U+PdrfkUIJKI4xaOGD9WSCeeRs8nNlpsDLnZcP1jyWcTuAGgkFNtu8VHI7gk5AgMBAAECggEAdCdXC2lx9gaZzjGxCUR00u4i+HAY3gnmNQqMBvvFQzkjWYAXyx2/E4ik48VBE9ppZBZmU2sbnOSZk7wMAOiG/MWd8vc/Kd1sclzQkMTiiIQ9qkV2GejyZE9s2Ry7jKIol30gY49plx3kin4EKXu7xl96fMtHlu7+98sDcqVWefD3efWRaCynLr0YmMGODQEvJ5mLeLn5aJS/zUMxWRmHtFL46LxPEDO0fpXZw/U2ZKtey/SiuxoMJNh18Nthtj/qmZmndjE0fPW25yb9u/5S8UJDfnCs1lzXG36QpW8RQjAZ1ip/DVNkP7FqP1MmDA1EtV73GLBM4K6x2g9z74mxgQKBgQDVsiy/AlbMzQe9ISj2MLOajDHhsMcw6vUIbh7Otj+Cqgga1rxSQ1XKTjp6n1JGFudMH58w0Z/htYn9D9mHCKbd7IjC4w3IX2X+kw8stx9kgrcidHSRhHXjiiF47wEUrZEnm32zUxjWw8+RXQdVojBawZrJQtytslKaJR5PQj/0EQKBgQDEtg9MeorZXgBrdO/Hs6paMlBGDFVUzf7wRWwzQqvGeYy8Qr4ztlTEeNgXZcDFrV6sSwUcW0BQDtg3oDtpolSFoW7MQjN9gsOh2D70jniIWVNFovwQ/+ljWfGT/JCKk19aN/jP2+DbMt/+E3uuNTu2XyfeHx5Ufrz3qGOOkplKqQKBgDjxBDlVbzmdPH2p81c+fO0mhDgmOb2QLgC0DyN3ro6rrgMwyveEl7yTgcOg5nRkr/c5ydphUR/8lqtG6OixZn1mBL8hb0/AE9Z06ys4FHZc2l2k+Fa6HAuoh+jIjtoqsa4DIciB0PGRNaL/TfAEiqv0QMF2PoVOKfKHB3+JIK9xAoGBAJTaD4mX0Sna8AZgXnGHiwjlucjH3Gpn1tqKLe48LS/rGov7FWKcPljN+Pb7kHwFTPajbiKfCnOKSCMPpOWyaLMWDXmTPtNi+BaoRDta8+p5bYHsa0GR5VHA5gVNwTKbgjQK1sSzZdt5C/Z/V7/jmGPQbaKveYwGu4fMbEmetVDBAoGALsgsyoJe19BQuqqYAp6zokDHF0w3W3YQNnrisF3qF/hFXY4n4azg/FMtykTYD2nOBEQ/JpACOHbpUULbucqnm/9fLTjSLfVNWRv2oY0hCsRRug+NH7OEXR2Da1vM7VnLrJwgkUubhqYD398qzyk8Uh3DPoYg7xnqRhgS+29tPw0=</p>
+<p>&#x9A8C;&#x7B7E;&#x516C;&#x94A5;&#xFF08;&#x4EC5;&#x7528;&#x4E8E;&#x5546;&#x6237;&#x8C03;&#x8BD5;&#x7B7E;&#x540D;&#x4F7F;&#x7528;&#xFF09;&#xFF1A;</p>
+<p>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApDRjs1VlaSwBPcjDdIqjjQBp4mKfCa88HQzu5Tjc1ckdAAvvV0ZKyaIX2Mhei3mTjF2aK8xftZtvCP5TSjb3dBKit9Df+717dPXAI9A9qB08MDyGRb03lktnyo36NZXFrziKUmZlw7qNSoYrR5UqOm5TX95F456ZrIcLd7JBNlisOJtDy6NlCW5p22IvVgkgR4WJAFcVzwgE1sppGXzlvXFGBroIOnS8yh9mdGqzVbVG3ZkiTj07ge8KcgJpOCLqV2HcPpmDw+cKRwkKxk8TujltFPj3a35FCCSiOMWjhg/VkgnnkbPJzZabAy52XD9Y8lnE7gBoJBTbbvFRyO4JOQIDAQAB</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5C01;&#x88C5;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</p>
+<p>{</p>
+<p>&quot;head&quot;: {</p>
+<p>&quot;sign_type&quot;: &quot;SHA1&quot;,</p>
+<p>&quot;appid&quot;: &quot;test_appid&quot;,</p>
+<p>&quot;request_time&quot;: &quot;2019-09-26T19:57:29+08:00&quot;,</p>
+<p>&quot;version&quot;: &quot;1.0.0&quot;</p>
+<p>},</p>
+<p>&quot;body&quot;: {</p>
+<p>&quot;store_sn&quot;: &quot;SH1&quot;,</p>
+<p>&quot;brand_code&quot;: &quot;000000&quot;,</p>
+<p>&quot;check_sn&quot;: &quot;000000001&quot;,</p>
+<p>&quot;workstation_sn&quot;: &quot;0&quot;</p>
+<p>}</p>
+<p>}</p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x751F;&#x6210;&#x7B7E;&#x540D;&#x4F53;&#xFF0C;</p>
+<p>{&quot;head&quot;:{&quot;sign_type&quot;:&quot;SHA1&quot;,&quot;appid&quot;:&quot;test_appid&quot;,&quot;request_time&quot;:&quot;2019-09-26T19:57:29+08:00&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;body&quot;:{&quot;store_sn&quot;:&quot;SH1&quot;,&quot;brand_code&quot;:&quot;000000&quot;,&quot;check_sn&quot;:&quot;000000001&quot;,&quot;workstation_sn&quot;:&quot;0&quot;}}</p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;&#x79C1;&#x94A5;&#x5E76;&#x6839;&#x636E;head.sign_type&#x6307;&#x5B9A;&#x7684;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x5BF9;&#x7B7E;&#x540D;&#x4F53;&#x8FDB;&#x884C;&#x7B7E;&#x540D;</p>
+<p>&quot;luyVxzfRoiy27uepgEireRWAFFsGQNX/wgJKn8ALzgknq9oh0OJTi23T3HhVUJyG9lien/8vGm/LQ4UY14wxDIh9AAYsjQSNZwFqzI5yHorBzZ1wZo3lfmS26i4zkMxwJcEYyryboTBYt/tFS/QhciHmBoDY9d/bdUgZ2R+fnNsBsKgPQUR/SEoz0bEg8LRIUmQHlc4X4ma5qqN2dV2paNa8fdIipCKJHyLAR8mjVeX3w4gG6Bsz478406NkSp8uQECxzSPRBUc/fd1f+RHoDWh+x3e6vk58kQJQyRu5mPTjFk2EUCgdyXtAm+FVMOyMYeR3Vx3i1W2WyRNmLITTxg==&quot;</p>
+<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5C01;&#x88C5;HTTP&#x8BF7;&#x6C42;&#x4F53;</p>
+<p>{&quot;request&quot;:{&quot;head&quot;:{&quot;sign_type&quot;:&quot;SHA1&quot;,&quot;appid&quot;:&quot;test_appid&quot;,&quot;request_time&quot;:&quot;2019-09-26T19:57:29+08:00&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;body&quot;:{&quot;store_sn&quot;:&quot;SH1&quot;,&quot;brand_code&quot;:&quot;000000&quot;,&quot;check_sn&quot;:&quot;000000001&quot;,&quot;workstation_sn&quot;:&quot;0&quot;}},&quot;signature&quot;:&quot;luyVxzfRoiy27uepgEireRWAFFsGQNX/wgJKn8ALzgknq9oh0OJTi23T3HhVUJyG9lien/8vGm/LQ4UY14wxDIh9AAYsjQSNZwFqzI5yHorBzZ1wZo3lfmS26i4zkMxwJcEYyryboTBYt/tFS/QhciHmBoDY9d/bdUgZ2R+fnNsBsKgPQUR/SEoz0bEg8LRIUmQHlc4X4ma5qqN2dV2paNa8fdIipCKJHyLAR8mjVeX3w4gG6Bsz478406NkSp8uQECxzSPRBUc/fd1f+RHoDWh+x3e6vk58kQJQyRu5mPTjFk2EUCgdyXtAm+FVMOyMYeR3Vx3i1W2WyRNmLITTxg==&quot;}</p>
+<h3 id="14&#x53C2;&#x6570;&#x6570;&#x91CF;&#x5B9A;&#x4E49;"><span id="1_4">1.4.<strong>&#x53C2;&#x6570;&#x6570;&#x91CF;&#x5B9A;&#x4E49;</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#xFF0C;&#x4E14;&#x662F;&#x4E00;&#x4E2A;&#x3002;</td>
+</tr>
+<tr>
+<td>0-1</td>
+<td>&#x8BE5;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x9879;&#xFF0C;&#x6700;&#x5C11;0&#x4E2A;&#xFF0C;&#x6700;&#x591A;1&#x4E2A;&#x3002;</td>
+</tr>
+<tr>
+<td>0-n</td>
+<td>&#x8BE5;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x9879;&#xFF0C;&#x6700;&#x5C11;0&#x4E2A;&#xFF0C;&#x6700;&#x5927;&#x4E0D;&#x9650;&#x3002;</td>
+</tr>
+<tr>
+<td>1-n</td>
+<td>&#x8BE5;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x5FC5;&#x987B;&#x9879;&#xFF0C;&#x6700;&#x5C11;1&#x4E2A;&#xFF0C;&#x6700;&#x5927;&#x4E0D;&#x9650;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;"><span id="1_5">1.5.<strong>&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</strong></span></h3>
+<p>&#x91C7;&#x7528;ISO 8601 Format. YYYY-MM-DDThh:mm:ssTZD</p>
+<p>Example:</p>
+<p>2015-12-05T15:28:36+08:00</p>
+<p>2015-12-05T15:28:36+0800</p>
+<h2 id="2&#x9500;&#x552E;&#x7C7B;&#x64CD;&#x4F5C;"><span id="2">2.<strong>&#x9500;&#x552E;&#x7C7B;&#x64CD;&#x4F5C;</strong></span></h2>
+<h3 id="21&#x8D2D;&#x4E70;"><span id="2_1">2.1.<strong>&#x8D2D;&#x4E70;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/sales/purchase</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_id</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BF7;&#x6C42;&#x7F16;&#x53F7;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF1B;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E1A;&#x52A1;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x662F;&#x54EA;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>store_name</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x95E8;&#x5E97;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>scene</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x573A;&#x666F;&#x503C;&#xFF1A;1-&#x667A;&#x80FD;&#x7EC8;&#x7AEF;&#xFF0C;2-H5&#xFF0C;4-PC</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F20;8&#x4E2A;&#x5B57;&#x5185;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h</td>
+</tr>
+<tr>
+<td>return_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;&#x652F;&#x6301;255&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x7ED3;&#x679C;&#x9875;&#xFF0C;H5&#x573A;&#x666F;&#x652F;&#x4ED8;&#x7ED3;&#x679C;&#x9875;</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+<tr>
+<td>items</td>
+<td>0-n</td>
+<td>[Item]</td>
+<td>item&#x6570;&#x7EC4;</td>
+<td>&#x8BA2;&#x5355;&#x8D27;&#x7269;&#x6E05;&#x5355;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>0-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x6307;&#x5B9A;&#x8BA2;&#x5355;&#x7684;&#x5404;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x65F6;&#x8BE5;&#x6570;&#x7EC4;&#x4E3A;&#x7A7A;&#x7531;&#x64CD;&#x4F5C;&#x5458;&#x5728;POS&#x4E0A;&#x9009;&#x62E9;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF0C;&#x6307;&#x5B9A;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x65F6;&#x4E0B;&#x53D1;&#x5404;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#xFF0C;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#x5FC5;&#x987B;&#x4E0B;&#x53D1;&#x8BE5;&#x9879;&#x76EE;&#x5E76;&#x6307;&#x5B9A;&#x6388;&#x6743;&#x65F6;&#x7684;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+</tbody>
+</table>
+<p>items&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;  </strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5546;&#x54C1;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>item_desc</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&quot;&#x767D;&#x8272;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>category</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6240;&#x5C5E;&#x5927;&#x7C7B;&#xFF0C;&#x4F8B;&quot;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4F4D;&#xFF0C;&#x4F8B;&quot;&#x4EF6;&quot;</td>
+</tr>
+<tr>
+<td>item_qty</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;8&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6570;&#x91CF;&#xFF0C;&#x4F8B;&quot;2&quot;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6570;&#x91CF;&#x4E3A;&#x8D1F;&#x6570;&#xFF0C;&#x4F8B;&#xFF1A;&quot;-2&quot;</td>
+</tr>
+<tr>
+<td>item_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4EF7;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>sales_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6210;&#x4EA4;&#x4EF7;&#x683C;,&#x4E00;&#x822C;&#x4E3A;&#x6570;&#x91CF;*&#x5355;&#x4EF7;&#xFF0C;&#x5982;&#x6709;&#x6298;&#x6263;&#x518D;&#x8FDB;&#x884C;&#x6263;&#x51CF;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6210;&#x4EA4;&#x4EF7;&#x4E3A;&#x8D1F;&#x6570;&#xFF1B;&#x76EE;&#x524D;&#x4E0D;&#x6821;&#x9A8C;&quot;&#x6570;&#x91CF;*&#x5355;&#x4EF7;&quot;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E0E;&#x6B64;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x7B49;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>0-&#x9500;&#x552E;&#xFF0C;1-&#x9000;&#x8D27;</td>
+</tr>
+<tr>
+<td>return_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x95E8;&#x5E97;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x6536;&#x97F3;&#x673A;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tender_type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;0-&#x5176;&#x4ED6;&#xFF0C;1-&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;2-&#x94F6;&#x884C;&#x5361;&#xFF0C;3-QRCode&#xFF0C;4-&#x5206;&#x671F;&#xFF0C;99-&#x5916;&#x90E8;</td>
+</tr>
+<tr>
+<td>sub_tender_type</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;</td>
+<td>&#x4E8C;&#x7EA7;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF08;&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x4F20;&#x5165;&#x5177;&#x4F53;&#x503C;&#xFF09;&#xFF1A;<br>001-&#x73B0;&#x91D1;&#xFF0C;&#x5982;&#x9700;&#x5728;&#x8F7B;POS&#x5F55;&#x5165;&#x5176;&#x4ED6;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x5BF9;&#x63A5;&#x65F6;&#x4E0E;&#x6536;&#x94B1;&#x5427;&#x6C9F;&#x901A;&#x914D;&#x7F6E;&#xFF1B;<br>101-&#x94F6;&#x884C;&#x5361;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;<br>102-&#x5FAE;&#x4FE1;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;103-&#x652F;&#x4ED8;&#x5B9D;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF1B;<br>201-&#x94F6;&#x884C;&#x5361;&#xFF1B;<br>301-&#x5FAE;&#x4FE1;&#xFF0C;302-&#x652F;&#x4ED8;&#x5B9D;&#xFF1B;<br>401-&#x94F6;&#x884C;&#x5361;&#x5206;&#x671F;&#xFF1B;402-&#x82B1;&#x5457;&#x5206;&#x671F;</td>
+</tr>
+<tr>
+<td>sub_tender_desc</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x5F53;tender_type&#x4E3A;99&#x65F6;&#xFF0C;&#x5FC5;&#x586B;&#xFF0C;&#x4E14;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x503C;&#x4E3A;&#x6536;&#x94F6;&#x7CFB;&#x7EDF;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>dynamic_id</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x4ED8;&#x6B3E;&#x7801;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF1B;</td>
+</tr>
+<tr>
+<td>transaction_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x6D41;&#x6C34;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>installment_number</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;</td>
+<td>&#x5206;&#x671F;&#x6570;&#xFF0C;&#x4E0D;&#x4F20;&#x5219;&#x7EC8;&#x7AEF;&#x9009;&#x62E9;</td>
+</tr>
+<tr>
+<td>installment_fee_merchant_percent</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;</td>
+<td>&#x5546;&#x5BB6;&#x8D34;&#x606F;&#x6BD4;&#x4F8B;0~100&#x7684;&#x6574;&#x6570;&#xFF0C;&#x8DDF;&#x671F;&#x6570;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#xFF0C;&#x6307;&#x5B9A;&#x671F;&#x6570;&#x65F6;&#x5FC5;&#x4F20;&#x3002;&#x82B1;&#x5457;&#x5206;&#x671F;&#x53EA;&#x80FD;&#x4F20;0&#x6216;&#x8005;100</td>
+</tr>
+<tr>
+<td>original_tender_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>tender_type &#x4E3A;1&#x65F6;&#x5FC5;&#x586B;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#x9884;&#x6388;&#x6743;&#x8BA2;&#x5355;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8F7B;POS&#x8FD4;&#x56DE;&#x7ED9;&#x5546;&#x6237;&#x7684;&#x9884;&#x6388;&#x6743;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x6807;&#x8BB0;&#x8BE5;tender&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x652F;&#x4ED8;&#x5B8C;&#x6210;&#xFF0C;<br>0&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;<br>1&#xFF1A;&#x5DF2;&#x5B8C;&#x6210;tender_type&#x4E3A;99&#x65F6;&#xFF0C;&#x4E3A;1&#xFF1A;&#x5DF2;&#x5B8C;&#x6210;&#xFF0C;&#x5176;&#x4ED6;&#x7684;tender_tpye&#x5FC5;&#x987B;&#x4E3A;0&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>tender&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#xFF0C;&#x5F53;pay_status&#x4E3A;1&#x65F6;&#x5FC5;&#x586B;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>cashier_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8F7B;POS&#x6536;&#x94F6;&#x53F0;&#x5730;&#x5740;&#xFF0C;H5&#x573A;&#x666F;&#x4E0B;&#x4F1A;&#x8FD4;&#x56DE;&#x8BE5;&#x5B57;&#x6BB5;&#xFF0C;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22&#x9000;&#x6B3E;"><span id="2_2">2.2.<strong>&#x9000;&#x6B3E;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/sales/refund</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_id</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BF7;&#x6C42;&#x7F16;&#x53F7;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF1B;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E1A;&#x52A1;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x662F;&#x54EA;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>store_name</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x95E8;&#x5E97;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF0C;&#x91D1;&#x989D;&#x5E94;&#x4E3A;&#x8D1F;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F20;8&#x4E2A;&#x5B57;&#x5185;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h&#x3002;</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+<tr>
+<td>items</td>
+<td>0-n</td>
+<td>[Item]</td>
+<td>item&#x6570;&#x7EC4;</td>
+<td>&#x8BA2;&#x5355;&#x8D27;&#x7269;&#x6E05;&#x5355;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>1-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x8BA2;&#x5355;&#x6307;&#x5B9A;&#x7684;&#x5404;&#x9000;&#x6B3E;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;</td>
+</tr>
+</tbody>
+</table>
+<p>items&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;  </strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5546;&#x54C1;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>item_desc</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&quot;&#x767D;&#x8272;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>category</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6240;&#x5C5E;&#x5927;&#x7C7B;&#xFF0C;&#x4F8B;&quot;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4F4D;&#xFF0C;&#x4F8B;&quot;&#x4EF6;&quot;</td>
+</tr>
+<tr>
+<td>item_qty</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;8&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6570;&#x91CF;&#xFF0C;&#x4F8B;&quot;2&quot;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6570;&#x91CF;&#x4E3A;&#x8D1F;&#x6570;&#xFF0C;&#x4F8B;&#xFF1A;&quot;-2&quot;</td>
+</tr>
+<tr>
+<td>item_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4EF7;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>sales_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6210;&#x4EA4;&#x4EF7;&#x683C;,&#x4E00;&#x822C;&#x4E3A;&#x6570;&#x91CF;<em>&#x5355;&#x4EF7;&#xFF0C;&#x5982;&#x6709;&#x6298;&#x6263;&#x518D;&#x8FDB;&#x884C;&#x6263;&#x51CF;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6210;&#x4EA4;&#x4EF7;&#x4E3A;&#x8D1F;&#x6570;&#xFF1B;&#x76EE;&#x524D;&#x4E0D;&#x6821;&#x9A8C;&quot;&#x6570;&#x91CF;</em>&#x5355;&#x4EF7;&quot;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E0E;&#x6B64;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x7B49;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>0-&#x9500;&#x552E;&#xFF0C;1-&#x9000;&#x8D27;</td>
+</tr>
+<tr>
+<td>return_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x95E8;&#x5E97;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x6536;&#x97F3;&#x673A;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transaction_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x6D41;&#x6C34;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9000;&#x6B3E;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF0C;&#x9000;&#x6B3E;&#x4E3A;&#x8D1F;</td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x6807;&#x8BB0;&#x8BE5;tender&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x652F;&#x4ED8;&#x5B8C;&#x6210;&#xFF0C;0&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;1&#xFF1A;&#x5DF2;&#x5B8C;&#x6210;&#x539F;tender_type&#x4E3A;99-&#x5916;&#x90E8;&#x65F6;&#x5FC5;&#x9700;&#x4E3A;1&#x5176;&#x4ED6;tender_tpye&#x5FC5;&#x9700;&#x4E3A;0</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>tender&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#xFF0C;&#x5F53;pay_status&#x4E3A;1&#x65F6;&#x5FC5;&#x586B;&#xFF0C;&#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>original_tender_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x8D2D;&#x8D27;&#x8BA2;&#x5355;&#x5B8C;&#x6210;&#x540E;&#x672C;&#x7CFB;&#x7EDF;&#x8FD4;&#x56DE;&#x7684;&#x652F;&#x4ED8;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3&#x6388;&#x6743;&#x7C7B;&#x64CD;&#x4F5C;"><span id="3">3.<strong>&#x6388;&#x6743;&#x7C7B;&#x64CD;&#x4F5C;</strong></span></h2>
+<h3 id="31&#x9884;&#x6388;&#x6743;"><span id="3_1">3.1.<strong>&#x9884;&#x6388;&#x6743;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/authorization/initial</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;
+&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_id</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BF7;&#x6C42;&#x7F16;&#x53F7;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF1B;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E1A;&#x52A1;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x662F;&#x54EA;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>store_name</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x95E8;&#x5E97;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>channel_fixed</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x662F;&#x5426;&#x6307;&#x5B9A;&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#xFF0C;0&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#xFF1B;1&#xFF0C;&#x6307;&#x5B9A;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;0</td>
+</tr>
+<tr>
+<td>auth_channel</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#xFF0C;1:&#x94F6;&#x884C;&#x5361;&#xFF0C;2&#xFF1A;&#x5FAE;&#x4FE1;&#xFF0C;3&#xFF1A;&#x652F;&#x4ED8;&#x5B9D;&#x3002;&#x6307;&#x5B9A;&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#x540E;&#x5FC5;&#x4F20;&#x3002;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F20;8&#x4E2A;&#x5B57;&#x5185;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h&#x3002;</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;"><span id="3_2">3.2.<strong>&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/authorization/release</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th>&#x51FA;&#x73B0;</th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_id</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BF7;&#x6C42;&#x7F16;&#x53F7;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF1B;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E1A;&#x52A1;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x662F;&#x54EA;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>store_name</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x95E8;&#x5E97;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>original_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x59CB;&#x5546;&#x6237;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>original_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x59CB;&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>original_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x59CB;&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;</td>
+</tr>
+<tr>
+<td>original_order_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x7B14;&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x5BF9;&#x5E94;&#x7684;&#x539F;&#x59CB;&#x9884;&#x6388;&#x6743;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1;<a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x91D1;&#x989D;&#xFF0C;&#x7B49;&#x4E8E;&#x539F;&#x59CB;&#x9884;&#x6388;&#x6743;&#x8BA2;&#x5355;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F20;8&#x4E2A;&#x5B57;&#x5185;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>original_store_sn&#x3001;original_workstation_sn&#x3001;original_check_sn&#x548C;original_order_sn&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F18;&#x5148;&#x6309;original_order_sn&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x518D;&#x6309;original_check_sn&#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+</tbody>
+</table>
+<h2 id=""> </h2>
+<h2 id="4&#x53D6;&#x6D88;&#x8BA2;&#x5355;&#x64CD;&#x4F5C;"><span id="4">4.<strong>&#x53D6;&#x6D88;&#x8BA2;&#x5355;&#x64CD;&#x4F5C;</strong></span></h2>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/sales/void</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_id</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BF7;&#x6C42;&#x7F16;&#x53F7;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF1B;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E1A;&#x52A1;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x662F;&#x54EA;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x4E1A;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>original_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>original_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x59CB;&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>original_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x59CB;&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;</td>
+</tr>
+<tr>
+<td>original_order_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>original_store_sn+original_workstation_sn+original_check_sn&#x548C;original_order_sn&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F18;&#x5148;&#x6309;original_order_sn&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x518D;&#x6309;original_store_sn+original_workstation_sn+original_check_sn&#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;&#x53EA;&#x6709;&#x5F85;&#x64CD;&#x4F5C;&#x7684;&#x8BA2;&#x5355;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>original_order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x672C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8BE5;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5&#x901A;&#x77E5;"><span id="5">5.<strong>&#x901A;&#x77E5;</strong></span></h2>
+<h3 id="51&#x6388;&#x6743;&#x7ED3;&#x679C;&#x901A;&#x77E5;"><span id="5_1">5.1.<strong>&#x6388;&#x6743;&#x7ED3;&#x679C;&#x901A;&#x77E5;</strong></span></h3>
+<p>API endpoint: &#x7531;&#x5546;&#x6237;&#x63D0;&#x4F9B;&#xFF0C;&#x6536;&#x94B1;&#x5427;&#x914D;&#x7F6E;</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E2D;&#x5305;&#x542B;&#x7B7E;&#x540D;&#xFF0C;&#x5546;&#x5BB6;&#x9700;&#x8981;&#x5BF9;&#x7B7E;&#x540D;&#x8FDB;&#x884C;&#x9A8C;&#x7B7E;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notification_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x72B6;&#x6001;0&#xFF1A;&#x5DF2;&#x53D6;&#x6D88;&#xFF0C;1&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;3&#xFF1A;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;4&#xFF1A;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>auth_channel</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#xFF0C;1:&#x94F6;&#x884C;&#x5361;&#xFF0C;2.&#x5FAE;&#x4FE1;&#xFF0C;3.&#x652F;&#x4ED8;&#x5B9D;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#xFF0C;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h&#x3002;</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>0-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500; &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>tender_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x540E;&#x672C;&#x7CFB;&#x7EDF;&#x8FD4;&#x56DE;&#x7684;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>1</td>
+<td>Int</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x72B6;&#x6001;, 1:&#x6210;&#x529F;;2:&#x5931;&#x8D25;;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5546;&#x6237;&#x6536;&#x5230;&#x901A;&#x77E5;&#x540E;&#x7684;&#x54CD;&#x5E94;&#xFF0C;&#x6536;&#x94B1;&#x5427;&#x5224;&#x65AD;&#x901A;&#x77E5;&#x6210;&#x529F;&#x7684;&#x6807;&#x5FD7;&#xFF0C;&#x53C2;&#x8003;&#x54CD;&#x5E94;&#x901A;&#x7528;&#x5B9A;&#x4E49;&#x3002;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>{</p>
+<p>&quot;response&quot;: {</p>
+<p>&quot;head&quot;: {</p>
+<p>&quot;version&quot;: &quot;1.0.0&quot;,</p>
+<p>&quot;sign_type&quot;: &quot;SHA1&quot;,</p>
+<p>&quot;appid&quot;: &quot;28lp61847655&quot;,</p>
+<p>&quot;response_time&quot;: &quot;2019-08-01T12:00:00+08:00&quot;</p>
+<p>},</p>
+<p>&quot;body&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;,</p>
+<p>&quot;biz_response&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;</p>
+<p>}</p>
+<p>}</p>
+<p>},</p>
+<p>&quot;signature&quot;: &quot;&quot;</p>
+<p>}</p>
+<h3 id="52-&#x9500;&#x552E;&#x7ED3;&#x679C;&#x901A;&#x77E5;"><span id="5_2">5.2. <strong>&#x9500;&#x552E;&#x7ED3;&#x679C;&#x901A;&#x77E5;</strong></span></h3>
+<p>API endpoint: &#x7531;&#x5546;&#x6237;&#x63D0;&#x4F9B;&#xFF0C;&#x6536;&#x94B1;&#x5427;&#x914D;&#x7F6E;</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E2D;&#x5305;&#x542B;&#x7B7E;&#x540D;&#xFF0C;&#x5546;&#x5BB6;&#x9700;&#x8981;&#x5BF9;&#x7B7E;&#x540D;&#x8FDB;&#x884C;&#x9A8C;&#x7B7E;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0; </strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notification_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x72B6;&#x6001;0&#xFF1A;&#x5DF2;&#x53D6;&#x6D88;&#xFF0C;1&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;2&#xFF1A;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;3&#xFF1A;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;4&#xFF1A;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#xFF0C;5&#xFF1A;&#x90E8;&#x5206;&#x5B8C;&#x6210;&#xFF0C;6&#xFF1A;&#x64CD;&#x4F5C;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>scene</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x573A;&#x666F;&#xFF1A;1&#xFF1A;&#x667A;&#x80FD;&#x7EC8;&#x7AEF;&#xFF0C;2&#xFF1A;H5&#xFF0C;4=PC</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;,&#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h&#x3002;</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td>reflect</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x53CD;&#x5C04;&#x53C2;&#x6570;; &#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x8005;&#x5E0C;&#x671B;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5173;&#x8054;&#x5546;&#x6237;ERP&#x7CFB;&#x7EDF;&#x7684;&#x8BA2;&#x5355;&#x6216;&#x8BB0;&#x5F55;&#x9644;&#x52A0;&#x8BA2;&#x5355;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x5355;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x4E2D;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>items</td>
+<td>0-n</td>
+<td>[Item]</td>
+<td>item&#x6570;&#x7EC4;</td>
+<td>&#x8BA2;&#x5355;&#x8D27;&#x7269;&#x6E05;&#x5355;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>0-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x6307;&#x5B9A;&#x8BA2;&#x5355;&#x7684;&#x5404;&#x9000;&#x6B3E;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;</td>
+</tr>
+</tbody>
+</table>
+<p>items&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5546;&#x54C1;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>item_desc</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&quot;&#x767D;&#x8272;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>category</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6240;&#x5C5E;&#x5927;&#x7C7B;&#xFF0C;&#x4F8B;&quot;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4F4D;&#xFF0C;&#x4F8B;&quot;&#x4EF6;&quot;</td>
+</tr>
+<tr>
+<td>item_qty</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;8&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6570;&#x91CF;&#xFF0C;&#x4F8B;&quot;2&quot;</td>
+</tr>
+<tr>
+<td>item_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4EF7;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>sales_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6210;&#x4EA4;&#x4EF7;&#x683C;,&#x4E00;&#x822C;&#x4E3A;&#x6570;&#x91CF;<em>&#x5355;&#x4EF7;&#xFF0C;&#x5982;&#x6709;&#x6298;&#x6263;&#x518D;&#x8FDB;&#x884C;&#x6263;&#x51CF;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6210;&#x4EA4;&#x4EF7;&#x4E3A;&#x8D1F;&#x6570;&#xFF1B;&#x76EE;&#x524D;&#x4E0D;&#x6821;&#x9A8C;&quot;&#x6570;&#x91CF;</em>&#x5355;&#x4EF7;&quot;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E0E;&#x6B64;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x7B49;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>0-&#x9500;&#x552E;&#xFF0C;1-&#x9000;&#x8D27;</td>
+</tr>
+<tr>
+<td>return_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x95E8;&#x5E97;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x6536;&#x94F6;&#x673A;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>original_transaction_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x6307;&#x5B9A;&#x4E2D;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x6D41;&#x6C34;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>original_tender_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9000;&#x6B3E;&#x5BF9;&#x5E94;&#x7684;&#x539F;&#x8D2D;&#x8D27;&#x8BA2;&#x5355;&#x5B8C;&#x6210;&#x540E;&#x672C;&#x7CFB;&#x7EDF;&#x8FD4;&#x56DE;&#x7684;&#x652F;&#x4ED8;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>tender_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8F7B;POS&#x751F;&#x6210;&#x7684;&#x552F;&#x4E00;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>collected_amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x5BB6;&#x5B9E;&#x6536;/&#x5B9E;&#x9000;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>paid_amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x6D88;&#x8D39;&#x8005;&#x5B9E;&#x4ED8;/&#x5B9E;&#x9000;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>tender&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x72B6;&#x6001;, 1:&#x5F85;&#x64CD;&#x4F5C;; 2:&#x652F;&#x4ED8;&#x4E2D;; 3:&#x652F;&#x4ED8;&#x6210;&#x529F;; 4:&#x9000;&#x6B3E;&#x4E2D;; 5:&#x9000;&#x6B3E;&#x6210;&#x529F;;6:&#x9000;&#x6B3E;&#x5931;&#x8D25;;7:&#x652F;&#x4ED8;&#x5931;&#x8D25;;8:&#x672A;&#x77E5;&#x72B6;&#x6001;;</td>
+</tr>
+<tr>
+<td>tender_type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;0-&#x5176;&#x4ED6;&#xFF0C;1-&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;2-&#x94F6;&#x884C;&#x5361;&#xFF0C;3-QRCode&#xFF0C;4-&#x5206;&#x671F;&#xFF0C;99-&#x5916;&#x90E8;</td>
+</tr>
+<tr>
+<td>sub_tender_type</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;</td>
+<td>&#x4E8C;&#x7EA7;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;<br>001-&#x73B0;&#x91D1;&#xFF0C;&#x5982;&#x9700;&#x5728;&#x8F7B;POS&#x5F55;&#x5165;&#x5176;&#x4ED6;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x5BF9;&#x63A5;&#x65F6;&#x4E0E;&#x6536;&#x94B1;&#x5427;&#x6C9F;&#x901A;&#x914D;&#x7F6E;&#xFF1B;<br>101-&#x94F6;&#x884C;&#x5361;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;102-&#x5FAE;&#x4FE1;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;103-&#x652F;&#x4ED8;&#x5B9D;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF1B;<br>201-&#x94F6;&#x884C;&#x5361;&#xFF1B;<br>301-&#x5FAE;&#x4FE1;&#xFF0C;302-&#x652F;&#x4ED8;&#x5B9D;&#xFF1B;<br>401-&#x94F6;&#x884C;&#x5361;&#x5206;&#x671F;&#xFF0C;402-&#x82B1;&#x5457;&#x5206;&#x671F;</td>
+</tr>
+<tr>
+<td>sub_tender_desc</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x4E8C;&#x7EA7;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x63CF;&#x8FF0;&#x3002;&#x5982;&#xFF1A;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5546;&#x6237;&#x6536;&#x5230;&#x901A;&#x77E5;&#x540E;&#x7684;&#x54CD;&#x5E94;&#xFF0C;&#x6536;&#x94B1;&#x5427;&#x5224;&#x65AD;&#x901A;&#x77E5;&#x6210;&#x529F;&#x7684;&#x6807;&#x5FD7;&#xFF0C;&#x53C2;&#x8003;&#x54CD;&#x5E94;&#x901A;&#x7528;&#x5B9A;&#x4E49;&#x3002;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>{</p>
+<p>&quot;response&quot;: {</p>
+<p>&quot;head&quot;: {</p>
+<p>&quot;version&quot;: &quot;1.0.0&quot;,</p>
+<p>&quot;sign_type&quot;: &quot;SHA1&quot;,</p>
+<p>&quot;appid&quot;: &quot;28lp61847655&quot;,</p>
+<p>&quot;response_time&quot;: &quot;2019-08-01T12:00:00+08:00&quot;</p>
+<p>},</p>
+<p>&quot;body&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;,</p>
+<p>&quot;biz_response&quot;: {</p>
+<p>&quot;result_code&quot;: &quot;200&quot;</p>
+<p>}</p>
+<p>}</p>
+<p>},</p>
+<p>&quot;signature&quot;: &quot;&quot;</p>
+<p>}</p>
+<h2 id="6&#x67E5;&#x8BE2;"><span id="6">6.<strong>&#x67E5;&#x8BE2;</strong></span></h2>
+<h3 id="61&#x6388;&#x6743;&#x7ED3;&#x679C;&#x67E5;&#x8BE2;"><span id="6_1">6.1.<strong>&#x6388;&#x6743;&#x7ED3;&#x679C;&#x67E5;&#x8BE2;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/authorization/query</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0; </strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x8BA2;&#x5355;&#x4E0B;&#x53D1;&#x65F6;&#x6536;&#x94B1;&#x5427;&#x8FD4;&#x56DE;&#x7684;&#x8BA2;&#x5355;&#x53F7;&#xFF08;&#x53EF;&#x9009;&#xFF0C;&#x4F18;&#x5148;&#x4F7F;&#x7528;order_sn&#x4F5C;&#x67E5;&#x8BE2;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0; </strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x72B6;&#x6001;0&#xFF1A;&#x5DF2;&#x53D6;&#x6D88;&#xFF0C;1&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;3&#xFF1A;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;4&#xFF1A;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td></td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x662F;&#x5426;&#x6307;&#x5B9A;&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#xFF0C;0&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;1&#xFF0C;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0</td>
+</tr>
+<tr>
+<td>auth_channel</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;&#x6E20;&#x9053;&#xFF0C;1:&#x94F6;&#x884C;&#x5361;&#xFF0C;2&#xFF1A;&#x5FAE;&#x4FE1;&#xFF0C;3&#xFF1A;&#x652F;&#x4ED8;&#x5B9D;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>0-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x6307;&#x5B9A;&#x8BA2;&#x5355;&#x7684;&#x5404;&#x9000;&#x6B3E;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>tender_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x540E;&#x672C;&#x7CFB;&#x7EDF;&#x8FD4;&#x56DE;&#x7684;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>1</td>
+<td>Int</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x9884;&#x6388;&#x6743;/&#x9884;&#x6388;&#x6743;&#x64A4;&#x9500;&#x72B6;&#x6001;, 1:&#x6210;&#x529F;;2:&#x5931;&#x8D25;;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62&#x9500;&#x552E;&#x7ED3;&#x679C;&#x67E5;&#x8BE2;"><span id="6_2">6.2<strong>&#x9500;&#x552E;&#x7ED3;&#x679C;&#x67E5;&#x8BE2;</strong></span></h3>
+<p>API endpoint: {api_domain}/api/lite-pos/v1/sales/query</p>
+<p>Verb: POST</p>
+<p>Signature &#xFF1A;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x53C2;&#x8003;&#x7EDF;&#x4E00;&#x7B7E;&#x540D;&#x8BF4;&#x660E;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BF7;&#x4F20;&#x5165;&quot;0&quot;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9500;&#x552E;&#x7C7B;&#x8BA2;&#x5355;&#x4E0B;&#x53D1;&#x65F6;&#x6536;&#x94B1;&#x5427;&#x8FD4;&#x56DE;&#x7684;&#x8BA2;&#x5355;&#x53F7;&#xFF08;&#x53EF;&#x9009;&#xFF0C;&#x4F18;&#x5148;&#x4F7F;&#x7528;order_sn&#x4F5C;&#x67E5;&#x8BE2;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x54C1;&#x724C;&#x7F16;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x5BF9;&#x63A5;&#x524D;&#x7531;&quot;&#x6536;&#x94B1;&#x5427;&quot;&#x5206;&#x914D;&#x5E76;&#x63D0;&#x4F9B;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>store_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x95E8;&#x5E97;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>workstation_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x95E8;&#x5E97;&#x6536;&#x94F6;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>check_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x65B9;&#x4F20;&#x5165;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x5E8F;&#x5217;&#x53F7;</td>
+</tr>
+<tr>
+<td>scene</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x573A;&#x666F;&#x503C;&#xFF1A;1-&#x667A;&#x80FD;&#x7EC8;&#x7AEF;&#xFF0C;2-H5&#xFF0C;4-PC</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x72B6;&#x6001;0&#xFF1A;&#x5DF2;&#x53D6;&#x6D88;&#xFF0C;1&#xFF1A;&#x5F85;&#x64CD;&#x4F5C;&#xFF0C;2&#xFF1A;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;3&#xFF1A;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;4&#xFF1A;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#xFF0C;5&#xFF1A;&#x90E8;&#x5206;&#x5B8C;&#x6210;&#xFF0C;6&#xFF1A;&#x64CD;&#x4F5C;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>sales_time</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x521B;&#x5EFA;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;3&#x4F4D;</td>
+<td>&#x5E01;&#x79CD;&#xFF0C;ISO numeric currency code &#x5982;&#xFF1A;&quot;156&quot;for CNY</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x8BA2;&#x5355;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x64CD;&#x4F5C;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6536;&#x6B3E;&#x7684;&#x6536;&#x94F6;&#x5458;&#x6216;&#x5BFC;&#x8D2D;&#x5458;&#x3002;&#x4F8B;&#x5982;&quot;&#x5F20;&#x4E09;&quot;</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5BA2;&#x6237;&#x59D3;&#x540D;&#x6216;&#x4F1A;&#x5458;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_1</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;1&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>extension_2</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x62D3;&#x5C55;&#x5B57;&#x6BB5;2&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BC6;&#xFF0C;&#x5982;&#x5EA7;&#x53F7;&#xFF0C;&#x623F;&#x95F4;&#x53F7;</td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x884C;&#x4E1A;&#x4EE3;&#x7801;, 0=&#x96F6;&#x552E;;1:&#x9152;&#x5E97;; 2:&#x9910;&#x996E;; 3:&#x6587;&#x5A31;; 4:&#x6559;&#x80B2;;</td>
+</tr>
+<tr>
+<td>pos_info</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x4F20;&#x5165;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3001;&#x7CFB;&#x7EDF;&#x7F16;&#x53F7;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x5E2E;&#x52A9;&#x5546;&#x6237;&#x8C03;&#x67E5;&#x95EE;&#x9898;</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x521B;&#xFF0C;&#x6700;&#x5927;255&#x4F4D;</td>
+<td>&#x901A;&#x77E5;&#x63A5;&#x6536;&#x5730;&#x5740;&#x3002;&#x603B;&#x5171;&#x56DE;&#x8C03;7&#x6B21;&#xFF0C;&#x56DE;&#x8C03;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;4m,10m,10m,1h,2h,6h,15h</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>0-1</td>
+<td>JSON</td>
+<td></td>
+<td>&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x672C;&#x63A5;&#x53E3;&#x6240;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;JSON&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td>items</td>
+<td>0-n</td>
+<td>[Item]</td>
+<td>item&#x6570;&#x7EC4;</td>
+<td>&#x8BA2;&#x5355;&#x8D27;&#x7269;&#x6E05;&#x5355;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td>0-n</td>
+<td>[tender]</td>
+<td>tender&#x6570;&#x7EC4;</td>
+<td>&#x6307;&#x5B9A;&#x8BA2;&#x5355;&#x7684;&#x5404;&#x9000;&#x6B3E;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x8868;&#xFF0C;</td>
+</tr>
+</tbody>
+</table>
+<p>items&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item_code</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5546;&#x54C1;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>item_desc</td>
+<td>1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;64&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&quot;&#x767D;&#x8272;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>category</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6240;&#x5C5E;&#x5927;&#x7C7B;&#xFF0C;&#x4F8B;&quot;&#x77ED;&#x8896;&quot;</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4F4D;&#xFF0C;&#x4F8B;&quot;&#x4EF6;&quot;</td>
+</tr>
+<tr>
+<td>item_qty</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;8&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6570;&#x91CF;&#xFF0C;&#x4F8B;&quot;2&quot;</td>
+</tr>
+<tr>
+<td>item_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x5355;&#x4EF7;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>sales_price</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x54C1;&#x6210;&#x4EA4;&#x4EF7;&#x683C;,&#x4E00;&#x822C;&#x4E3A;&#x6570;&#x91CF;<em>&#x5355;&#x4EF7;&#xFF0C;&#x5982;&#x6709;&#x6298;&#x6263;&#x518D;&#x8FDB;&#x884C;&#x6263;&#x51CF;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;&#xFF1B;&#x5F53;&#x9000;&#x8D27;&#x65F6;&#x6210;&#x4EA4;&#x4EF7;&#x4E3A;&#x8D1F;&#x6570;&#xFF1B;&#x76EE;&#x524D;&#x4E0D;&#x6821;&#x9A8C;&quot;&#x6570;&#x91CF;</em>&#x5355;&#x4EF7;&quot;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E0E;&#x6B64;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x7B49;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>0-&#x9500;&#x552E;&#xFF0C;1-&#x9000;&#x8D27;</td>
+</tr>
+<tr>
+<td>return_store_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x95E8;&#x5E97;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_workstation_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;36&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x6536;&#x94F6;&#x673A;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>return_check_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x539F;&#x5546;&#x54C1;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x9000;&#x8D27;&#x65F6;&#x5FC5;&#x586B;</td>
+</tr>
+</tbody>
+</table>
+<p>tenders&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x53C2;&#x6570;</strong></th>
+<th><strong>&#x51FA;&#x73B0;</strong></th>
+<th><strong>&#x7C7B;&#x578B;</strong></th>
+<th><strong>&#x7EA6;&#x675F;</strong></th>
+<th><strong>&#x63CF;&#x8FF0;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>original_transaction_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x6307;&#x5B9A;&#x4E2D;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x6D41;&#x6C34;&#x53F7;&#xFF0C;&#x5728;&#x5546;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x552F;&#x4E00;</td>
+</tr>
+<tr>
+<td>original_tender_sn</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x9000;&#x6B3E;&#x5BF9;&#x5E94;&#x7684;&#x539F;&#x8D2D;&#x8D27;&#x8BA2;&#x5355;&#x5B8C;&#x6210;&#x540E;&#x672C;&#x7CFB;&#x7EDF;&#x8FD4;&#x56DE;&#x7684;&#x652F;&#x4ED8;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>tender_sn</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;32&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8F7B;POS&#x751F;&#x6210;&#x7684;&#x552F;&#x4E00;&#x6D41;&#x6C34;&#x53F7;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>collected_amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x5546;&#x5BB6;&#x5B9E;&#x6536;/&#x5B9E;&#x9000;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>paid_amount</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;&#x6700;&#x5927;12&#x4F4D;</td>
+<td>&#x6D88;&#x8D39;&#x8005;&#x5B9E;&#x4ED8;/&#x5B9E;&#x9000;&#x91D1;&#x989D;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x5206;</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;20- 25&#x4F4D;</td>
+<td>tender&#x652F;&#x4ED8;/&#x9000;&#x6B3E;&#x65F6;&#x95F4;, &#x683C;&#x5F0F;&#x8BE6;&#x89C1; <a href="./#1_5">1.5&#x65F6;&#x95F4;&#x6570;&#x636E;&#x5143;&#x7D20;&#x5B9A;&#x4E49;</a></td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x72B6;&#x6001;, 1:&#x5F85;&#x64CD;&#x4F5C;; 2:&#x652F;&#x4ED8;&#x4E2D;; 3:&#x652F;&#x4ED8;&#x6210;&#x529F;; 4:&#x9000;&#x6B3E;&#x4E2D;; 5:&#x9000;&#x6B3E;&#x6210;&#x529F;;6:&#x9000;&#x6B3E;&#x5931;&#x8D25;;7:&#x652F;&#x4ED8;&#x5931;&#x8D25;;8:&#x672A;&#x77E5;&#x72B6;&#x6001;;</td>
+</tr>
+<tr>
+<td>tender_type</td>
+<td>1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;&#xFF0C;1&#x4F4D;</td>
+<td>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;0-&#x5176;&#x4ED6;&#xFF0C;1-&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;2-&#x94F6;&#x884C;&#x5361;&#xFF0C;3-QRCode&#xFF0C;4-&#x5206;&#x671F;&#xFF0C;99-&#x5916;&#x90E8;</td>
+</tr>
+<tr>
+<td>sub_tender_type</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x6570;&#x5B57;</td>
+<td>&#x4E8C;&#x7EA7;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;<br>001-&#x73B0;&#x91D1;&#xFF0C;&#x5982;&#x9700;&#x5728;&#x8F7B;POS&#x5F55;&#x5165;&#x5176;&#x4ED6;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x5BF9;&#x63A5;&#x65F6;&#x4E0E;&#x6536;&#x94B1;&#x5427;&#x6C9F;&#x901A;&#x914D;&#x7F6E;&#xFF1B;<br>101-&#x94F6;&#x884C;&#x5361;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;102-&#x5FAE;&#x4FE1;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF0C;103-&#x652F;&#x4ED8;&#x5B9D;&#x9884;&#x6388;&#x6743;&#x5B8C;&#x6210;&#xFF1B;<br>201-&#x94F6;&#x884C;&#x5361;&#xFF1B;<br>301-&#x5FAE;&#x4FE1;&#xFF0C;302-&#x652F;&#x4ED8;&#x5B9D;&#xFF1B;<br>401-&#x94F6;&#x884C;&#x5361;&#x5206;&#x671F;&#xFF0C;402-&#x82B1;&#x5457;&#x5206;&#x671F;</td>
+</tr>
+<tr>
+<td>sub_tender_desc</td>
+<td>0-1</td>
+<td>String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x4E8C;&#x7EA7;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#x63CF;&#x8FF0;&#x3002;&#x5982;&#xFF1A;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="./#1" class="navigation navigation-next navigation-unique" aria-label="Next page: 公共定义">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LitePOS","level":"1.1","depth":1,"next":{"title":"公共定义","level":"1.2","depth":1,"anchor":"#1","path":"README.md","ref":"README.md#1","articles":[{"title":"请求通用定义","level":"1.2.1","depth":2,"anchor":"#1_1","path":"README.md","ref":"README.md#1_1","articles":[]},{"title":"响应通用定义","level":"1.2.2","depth":2,"anchor":"#1_2","path":"README.md","ref":"README.md#1_2","articles":[]},{"title":"签名","level":"1.2.3","depth":2,"anchor":"#1_3","path":"README.md","ref":"README.md#1_3","articles":[]},{"title":"参数数量定义","level":"1.2.4","depth":2,"anchor":"#1_4","path":"README.md","ref":"README.md#1_4","articles":[]},{"title":"时间数据元素定义","level":"1.2.5","depth":2,"anchor":"#1_5","path":"README.md","ref":"README.md#1_5","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-04-30T03:56:18.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-30T03:52:26.391Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
