@@ -1,6 +1,5 @@
 # Summary
 
-* [LitePOS](README.md)
 * [公共定义](README.md#1)
 	* [请求通用定义](README.md#1_1)
 	* [响应通用定义](README.md#1_2)
